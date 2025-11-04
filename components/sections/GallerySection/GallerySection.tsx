@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
+import Lightbox from "@/components/ui/Lightbox/Lightbox";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import Link from "next/link";
 import styles from "./GallerySection.module.css";
@@ -61,6 +62,8 @@ const categories = [
 
 export default function GallerySection() {
   const [activeCategory, setActiveCategory] = useState("TODAS LAS OBRAS");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredArtworks =
     activeCategory === "TODAS LAS OBRAS"
@@ -75,6 +78,29 @@ export default function GallerySection() {
           };
           return artwork.category === categoryMap[activeCategory];
         });
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev < filteredArtworks.length - 1 ? prev + 1 : prev
+    );
+  };
+
+  const previousImage = () => {
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
 
   return (
     <section className={styles.gallery}>
@@ -102,7 +128,10 @@ export default function GallerySection() {
         <div className={styles.gallery__grid}>
           {filteredArtworks.map((artwork, index) => (
             <ScrollReveal key={artwork.id} delay={index * 100}>
-              <ArtworkCard artwork={artwork} />
+              <ArtworkCard
+                artwork={artwork}
+                onClick={() => openLightbox(index)}
+              />
             </ScrollReveal>
           ))}
         </div>
@@ -113,6 +142,18 @@ export default function GallerySection() {
           </Link>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <Lightbox
+          images={filteredArtworks}
+          currentIndex={currentImageIndex}
+          onClose={closeLightbox}
+          onNext={nextImage}
+          onPrevious={previousImage}
+          onThumbnailClick={goToImage}
+        />
+      )}
     </section>
   );
 }

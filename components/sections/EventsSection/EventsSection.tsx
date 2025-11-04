@@ -10,7 +10,7 @@ const eventsData = [
     description:
       "La Exposición Internacional de Bellas Artes sirve como una oportunidad para que creativos únicos de todo el mundo demuestren sus talentos. Este año proporciona narrativas poderosas para complementar el arte innovador.",
     date: "21",
-    month: "FEB",
+    month: "02",
     dateRange: "Febrero 21 - Febrero 26",
     time: "10 AM-8 PM",
     reception: "Recepción",
@@ -21,7 +21,7 @@ const eventsData = [
     description:
       "Esta próxima exposición es una oportunidad para que todas las edades compartan sus opiniones sobre el arte y echen un vistazo al increíble arte fino presentado por varios artistas de todo el mundo.",
     date: "27",
-    month: "FEB",
+    month: "02",
     dateRange: "Febrero 26 - Marzo 08",
     time: "10 AM-8 PM",
     reception: "Recepción",
@@ -32,7 +32,7 @@ const eventsData = [
     description:
       "Echa un vistazo a las obras de arte oníricas de artistas experimentados y de tendencia que comparten su visión de los paisajes primaverales a través del arte fino de varios géneros y estilos.",
     date: "09",
-    month: "MAR",
+    month: "03",
     dateRange: "Marzo 09 - Marzo 15",
     time: "10 AM-8 PM",
     reception: "Recepción",

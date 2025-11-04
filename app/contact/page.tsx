@@ -61,8 +61,8 @@ export default function ContactPage() {
               <ScrollReveal delay={100}>
                 <div className={styles.infoCard}>
                   <div className={styles.infoCard__icon}>📞</div>
-                  <a href="tel:+34123456789" className={styles.infoCard__link}>
-                    +34 123 456 789
+                  <a href="tel:+34912345678" className={styles.infoCard__link}>
+                    +34 912 345 678
                   </a>
                 </div>
 
@@ -80,16 +80,16 @@ export default function ContactPage() {
 
                 <div className={styles.infoCard}>
                   <a
-                    href="mailto:info@demolink.org"
+                    href="mailto:info@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    INFO@DEMOLINK.ORG
+                    INFO@DECORD-GALLERY.COM
                   </a>
                   <a
-                    href="mailto:mail@demolink.org"
+                    href="mailto:contacto@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    MAIL@DEMOLINK.ORG
+                    CONTACTO@DECORD-GALLERY.COM
                   </a>
                 </div>
               </ScrollReveal>

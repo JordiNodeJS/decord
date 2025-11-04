@@ -13,11 +13,14 @@
   transition: 0.3s ease-in-out;
   aspect-ratio: 420 / 570; /* Original image dimensions */
   width: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-/* Red overlay with "+" icon using ::before pseudo-element */
-.artworkCard__media::before {
-  content: "+";
+/* Plus icon */
+.artworkCard__plus {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,9 +38,10 @@
   transform: scale(0.5);
   transition: 0.25s;
   z-index: 1;
+  pointer-events: none;
 }
 
-.artworkCard__media:hover::before {
+.artworkCard__media:hover .artworkCard__plus {
   opacity: 1;
   transform: scale(1);
 }

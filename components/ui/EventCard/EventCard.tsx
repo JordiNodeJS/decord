@@ -18,9 +18,7 @@ export default function EventCard({ event }: EventCardProps) {
     <article className={styles.eventCard}>
       <div className={styles.eventCard__dateBox}>
         <span className={styles.eventCard__dateNumber}>{event.date}</span>
-        <span className={styles.eventCard__dateMonth}>
-          /{event.month.substring(0, 2)}
-        </span>
+        <span className={styles.eventCard__dateMonth}>/{event.month}</span>
       </div>
       <div className={styles.eventCard__content}>
         <h3 className={styles.eventCard__title}>{event.title}</h3>

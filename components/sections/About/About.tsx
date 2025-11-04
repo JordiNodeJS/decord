@@ -1,8 +1,16 @@
+"use client";
+
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import styles from "./About.module.css";
 
 export default function About() {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
-    <section className={styles.about}>
+    <section 
+      ref={elementRef as React.RefObject<HTMLElement>}
+      className={`${styles.about} ${isVisible ? styles['about--visible'] : ''}`}
+    >
       <div className={styles.about__container}>
         <div className={styles.about__header}>
           <span className={styles.about__label}>SOBRE LA GALERÍA DE ARTE</span>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./ArtworkCard.module.css";
 
 interface ArtworkCardProps {
@@ -15,16 +16,13 @@ export default function ArtworkCard({ artwork }: ArtworkCardProps) {
   return (
     <article className={styles.artworkCard}>
       <div className={styles.artworkCard__imageWrapper}>
-        {/* Placeholder para imagen */}
-        <div className={styles.artworkCard__imagePlaceholder}>
-          {/* <Image
-            src={artwork.image}
-            alt={artwork.title}
-            fill
-            className={styles.artworkCard__image}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          /> */}
-        </div>
+        <Image
+          src={artwork.image}
+          alt={artwork.title}
+          fill
+          className={styles.artworkCard__image}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
         <div className={styles.artworkCard__overlay}>
           <div className={styles.artworkCard__plusIcon}>
             <svg

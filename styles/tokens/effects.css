@@ -1,0 +1,74 @@
+/* ============================================
+   DECORD EFFECTS SYSTEM
+   Sombras, bordes, animaciones
+   ============================================ */
+
+:root {
+  /* --- SHADOWS --- */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Sombras específicas DECORD (más sutiles en dark mode) */
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  /* --- BORDER RADIUS --- */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Específicos DECORD */
+  --radius-button: var(--radius-base);    /* Botones: 4px */
+  --radius-card: var(--radius-lg);        /* Cards: 8px */
+  --radius-input: var(--radius-base);     /* Inputs: 4px */
+  --radius-modal: var(--radius-xl);       /* Modals: 12px */
+
+  /* --- TRANSITIONS --- */
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+  --transition-slower: 500ms;
+
+  --transition-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Presets de transición */
+  --transition-colors: color var(--transition-base) var(--transition-ease-in-out),
+                       background-color var(--transition-base) var(--transition-ease-in-out),
+                       border-color var(--transition-base) var(--transition-ease-in-out);
+
+  --transition-transform: transform var(--transition-base) var(--transition-ease-in-out);
+
+  --transition-all: all var(--transition-base) var(--transition-ease-in-out);
+
+  /* --- ANIMATIONS --- */
+  /* Hover zoom en imágenes de galería */
+  --animation-image-zoom: scale(1.05);
+  --animation-image-zoom-duration: var(--transition-slow);
+
+  /* Fade-in al hacer scroll */
+  --animation-fade-in-duration: 600ms;
+  --animation-fade-in-delay: 0ms;
+
+  /* --- BLUR --- */
+  --blur-none: 0;
+  --blur-sm: 4px;
+  --blur-base: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+}

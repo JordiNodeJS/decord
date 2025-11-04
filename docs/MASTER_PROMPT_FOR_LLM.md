@@ -73,6 +73,606 @@ creando una réplica funcional, responsive y optimizada usando Next.js 16
 6. **Lightbox:** Implementa un sistema de visualización de imágenes en modal/lightbox para la galería.
 7. **Animaciones:** Implementa animaciones sutiles de fade-in y slide-up al hacer scroll.
 
+## 🎨 SISTEMA DE TOKENS DE DISEÑO
+
+### Estrategia: Del Visual al Código
+
+El sistema de tokens de diseño es la **base fundamental** para lograr alta fidelidad visual. Antes de escribir cualquier componente, debes extraer y documentar todos los tokens del sitio original.
+
+### FASE 0: EXTRACCIÓN DE TOKENS (20% del tiempo inicial)
+
+#### 0.1 Metodología de Extracción
+
+**Herramientas necesarias:**
+- DevTools del navegador (Inspect + Computed styles)
+- Extension "ColorZilla" o "Eye Dropper" para colores exactos
+- Extension "WhatFont" para identificar tipografías
+- Regla digital o extensión "Page Ruler" para medidas exactas
+
+**Proceso sistemático:**
+1. **Inspeccionar cada elemento** del sitio original
+2. **Copiar valores computados** (no valores declarados que pueden tener variables)
+3. **Agrupar valores similares** (ej: si ves 16px, 16.5px, 15.8px → unificar a 16px)
+4. **Crear escala consistente** basada en patrones encontrados
+5. **Documentar excepciones** cuando un valor rompe el patrón
+
+#### 0.2 Categorías de Tokens
+
+##### 🎨 **COLOR TOKENS**
+
+```css
+/* styles/tokens/colors.css */
+
+/* ============================================
+   DECORD COLOR SYSTEM
+   Extraído del sitio original
+   ============================================ */
+
+/* --- PRIMARY PALETTE --- */
+--color-primary-black: #0a0a0a;        /* Background principal */
+--color-primary-dark: #1a1a1a;         /* Background secundario */
+--color-primary-charcoal: #2a2a2a;     /* Cards, overlays */
+--color-primary-gold: #d4af37;         /* Accent principal (dorado) */
+--color-primary-gold-light: #e6c968;   /* Hover sobre dorado */
+--color-primary-gold-dark: #b8941f;    /* Active state dorado */
+
+/* --- NEUTRALS (Grises) --- */
+--color-neutral-50: #fafafa;           /* Textos muy claros */
+--color-neutral-100: #f5f5f5;          /* Backgrounds suaves */
+--color-neutral-200: #e5e5e5;          /* Borders sutiles */
+--color-neutral-300: #d4d4d4;          /* Borders visibles */
+--color-neutral-400: #a3a3a3;          /* Texto secundario */
+--color-neutral-500: #737373;          /* Texto terciario */
+--color-neutral-600: #525252;          /* Iconos */
+--color-neutral-700: #404040;          /* Dividers */
+--color-neutral-800: #262626;          /* Fondos oscuros */
+--color-neutral-900: #171717;          /* Texto en fondos claros */
+
+/* --- SEMANTIC COLORS --- */
+--color-text-primary: #fafafa;         /* Texto principal en dark mode */
+--color-text-secondary: #a3a3a3;       /* Texto secundario */
+--color-text-tertiary: #737373;        /* Metadata, captions */
+--color-text-inverse: #0a0a0a;         /* Texto sobre fondos claros */
+
+--color-background-primary: #0a0a0a;   /* Fondo principal del sitio */
+--color-background-secondary: #1a1a1a; /* Secciones alternas */
+--color-background-elevated: #2a2a2a;  /* Cards, modals */
+
+--color-border-subtle: #262626;        /* Bordes suaves */
+--color-border-default: #404040;       /* Bordes normales */
+--color-border-strong: #525252;        /* Bordes destacados */
+
+--color-overlay-light: rgba(0, 0, 0, 0.5);  /* Overlay sobre imágenes */
+--color-overlay-dark: rgba(0, 0, 0, 0.8);   /* Overlay intenso */
+--color-overlay-gold: rgba(212, 175, 55, 0.1); /* Hover gold subtle */
+
+/* --- INTERACTION STATES --- */
+--color-hover-gold: #e6c968;           /* Hover sobre elementos dorados */
+--color-active-gold: #b8941f;          /* Click/active sobre dorado */
+--color-focus-outline: #d4af37;        /* Outline de accesibilidad */
+--color-disabled: #404040;             /* Elementos deshabilitados */
+```
+
+**📝 CHECKLIST DE EXTRACCIÓN DE COLORES:**
+- [ ] Inspeccionar backgrounds de todas las secciones
+- [ ] Extraer colores de todos los botones (normal, hover, active)
+- [ ] Identificar colores de texto (títulos h1-h6, párrafos, links)
+- [ ] Capturar colores de bordes (inputs, cards, dividers)
+- [ ] Analizar overlays (hover sobre imágenes, modals)
+- [ ] Documentar gradients si existen
+- [ ] Verificar colores en modo oscuro/claro si aplica
+
+##### 📏 **SPACING TOKENS**
+
+```css
+/* styles/tokens/spacing.css */
+
+/* ============================================
+   DECORD SPACING SYSTEM
+   Sistema basado en múltiplos de 8px
+   ============================================ */
+
+/* --- BASE UNIT --- */
+--spacing-unit: 8px; /* Unidad base para todo el espaciado */
+
+/* --- SPACING SCALE --- */
+--spacing-0: 0;
+--spacing-1: 4px;    /* 0.5 × base */
+--spacing-2: 8px;    /* 1 × base */
+--spacing-3: 12px;   /* 1.5 × base */
+--spacing-4: 16px;   /* 2 × base */
+--spacing-5: 20px;   /* 2.5 × base */
+--spacing-6: 24px;   /* 3 × base */
+--spacing-8: 32px;   /* 4 × base */
+--spacing-10: 40px;  /* 5 × base */
+--spacing-12: 48px;  /* 6 × base */
+--spacing-16: 64px;  /* 8 × base */
+--spacing-20: 80px;  /* 10 × base */
+--spacing-24: 96px;  /* 12 × base */
+--spacing-32: 128px; /* 16 × base */
+--spacing-40: 160px; /* 20 × base */
+--spacing-48: 192px; /* 24 × base */
+--spacing-56: 224px; /* 28 × base */
+--spacing-64: 256px; /* 32 × base */
+
+/* --- SEMANTIC SPACING (Casos de uso específicos) --- */
+--spacing-section-y: var(--spacing-32);      /* Padding vertical de secciones: 128px */
+--spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */
+
+--spacing-container-x: var(--spacing-12);    /* Padding horizontal del container: 48px */
+--spacing-container-x-mobile: var(--spacing-6); /* 24px en mobile */
+
+--spacing-card-padding: var(--spacing-8);    /* Padding interno de cards: 32px */
+--spacing-card-gap: var(--spacing-6);        /* Gap entre cards: 24px */
+
+--spacing-element-gap: var(--spacing-4);     /* Gap entre elementos pequeños: 16px */
+--spacing-text-gap: var(--spacing-3);        /* Gap entre párrafos: 12px */
+
+--spacing-hero-title-y: var(--spacing-48);   /* Espaciado vertical en hero: 192px */
+--spacing-hero-title-y-mobile: var(--spacing-24); /* 96px en mobile */
+```
+
+**📝 CHECKLIST DE EXTRACCIÓN DE SPACING:**
+- [ ] Medir padding vertical de cada sección (usar DevTools)
+- [ ] Medir gaps entre cards en grids
+- [ ] Identificar márgenes entre elementos de texto (h1 → p, p → p)
+- [ ] Medir padding interno de botones
+- [ ] Capturar spacing del container principal
+- [ ] Identificar el patrón/escala (4px, 8px, o 16px base)
+- [ ] Documentar excepciones que rompan la escala
+
+##### 🔤 **TYPOGRAPHY TOKENS**
+
+```css
+/* styles/tokens/typography.css */
+
+/* ============================================
+   DECORD TYPOGRAPHY SYSTEM
+   ============================================ */
+
+/* --- FONT FAMILIES --- */
+--font-family-primary: 'Playfair Display', 'Georgia', serif;  /* Títulos elegantes */
+--font-family-secondary: 'Inter', 'system-ui', sans-serif;    /* Cuerpo de texto */
+--font-family-mono: 'Fira Code', 'Courier New', monospace;   /* Código (si aplica) */
+
+/* --- FONT SIZES --- */
+/* Escala tipográfica basada en ratio 1.25 (Fourth) */
+--font-size-xs: 12px;      /* 0.75rem - Captions, legal text */
+--font-size-sm: 14px;      /* 0.875rem - Small text, metadata */
+--font-size-base: 16px;    /* 1rem - Body text (base) */
+--font-size-md: 18px;      /* 1.125rem - Large body text */
+--font-size-lg: 20px;      /* 1.25rem - Small headings */
+--font-size-xl: 24px;      /* 1.5rem - H4 */
+--font-size-2xl: 32px;     /* 2rem - H3 */
+--font-size-3xl: 40px;     /* 2.5rem - H2 */
+--font-size-4xl: 48px;     /* 3rem - H1 */
+--font-size-5xl: 64px;     /* 4rem - Hero title desktop */
+--font-size-6xl: 80px;     /* 5rem - Display titles */
+--font-size-7xl: 96px;     /* 6rem - Extra large hero */
+
+/* --- FONT WEIGHTS --- */
+--font-weight-light: 300;
+--font-weight-normal: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--font-weight-extrabold: 800;
+
+/* --- LINE HEIGHTS --- */
+--line-height-tight: 1.1;     /* Títulos grandes */
+--line-height-snug: 1.25;     /* Subtítulos */
+--line-height-normal: 1.5;    /* Texto normal */
+--line-height-relaxed: 1.75;  /* Texto largo, artículos */
+--line-height-loose: 2;       /* Espaciado extra */
+
+/* --- LETTER SPACING --- */
+--letter-spacing-tighter: -0.05em;  /* Títulos grandes compactos */
+--letter-spacing-tight: -0.025em;   /* Subtítulos */
+--letter-spacing-normal: 0;         /* Texto normal */
+--letter-spacing-wide: 0.025em;     /* Texto espaciado */
+--letter-spacing-wider: 0.05em;     /* Navegación, labels */
+--letter-spacing-widest: 0.1em;     /* "MUSEUM OF MODERN ART" - Característica DECORD */
+
+/* --- TEXT STYLES (Presets combinados) --- */
+/* Hero Title */
+--text-hero-font-size: var(--font-size-5xl);
+--text-hero-font-weight: var(--font-weight-bold);
+--text-hero-line-height: var(--line-height-tight);
+--text-hero-letter-spacing: var(--letter-spacing-widest);
+--text-hero-font-family: var(--font-family-primary);
+
+/* H1 */
+--text-h1-font-size: var(--font-size-4xl);
+--text-h1-font-weight: var(--font-weight-bold);
+--text-h1-line-height: var(--line-height-snug);
+--text-h1-letter-spacing: var(--letter-spacing-tight);
+
+/* Body */
+--text-body-font-size: var(--font-size-base);
+--text-body-font-weight: var(--font-weight-normal);
+--text-body-line-height: var(--line-height-normal);
+--text-body-letter-spacing: var(--letter-spacing-normal);
+--text-body-font-family: var(--font-family-secondary);
+```
+
+**📝 CHECKLIST DE EXTRACCIÓN DE TIPOGRAFÍA:**
+- [ ] Identificar todas las fuentes usadas (WhatFont extension)
+- [ ] Medir font-size de cada nivel de heading (h1-h6)
+- [ ] Capturar font-weight de títulos y cuerpo
+- [ ] Medir line-height de textos largos vs títulos
+- [ ] **CRÍTICO:** Medir letter-spacing del título hero (característico de DECORD)
+- [ ] Documentar font-family fallbacks
+- [ ] Crear presets para text styles más usados
+
+##### 🔲 **LAYOUT TOKENS**
+
+```css
+/* styles/tokens/layout.css */
+
+/* ============================================
+   DECORD LAYOUT SYSTEM
+   ============================================ */
+
+/* --- CONTAINER WIDTHS --- */
+--container-xs: 480px;      /* Mobile container */
+--container-sm: 640px;      /* Tablet pequeño */
+--container-md: 768px;      /* Tablet */
+--container-lg: 1024px;     /* Desktop pequeño */
+--container-xl: 1280px;     /* Desktop */
+--container-2xl: 1536px;    /* Desktop grande */
+--container-full: 100%;     /* Full width */
+
+--container-max-width: var(--container-xl); /* Max width del sitio: 1280px */
+--container-narrow: 800px;  /* Para contenido de texto (about, blog posts) */
+
+/* --- BREAKPOINTS --- */
+--breakpoint-sm: 640px;
+--breakpoint-md: 768px;
+--breakpoint-lg: 1024px;
+--breakpoint-xl: 1280px;
+--breakpoint-2xl: 1536px;
+
+/* --- GRID SYSTEMS --- */
+/* Gallery Grid (Masonry) */
+--grid-columns-mobile: 1;
+--grid-columns-tablet: 2;
+--grid-columns-desktop: 3;
+--grid-gap: var(--spacing-6);  /* 24px */
+
+/* Card Grid (Events, Blog) */
+--card-grid-columns-mobile: 1;
+--card-grid-columns-tablet: 2;
+--card-grid-columns-desktop: 3;
+--card-grid-gap: var(--spacing-8);  /* 32px */
+
+/* --- Z-INDEX SCALE --- */
+--z-index-base: 0;
+--z-index-dropdown: 100;
+--z-index-sticky: 200;
+--z-index-fixed: 300;
+--z-index-overlay: 400;
+--z-index-modal: 500;
+--z-index-popover: 600;
+--z-index-tooltip: 700;
+--z-index-notification: 800;
+```
+
+##### 🎭 **EFFECTS TOKENS**
+
+```css
+/* styles/tokens/effects.css */
+
+/* ============================================
+   DECORD EFFECTS SYSTEM
+   Sombras, bordes, animaciones
+   ============================================ */
+
+/* --- SHADOWS --- */
+--shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+--shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+/* Sombras específicas DECORD (más sutiles en dark mode) */
+--shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+--shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+--shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+/* --- BORDER RADIUS --- */
+--radius-none: 0;
+--radius-sm: 2px;
+--radius-base: 4px;
+--radius-md: 6px;
+--radius-lg: 8px;
+--radius-xl: 12px;
+--radius-2xl: 16px;
+--radius-3xl: 24px;
+--radius-full: 9999px;
+
+/* Específicos DECORD */
+--radius-button: var(--radius-base);    /* Botones: 4px */
+--radius-card: var(--radius-lg);        /* Cards: 8px */
+--radius-input: var(--radius-base);     /* Inputs: 4px */
+--radius-modal: var(--radius-xl);       /* Modals: 12px */
+
+/* --- TRANSITIONS --- */
+--transition-fast: 150ms;
+--transition-base: 200ms;
+--transition-slow: 300ms;
+--transition-slower: 500ms;
+
+--transition-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+--transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+--transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+--transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+/* Presets de transición */
+--transition-colors: color var(--transition-base) var(--transition-ease-in-out),
+                     background-color var(--transition-base) var(--transition-ease-in-out),
+                     border-color var(--transition-base) var(--transition-ease-in-out);
+
+--transition-transform: transform var(--transition-base) var(--transition-ease-in-out);
+
+--transition-all: all var(--transition-base) var(--transition-ease-in-out);
+
+/* --- ANIMATIONS --- */
+/* Hover zoom en imágenes de galería */
+--animation-image-zoom: scale(1.05);
+--animation-image-zoom-duration: var(--transition-slow);
+
+/* Fade-in al hacer scroll */
+--animation-fade-in-duration: 600ms;
+--animation-fade-in-delay: 0ms;
+
+/* --- BLUR --- */
+--blur-none: 0;
+--blur-sm: 4px;
+--blur-base: 8px;
+--blur-md: 12px;
+--blur-lg: 16px;
+--blur-xl: 24px;
+```
+
+##### 📦 **COMPONENT-SPECIFIC TOKENS**
+
+```css
+/* styles/tokens/components.css */
+
+/* ============================================
+   DECORD COMPONENT-SPECIFIC TOKENS
+   Tokens específicos para componentes únicos
+   ============================================ */
+
+/* --- BUTTONS --- */
+--button-height-sm: 36px;
+--button-height-md: 44px;
+--button-height-lg: 52px;
+
+--button-padding-x-sm: var(--spacing-4);  /* 16px */
+--button-padding-x-md: var(--spacing-6);  /* 24px */
+--button-padding-x-lg: var(--spacing-8);  /* 32px */
+
+--button-font-size-sm: var(--font-size-sm);
+--button-font-size-md: var(--font-size-base);
+--button-font-size-lg: var(--font-size-md);
+
+/* --- INPUTS --- */
+--input-height: 48px;
+--input-padding-x: var(--spacing-4);  /* 16px */
+--input-border-width: 1px;
+--input-border-color: var(--color-border-default);
+--input-border-color-focus: var(--color-primary-gold);
+
+/* --- CARDS --- */
+--card-padding: var(--spacing-8);         /* 32px */
+--card-border-radius: var(--radius-card); /* 8px */
+--card-background: var(--color-background-elevated);
+
+/* ArtworkCard específico */
+--artwork-card-aspect-ratio: 3 / 4;  /* Portrait */
+--artwork-card-overlay-opacity: 0;
+--artwork-card-overlay-opacity-hover: 1;
+
+/* EventCard específico */
+--event-card-date-size: var(--font-size-4xl);  /* Fecha grande: 48px */
+--event-card-date-color: var(--color-primary-gold);
+
+/* --- HEADER/NAVBAR --- */
+--header-height: 80px;
+--header-height-mobile: 64px;
+--header-background: transparent;  /* Transparent por defecto */
+--header-background-scrolled: rgba(10, 10, 10, 0.95);  /* Oscuro al hacer scroll */
+--header-backdrop-blur: 10px;  /* Blur al hacer scroll */
+
+/* --- HERO --- */
+--hero-min-height: 100vh;
+--hero-min-height-mobile: 80vh;
+--hero-title-font-size: var(--font-size-7xl);         /* 96px desktop */
+--hero-title-font-size-mobile: var(--font-size-4xl);  /* 48px mobile */
+
+/* --- FOOTER --- */
+--footer-background: var(--color-primary-black);
+--footer-padding-y: var(--spacing-32);  /* 128px */
+
+/* --- LIGHTBOX/MODAL --- */
+--lightbox-overlay-background: rgba(0, 0, 0, 0.95);
+--lightbox-content-max-width: 90vw;
+--lightbox-content-max-height: 90vh;
+```
+
+#### 0.3 Organización de Archivos de Tokens
+
+```
+📁 styles/
+├── 📁 tokens/
+│   ├── colors.css          # Paleta de colores completa
+│   ├── spacing.css         # Sistema de espaciado
+│   ├── typography.css      # Tipografía y text styles
+│   ├── layout.css          # Containers, grids, breakpoints
+│   ├── effects.css         # Shadows, radius, transitions
+│   ├── components.css      # Tokens específicos de componentes
+│   └── index.css           # Import de todos los tokens
+├── globals.css             # Estilos globales que usan tokens
+├── mixins.css              # Mixins CSS reutilizables
+└── utilities.css           # Clases de utilidad
+```
+
+**styles/tokens/index.css:**
+```css
+/* Import todos los tokens en orden */
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+@import './layout.css';
+@import './effects.css';
+@import './components.css';
+```
+
+**app/layout.tsx (importar tokens globalmente):**
+```tsx
+import '@/styles/tokens/index.css'
+import '@/styles/globals.css'
+```
+
+#### 0.4 Uso de Tokens en Componentes
+
+**❌ INCORRECTO (valores hardcoded):**
+```css
+/* Button.module.css */
+.button {
+  background-color: #d4af37;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #e6c968;
+}
+```
+
+**✅ CORRECTO (usando tokens):**
+```css
+/* Button.module.css */
+.button {
+  background-color: var(--color-primary-gold);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--button-font-size-md);
+  border-radius: var(--radius-button);
+  transition: var(--transition-colors);
+  
+  height: var(--button-height-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.button:hover {
+  background-color: var(--color-hover-gold);
+  transform: translateY(-1px);
+  transition: var(--transition-all);
+}
+```
+
+#### 0.5 Documentación de Tokens
+
+Crear un archivo `docs/DESIGN_TOKENS.md` con:
+
+```markdown
+# 🎨 Sistema de Tokens de Diseño - DECORD
+
+## Propósito
+Este documento explica el sistema de tokens de diseño extraídos del sitio original DECORD.
+Los tokens garantizan consistencia visual y facilitan mantenimiento.
+
+## Colores
+
+### Paleta Principal
+- **Gold Accent:** `#d4af37` - Color principal de marca, usado en CTAs
+- **Black:** `#0a0a0a` - Background principal del sitio
+- **Charcoal:** `#2a2a2a` - Cards y elementos elevados
+
+[Agregar capturas visuales de la paleta]
+
+### Cuándo usar cada color
+- Use `--color-primary-gold` para botones primarios y acentos importantes
+- Use `--color-text-secondary` para metadata como fechas, autores
+- Use `--color-border-subtle` para separadores discretos
+
+## Espaciado
+
+### Sistema base: 8px
+Todo el espaciado del sitio sigue múltiplos de 8px.
+
+**Ejemplos de uso:**
+- Secciones: `--spacing-32` (128px) vertical padding
+- Cards: `--spacing-8` (32px) internal padding
+- Elementos: `--spacing-4` (16px) gap entre elementos relacionados
+
+## Tipografía
+
+### Fuentes
+- **Playfair Display:** Títulos y headings elegantes
+- **Inter:** Texto de cuerpo y UI
+
+### Característica distintiva
+El título hero usa `letter-spacing: 0.1em` (--letter-spacing-widest) 
+que es un rasgo característico de DECORD.
+
+## Efectos
+
+### Hover en imágenes
+```css
+transform: scale(1.05);
+transition: transform 300ms ease-in-out;
+```
+
+[Incluir GIF del efecto]
+
+---
+
+## Mantenimiento
+Si necesitas agregar un nuevo color/spacing/etc:
+1. ¿Existe ya un token similar que puedas reutilizar?
+2. Si no, ¿sigue el patrón del sistema? (ej: múltiplo de 8px)
+3. Agrégalo en el archivo correspondiente en `styles/tokens/`
+4. Actualiza esta documentación
+```
+
+### ⚡ Beneficios del Sistema de Tokens
+
+1. **Consistencia Visual:** Todos los componentes usan los mismos valores
+2. **Fácil mantenimiento:** Cambiar un color en un lugar actualiza todo el sitio
+3. **Escalabilidad:** Agregar nuevos componentes es más rápido
+4. **Temas fáciles:** Puedes crear tema claro/oscuro solo cambiando tokens
+5. **Documentación viva:** Los tokens son auto-documentados
+6. **Colaboración:** Otros desarrolladores entienden el sistema rápidamente
+
+### 🎯 Checklist Final de Tokens
+
+Antes de comenzar a crear componentes, asegúrate de tener:
+
+- [ ] ✅ Todos los colores extraídos y organizados por categoría
+- [ ] ✅ Sistema de espaciado documentado (escala base identificada)
+- [ ] ✅ Todas las fuentes identificadas con fallbacks
+- [ ] ✅ Font sizes, weights, line-heights, letter-spacing documentados
+- [ ] ✅ Breakpoints y container widths definidos
+- [ ] ✅ Sombras y border-radius catalogados
+- [ ] ✅ Transiciones y animaciones documentadas
+- [ ] ✅ Z-index scale definido
+- [ ] ✅ Tokens component-specific para elementos únicos
+- [ ] ✅ Archivo `DESIGN_TOKENS.md` creado con ejemplos visuales
+- [ ] ✅ Estructura de carpetas `styles/tokens/` creada
+- [ ] ✅ Todos los archivos CSS de tokens creados
+- [ ] ✅ Tokens importados globalmente en `app/layout.tsx`
+
+**🚨 REGLA DE ORO:** No escribas ningún componente hasta completar esta checklist.
+
+---
+
 ## FASE 1: ANÁLISIS Y PLANIFICACIÓN (30% del tiempo)
 
 ### 1.1 Captura Visual Completa

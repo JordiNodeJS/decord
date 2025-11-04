@@ -1,0 +1,50 @@
+/* ============================================
+   DECORD COLOR SYSTEM
+   Extraído del sitio original
+   ============================================ */
+
+:root {
+  /* --- PRIMARY PALETTE --- */
+  --color-primary-black: #0a0a0a;        /* Background principal */
+  --color-primary-dark: #1a1a1a;         /* Background secundario */
+  --color-primary-charcoal: #2a2a2a;     /* Cards, overlays */
+  --color-primary-gold: #d4af37;         /* Accent principal (dorado) */
+  --color-primary-gold-light: #e6c968;   /* Hover sobre dorado */
+  --color-primary-gold-dark: #b8941f;    /* Active state dorado */
+
+  /* --- NEUTRALS (Grises) --- */
+  --color-neutral-50: #fafafa;           /* Textos muy claros */
+  --color-neutral-100: #f5f5f5;          /* Backgrounds suaves */
+  --color-neutral-200: #e5e5e5;          /* Borders sutiles */
+  --color-neutral-300: #d4d4d4;          /* Borders visibles */
+  --color-neutral-400: #a3a3a3;          /* Texto secundario */
+  --color-neutral-500: #737373;          /* Texto terciario */
+  --color-neutral-600: #525252;          /* Iconos */
+  --color-neutral-700: #404040;          /* Dividers */
+  --color-neutral-800: #262626;          /* Fondos oscuros */
+  --color-neutral-900: #171717;          /* Texto en fondos claros */
+
+  /* --- SEMANTIC COLORS --- */
+  --color-text-primary: #fafafa;         /* Texto principal en dark mode */
+  --color-text-secondary: #a3a3a3;       /* Texto secundario */
+  --color-text-tertiary: #737373;        /* Metadata, captions */
+  --color-text-inverse: #0a0a0a;         /* Texto sobre fondos claros */
+
+  --color-background-primary: #0a0a0a;   /* Fondo principal del sitio */
+  --color-background-secondary: #1a1a1a; /* Secciones alternas */
+  --color-background-elevated: #2a2a2a;  /* Cards, modals */
+
+  --color-border-subtle: #262626;        /* Bordes suaves */
+  --color-border-default: #404040;       /* Bordes normales */
+  --color-border-strong: #525252;        /* Bordes destacados */
+
+  --color-overlay-light: rgba(0, 0, 0, 0.5);  /* Overlay sobre imágenes */
+  --color-overlay-dark: rgba(0, 0, 0, 0.8);   /* Overlay intenso */
+  --color-overlay-gold: rgba(212, 175, 55, 0.1); /* Hover gold subtle */
+
+  /* --- INTERACTION STATES --- */
+  --color-hover-gold: #e6c968;           /* Hover sobre elementos dorados */
+  --color-active-gold: #b8941f;          /* Click/active sobre dorado */
+  --color-focus-outline: #d4af37;        /* Outline de accesibilidad */
+  --color-disabled: #404040;             /* Elementos deshabilitados */
+}

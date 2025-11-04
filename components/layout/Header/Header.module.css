@@ -34,10 +34,18 @@
   text-decoration: none;
   color: var(--color-text-primary);
   transition: var(--transition-colors);
+  display: flex;
+  align-items: center;
 }
 
 .header__logo:hover {
-  color: var(--color-primary-red);
+  opacity: 0.8;
+}
+
+.header__logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header__logoText {

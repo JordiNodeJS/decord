@@ -3,6 +3,14 @@
 .about {
   padding: var(--spacing-section-y) var(--spacing-container-x);
   background: var(--color-background-secondary);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about__container {

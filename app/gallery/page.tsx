@@ -20,7 +20,7 @@ const artworksData = [
     artist: "María González",
     year: "2023",
     category: "Fotorrealismo",
-    image: "/images/gallery/artwork-1.jpg",
+    image: "/images/home-02-420x570.jpg",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const artworksData = [
     artist: "Carlos Ruiz",
     year: "2022",
     category: "Surrealismo",
-    image: "/images/gallery/artwork-2.jpg",
+    image: "/images/home-03-570x480.jpg",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const artworksData = [
     artist: "Ana Martínez",
     year: "2023",
     category: "Abstracto",
-    image: "/images/gallery/artwork-3.jpg",
+    image: "/images/home-04-570x800.jpg",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const artworksData = [
     artist: "Juan López",
     year: "2022",
     category: "Anamorfismo",
-    image: "/images/gallery/artwork-4.jpg",
+    image: "/images/home-05-720x700.jpg",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const artworksData = [
     artist: "Laura Fernández",
     year: "2023",
     category: "Surrealismo",
-    image: "/images/gallery/artwork-5.jpg",
+    image: "/images/home-06-570x390.jpg",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const artworksData = [
     artist: "Pedro Sánchez",
     year: "2022",
     category: "Fotorrealismo",
-    image: "/images/gallery/artwork-6.jpg",
+    image: "/images/home-07-570x790.jpg",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const artworksData = [
     artist: "Isabel Torres",
     year: "2023",
     category: "Abstracto",
-    image: "/images/gallery/artwork-7.jpg",
+    image: "/images/home-02-420x570.jpg",
   },
   {
     id: 8,
@@ -76,7 +76,7 @@ const artworksData = [
     artist: "Roberto Díaz",
     year: "2022",
     category: "Anamorfismo",
-    image: "/images/gallery/artwork-8.jpg",
+    image: "/images/home-03-570x480.jpg",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const artworksData = [
     artist: "Sofía Ramírez",
     year: "2023",
     category: "Fotorrealismo",
-    image: "/images/gallery/artwork-9.jpg",
+    image: "/images/home-04-570x800.jpg",
   },
 ];
 

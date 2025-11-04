@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
@@ -29,7 +30,14 @@ export default function Header() {
       <div className={styles.header__container}>
         {/* Logo */}
         <Link href="/" className={styles.header__logo}>
-          <span className={styles.header__logoText}>ART GALLERY</span>
+          <Image
+            src="/images/logo-inverse-343x45.png"
+            alt="DECORD Art Gallery"
+            width={343}
+            height={45}
+            className={styles.header__logoImage}
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

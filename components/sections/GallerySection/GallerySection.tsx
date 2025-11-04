@@ -13,7 +13,7 @@ const artworksData = [
     artist: "Frank Anderson",
     year: "2016",
     category: "Fotorrealismo",
-    image: "/images/home-02-420x570.jpg",
+    image: "/images/gallery/artwork-02.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const artworksData = [
     artist: "Emma Smith",
     year: "2018",
     category: "Abstracto",
-    image: "/images/home-03-570x480.jpg",
+    image: "/images/gallery/artwork-03.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const artworksData = [
     artist: "Sam Turner",
     year: "2020",
     category: "Surrealismo",
-    image: "/images/home-05-720x700.jpg",
+    image: "/images/gallery/artwork-05.jpg",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const artworksData = [
     artist: "Johnny Lee",
     year: "2019",
     category: "Anamorfismo",
-    image: "/images/home-04-570x800.jpg",
+    image: "/images/gallery/artwork-04.jpg",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const artworksData = [
     artist: "Kathleen Davis",
     year: "2021",
     category: "Hiperrealismo",
-    image: "/images/home-06-570x390.jpg",
+    image: "/images/gallery/artwork-06.jpg",
   },
 ];
 

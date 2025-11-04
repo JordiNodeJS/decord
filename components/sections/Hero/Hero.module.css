@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end; /* Alinear a la derecha como el original */
-  background: var(--color-background-primary) url('/images/home-01-720x900.png') left center no-repeat;
+  background: var(--color-background-primary) url('/images/gallery/hero-01.png') left center no-repeat;
   background-size: auto 100%;
   position: relative;
   padding: var(--spacing-32) var(--spacing-container-x);
@@ -40,10 +40,10 @@
 
 .hero__title {
   font-family: var(--text-hero-font-family); /* Oswald */
-  font-size: var(--text-hero-font-size); /* 90.22px */
+  font-size: var(--text-hero-font-size); /* 160px */
   font-weight: var(--text-hero-font-weight); /* 500 */
-  letter-spacing: var(--text-hero-letter-spacing); /* -4.511px NEGATIVO */
-  line-height: var(--text-hero-line-height); /* 1.1 */
+  letter-spacing: var(--text-hero-letter-spacing); /* -8px NEGATIVO */
+  line-height: var(--text-hero-line-height); /* 1.0 */
   color: var(--color-primary-red); /* rgb(254, 72, 59) - ROJO/NARANJA */
   text-transform: uppercase;
   text-align: right;
@@ -54,15 +54,15 @@
 /* Responsive */
 @media (max-width: 1280px) {
   .hero__title {
-    font-size: 72px;
-    letter-spacing: -3.6px;
+    font-size: 120px;
+    letter-spacing: -6px;
   }
 }
 
 @media (max-width: 1024px) {
   .hero__title {
-    font-size: 64px;
-    letter-spacing: -3.2px;
+    font-size: 96px;
+    letter-spacing: -4.8px;
   }
 }
 

@@ -1,0 +1,70 @@
+/* Componente Button - Metodología BEM */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+/* Variantes - Modificadores BEM */
+.button--primary {
+  background: var(--color-accent);
+  color: white;
+}
+
+.button--primary:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.button--secondary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button--secondary:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.button--outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Tamaños - Modificadores BEM */
+.button--sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+.button--md {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-base);
+}
+
+.button--lg {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-lg);
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}

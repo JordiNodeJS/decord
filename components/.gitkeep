@@ -1,0 +1,6 @@
+# Esta carpeta contiene todos los componentes reutilizables
+# Organización:
+# - layout/     -> Componentes de diseño (Header, Footer, etc.)
+# - sections/   -> Secciones de página (Hero, About, etc.)
+# - ui/         -> Componentes UI básicos (Button, Card, etc.)
+# - animations/ -> Componentes de animación

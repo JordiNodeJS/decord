@@ -5,7 +5,7 @@ import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
 import Link from "next/link";
 import styles from "./GallerySection.module.css";
 
-// Datos de ejemplo de obras de arte
+// Datos de obras de arte del sitio original
 const artworksData = [
   {
     id: 1,
@@ -13,7 +13,7 @@ const artworksData = [
     artist: "Frank Anderson",
     year: "2016",
     category: "Fotorrealismo",
-    image: "/images/gallery/artwork-02.jpg",
+    image: "/images/gallery/home-02.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const artworksData = [
     artist: "Emma Smith",
     year: "2018",
     category: "Abstracto",
-    image: "/images/gallery/artwork-03.jpg",
+    image: "/images/gallery/home-03.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const artworksData = [
     artist: "Sam Turner",
     year: "2020",
     category: "Surrealismo",
-    image: "/images/gallery/artwork-05.jpg",
+    image: "/images/gallery/home-05.jpg",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const artworksData = [
     artist: "Johnny Lee",
     year: "2019",
     category: "Anamorfismo",
-    image: "/images/gallery/artwork-04.jpg",
+    image: "/images/gallery/home-04.jpg",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const artworksData = [
     artist: "Kathleen Davis",
     year: "2021",
     category: "Hiperrealismo",
-    image: "/images/gallery/artwork-06.jpg",
+    image: "/images/gallery/home-06.jpg",
   },
 ];
 

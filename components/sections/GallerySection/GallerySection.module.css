@@ -18,12 +18,13 @@
 
 .gallery__label {
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-widest);
+  font-size: 30px;  /* Exacto del original */
+  font-weight: 500;  /* Medium */
+  letter-spacing: 18px;  /* Amplio como el original */
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);  /* Negro, no secundario */
   display: block;
+  line-height: 1.172;
 }
 
 /* Categories Filter */

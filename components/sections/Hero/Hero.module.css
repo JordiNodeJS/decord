@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end; /* Alinear a la derecha como el original */
-  background: var(--color-background-primary) url('/images/gallery/hero-01.png') left center no-repeat;
+  background: var(--color-background-primary) url('/images/gallery/home-01.png') left center no-repeat;
   background-size: auto 100%;
   position: relative;
   padding: var(--spacing-32) var(--spacing-container-x);

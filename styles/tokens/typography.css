@@ -4,8 +4,8 @@
 
 :root {
   /* --- FONT FAMILIES --- */
-  --font-family-primary: 'Oswald', 'Arial', sans-serif;  /* Títulos - Oswald es la font del original */
-  --font-family-secondary: 'Roboto', 'system-ui', sans-serif;    /* Cuerpo de texto - Roboto del original */
+  --font-family-primary: var(--font-oswald, 'Oswald', 'Arial', sans-serif);  /* Títulos - Oswald es la font del original */
+  --font-family-secondary: var(--font-roboto, 'Roboto', 'system-ui', sans-serif);    /* Cuerpo de texto - Roboto del original */
   --font-family-mono: 'Fira Code', 'Courier New', monospace;   /* Código (si aplica) */
 
   /* --- FONT SIZES --- */
@@ -73,4 +73,11 @@
   --text-body-line-height: var(--line-height-normal);
   --text-body-letter-spacing: var(--letter-spacing-normal);
   --text-body-font-family: var(--font-family-secondary);
+
+  /* Section Headings - Estilo común DECORD */
+  --text-section-heading-font-size: 30px;
+  --text-section-heading-font-weight: 500;
+  --text-section-heading-letter-spacing: 18px;
+  --text-section-heading-font-family: var(--font-family-secondary);
+  --text-section-heading-line-height: 1.172;
 }

@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
+import { Oswald, Roboto } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 
-// Note: Using system font fallbacks instead of Google Fonts due to environment restrictions
-// The design tokens already define the font families with proper fallbacks:
-// --font-family-primary: 'Playfair Display', 'Georgia', serif (for headings)
-// --font-family-secondary: 'Inter', 'system-ui', sans-serif (for body text)
+// Fonts from original site
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "DECORD - Museo de Arte Moderno",
@@ -20,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${oswald.variable} ${roboto.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

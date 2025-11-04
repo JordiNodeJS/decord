@@ -96,6 +96,15 @@
   width: 100%;
 }
 
+/* When header is scrolled (dark background), make links white */
+.header--scrolled .header__link {
+  color: var(--color-neutral-400);
+}
+
+.header--scrolled .header__link:hover {
+  color: var(--color-text-inverse); /* White on dark background */
+}
+
 /* Active link */
 .header__link--active {
   color: var(--color-primary-red);

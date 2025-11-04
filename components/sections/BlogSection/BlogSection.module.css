@@ -28,10 +28,11 @@
 }
 
 .blog__title {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--text-section-heading-font-family);
+  font-size: var(--text-section-heading-font-size);
+  font-weight: var(--text-section-heading-font-weight);
+  letter-spacing: var(--text-section-heading-letter-spacing);
+  line-height: var(--text-section-heading-line-height);
   color: var(--color-text-primary);
   text-transform: uppercase;
 }

@@ -80,7 +80,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
   text-transform: uppercase;
 }
 

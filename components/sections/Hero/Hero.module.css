@@ -119,7 +119,7 @@
 }
 
 .hero__scrollIndicator:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 @keyframes bounce {

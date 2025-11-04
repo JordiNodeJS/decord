@@ -37,7 +37,7 @@
 }
 
 .header__logo:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 .header__logoText {
@@ -76,7 +76,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-primary-gold);
+  background: var(--color-primary-red);
   transition: width var(--transition-base) var(--transition-ease-out);
 }
 
@@ -90,7 +90,7 @@
 
 /* Active link */
 .header__link--active {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 /* Responsive */

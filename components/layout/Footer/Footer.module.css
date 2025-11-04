@@ -39,7 +39,7 @@
 .footer__ctaButton {
   display: inline-block;
   padding: var(--button-padding-x-md) var(--button-padding-x-lg);
-  background: var(--color-primary-gold);
+  background: var(--color-primary-red);
   color: var(--color-text-inverse);
   font-family: var(--font-family-secondary);
   font-size: var(--button-font-size-md);
@@ -53,7 +53,7 @@
 }
 
 .footer__ctaButton:hover {
-  background: var(--color-hover-gold);
+  background: var(--color-hover-red);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -84,7 +84,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
   margin-bottom: var(--spacing-2);
 }
 
@@ -111,7 +111,7 @@
 }
 
 .footer__link:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 .footer__info {
@@ -154,7 +154,7 @@
 }
 
 .footer__legalLink:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 /* Responsive */

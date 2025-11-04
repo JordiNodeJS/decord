@@ -82,7 +82,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 /* ============================================
@@ -181,5 +181,5 @@ select {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-gold);
+  background: var(--color-primary-red);
 }

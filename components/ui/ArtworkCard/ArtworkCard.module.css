@@ -34,7 +34,7 @@
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: var(--color-primary-gold);
+  background: var(--color-primary-red);
   opacity: 0.1;
   border-radius: var(--radius-full);
 }

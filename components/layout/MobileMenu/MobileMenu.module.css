@@ -100,7 +100,7 @@
 }
 
 .mobileMenu__link:hover {
-  color: var(--color-primary-gold);
+  color: var(--color-primary-red);
 }
 
 @keyframes fadeInUp {

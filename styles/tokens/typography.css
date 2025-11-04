@@ -56,9 +56,10 @@
   --text-hero-letter-spacing: var(--letter-spacing-hero); /* -8px */
   --text-hero-font-family: var(--font-family-primary);  /* Oswald */
 
-  /* Hero Label */
-  --text-hero-label-font-size: var(--font-size-lg);   /* 20px */
-  --text-hero-label-letter-spacing: var(--letter-spacing-hero-label); /* 12px */
+  /* Hero Label - EXACTO del original */
+  --text-hero-label-font-size: 24px;   /* 24px del original */
+  --text-hero-label-letter-spacing: 14.4px; /* 14.4px del original */
+  --text-hero-label-font-weight: 500;  /* 500 del original */
   --text-hero-label-font-family: var(--font-family-secondary); /* Roboto */
 
   /* H1 */

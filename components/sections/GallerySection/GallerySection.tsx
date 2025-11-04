@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
+import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import Link from "next/link";
 import styles from "./GallerySection.module.css";
 
@@ -99,8 +100,10 @@ export default function GallerySection() {
         </div>
 
         <div className={styles.gallery__grid}>
-          {filteredArtworks.map((artwork) => (
-            <ArtworkCard key={artwork.id} artwork={artwork} />
+          {filteredArtworks.map((artwork, index) => (
+            <ScrollReveal key={artwork.id} delay={index * 100}>
+              <ArtworkCard artwork={artwork} />
+            </ScrollReveal>
           ))}
         </div>
 

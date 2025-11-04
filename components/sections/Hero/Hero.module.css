@@ -30,9 +30,9 @@
 
 .hero__subtitle {
   font-family: var(--text-hero-label-font-family); /* Roboto */
-  font-size: var(--text-hero-label-font-size); /* 20px */
-  font-weight: var(--font-weight-normal); /* 400 */
-  letter-spacing: var(--text-hero-label-letter-spacing); /* 12px */
+  font-size: var(--text-hero-label-font-size); /* 24px */
+  font-weight: var(--text-hero-label-font-weight); /* 500 */
+  letter-spacing: var(--text-hero-label-letter-spacing); /* 14.4px */
   text-transform: uppercase;
   color: var(--color-text-primary); /* Negro rgb(21, 21, 21) */
   display: block;

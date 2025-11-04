@@ -29,35 +29,33 @@ export default function ContactPage() {
   };
 
   return (
-    <div className={styles.contactPage}>
+    <main className={styles.contactPage}>
       {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>
+      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         <div className={styles.breadcrumb__container}>
           <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
+            HOME
           </Link>
           <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>CONTACTOS</span>
+          <span className={styles.breadcrumb__current}>CONTACTS</span>
         </div>
-      </div>
+      </nav>
 
       {/* Contact Content */}
       <section className={styles.contact}>
         <div className={styles.contact__container}>
           <ScrollReveal>
-            <h3 className={styles.contact__heading}>
-              ¿NECESITAS AYUDA? CONTÁCTANOS.
-            </h3>
+            <h1 className={styles.contact__heading}>NEED HELP? CONTACT US.</h1>
             <p className={styles.contact__intro}>
-              Si tienes alguna pregunta, solo llena el formulario de contacto y
-              te responderemos en breve. Si vives cerca, ven a visitar nuestra
-              galería.
+              If you have any questions, just fill in the contact form, and we
+              will answer you shortly. If you are living nearby, come visit our
+              gallery.
             </p>
           </ScrollReveal>
 
           <div className={styles.contact__grid}>
             {/* Contact Info */}
-            <div className={styles.info}>
+            <aside className={styles.info}>
               <ScrollReveal delay={100}>
                 <div className={styles.infoCard}>
                   <div className={styles.infoCard__icon}>📞</div>
@@ -68,13 +66,13 @@ export default function ContactPage() {
 
                 <div className={styles.infoCard}>
                   <p className={styles.infoCard__text}>
-                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
+                    <strong>MONDAY-FRIDAY:</strong> 8AM - 6PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
+                    <strong>SATURDAY-SUNDAY:</strong> 8AM - 2PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>FESTIVOS:</strong> CERRADO
+                    <strong>HOLIDAYS:</strong> CLOSED
                   </p>
                 </div>
 
@@ -89,11 +87,11 @@ export default function ContactPage() {
                     href="mailto:contacto@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    CONTACTO@DECORD-GALLERY.COM
+                    MAIL@MAIL.COM
                   </a>
                 </div>
               </ScrollReveal>
-            </div>
+            </aside>
 
             {/* Contact Form */}
             <div className={styles.form}>
@@ -101,7 +99,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className={styles.form__form}>
                   <div className={styles.form__group}>
                     <label htmlFor="name" className={styles.form__label}>
-                      NOMBRE
+                      NAME
                     </label>
                     <input
                       type="text"
@@ -111,7 +109,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className={styles.form__input}
-                      placeholder="ej.: Emma McCoy"
+                      placeholder="e.g.: Emma McCoy"
                     />
                   </div>
 
@@ -127,13 +125,13 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className={styles.form__input}
-                      placeholder="ej.: info@demolink.org"
+                      placeholder="e.g.: info@demolink.org"
                     />
                   </div>
 
                   <div className={styles.form__group}>
                     <label htmlFor="subject" className={styles.form__label}>
-                      ASUNTO
+                      SUBJECT
                     </label>
                     <input
                       type="text"
@@ -143,13 +141,13 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className={styles.form__input}
-                      placeholder="El asunto de tu mensaje"
+                      placeholder="The subject of your message"
                     />
                   </div>
 
                   <div className={styles.form__group}>
                     <label htmlFor="message" className={styles.form__label}>
-                      MENSAJE
+                      MESSAGE
                     </label>
                     <textarea
                       id="message"
@@ -159,12 +157,12 @@ export default function ContactPage() {
                       required
                       rows={6}
                       className={styles.form__textarea}
-                      placeholder="Escribe tu mensaje aquí..."
+                      placeholder="Write your message here..."
                     />
                   </div>
 
                   <button type="submit" className={styles.form__submit}>
-                    ENVIAR
+                    SUBMIT
                   </button>
                 </form>
               </ScrollReveal>
@@ -172,6 +170,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

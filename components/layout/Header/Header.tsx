@@ -30,9 +30,9 @@ export default function Header() {
       <div className={styles.header__container}>
         {/* Logo */}
         <Link href="/" className={styles.header__logo}>
-          <Image 
-            src="/images/logo-inverse-343x45.png" 
-            alt="DECORD Art Gallery" 
+          <Image
+            src="/images/logo-inverse-343x45.png"
+            alt="DECORD Art Gallery"
             width={343}
             height={45}
             className={styles.header__logoImage}

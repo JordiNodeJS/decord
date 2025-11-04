@@ -7,9 +7,9 @@ export default function About() {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section 
+    <section
       ref={elementRef as React.RefObject<HTMLElement>}
-      className={`${styles.about} ${isVisible ? styles['about--visible'] : ''}`}
+      className={`${styles.about} ${isVisible ? styles["about--visible"] : ""}`}
     >
       <div className={styles.about__container}>
         <div className={styles.about__header}>

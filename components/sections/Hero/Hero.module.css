@@ -5,10 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-end; /* Alinear a la derecha como el original */
-  background: var(--color-background-primary) url('/images/gallery/home-01.png') left center no-repeat;
+  background: var(--color-background-primary) url('/images/hero/hero-bg.png') left center no-repeat;
   background-size: auto 100%;
   position: relative;
-  padding: var(--spacing-32) var(--spacing-container-x);
+  padding: 307px var(--spacing-container-x) 80px; /* Padding exacto del original: 307px top, 80px bottom */
   overflow: hidden;
 }
 

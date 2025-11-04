@@ -49,7 +49,7 @@
   position: absolute;
   top: var(--spacing-6);
   right: var(--spacing-6);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   color: var(--color-text-primary);
   font-size: var(--font-size-3xl);
@@ -65,8 +65,8 @@
 }
 
 .lightbox__close:hover {
-  color: var(--color-primary-gold);
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary-red);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Counter */
@@ -76,8 +76,8 @@
   left: var(--spacing-6);
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-base);
-  color: var(--color-text-primary);
-  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-inverse);
+  background: rgba(0, 0, 0, 0.7);
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius-base);
   z-index: 10;
@@ -88,7 +88,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   color: var(--color-text-primary);
   font-size: var(--font-size-4xl);
@@ -104,7 +104,7 @@
 }
 
 .lightbox__arrow:hover:not(:disabled) {
-  background: rgba(212, 175, 55, 0.8);
+  background: var(--color-primary-red);
   color: var(--color-text-inverse);
 }
 
@@ -153,7 +153,7 @@
   gap: var(--spacing-2);
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-gold) transparent;
+  scrollbar-color: var(--color-primary-red) transparent;
   padding: var(--spacing-2);
 }
 
@@ -166,7 +166,7 @@
 }
 
 .lightbox__thumbnailsScroll::-webkit-scrollbar-thumb {
-  background: var(--color-primary-gold);
+  background: var(--color-primary-red);
   border-radius: 2px;
 }
 
@@ -184,12 +184,12 @@
 }
 
 .lightbox__thumbnail:hover {
-  border-color: var(--color-text-primary);
+  border-color: var(--color-primary-red);
 }
 
 .lightbox__thumbnail_active {
-  border-color: var(--color-primary-gold);
-  box-shadow: 0 0 0 2px var(--color-primary-gold);
+  border-color: var(--color-primary-red);
+  box-shadow: 0 0 0 2px var(--color-primary-red);
 }
 
 .lightbox__thumbnailImage {

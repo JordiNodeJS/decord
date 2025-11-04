@@ -1,0 +1,13 @@
+/* ScrollReveal Animation */
+
+.scrollReveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--animation-fade-in-duration) var(--transition-ease-out),
+              transform var(--animation-fade-in-duration) var(--transition-ease-out);
+}
+
+.scrollReveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}

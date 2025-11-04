@@ -1,0 +1,147 @@
+/* Gallery Page Styles */
+
+.galleryPage {
+  padding-top: var(--header-height);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background-primary);
+  text-align: center;
+  padding: var(--spacing-32) var(--spacing-container-x);
+}
+
+.hero__container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.hero__label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-gold);
+  display: block;
+  margin-bottom: var(--spacing-6);
+}
+
+.hero__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+}
+
+.hero__description {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Gallery Section */
+.gallery {
+  padding: var(--spacing-section-y) var(--spacing-container-x);
+  background: var(--color-background-secondary);
+}
+
+.gallery__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Category Filter */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-16);
+  flex-wrap: wrap;
+}
+
+.filter__button {
+  padding: var(--spacing-3) var(--spacing-6);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.filter__button:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-primary-gold);
+}
+
+.filter__button--active {
+  background: var(--color-primary-gold);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary-gold);
+}
+
+/* Artworks Grid */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryPage {
+    padding-top: var(--header-height-mobile);
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: var(--spacing-20) var(--spacing-container-x-mobile);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .gallery {
+    padding: var(--spacing-section-y-mobile) var(--spacing-container-x-mobile);
+  }
+
+  .filter {
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-12);
+  }
+
+  .filter__button {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-xs);
+  }
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}

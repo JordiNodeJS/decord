@@ -4,8 +4,8 @@
 
 :root {
   /* --- FONT FAMILIES --- */
-  --font-family-primary: 'Playfair Display', 'Georgia', serif;  /* Títulos elegantes */
-  --font-family-secondary: 'Inter', 'system-ui', sans-serif;    /* Cuerpo de texto */
+  --font-family-primary: var(--font-playfair-display), 'Playfair Display', 'Georgia', serif;  /* Títulos elegantes */
+  --font-family-secondary: var(--font-inter), 'Inter', 'system-ui', sans-serif;    /* Cuerpo de texto */
   --font-family-mono: 'Fira Code', 'Courier New', monospace;   /* Código (si aplica) */
 
   /* --- FONT SIZES --- */

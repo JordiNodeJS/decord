@@ -1,0 +1,100 @@
+/* Events Page Styles */
+
+.eventsPage {
+  padding-top: var(--header-height);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background-primary);
+  text-align: center;
+  padding: var(--spacing-32) var(--spacing-container-x);
+}
+
+.hero__container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.hero__label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-primary-gold);
+  display: block;
+  margin-bottom: var(--spacing-6);
+}
+
+.hero__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+}
+
+.hero__description {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Events Section */
+.events {
+  padding: var(--spacing-section-y) var(--spacing-container-x);
+  background: var(--color-background-secondary);
+}
+
+.events__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.events__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .events__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventsPage {
+    padding-top: var(--header-height-mobile);
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: var(--spacing-20) var(--spacing-container-x-mobile);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .events {
+    padding: var(--spacing-section-y-mobile) var(--spacing-container-x-mobile);
+  }
+
+  .events__grid {
+    gap: var(--spacing-6);
+  }
+}

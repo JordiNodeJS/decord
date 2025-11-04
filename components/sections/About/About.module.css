@@ -1,0 +1,66 @@
+/* About Section - DECORD Style */
+
+.about {
+  padding: var(--spacing-section-y) var(--spacing-container-x);
+  background: var(--color-background-secondary);
+}
+
+.about__container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__header {
+  margin-bottom: var(--spacing-10);
+}
+
+.about__label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  display: block;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.about__text {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: var(--spacing-section-y-mobile) var(--spacing-container-x-mobile);
+  }
+
+  .about__header {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .about__text {
+    font-size: var(--font-size-base);
+  }
+}
+    gap: var(--spacing-8);
+  }
+
+  .about__image {
+    min-height: 300px;
+  }
+
+  .about__title {
+    font-size: var(--font-size-xl);
+  }
+}

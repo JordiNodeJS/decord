@@ -1,0 +1,111 @@
+/* Header - DECORD Style con Design Tokens */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-sticky);
+  background: var(--header-background);
+  transition: background-color var(--transition-slow) var(--transition-ease-in-out),
+              backdrop-filter var(--transition-slow) var(--transition-ease-in-out);
+  height: var(--header-height);
+}
+
+/* Scrolled state - se activa con JavaScript */
+.header--scrolled {
+  background: var(--header-background-scrolled);
+  backdrop-filter: blur(var(--header-backdrop-blur));
+  box-shadow: var(--shadow-sm);
+}
+
+.header__container {
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 var(--spacing-container-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header__logo {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: var(--transition-colors);
+}
+
+.header__logo:hover {
+  color: var(--color-primary-gold);
+}
+
+.header__logoText {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+}
+
+/* Desktop Navigation */
+.header__nav {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+.header__link {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition-colors);
+  padding: var(--spacing-2) 0;
+}
+
+/* Underline animation */
+.header__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary-gold);
+  transition: width var(--transition-base) var(--transition-ease-out);
+}
+
+.header__link:hover {
+  color: var(--color-text-primary);
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.header__link--active {
+  color: var(--color-primary-gold);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: var(--header-height-mobile);
+  }
+
+  .header__container {
+    padding: 0 var(--spacing-container-x-mobile);
+  }
+}

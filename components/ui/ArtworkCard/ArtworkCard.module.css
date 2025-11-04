@@ -1,0 +1,130 @@
+/* ArtworkCard - DECORD Style */
+
+.artworkCard {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-background-elevated);
+}
+
+.artworkCard__imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--artwork-card-aspect-ratio);
+  overflow: hidden;
+}
+
+.artworkCard__imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-charcoal) 0%,
+    var(--color-background-elevated) 100%
+  );
+  position: relative;
+}
+
+.artworkCard__imagePlaceholder::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-gold);
+  opacity: 0.1;
+  border-radius: var(--radius-full);
+}
+
+.artworkCard__image {
+  object-fit: cover;
+  transition: transform var(--animation-image-zoom-duration) var(--transition-ease-in-out);
+}
+
+/* Overlay */
+.artworkCard__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-overlay-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-6);
+  opacity: var(--artwork-card-overlay-opacity);
+  transition: opacity var(--transition-slow) var(--transition-ease-in-out);
+}
+
+.artworkCard:hover .artworkCard__overlay {
+  opacity: var(--artwork-card-overlay-opacity-hover);
+}
+
+.artworkCard:hover .artworkCard__image {
+  transform: var(--animation-image-zoom);
+}
+
+.artworkCard__plusIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-primary);
+  opacity: 0;
+  transition: opacity var(--transition-slow) var(--transition-ease-out);
+}
+
+.artworkCard:hover .artworkCard__plusIcon {
+  opacity: 1;
+}
+
+.artworkCard__info {
+  position: absolute;
+  bottom: var(--spacing-6);
+  left: var(--spacing-6);
+  right: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform var(--transition-slow) var(--transition-ease-out),
+              opacity var(--transition-slow) var(--transition-ease-out);
+}
+
+.artworkCard:hover .artworkCard__info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.artworkCard__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.artworkCard__artist {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .artworkCard__overlay {
+    padding: var(--spacing-4);
+  }
+
+  .artworkCard__title {
+    font-size: var(--font-size-lg);
+  }
+}

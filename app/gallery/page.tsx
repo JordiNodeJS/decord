@@ -1,124 +1,115 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
+import Lightbox from "@/components/ui/Lightbox/Lightbox";
 import styles from "./gallery.module.css";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 
 const categories = [
-  "Todas",
-  "Anamorfismo",
-  "Fotorrealismo",
-  "Surrealismo",
-  "Abstracto",
+  "ANAMORFOSIS",
+  "FOTORREALISMO",
+  "SURREALISMO",
+  "HIPERREALISMO",
+  "OBRAS ABSTRACTAS",
+  "TODAS LAS OBRAS",
 ];
 
 const artworksData = [
   {
     id: 1,
-    title: "Reflejos Urbanos",
-    artist: "María González",
-    year: "2023",
-    category: "Fotorrealismo",
+    title: "EL PODER DEL ÁTOMO",
+    artist: "Frank Anderson",
+    year: "2016",
+    category: "ANAMORFOSIS",
     image: "/images/home-02-420x570.jpg",
   },
   {
     id: 2,
-    title: "Dimensión Paralela",
-    artist: "Carlos Ruiz",
-    year: "2022",
-    category: "Surrealismo",
+    title: "CUBOS",
+    artist: "Emma Smith",
+    year: "2018",
+    category: "ANAMORFOSIS",
     image: "/images/home-03-570x480.jpg",
   },
   {
     id: 3,
-    title: "Geometría Orgánica",
-    artist: "Ana Martínez",
-    year: "2023",
-    category: "Abstracto",
+    title: "ESCALERAS",
+    artist: "Sam Turner",
+    year: "2020",
+    category: "FOTORREALISMO",
     image: "/images/home-04-570x800.jpg",
   },
   {
     id: 4,
-    title: "Perspectiva Distorsionada",
-    artist: "Juan López",
-    year: "2022",
-    category: "Anamorfismo",
+    title: "CONFRONTACIÓN",
+    artist: "Johnny Lee",
+    year: "2019",
+    category: "SURREALISMO",
     image: "/images/home-05-720x700.jpg",
   },
   {
     id: 5,
-    title: "Sueños Líquidos",
-    artist: "Laura Fernández",
-    year: "2023",
-    category: "Surrealismo",
+    title: "LÍNEAS Y ROMPECABEZAS",
+    artist: "Kathleen Davis",
+    year: "2021",
+    category: "OBRAS ABSTRACTAS",
     image: "/images/home-06-570x390.jpg",
-  },
-  {
-    id: 6,
-    title: "Realidad Fragmentada",
-    artist: "Pedro Sánchez",
-    year: "2022",
-    category: "Fotorrealismo",
-    image: "/images/home-07-570x790.jpg",
-  },
-  {
-    id: 7,
-    title: "Espacio Cuántico",
-    artist: "Isabel Torres",
-    year: "2023",
-    category: "Abstracto",
-    image: "/images/home-02-420x570.jpg",
-  },
-  {
-    id: 8,
-    title: "Ilusión Óptica",
-    artist: "Roberto Díaz",
-    year: "2022",
-    category: "Anamorfismo",
-    image: "/images/home-03-570x480.jpg",
-  },
-  {
-    id: 9,
-    title: "Metamorfosis Urbana",
-    artist: "Sofía Ramírez",
-    year: "2023",
-    category: "Fotorrealismo",
-    image: "/images/home-04-570x800.jpg",
   },
 ];
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("Todas");
+  const [activeCategory, setActiveCategory] = useState("TODAS LAS OBRAS");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredArtworks =
-    activeCategory === "Todas"
+    activeCategory === "TODAS LAS OBRAS"
       ? artworksData
       : artworksData.filter((artwork) => artwork.category === activeCategory);
 
+  const handleOpenLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const handleCloseLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === filteredArtworks.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? filteredArtworks.length - 1 : prev - 1
+    );
+  };
+
   return (
     <div className={styles.galleryPage}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.hero__container}>
-          <ScrollReveal>
-            <span className={styles.hero__label}>GALERÍA</span>
-            <h1 className={styles.hero__title}>
-              Nuestra Colección
-              <br />
-              de Arte Contemporáneo
-            </h1>
-            <p className={styles.hero__description}>
-              Explora más de 500 obras que representan la vanguardia del arte
-              moderno
-            </p>
-          </ScrollReveal>
+      {/* Breadcrumb */}
+      <div className={styles.breadcrumb}>
+        <div className={styles.breadcrumb__container}>
+          <Link href="/" className={styles.breadcrumb__link}>
+            INICIO
+          </Link>
+          <span className={styles.breadcrumb__separator}>|</span>
+          <span className={styles.breadcrumb__current}>GALERÍA</span>
         </div>
-      </section>
+      </div>
 
       {/* Gallery Section */}
       <section className={styles.gallery}>
         <div className={styles.gallery__container}>
+          <ScrollReveal>
+            <h3 className={styles.gallery__title}>GALERÍA</h3>
+          </ScrollReveal>
+
           {/* Category Filter */}
           <div className={styles.filter}>
             {categories.map((category) => (
@@ -126,7 +117,7 @@ export default function GalleryPage() {
                 key={category}
                 className={`${styles.filter__button} ${
                   activeCategory === category
-                    ? styles["filter__button--active"]
+                    ? styles.filter__button_active
                     : ""
                 }`}
                 onClick={() => setActiveCategory(category)}
@@ -140,12 +131,26 @@ export default function GalleryPage() {
           <div className={styles.gallery__grid}>
             {filteredArtworks.map((artwork, index) => (
               <ScrollReveal key={artwork.id} delay={index * 50}>
-                <ArtworkCard artwork={artwork} />
+                <div onClick={() => handleOpenLightbox(index)}>
+                  <ArtworkCard artwork={artwork} />
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <Lightbox
+          images={filteredArtworks}
+          currentIndex={currentImageIndex}
+          onClose={handleCloseLightbox}
+          onNext={handleNextImage}
+          onPrevious={handlePreviousImage}
+          onThumbnailClick={setCurrentImageIndex}
+        />
+      )}
     </div>
   );
 }

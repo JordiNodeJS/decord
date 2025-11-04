@@ -1,3 +1,4 @@
+import Link from "next/link";
 import EventCard from "@/components/ui/EventCard/EventCard";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import styles from "./events.module.css";
@@ -74,26 +75,28 @@ const eventsData = [
 export default function EventsPage() {
   return (
     <div className={styles.eventsPage}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.hero__container}>
-          <ScrollReveal>
-            <span className={styles.hero__label}>EVENTOS</span>
-            <h1 className={styles.hero__title}>
-              Próximos Eventos
-              <br />y Exposiciones
-            </h1>
-            <p className={styles.hero__description}>
-              Únete a nosotros en experiencias artísticas únicas que conectan a
-              creadores y amantes del arte
-            </p>
-          </ScrollReveal>
+      {/* Breadcrumb */}
+      <div className={styles.breadcrumb}>
+        <div className={styles.breadcrumb__container}>
+          <Link href="/" className={styles.breadcrumb__link}>
+            INICIO
+          </Link>
+          <span className={styles.breadcrumb__separator}>|</span>
+          <Link href="#" className={styles.breadcrumb__link}>
+            PÁGINAS
+          </Link>
+          <span className={styles.breadcrumb__separator}>|</span>
+          <span className={styles.breadcrumb__current}>EVENTOS</span>
         </div>
-      </section>
+      </div>
 
       {/* Events Section */}
       <section className={styles.events}>
         <div className={styles.events__container}>
+          <ScrollReveal>
+            <h3 className={styles.events__title}>EVENTOS</h3>
+          </ScrollReveal>
+
           <div className={styles.events__grid}>
             {eventsData.map((event, index) => (
               <ScrollReveal key={event.id} delay={index * 100}>

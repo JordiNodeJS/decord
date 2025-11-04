@@ -2,56 +2,50 @@
 
 .galleryPage {
   padding-top: var(--header-height);
+  background: var(--color-background-primary);
 }
 
-/* Hero Section */
-.hero {
-  min-height: 60vh;
+/* Breadcrumb */
+.breadcrumb {
+  padding: var(--spacing-8) var(--spacing-container-x);
+  background: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.breadcrumb__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--color-background-primary);
-  text-align: center;
-  padding: var(--spacing-32) var(--spacing-container-x);
-}
-
-.hero__container {
-  max-width: var(--container-narrow);
-  margin: 0 auto;
-}
-
-.hero__label {
+  gap: var(--spacing-3);
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-widest);
-  text-transform: uppercase;
-  color: var(--color-primary-gold);
-  display: block;
-  margin-bottom: var(--spacing-6);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
-.hero__title {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-6);
-}
-
-.hero__description {
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-relaxed);
+.breadcrumb__link {
   color: var(--color-text-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--transition-colors);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-primary-gold);
+}
+
+.breadcrumb__separator {
+  color: var(--color-text-tertiary);
+}
+
+.breadcrumb__current {
+  color: var(--color-text-primary);
+  text-transform: uppercase;
 }
 
 /* Gallery Section */
 .gallery {
   padding: var(--spacing-section-y) var(--spacing-container-x);
-  background: var(--color-background-secondary);
 }
 
 .gallery__container {
@@ -59,36 +53,47 @@
   margin: 0 auto;
 }
 
+.gallery__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-12);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
 /* Category Filter */
 .filter {
   display: flex;
-  justify-content: center;
-  gap: var(--spacing-4);
+  justify-content: flex-start;
+  gap: var(--spacing-2);
   margin-bottom: var(--spacing-16);
   flex-wrap: wrap;
 }
 
 .filter__button {
-  padding: var(--spacing-3) var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-5);
   background: transparent;
   color: var(--color-text-secondary);
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-wide);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-button);
+  border-radius: 0;
   cursor: pointer;
   transition: var(--transition-all);
 }
 
 .filter__button:hover {
   color: var(--color-text-primary);
+  background: rgba(212, 175, 55, 0.1);
   border-color: var(--color-primary-gold);
 }
 
-.filter__button--active {
+.filter__button_active {
   background: var(--color-primary-gold);
   color: var(--color-text-inverse);
   border-color: var(--color-primary-gold);
@@ -103,8 +108,8 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero__title {
-    font-size: var(--font-size-4xl);
+  .gallery__title {
+    font-size: var(--font-size-2xl);
   }
 
   .gallery__grid {
@@ -117,17 +122,21 @@
     padding-top: var(--header-height-mobile);
   }
 
-  .hero {
-    min-height: 50vh;
-    padding: var(--spacing-20) var(--spacing-container-x-mobile);
+  .breadcrumb {
+    padding: var(--spacing-4) var(--spacing-container-x-mobile);
   }
 
-  .hero__title {
-    font-size: var(--font-size-3xl);
+  .breadcrumb__container {
+    font-size: var(--font-size-xs);
   }
 
   .gallery {
     padding: var(--spacing-section-y-mobile) var(--spacing-container-x-mobile);
+  }
+
+  .gallery__title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-8);
   }
 
   .filter {
@@ -136,8 +145,8 @@
   }
 
   .filter__button {
-    padding: var(--spacing-2) var(--spacing-4);
-    font-size: var(--font-size-xs);
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: 10px;
   }
 
   .gallery__grid {

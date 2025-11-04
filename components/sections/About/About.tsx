@@ -6,6 +6,13 @@ export default function About() {
       <div className={styles.about__container}>
         <div className={styles.about__header}>
           <span className={styles.about__label}>SOBRE LA GALERÍA DE ARTE</span>
+          <h2 className={styles.about__title}>
+            LA COLECCIÓN CUENTA CON OBRAS DE{" "}
+            <span className={styles.about__titleHighlight}>
+              ARTISTAS CONTEMPORÁNEOS
+            </span>{" "}
+            FAMOSOS EN MUCHOS GÉNEROS DESDE ABSTRACTO HASTA FIGURATIVO
+          </h2>
         </div>
         <div className={styles.about__content}>
           <p className={styles.about__text}>

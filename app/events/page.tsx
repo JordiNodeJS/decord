@@ -10,8 +10,9 @@ const eventsData = [
       "Una exploración del fotorrealismo contemporáneo a través de obras de artistas emergentes que desafían la percepción de lo real.",
     date: "15",
     month: "ENE",
+    dateRange: "15 ENE - 28 ENE",
     time: "18:00 - 21:00",
-    location: "Sala Principal",
+    reception: "Recepción de apertura",
   },
   {
     id: 2,
@@ -20,8 +21,9 @@ const eventsData = [
       "Conferencia magistral sobre las técnicas y filosofía del movimiento surrealista moderno, con invitados especiales.",
     date: "22",
     month: "ENE",
+    dateRange: "22 ENE",
     time: "19:00 - 20:30",
-    location: "Auditorio",
+    reception: "Entrada gratuita",
   },
   {
     id: 3,
@@ -30,8 +32,9 @@ const eventsData = [
       "Taller práctico de técnicas de arte contemporáneo con materiales diversos. Cupos limitados.",
     date: "28",
     month: "ENE",
+    dateRange: "28 ENE",
     time: "10:00 - 14:00",
-    location: "Estudio Creativo",
+    reception: "Inscripción requerida",
   },
   {
     id: 4,
@@ -40,8 +43,9 @@ const eventsData = [
       "Evento exclusivo para presentar las nuevas adquisiciones de nuestra colección permanente con cóctel incluido.",
     date: "05",
     month: "FEB",
+    dateRange: "05 FEB",
     time: "20:00 - 23:00",
-    location: "Sala Principal",
+    reception: "Solo invitados",
   },
   {
     id: 5,
@@ -50,8 +54,9 @@ const eventsData = [
       "Retrospectiva de 20 años de arte abstracto geométrico, con obras de artistas nacionales e internacionales.",
     date: "12",
     month: "FEB",
+    dateRange: "12 FEB - 15 MAR",
     time: "10:00 - 20:00",
-    location: "Sala 2",
+    reception: "Recepción de apertura",
   },
   {
     id: 6,
@@ -60,8 +65,9 @@ const eventsData = [
       "Sesión abierta de diálogo con artistas contemporáneos sobre sus procesos creativos y fuentes de inspiración.",
     date: "18",
     month: "FEB",
+    dateRange: "18 FEB",
     time: "17:00 - 19:00",
-    location: "Auditorio",
+    reception: "Entrada libre",
   },
 ];
 

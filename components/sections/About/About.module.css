@@ -12,7 +12,7 @@
 }
 
 .about__header {
-  margin-bottom: var(--spacing-10);
+  margin-bottom: var(--spacing-12);
 }
 
 .about__label {
@@ -23,6 +23,22 @@
   text-transform: uppercase;
   color: var(--color-text-secondary);
   display: block;
+  margin-bottom: var(--spacing-6);
+}
+
+.about__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.about__titleHighlight {
+  color: var(--color-primary-gold);
 }
 
 .about__content {
@@ -49,18 +65,11 @@
     margin-bottom: var(--spacing-8);
   }
 
+  .about__title {
+    font-size: var(--font-size-2xl);
+  }
+
   .about__text {
     font-size: var(--font-size-base);
-  }
-}
-    gap: var(--spacing-8);
-  }
-
-  .about__image {
-    min-height: 300px;
-  }
-
-  .about__title {
-    font-size: var(--font-size-xl);
   }
 }

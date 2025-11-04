@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
 import Link from "next/link";
 import styles from "./GallerySection.module.css";
@@ -54,7 +57,32 @@ const artworksData = [
   },
 ];
 
+const categories = [
+  "TODAS LAS OBRAS",
+  "ANAMORFISMO",
+  "FOTORREALISMO",
+  "SURREALISMO",
+  "HIPERREALISMO",
+  "OBRAS ABSTRACTAS",
+];
+
 export default function GallerySection() {
+  const [activeCategory, setActiveCategory] = useState("TODAS LAS OBRAS");
+
+  const filteredArtworks =
+    activeCategory === "TODAS LAS OBRAS"
+      ? artworksData
+      : artworksData.filter((artwork) => {
+          const categoryMap: Record<string, string> = {
+            ANAMORFISMO: "Anamorfismo",
+            FOTORREALISMO: "Fotorrealismo",
+            SURREALISMO: "Surrealismo",
+            HIPERREALISMO: "Hiperrealismo",
+            "OBRAS ABSTRACTAS": "Abstracto",
+          };
+          return artwork.category === categoryMap[activeCategory];
+        });
+
   return (
     <section className={styles.gallery}>
       <div className={styles.gallery__container}>
@@ -63,22 +91,23 @@ export default function GallerySection() {
         </div>
 
         <div className={styles.gallery__categories}>
-          <button
-            className={`${styles.gallery__categoryBtn} ${styles["gallery__categoryBtn--active"]}`}
-          >
-            TODAS LAS OBRAS
-          </button>
-          <button className={styles.gallery__categoryBtn}>ANAMORFISMO</button>
-          <button className={styles.gallery__categoryBtn}>FOTORREALISMO</button>
-          <button className={styles.gallery__categoryBtn}>SURREALISMO</button>
-          <button className={styles.gallery__categoryBtn}>HIPERREALISMO</button>
-          <button className={styles.gallery__categoryBtn}>
-            OBRAS ABSTRACTAS
-          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`${styles.gallery__categoryBtn} ${
+                activeCategory === category
+                  ? styles["gallery__categoryBtn--active"]
+                  : ""
+              }`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
         <div className={styles.gallery__grid}>
-          {artworksData.map((artwork) => (
+          {filteredArtworks.map((artwork) => (
             <ArtworkCard key={artwork.id} artwork={artwork} />
           ))}
         </div>

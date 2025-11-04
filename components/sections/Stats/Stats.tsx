@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import styles from "./Stats.module.css";
 
 const statsData = [
@@ -26,17 +29,71 @@ const statsData = [
   },
 ];
 
+function StatCard({ stat }: { stat: (typeof statsData)[0] }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const targetNumber = parseInt(stat.number);
+
+  useEffect(() => {
+    const element = ref.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const increment = targetNumber / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= targetNumber) {
+        setCount(targetNumber);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isVisible, targetNumber]);
+
+  return (
+    <div ref={ref} className={styles.statCard}>
+      <div className={styles.statCard__number}>{count}</div>
+      <h3 className={styles.statCard__label}>{stat.label}</h3>
+      <p className={styles.statCard__description}>{stat.description}</p>
+    </div>
+  );
+}
+
 export default function Stats() {
   return (
     <section className={styles.stats}>
       <div className={styles.stats__container}>
         <div className={styles.stats__grid}>
           {statsData.map((stat, index) => (
-            <div key={index} className={styles.statCard}>
-              <div className={styles.statCard__number}>{stat.number}</div>
-              <h3 className={styles.statCard__label}>{stat.label}</h3>
-              <p className={styles.statCard__description}>{stat.description}</p>
-            </div>
+            <StatCard key={index} stat={stat} />
           ))}
         </div>
       </div>

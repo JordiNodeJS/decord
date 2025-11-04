@@ -10,7 +10,11 @@
   letter-spacing: 8.4px;  /* Exacto del original */
   text-transform: uppercase;
   border-radius: 0;  /* Sin border radius en el original */
-  transition: var(--transition-all);
+  transition: background 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+              color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.2, 1, 0.3, 1);
   cursor: pointer;
   border: 2px solid transparent;
   text-align: center;

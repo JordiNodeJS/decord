@@ -1,16 +1,16 @@
 /* ============================================
    DECORD COLOR SYSTEM
-   Extraído del sitio original
+   Extraído del sitio original - Tema CLARO
    ============================================ */
 
 :root {
   /* --- PRIMARY PALETTE --- */
-  --color-primary-black: #0a0a0a;        /* Background principal */
-  --color-primary-dark: #1a1a1a;         /* Background secundario */
+  --color-primary-red: #fe483b;          /* Color accent principal (rojo/naranja) rgb(254, 72, 59) */
+  --color-primary-red-light: #ff6b5f;    /* Hover sobre rojo */
+  --color-primary-red-dark: #e63a2e;     /* Active state rojo */
+  
+  --color-primary-black: #151515;        /* Negro para textos rgb(21, 21, 21) */
   --color-primary-charcoal: #2a2a2a;     /* Cards, overlays */
-  --color-primary-gold: #d4af37;         /* Accent principal (dorado) */
-  --color-primary-gold-light: #e6c968;   /* Hover sobre dorado */
-  --color-primary-gold-dark: #b8941f;    /* Active state dorado */
 
   /* --- NEUTRALS (Grises) --- */
   --color-neutral-50: #fafafa;           /* Textos muy claros */
@@ -18,33 +18,33 @@
   --color-neutral-200: #e5e5e5;          /* Borders sutiles */
   --color-neutral-300: #d4d4d4;          /* Borders visibles */
   --color-neutral-400: #a3a3a3;          /* Texto secundario */
-  --color-neutral-500: #737373;          /* Texto terciario */
+  --color-neutral-500: #767676;          /* Texto terciario rgb(118, 118, 118) */
   --color-neutral-600: #525252;          /* Iconos */
   --color-neutral-700: #404040;          /* Dividers */
   --color-neutral-800: #262626;          /* Fondos oscuros */
   --color-neutral-900: #171717;          /* Texto en fondos claros */
 
   /* --- SEMANTIC COLORS --- */
-  --color-text-primary: #fafafa;         /* Texto principal en dark mode */
-  --color-text-secondary: #a3a3a3;       /* Texto secundario */
-  --color-text-tertiary: #737373;        /* Metadata, captions */
-  --color-text-inverse: #0a0a0a;         /* Texto sobre fondos claros */
+  --color-text-primary: #151515;         /* Texto principal rgb(21, 21, 21) */
+  --color-text-secondary: #767676;       /* Texto secundario rgb(118, 118, 118) */
+  --color-text-tertiary: #a3a3a3;        /* Metadata, captions */
+  --color-text-inverse: #ffffff;         /* Texto sobre fondos oscuros */
 
-  --color-background-primary: #0a0a0a;   /* Fondo principal del sitio */
-  --color-background-secondary: #1a1a1a; /* Secciones alternas */
-  --color-background-elevated: #2a2a2a;  /* Cards, modals */
+  --color-background-primary: #ffffff;   /* Fondo principal del sitio (BLANCO) */
+  --color-background-secondary: #f5f5f5; /* Secciones alternas */
+  --color-background-elevated: #ffffff;  /* Cards, modals */
 
-  --color-border-subtle: #262626;        /* Bordes suaves */
-  --color-border-default: #404040;       /* Bordes normales */
-  --color-border-strong: #525252;        /* Bordes destacados */
+  --color-border-subtle: #e5e5e5;        /* Bordes suaves */
+  --color-border-default: #d4d4d4;       /* Bordes normales */
+  --color-border-strong: #a3a3a3;        /* Bordes destacados */
 
   --color-overlay-light: rgba(0, 0, 0, 0.5);  /* Overlay sobre imágenes */
   --color-overlay-dark: rgba(0, 0, 0, 0.8);   /* Overlay intenso */
-  --color-overlay-gold: rgba(212, 175, 55, 0.1); /* Hover gold subtle */
+  --color-overlay-red: rgba(254, 72, 59, 0.1); /* Hover red subtle */
 
   /* --- INTERACTION STATES --- */
-  --color-hover-gold: #e6c968;           /* Hover sobre elementos dorados */
-  --color-active-gold: #b8941f;          /* Click/active sobre dorado */
-  --color-focus-outline: #d4af37;        /* Outline de accesibilidad */
-  --color-disabled: #404040;             /* Elementos deshabilitados */
+  --color-hover-red: #ff6b5f;            /* Hover sobre elementos rojos */
+  --color-active-red: #e63a2e;           /* Click/active sobre rojo */
+  --color-focus-outline: #fe483b;        /* Outline de accesibilidad */
+  --color-disabled: #d4d4d4;             /* Elementos deshabilitados */
 }

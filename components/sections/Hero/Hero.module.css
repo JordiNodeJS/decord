@@ -1,10 +1,10 @@
-/* Hero Section - DECORD Style con Design Tokens */
+/* Hero Section - DECORD Style - Exacto del original */
 
 .hero {
   min-height: var(--hero-min-height);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end; /* Alinear a la derecha como el original */
   background: var(--color-background-primary);
   position: relative;
   padding: var(--spacing-32) var(--spacing-container-x);
@@ -22,29 +22,30 @@
 .hero__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-8);
-  text-align: center;
+  align-items: flex-end; /* Alinear a la derecha */
+  gap: var(--spacing-4);
+  text-align: right; /* Texto alineado a la derecha */
 }
 
 .hero__subtitle {
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-widest);
+  font-family: var(--text-hero-label-font-family); /* Roboto */
+  font-size: var(--text-hero-label-font-size); /* 20px */
+  font-weight: var(--font-weight-normal); /* 400 */
+  letter-spacing: var(--text-hero-label-letter-spacing); /* 12px */
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary); /* Negro rgb(21, 21, 21) */
   display: block;
 }
 
 .hero__title {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-7xl);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.15em;
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
+  font-family: var(--text-hero-font-family); /* Oswald */
+  font-size: var(--text-hero-font-size); /* 90.22px */
+  font-weight: var(--text-hero-font-weight); /* 500 */
+  letter-spacing: var(--text-hero-letter-spacing); /* -4.511px NEGATIVO */
+  line-height: var(--text-hero-line-height); /* 1.1 */
+  color: var(--color-primary-red); /* rgb(254, 72, 59) - ROJO/NARANJA */
   text-transform: uppercase;
+  text-align: right;
   margin: 0;
   white-space: nowrap;
 }
@@ -52,14 +53,15 @@
 /* Responsive */
 @media (max-width: 1280px) {
   .hero__title {
-    font-size: var(--font-size-6xl);
-    letter-spacing: 0.12em;
+    font-size: 72px;
+    letter-spacing: -3.6px;
   }
 }
 
 @media (max-width: 1024px) {
   .hero__title {
-    font-size: var(--font-size-5xl);
+    font-size: 64px;
+    letter-spacing: -3.2px;
   }
 }
 
@@ -67,22 +69,37 @@
   .hero {
     min-height: var(--hero-min-height-mobile);
     padding: var(--spacing-24) var(--spacing-container-x-mobile);
+    justify-content: center;
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
   }
 
   .hero__title {
-    font-size: var(--font-size-4xl);
+    font-size: 48px;
+    letter-spacing: -2.4px;
     white-space: normal;
     word-spacing: 9999px;
+    text-align: center;
+  }
+  
+  .hero__subtitle {
+    font-size: 16px;
+    letter-spacing: 8px;
   }
 }
 
 @media (max-width: 480px) {
   .hero__title {
-    font-size: var(--font-size-3xl);
+    font-size: 40px;
+    letter-spacing: -2px;
   }
   
   .hero__subtitle {
-    font-size: 10px;
+    font-size: 14px;
+    letter-spacing: 6px;
   }
 }
 

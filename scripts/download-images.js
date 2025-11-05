@@ -52,18 +52,57 @@ const imagesToDownload = [
   },
 
   // Blog
-  { url: "images/post-01-770x360.jpg", dest: "public/images/blog/post-01.jpg" },
-  { url: "images/post-02-770x360.jpg", dest: "public/images/blog/post-02.jpg" },
-  { url: "images/post-03-770x360.jpg", dest: "public/images/blog/post-03.jpg" },
-
-  // About
   {
-    url: "images/about-01-570x703.jpg",
-    dest: "public/images/about/about-01.jpg",
+    url: "images/news-01-570x480.jpg",
+    dest: "public/images/blog/news-01-570x480.jpg",
   },
   {
-    url: "images/about-02-570x703.jpg",
-    dest: "public/images/about/about-02.jpg",
+    url: "images/news-02-570x700.jpg",
+    dest: "public/images/blog/news-02-570x700.jpg",
+  },
+  {
+    url: "images/news-03-570x570.jpg",
+    dest: "public/images/blog/news-03-570x570.jpg",
+  },
+  {
+    url: "images/news-04-570x800.jpg",
+    dest: "public/images/blog/news-04-570x800.jpg",
+  },
+  {
+    url: "images/news-05-570x480.jpg",
+    dest: "public/images/blog/news-05-570x480.jpg",
+  },
+  {
+    url: "images/news-06-570x390.jpg",
+    dest: "public/images/blog/news-06-570x390.jpg",
+  },
+
+  // About - Main image
+  {
+    url: "images/about-01-570x790.jpg",
+    dest: "public/images/about/about-01-570x790.jpg",
+  },
+
+  // About - Team members
+  {
+    url: "images/person-01-420x633.jpg",
+    dest: "public/images/team/person-01-420x633.jpg",
+  },
+  {
+    url: "images/person-02-570x774.jpg",
+    dest: "public/images/team/person-02-570x774.jpg",
+  },
+  {
+    url: "images/person-03-420x570.jpg",
+    dest: "public/images/team/person-03-420x570.jpg",
+  },
+  {
+    url: "images/person-04-420x570.jpg",
+    dest: "public/images/team/person-04-420x570.jpg",
+  },
+  {
+    url: "images/person-05-420x633.jpg",
+    dest: "public/images/team/person-05-420x633.jpg",
   },
 ];
 

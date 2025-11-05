@@ -31,7 +31,7 @@ export default function Header() {
         {/* Logo - Two versions for transparent and dark backgrounds */}
         <Link href="/" className={styles.header__logo}>
           <Image
-            src="/images/logo-dark.png"
+            src="/images/logo-default-350x70.png"
             alt="DECORD Art Gallery"
             width={175}
             height={35}
@@ -39,7 +39,7 @@ export default function Header() {
             priority
           />
           <Image
-            src="/images/logo-light.png"
+            src="/images/logo-inverse-343x45.png"
             alt="DECORD Art Gallery"
             width={171}
             height={22}

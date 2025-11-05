@@ -9,7 +9,7 @@ const teamMembers = [
     id: 1,
     name: "DEVON LANE",
     role: "FUNDADOR",
-    image: "/images/team/person-01.jpg",
+    image: "/images/team/person-01-420x633.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -19,7 +19,7 @@ const teamMembers = [
     id: 2,
     name: "COURTNEY HENRY",
     role: "JEFE DE MARKETING",
-    image: "/images/team/person-02.jpg",
+    image: "/images/team/person-02-570x774.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -29,7 +29,7 @@ const teamMembers = [
     id: 3,
     name: "THERESA WEBB",
     role: "GERENTE DE OPERACIONES",
-    image: "/images/team/person-03.jpg",
+    image: "/images/team/person-03-420x570.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -39,7 +39,7 @@ const teamMembers = [
     id: 4,
     name: "JENNY WILSON",
     role: "ASISTENTE DE GALERÍA",
-    image: "/images/team/person-04.jpg",
+    image: "/images/team/person-04-420x570.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -49,15 +49,13 @@ const teamMembers = [
     id: 5,
     name: "ALBERT FLORES",
     role: "COORDINADOR DE EXPOSICIONES",
-    image: "/images/team/person-05.jpg",
+    image: "/images/team/person-05-420x633.jpg",
     social: {
       instagram: "#",
       twitter: "#",
     },
   },
-];
-
-// Stats data
+];// Stats data
 const stats = [
   {
     number: "15",
@@ -106,10 +104,10 @@ export default function AboutPage() {
             <div className={styles.aboutHero__imageWrapper}>
               <ScrollReveal>
                 <Image
-                  src="/images/about/about-01-570x703.jpg"
+                  src="/images/about/about-01-570x790.jpg"
                   alt="Galería de Arte"
                   width={570}
-                  height={703}
+                  height={790}
                   className={styles.aboutHero__image}
                 />
               </ScrollReveal>

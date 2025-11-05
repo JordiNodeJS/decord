@@ -49,37 +49,37 @@ export default function Footer() {
               <nav className={styles.footer__nav}>
                 <Link
                   href="/gallery?category=anamorphosis"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   ANAMORPHOSIS
                 </Link>
                 <Link
                   href="/gallery?category=photorealism"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   PHOTOREALISM
                 </Link>
                 <Link
                   href="/gallery?category=surrealism"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   SURREALISM
                 </Link>
                 <Link
                   href="/gallery?category=hyperrealism"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   HYPERREALISM
                 </Link>
                 <Link
                   href="/gallery?category=performance"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   THE ART OF PERFORMANCE
                 </Link>
                 <Link
                   href="/gallery?category=abstract"
-                  className={styles.footer__link}
+                  className={styles.footer__linkLarge}
                 >
                   ABSTRACT ARTWORKS
                 </Link>
@@ -176,7 +176,7 @@ export default function Footer() {
       {/* CTA Section - "LET'S TALK" */}
       <div className={styles.footer__cta}>
         <div className={styles.footer__ctaContainer}>
-          <h2 className={styles.footer__ctaTitle}>LET&apos;S TALK</h2>
+          <h2 className={styles.footer__ctaTitle}>let&apos;s talk</h2>
           <div className={styles.footer__ctaArrow}>
             <svg
               width="260"

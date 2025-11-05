@@ -7,15 +7,15 @@
 
 /* ========== BREADCRUMB ========== */
 .breadcrumb {
-  background: var(--color-background-secondary);
-  padding: var(--spacing-6) 0;
-  border-bottom: 1px solid var(--color-border-default);
+  background: transparent; /* Original has transparent background */
+  padding: 0 var(--spacing-container-x) 28px; /* Match original: no top padding, 28px bottom */
+  border-bottom: none; /* Original has no border */
 }
 
 .breadcrumb__container {
   max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0 var(--spacing-container-x);
+  padding: 0; /* Remove padding from container, it's in parent */
   display: flex;
   align-items: center;
   gap: var(--spacing-4);

@@ -7,9 +7,9 @@
 
 /* Breadcrumb */
 .breadcrumb {
-  padding: var(--spacing-8) var(--spacing-container-x);
-  background: var(--color-background-secondary);
-  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 0 var(--spacing-container-x) 28px; /* Match original: no top padding, 28px bottom */
+  background: transparent; /* Original has transparent background */
+  border-bottom: none; /* Original has no border */
 }
 
 .breadcrumb__container {
@@ -62,6 +62,11 @@
   margin-bottom: var(--spacing-16);
   letter-spacing: 14.4px; /* Letter-spacing exacto del original */
   text-transform: uppercase;
+}
+
+.textLine {
+  border-bottom: 2px solid rgb(254, 72, 59); /* Red underline from original */
+  display: inline-block;
 }
 
 .events__grid {

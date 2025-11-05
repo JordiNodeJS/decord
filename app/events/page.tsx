@@ -94,7 +94,9 @@ export default function EventsPage() {
       <section className={styles.events}>
         <div className={styles.events__container}>
           <ScrollReveal>
-            <h3 className={styles.events__title}>EVENTOS</h3>
+            <h3 className={styles.events__title}>
+              <span className={styles.textLine}>EVENTOS</span>
+            </h3>
           </ScrollReveal>
 
           <div className={styles.events__grid}>

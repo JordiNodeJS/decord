@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // Script to download images from the original DECORD website
 const https = require("https");
 const http = require("http");

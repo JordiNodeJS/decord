@@ -35,30 +35,30 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "LOREM IPSUM DOLOR",
+    title: "EL RENACIMIENTO DEL ARTE ABSTRACTO",
     date: "9/4/21",
     excerpt:
-      "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "El arte abstracto ha experimentado un resurgimiento notable en las últimas décadas, con artistas contemporáneos que reinterpretan los principios del movimiento original con nuevas técnicas y perspectivas culturales. Exploramos esta fascinante evolución...",
     image: "/images/blog/news-05-570x480.jpg",
-    slug: "lorem-ipsum-dolor",
+    slug: "renacimiento-arte-abstracto",
   },
   {
     id: 5,
-    title: "CONSECTETUR",
+    title: "COLECCIONISMO DE ARTE MODERNO",
     date: "9/4/21",
     excerpt:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+      "Adentrarse en el mundo del coleccionismo de arte puede parecer intimidante, pero con la orientación adecuada, cualquiera puede comenzar a construir una colección significativa que refleje sus gustos personales y su visión artística...",
     image: "/images/blog/news-04-570x800.jpg",
-    slug: "consectetur",
+    slug: "coleccionismo-arte-moderno",
   },
   {
     id: 6,
-    title: "SIT AMET",
+    title: "TÉCNICAS MIXTAS EN EL ARTE CONTEMPORÁNEO",
     date: "9/4/21",
     excerpt:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+      "Los artistas contemporáneos están rompiendo barreras tradicionales al combinar diferentes medios y técnicas en sus obras. Esta experimentación está creando nuevas formas de expresión que desafían nuestra comprensión del arte...",
     image: "/images/blog/news-06-570x390.jpg",
-    slug: "sit-amet",
+    slug: "tecnicas-mixtas-contemporaneas",
   },
 ];
 

@@ -51,6 +51,9 @@
 .gallery__container {
   max-width: var(--container-xl);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: var(--spacing-12);
 }
 
 .gallery__title {
@@ -58,22 +61,21 @@
   font-size: 24px; /* Exacto del original */
   font-weight: 500; /* Exacto del original */
   color: rgb(21, 21, 21); /* Color exacto del original */
-  margin-bottom: 0; /* Sin margen inferior */
+  margin-bottom: 42.7px; /* Espacio antes de los filtros */
   letter-spacing: 14.4px; /* Letter-spacing exacto del original */
   text-transform: uppercase;
 }
 
-/* Category Filter - DECORD Style (Exacto del original) */
+/* Category Filter - DECORD Style (Vertical list on RIGHT side) */
 .filter {
-  display: block;
-  margin-bottom: var(--spacing-12);
-  margin-left: -10px; /* Negativo como en el original */
-  margin-top: 42.7px; /* Exacto del original */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 0;
 }
 
 .filter__button {
-  display: inline-block;
-  margin: 0 0 10px 10px; /* Espaciado exacto del original */
+  display: block;
   padding: 0;
   background: transparent;
   color: rgb(21, 21, 21); /* Color exacto del original */
@@ -81,11 +83,12 @@
   font-size: 16px; /* Exacto del original */
   font-weight: 500; /* Exacto del original */
   letter-spacing: 1.6px; /* Exacto del original */
-  text-transform: uppercase;
+  text-transform: lowercase; /* lowercase como en el original */
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  text-align: left;
 }
 
 .filter__button:hover {
@@ -107,8 +110,21 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .gallery__container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__sidebar {
+    order: -1;
+  }
+
   .gallery__title {
     font-size: var(--font-size-2xl);
+  }
+
+  .filter {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .gallery__grid {
@@ -144,11 +160,13 @@
   }
 
   .filter__button {
-    padding: var(--spacing-2) var(--spacing-3);
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}  .gallery__grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-4);
   }

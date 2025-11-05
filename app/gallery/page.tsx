@@ -8,12 +8,12 @@ import styles from "./gallery.module.css";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 
 const categories = [
-  "ANAMORFOSIS",
-  "FOTORREALISMO",
-  "SURREALISMO",
-  "HIPERREALISMO",
-  "OBRAS ABSTRACTAS",
-  "TODAS LAS OBRAS",
+  "anamorfismo",
+  "fotorrealismo",
+  "surrealismo",
+  "hiperrealismo",
+  "obras abstractas",
+  "todas las obras",
 ];
 
 const artworksData = [
@@ -60,14 +60,16 @@ const artworksData = [
 ];
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("TODAS LAS OBRAS");
+  const [activeCategory, setActiveCategory] = useState("todas las obras");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredArtworks =
-    activeCategory === "TODAS LAS OBRAS"
+    activeCategory === "todas las obras"
       ? artworksData
-      : artworksData.filter((artwork) => artwork.category === activeCategory);
+      : artworksData.filter(
+          (artwork) => artwork.category.toLowerCase() === activeCategory
+        );
 
   const handleOpenLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -106,28 +108,7 @@ export default function GalleryPage() {
       {/* Gallery Section */}
       <section className={styles.gallery}>
         <div className={styles.gallery__container}>
-          <ScrollReveal>
-            <h3 className={styles.gallery__title}>GALERÍA</h3>
-          </ScrollReveal>
-
-          {/* Category Filter */}
-          <div className={styles.filter}>
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`${styles.filter__button} ${
-                  activeCategory === category
-                    ? styles.filter__button_active
-                    : ""
-                }`}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Artworks Grid */}
+          {/* Left side - Artworks Grid */}
           <div className={styles.gallery__grid}>
             {filteredArtworks.map((artwork, index) => (
               <ScrollReveal key={artwork.id} delay={index * 50}>
@@ -136,6 +117,30 @@ export default function GalleryPage() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* Right side - Title and Filters */}
+          <div className={styles.gallery__sidebar}>
+            <ScrollReveal>
+              <h3 className={styles.gallery__title}>GALERÍA</h3>
+            </ScrollReveal>
+
+            {/* Category Filter */}
+            <div className={styles.filter}>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`${styles.filter__button} ${
+                    activeCategory === category
+                      ? styles.filter__button_active
+                      : ""
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

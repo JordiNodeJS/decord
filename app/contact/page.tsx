@@ -61,17 +61,17 @@ export default function ContactPage() {
               <ScrollReveal delay={100}>
                 <div className={styles.infoCard}>
                   <div className={styles.infoCard__icon}>📞</div>
-                  <a href="tel:+1234567890" className={styles.infoCard__link}>
-                    +1 234 567 8901
+                  <a href="tel:+34912345678" className={styles.infoCard__link}>
+                    +34 912 345 678
                   </a>
                 </div>
 
                 <div className={styles.infoCard}>
                   <p className={styles.infoCard__text}>
-                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
+                    <strong>LUNES-VIERNES:</strong> 8:00 - 18:00
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
+                    <strong>SÁBADO-DOMINGO:</strong> 8:00 - 14:00
                   </p>
                   <p className={styles.infoCard__text}>
                     <strong>FESTIVOS:</strong> CERRADO

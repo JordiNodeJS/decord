@@ -76,9 +76,9 @@
   --text-body-font-family: var(--font-family-secondary);
 
   /* Section Headings - Estilo común DECORD */
-  --text-section-heading-font-size: 30px;
+  --text-section-heading-font-size: 24px;
   --text-section-heading-font-weight: 500;
-  --text-section-heading-letter-spacing: 18px;
+  --text-section-heading-letter-spacing: 14.4px;
   --text-section-heading-font-family: var(--font-family-secondary);
   --text-section-heading-line-height: 1.172;
 }

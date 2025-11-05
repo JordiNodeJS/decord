@@ -55,7 +55,7 @@ const teamMembers = [
       twitter: "#",
     },
   },
-];// Stats data
+]; // Stats data
 const stats = [
   {
     number: "15",

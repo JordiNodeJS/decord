@@ -34,16 +34,19 @@
 }
 
 .lightbox__content {
-  position: relative;
-  width: 90%;
-  height: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
   max-width: 1400px;
   max-height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Close Button */
@@ -63,13 +66,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 20;
 }
 
 .lightbox__close:hover {
   background: rgba(254, 72, 59, 0.9);
   border-color: rgba(254, 72, 59, 1);
   transform: rotate(90deg);
+}
+
+.lightbox__close:active {
+  transform: rotate(90deg) scale(0.95);
 }
 
 /* Counter */

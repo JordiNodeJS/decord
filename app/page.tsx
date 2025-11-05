@@ -9,7 +9,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ScrollReveal delay={100}>
         <About />
@@ -29,6 +29,6 @@ export default function Home() {
       <ScrollReveal delay={100}>
         <BlogSection />
       </ScrollReveal>
-    </>
+    </main>
   );
 }

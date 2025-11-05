@@ -73,6 +73,13 @@ export default function MobileMenu() {
             EVENTOS
           </Link>
           <Link
+            href="/blog"
+            className={styles.mobileMenu__link}
+            onClick={closeMenu}
+          >
+            BLOG
+          </Link>
+          <Link
             href="/contact"
             className={styles.mobileMenu__link}
             onClick={closeMenu}

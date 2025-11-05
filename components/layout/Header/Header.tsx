@@ -54,6 +54,9 @@ export default function Header() {
           <Link href="/events" className={styles.header__link}>
             EVENTOS
           </Link>
+          <Link href="/blog" className={styles.header__link}>
+            BLOG
+          </Link>
           <Link href="/contact" className={styles.header__link}>
             CONTACTO
           </Link>

@@ -24,10 +24,10 @@ export default function Hero() {
   };
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-label="Hero principal">
       <div className={styles.hero__container}>
-        {/* Image positioned absolutely on the right */}
-        <div className={styles.hero__imageWrapper}>
+        {/* Image positioned absolutely on the left */}
+        <figure className={styles.hero__imageWrapper}>
           <Image
             src="/images/hero/home-01-720x900.png"
             alt="Columnas de arte moderno"
@@ -37,20 +37,20 @@ export default function Hero() {
             className={styles.hero__image}
             style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           />
-        </div>
+        </figure>
 
-        {/* Text content overlaying on the left side of the image */}
-        <div
+        {/* Text content overlaying on the right side of the image */}
+        <header
           className={styles.hero__content}
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
-          <h4 className={styles.hero__subtitle}>GALERÍA DE ARTE</h4>
+          <p className={styles.hero__subtitle}>GALERÍA DE ARTE</p>
           <h1 className={styles.hero__title}>
             <span>MUSEO</span>
             <span>DE ARTE</span>
             <span>MODERNO</span>
           </h1>
-        </div>
+        </header>
       </div>
 
       {/* Scroll Indicator */}
@@ -68,6 +68,7 @@ export default function Hero() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
         >
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <polyline points="19 12 12 19 5 12"></polyline>

@@ -61,20 +61,20 @@ export default function ContactPage() {
               <ScrollReveal delay={100}>
                 <div className={styles.infoCard}>
                   <div className={styles.infoCard__icon}>📞</div>
-                  <a href="tel:+34912345678" className={styles.infoCard__link}>
-                    +34 912 345 678
+                  <a href="tel:+1234567890" className={styles.infoCard__link}>
+                    +1 234 567 8901
                   </a>
                 </div>
 
                 <div className={styles.infoCard}>
                   <p className={styles.infoCard__text}>
-                    <strong>Lunes-Viernes:</strong> 8AM - 6PM
+                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>Sábado-Domingo:</strong> 8AM - 2PM
+                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>Festivos:</strong> Cerrado
+                    <strong>FESTIVOS:</strong> CERRADO
                   </p>
                 </div>
 
@@ -83,13 +83,13 @@ export default function ContactPage() {
                     href="mailto:info@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    info@decord-gallery.com
+                    INFO@DECORD-GALLERY.COM
                   </a>
                   <a
-                    href="mailto:contacto@decord-gallery.com"
+                    href="mailto:mail@mail.com"
                     className={styles.infoCard__link}
                   >
-                    mail@mail.com
+                    MAIL@MAIL.COM
                   </a>
                 </div>
               </ScrollReveal>

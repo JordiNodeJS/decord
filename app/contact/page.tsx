@@ -37,7 +37,7 @@ export default function ContactPage() {
             HOME
           </Link>
           <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>CONTACTS</span>
+          <span className={styles.breadcrumb__current}>CONTACTO</span>
         </div>
       </nav>
 
@@ -45,11 +45,13 @@ export default function ContactPage() {
       <section className={styles.contact}>
         <div className={styles.contact__container}>
           <ScrollReveal>
-            <h1 className={styles.contact__heading}>NEED HELP? CONTACT US.</h1>
+            <h1 className={styles.contact__heading}>
+              ¿NECESITAS AYUDA? CONTÁCTANOS.
+            </h1>
             <p className={styles.contact__intro}>
-              If you have any questions, just fill in the contact form, and we
-              will answer you shortly. If you are living nearby, come visit our
-              gallery.
+              Si tienes alguna pregunta, simplemente rellena el formulario de
+              contacto y te responderemos en breve. Si vives cerca, ven a
+              visitar nuestra galería.
             </p>
           </ScrollReveal>
 
@@ -66,13 +68,13 @@ export default function ContactPage() {
 
                 <div className={styles.infoCard}>
                   <p className={styles.infoCard__text}>
-                    <strong>MONDAY-FRIDAY:</strong> 8AM - 6PM
+                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>SATURDAY-SUNDAY:</strong> 8AM - 2PM
+                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>HOLIDAYS:</strong> CLOSED
+                    <strong>FESTIVOS:</strong> CERRADO
                   </p>
                 </div>
 

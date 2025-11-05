@@ -51,22 +51,29 @@ export default function Lightbox({
   }, [handleKeyDown]);
 
   return (
-    <div className={styles.lightbox} onClick={onClose}>
+    <div className={styles.lightbox}>
       {/* Overlay */}
-      <div className={styles.lightbox__overlay} />
+      <div className={styles.lightbox__overlay} onClick={onClose} />
 
       {/* Content */}
-      <div
-        className={styles.lightbox__content}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className={styles.lightbox__content}>
         {/* Close Button */}
         <button
           className={styles.lightbox__close}
           onClick={onClose}
           aria-label="Cerrar"
         >
-          ✕
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
 
         {/* Counter */}
@@ -75,23 +82,43 @@ export default function Lightbox({
         </div>
 
         {/* Navigation Arrows */}
-        <button
-          className={`${styles.lightbox__arrow} ${styles.lightbox__arrow_left}`}
-          onClick={onPrevious}
-          aria-label="Anterior"
-          disabled={currentIndex === 0}
-        >
-          ←
-        </button>
+        {currentIndex > 0 && (
+          <button
+            className={`${styles.lightbox__arrow} ${styles.lightbox__arrow_left}`}
+            onClick={onPrevious}
+            aria-label="Anterior"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        )}
 
-        <button
-          className={`${styles.lightbox__arrow} ${styles.lightbox__arrow_right}`}
-          onClick={onNext}
-          aria-label="Siguiente"
-          disabled={currentIndex === images.length - 1}
-        >
-          →
-        </button>
+        {currentIndex < images.length - 1 && (
+          <button
+            className={`${styles.lightbox__arrow} ${styles.lightbox__arrow_right}`}
+            onClick={onNext}
+            aria-label="Siguiente"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        )}
 
         {/* Main Image */}
         <div className={styles.lightbox__imageWrapper}>

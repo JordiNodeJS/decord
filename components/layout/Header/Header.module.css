@@ -69,7 +69,7 @@
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-inverse); /* White by default (transparent header) */
   text-decoration: none;
   position: relative;
   transition: var(--transition-colors);
@@ -89,20 +89,22 @@
 }
 
 .header__link:hover {
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  opacity: 0.8;
 }
 
 .header__link:hover::after {
   width: 100%;
 }
 
-/* When header is scrolled (dark background), make links white */
+/* When header is scrolled (white background), make links dark */
 .header--scrolled .header__link {
-  color: var(--color-neutral-400);
+  color: var(--color-text-secondary); /* Dark on light background */
 }
 
 .header--scrolled .header__link:hover {
-  color: var(--color-text-inverse); /* White on dark background */
+  color: var(--color-text-primary);
+  opacity: 1;
 }
 
 /* Active link */

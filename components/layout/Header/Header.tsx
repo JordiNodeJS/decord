@@ -28,10 +28,10 @@ export default function Header() {
       }`}
     >
       <div className={styles.header__container}>
-        {/* Logo */}
+        {/* Logo - cambio dinámico según scroll */}
         <Link href="/" className={styles.header__logo}>
           <Image
-            src="/images/logo-inverse-343x45.png"
+            src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
             alt="DECORD Art Gallery"
             width={343}
             height={45}

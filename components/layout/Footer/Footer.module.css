@@ -20,10 +20,10 @@
 
 .footer__ctaTitle {
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-widest);
-  color: var(--color-text-primary);
+  font-size: 88px; /* Exact size from original */
+  font-weight: 500; /* Medium weight like original */
+  letter-spacing: -4.4px; /* Negative spacing like original */
+  color: var(--color-primary-red); /* RED color like original */
   margin: 0;
   text-transform: uppercase;
 }
@@ -68,14 +68,33 @@
   max-width: var(--container-2xl);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-12);
+  grid-template-columns: 1fr 1fr 2fr 1fr; /* Logo, Nav, Categories, Social */
+  gap: var(--spacing-16);
 }
 
 .footer__column {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
+}
+
+/* Footer Logo */
+.footer__logo {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.footer__logoText {
+  color: var(--color-text-primary);
+}
+
+.footer__logoAccent {
+  color: var(--color-primary-red);
 }
 
 .footer__columnTitle {
@@ -104,20 +123,41 @@
 
 .footer__link {
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  font-size: 16px; /* Match original 16px */
+  color: var(--color-primary-red); /* RED links like original */
   text-decoration: none;
   transition: var(--transition-colors);
+  text-transform: uppercase; /* Uppercase like original */
+  letter-spacing: 0.5px;
 }
 
 .footer__link:hover {
-  color: var(--color-primary-red);
+  color: var(--color-hover-red);
+  opacity: 0.8;
 }
 
 .footer__info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
+}
+
+/* Social Media */
+.footer__social {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.footer__socialLink {
+  color: var(--color-primary-red);
+  font-size: 24px;
+  transition: var(--transition-colors);
+}
+
+.footer__socialLink:hover {
+  color: var(--color-hover-red);
+  opacity: 0.8;
 }
 
 /* Footer Bottom */

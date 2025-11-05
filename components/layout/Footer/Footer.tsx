@@ -14,18 +14,17 @@ export default function Footer() {
       {/* Footer Main */}
       <div className={styles.footer__main}>
         <div className={styles.footer__container}>
-          {/* Column 1: About */}
+          {/* Logo */}
           <div className={styles.footer__column}>
-            <h3 className={styles.footer__columnTitle}>SOBRE NOSOTROS</h3>
-            <p className={styles.footer__text}>
-              Museo de Arte Moderno dedicado a exhibir obras contemporáneas de
-              artistas emergentes y establecidos de todo el mundo.
-            </p>
+            <Link href="/" className={styles.footer__logo}>
+              <span className={styles.footer__logoText}>DE</span>
+              <span className={styles.footer__logoAccent}>C</span>
+              <span className={styles.footer__logoText}>ORD</span>
+            </Link>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 1: Main Navigation */}
           <div className={styles.footer__column}>
-            <h3 className={styles.footer__columnTitle}>NAVEGACIÓN</h3>
             <nav className={styles.footer__nav}>
               <Link href="/" className={styles.footer__link}>
                 Inicio
@@ -48,49 +47,52 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Column 3: Contact Info */}
+          {/* Column 2: Gallery Categories */}
           <div className={styles.footer__column}>
-            <h3 className={styles.footer__columnTitle}>INFORMACIÓN</h3>
-            <div className={styles.footer__info}>
-              <p className={styles.footer__text}>
-                <strong>Dirección:</strong>
-                <br />
-                Calle del Arte, 123
-                <br />
-                28001 Madrid, España
-              </p>
-              <p className={styles.footer__text}>
-                <strong>Teléfono:</strong>
-                <br />
-                +34 912 345 678
-              </p>
-              <p className={styles.footer__text}>
-                <strong>Email:</strong>
-                <br />
-                info@decord-gallery.com
-              </p>
-            </div>
+            <nav className={styles.footer__nav}>
+              <Link
+                href="/gallery?category=anamorphosis"
+                className={styles.footer__link}
+              >
+                Anamorfosis
+              </Link>
+              <Link
+                href="/gallery?category=photorealism"
+                className={styles.footer__link}
+              >
+                Fotorrealismo
+              </Link>
+              <Link
+                href="/gallery?category=surrealism"
+                className={styles.footer__link}
+              >
+                Surrealismo
+              </Link>
+              <Link
+                href="/gallery?category=hyperrealism"
+                className={styles.footer__link}
+              >
+                Hiperrealismo
+              </Link>
+              <Link
+                href="/gallery?category=performance"
+                className={styles.footer__link}
+              >
+                Arte de Performance
+              </Link>
+              <Link
+                href="/gallery?category=abstract"
+                className={styles.footer__link}
+              >
+                Obras Abstractas
+              </Link>
+            </nav>
           </div>
 
-          {/* Column 4: Hours */}
+          {/* Column 3: Social Media */}
           <div className={styles.footer__column}>
-            <h3 className={styles.footer__columnTitle}>HORARIOS</h3>
-            <div className={styles.footer__info}>
-              <p className={styles.footer__text}>
-                <strong>Martes - Viernes:</strong>
-                <br />
-                10:00 - 20:00
-              </p>
-              <p className={styles.footer__text}>
-                <strong>Sábado - Domingo:</strong>
-                <br />
-                11:00 - 21:00
-              </p>
-              <p className={styles.footer__text}>
-                <strong>Lunes:</strong>
-                <br />
-                Cerrado
-              </p>
+            <div className={styles.footer__social}>
+              {/* Add social media icons here */}
             </div>
           </div>
         </div>

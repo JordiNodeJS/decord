@@ -108,25 +108,14 @@ export default function GalleryPage() {
       {/* Gallery Section */}
       <section className={styles.gallery}>
         <div className={styles.gallery__container}>
-          {/* Left side - Artworks Grid */}
-          <div className={styles.gallery__grid}>
-            {filteredArtworks.map((artwork, index) => (
-              <ScrollReveal key={artwork.id} delay={index * 50}>
-                <div onClick={() => handleOpenLightbox(index)}>
-                  <ArtworkCard artwork={artwork} />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Right side - Title and Filters */}
-          <div className={styles.gallery__sidebar}>
+          {/* Left side - Title and Filters */}
+          <aside className={styles.gallery__sidebar}>
             <ScrollReveal>
-              <h3 className={styles.gallery__title}>GALERÍA</h3>
+              <h1 className={styles.gallery__title}>GALERÍA</h1>
             </ScrollReveal>
 
             {/* Category Filter */}
-            <div className={styles.filter}>
+            <nav className={styles.filter} aria-label="Filtro de categorías">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -136,11 +125,23 @@ export default function GalleryPage() {
                       : ""
                   }`}
                   onClick={() => setActiveCategory(category)}
+                  aria-pressed={activeCategory === category}
                 >
                   {category}
                 </button>
               ))}
-            </div>
+            </nav>
+          </aside>
+
+          {/* Right side - Artworks Grid */}
+          <div className={styles.gallery__grid}>
+            {filteredArtworks.map((artwork, index) => (
+              <ScrollReveal key={artwork.id} delay={index * 50}>
+                <div onClick={() => handleOpenLightbox(index)}>
+                  <ArtworkCard artwork={artwork} />
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

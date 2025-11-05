@@ -52,35 +52,32 @@ export default function BlogPage() {
       {/* Blog Section */}
       <section className={styles.blog}>
         <div className={styles.blog__container}>
-          <ScrollReveal>
-            <h1 className={styles.blog__title}>DESDE NUESTRO BLOG</h1>
-          </ScrollReveal>
-
-          <div className={styles.blog__grid}>
+          <div className={styles.blog__list}>
             {blogPosts.map((post, index) => (
               <ScrollReveal key={post.id} delay={index * 100}>
                 <article className={styles.blogCard}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className={styles.blogCard__link}
+                    className={styles.blogCard__imageLink}
                   >
-                    <div className={styles.blogCard__imageWrapper}>
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        width={770}
-                        height={360}
-                        className={styles.blogCard__image}
-                      />
-                    </div>
-                    <div className={styles.blogCard__content}>
-                      <time className={styles.blogCard__date}>{post.date}</time>
-                      <h2 className={styles.blogCard__title}>{post.title}</h2>
-                      <p className={styles.blogCard__excerpt}>{post.excerpt}</p>
-                      <span className={styles.blogCard__readMore}>
-                        LEER MÁS
-                      </span>
-                    </div>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={570}
+                      height={480}
+                      className={styles.blogCard__image}
+                    />
+                  </Link>
+                  <h2 className={styles.blogCard__title}>
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h2>
+                  <time className={styles.blogCard__date}>{post.date}</time>
+                  <p className={styles.blogCard__excerpt}>{post.excerpt}</p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className={styles.blogCard__readMore}
+                  >
+                    LEER MÁS
                   </Link>
                 </article>
               </ScrollReveal>

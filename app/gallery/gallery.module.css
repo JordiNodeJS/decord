@@ -52,21 +52,28 @@
   max-width: var(--container-xl);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 200px;
-  gap: var(--spacing-12);
+  grid-template-columns: 280px 1fr; /* Sidebar LEFT, grid RIGHT */
+  gap: var(--spacing-16);
+}
+
+.gallery__sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-8));
+  height: fit-content;
 }
 
 .gallery__title {
-  font-family: var(--font-family-secondary); /* Roboto (no Oswald) */
-  font-size: 24px; /* Exacto del original */
-  font-weight: 500; /* Exacto del original */
-  color: rgb(21, 21, 21); /* Color exacto del original */
-  margin-bottom: 42.7px; /* Espacio antes de los filtros */
-  letter-spacing: 14.4px; /* Letter-spacing exacto del original */
+  font-family: var(--font-family-secondary); /* Roboto */
+  font-size: 24px; /* Exact from original */
+  font-weight: 500;
+  color: rgb(21, 21, 21);
+  margin-bottom: 42.7px; /* Exact spacing from original */
+  letter-spacing: 14.4px;
   text-transform: uppercase;
+  line-height: 1.172;
 }
 
-/* Category Filter - DECORD Style (Vertical list on RIGHT side) */
+/* Category Filter - DECORD Style (Vertical list on LEFT side) */
 .filter {
   display: flex;
   flex-direction: column;
@@ -78,27 +85,27 @@
   display: block;
   padding: 0;
   background: transparent;
-  color: rgb(21, 21, 21); /* Color exacto del original */
+  color: rgb(21, 21, 21); /* Exact color from original */
   font-family: var(--font-family-secondary); /* Roboto */
-  font-size: 16px; /* Exacto del original */
-  font-weight: 500; /* Exacto del original */
-  letter-spacing: 1.6px; /* Exacto del original */
-  text-transform: lowercase; /* lowercase como en el original */
+  font-size: 14px; /* 14px from original inspection */
+  font-weight: 400; /* Normal weight from original */
+  letter-spacing: normal; /* No extra spacing */
+  text-transform: uppercase; /* Uppercase like in snapshot */
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   text-align: left;
+  line-height: 1.5;
 }
 
 .filter__button:hover {
-  color: rgb(254, 72, 59); /* Hover en rojo como el original */
+  color: rgb(254, 72, 59); /* Red hover */
 }
 
 .filter__button_active {
-  color: rgb(21, 21, 21); /* Color del texto igual */
-  text-decoration: line-through rgb(254, 72, 59); /* Strikethrough ROJO - Característica única del original */
-  text-decoration-thickness: 2px; /* Grosor de la línea */
+  color: rgb(254, 72, 59); /* Red when active */
+  font-weight: 500; /* Slightly bolder when active */
 }
 
 /* Artworks Grid */

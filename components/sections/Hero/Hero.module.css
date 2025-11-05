@@ -12,23 +12,23 @@
 }
 
 .hero__container {
-  max-width: 1170px;
+  max-width: 1600px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Image Wrapper - Positioned absolutely, centered */
+/* Image Wrapper - Positioned on the LEFT, slightly off-center */
 .hero__imageWrapper {
   position: absolute;
-  left: 50%;
+  left: 15%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   width: 720px;
   height: 900px;
   max-height: 90vh;
@@ -44,37 +44,37 @@
   transition: transform 0.1s ease-out;
 }
 
-/* Content - Text that overlays on the RIGHT side overlapping the image */
+/* Content - Text that overlays on the RIGHT side, overlapping the image */
 .hero__content {
   position: absolute;
-  right: 50px;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
   max-width: 900px;
   will-change: transform;
   transition: transform 0.1s ease-out;
-  text-align: left;
+  text-align: right;
 }
 
 .hero__subtitle {
   font-family: var(--font-family-secondary); /* Roboto */
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 14.4px;
+  letter-spacing: 12px;
   text-transform: uppercase;
   color: rgb(21, 21, 21);
   display: block;
-  margin: 0 0 30px 0;
-  line-height: 1.4;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
 }
 
 .hero__title {
   font-family: var(--font-family-primary); /* Oswald */
-  font-size: 120px;
+  font-size: 140px;
   font-weight: 500;
-  letter-spacing: -6px;
-  line-height: 0.95;
+  letter-spacing: -7px;
+  line-height: 0.9;
   color: rgb(254, 72, 59); /* Color exacto del original - ROJO/NARANJA */
   text-transform: uppercase;
   margin: 0;

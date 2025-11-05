@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   title: "DECORD - Museo de Arte Moderno",
   description:
     "Galería de arte moderno dedicada a exhibir obras contemporáneas de artistas emergentes y establecidos.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

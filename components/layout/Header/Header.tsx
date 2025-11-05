@@ -28,14 +28,22 @@ export default function Header() {
       }`}
     >
       <div className={styles.header__container}>
-        {/* Logo - always dark/visible on light/transparent background */}
+        {/* Logo - Two versions for transparent and dark backgrounds */}
         <Link href="/" className={styles.header__logo}>
           <Image
             src="/images/logo-dark.png"
             alt="DECORD Art Gallery"
-            width={343}
-            height={45}
-            className={styles.header__logoImage}
+            width={175}
+            height={35}
+            className={`${styles.header__logoImage} ${styles.header__logoDark}`}
+            priority
+          />
+          <Image
+            src="/images/logo-light.png"
+            alt="DECORD Art Gallery"
+            width={171}
+            height={22}
+            className={`${styles.header__logoImage} ${styles.header__logoLight}`}
             priority
           />
         </Link>
@@ -63,7 +71,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <MobileMenu />
+        <MobileMenu scrolled={scrolled} />
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import styles from "./BlogSection.module.css";
 
@@ -61,12 +62,14 @@ export default function BlogSection() {
                   className={styles.blogCard__link}
                 >
                   <div className={styles.blogCard__imageWrapper}>
-                    <div className={styles.blogCard__imagePlaceholder}>
-                      {/* Placeholder for image */}
-                      <span className={styles.blogCard__imagePlaceholderText}>
-                        Imagen
-                      </span>
-                    </div>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={570}
+                      height={480}
+                      className={styles.blogCard__image}
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                   <div className={styles.blogCard__content}>
                     <time className={styles.blogCard__date}>{post.date}</time>

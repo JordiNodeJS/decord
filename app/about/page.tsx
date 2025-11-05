@@ -229,18 +229,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer CTA */}
-      <section className={styles.cta}>
-        <div className={styles.cta__container}>
-          <ScrollReveal>
-            <h2 className={styles.cta__title}>HABLEMOS</h2>
-            <Link href="/contact" className={styles.cta__button}>
-              CONTACTAR
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
     </div>
   );
 }

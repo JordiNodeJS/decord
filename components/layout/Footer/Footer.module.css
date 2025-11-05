@@ -67,12 +67,12 @@
 
 .footer__link {
   font-family: var(--font-family-secondary);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  color: #2a2a2a; /* Dark gray like original */
+  color: #000000; /* Pure black like original */
   text-decoration: none;
   transition: var(--transition-colors);
-  letter-spacing: 2px;
+  letter-spacing: 7.2px; /* Exact match to original */
   text-transform: uppercase;
 }
 

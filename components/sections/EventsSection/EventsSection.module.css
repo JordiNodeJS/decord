@@ -27,17 +27,8 @@
   color: var(--color-text-primary);
   display: inline-block;
   position: relative;
-  padding-bottom: 12px; /* Space for underline */
-}
-
-.events__label::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 80px; /* Increased from 60px to match original better */
-  height: 3px; /* Slightly thicker for visibility */
-  background: var(--color-primary-red);
+  padding-bottom: 8px; /* Space for underline */
+  border-bottom: 2px solid var(--color-primary-red);
 }
 
 /* Grid */

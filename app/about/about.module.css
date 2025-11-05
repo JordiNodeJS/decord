@@ -3,6 +3,7 @@
 .aboutPage {
   min-height: 100vh;
   background: var(--color-background-primary);
+  padding-top: var(--header-height);
 }
 
 /* ========== BREADCRUMB ========== */
@@ -215,16 +216,8 @@
   margin-bottom: var(--spacing-12);
   position: relative;
   display: inline-block;
-}
-
-.team__title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--color-primary-red);
+  border-bottom: 2px solid var(--color-primary-red);
+  padding-bottom: 8px;
 }
 
 .team__grid {

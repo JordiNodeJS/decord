@@ -8,54 +8,68 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 60px 0; /* Padding vertical */
+  padding: 60px 0;
 }
 
 .hero__container {
-  max-width: 1170px; /* Container del original */
+  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  min-height: 600px;
 }
 
-/* Box Intro - Contenedor con background image que contiene el texto */
-.hero__boxIntro {
-  position: relative;
-  display: block;
+/* Image Wrapper - Positioned absolutely on the right side */
+.hero__imageWrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 720px;
+  height: 900px;
+  z-index: 1;
+}
+
+.hero__image {
   width: 100%;
-  max-width: 703px; /* Ancho del original */
-  min-height: 511px; /* Altura mínima del original */
-  padding: 130px 260px 40px 15px; /* Padding exacto del original */
-  background-image: url('/images/hero/home-01-720x900.png');
-  background-size: contain;
-  background-position: 100% 50%; /* right center */
-  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Content - Text that overlays on the left side of the image */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding-right: 100px;
   will-change: transform;
   transition: transform 0.1s ease-out;
 }
 
 .hero__subtitle {
   font-family: var(--font-family-secondary); /* Roboto */
-  font-size: 24px; /* Exacto del original */
-  font-weight: 500; /* Exacto del original */
-  letter-spacing: 14.4px; /* Exacto del original */
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 14.4px;
   text-transform: uppercase;
-  color: rgb(21, 21, 21); /* Color exacto del original */
+  color: rgb(21, 21, 21);
   display: block;
-  margin: 0 0 22px 0; /* Margen inferior entre h4 y h1 */
+  margin: 0 0 22px 0;
   line-height: 1.4;
 }
 
 .hero__title {
   font-family: var(--font-family-primary); /* Oswald */
-  font-size: 90.22px; /* Exacto del original */
-  font-weight: 500; /* Exacto del original */
-  letter-spacing: -4.511px; /* NEGATIVO - Exacto del original */
-  line-height: 1.1; /* Line-height exacto del original: 99.242px / 90.22px ≈ 1.1 */
+  font-size: 90.22px;
+  font-weight: 500;
+  letter-spacing: -4.511px;
+  line-height: 1.1;
   color: rgb(254, 72, 59); /* Color exacto del original - ROJO/NARANJA */
   text-transform: uppercase;
   margin: 0;
@@ -64,7 +78,7 @@
 
 .hero__title span {
   display: block;
-  line-height: inherit; /* Heredar line-height del h1 */
+  line-height: inherit;
 }
 
 /* Scroll Indicator */
@@ -101,9 +115,13 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .hero__boxIntro {
-    max-width: 600px;
-    padding: 100px 200px 40px 15px;
+  .hero__imageWrapper {
+    width: 600px;
+    height: 750px;
+  }
+  
+  .hero__content {
+    padding-right: 80px;
   }
   
   .hero__title {
@@ -118,10 +136,13 @@
 }
 
 @media (max-width: 992px) {
-  .hero__boxIntro {
-    max-width: 500px;
-    padding: 80px 150px 30px 15px;
-    min-height: 400px;
+  .hero__imageWrapper {
+    width: 500px;
+    height: 625px;
+  }
+  
+  .hero__content {
+    padding-right: 60px;
   }
   
   .hero__title {
@@ -140,36 +161,44 @@
     padding: 40px 0;
   }
 
-  .hero__boxIntro {
-    max-width: 100%;
-    padding: 60px 15px 30px 15px;
-    min-height: 400px;
-    background-position: center top;
-    background-size: 80%;
-    display: flex;
+  .hero__container {
     flex-direction: column;
-    justify-content: flex-end;
+    min-height: 500px;
+  }
+
+  .hero__imageWrapper {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 400px;
+    height: 500px;
+    margin-bottom: 30px;
+  }
+
+  .hero__content {
+    padding-right: 0;
+    text-align: center;
+    max-width: 100%;
   }
 
   .hero__title {
     font-size: 48px;
     letter-spacing: -2.4px;
-    text-align: center;
   }
   
   .hero__subtitle {
     font-size: 16px;
     letter-spacing: 8px;
-    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .hero__boxIntro {
-    min-height: 350px;
-    padding: 40px 15px 20px 15px;
+  .hero__imageWrapper {
+    width: 300px;
+    height: 375px;
   }
-  
+
   .hero__title {
     font-size: 36px;
     letter-spacing: -1.8px;
@@ -178,6 +207,5 @@
   .hero__subtitle {
     font-size: 14px;
     letter-spacing: 6px;
-    margin: 0 0 16px 0;
   }
 }

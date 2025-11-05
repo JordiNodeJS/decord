@@ -1,53 +1,127 @@
 import styles from "./about.module.css";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Link from "next/link";
+import Image from "next/image";
+
+const teamMembers = [
+  {
+    id: 1,
+    name: "Devon Lane",
+    role: "Fundador",
+    image: "/images/team/person-01.jpg",
+    social: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+    },
+  },
+  {
+    id: 2,
+    name: "Courtney Henry",
+    role: "Jefe de Marketing",
+    image: "/images/team/person-02.jpg",
+    social: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+    },
+  },
+  {
+    id: 3,
+    name: "Theresa Webb",
+    role: "Gerente de Operaciones",
+    image: "/images/team/person-03.jpg",
+    social: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+    },
+  },
+  {
+    id: 4,
+    name: "Jenny Wilson",
+    role: "Asistente de Galería",
+    image: "/images/team/person-04.jpg",
+    social: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+    },
+  },
+  {
+    id: 5,
+    name: "Albert Flores",
+    role: "Coordinador de Exposiciones",
+    image: "/images/team/person-05.jpg",
+    social: {
+      facebook: "#",
+      instagram: "#",
+      twitter: "#",
+    },
+  },
+];
+
+const stats = [
+  {
+    number: "15",
+    title: "Años de Experiencia",
+    description:
+      "Nuestra galería fue establecida en 2002 para exhibir obras maestras de todo el mundo.",
+  },
+  {
+    number: "34",
+    title: "Artistas Famosos",
+    description:
+      "Hemos reunido las mejores obras de arte del siglo XX.",
+  },
+  {
+    number: "89",
+    title: "Exposiciones Exitosas",
+    description:
+      "Increíbles colecciones de arte moderno y experimental, arte abstracto y retrato están representadas en nuestra galería.",
+  },
+  {
+    number: "12",
+    title: "Exposiciones Actuales",
+    description:
+      "Tenemos una selección de miles de obras de arte de algunos de los mejores nombres del arte fino contemporáneo.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.hero__container}>
+      {/* Breadcrumb */}
+      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+        <div className={styles.breadcrumb__container}>
+          <Link href="/" className={styles.breadcrumb__link}>
+            Home
+          </Link>
+          <span className={styles.breadcrumb__separator}>|</span>
+          <span className={styles.breadcrumb__current}>About</span>
+        </div>
+      </nav>
+
+      {/* About Section */}
+      <section className={styles.about}>
+        <div className={styles.about__container}>
           <ScrollReveal>
-            <span className={styles.hero__label}>SOBRE NOSOTROS</span>
-            <h1 className={styles.hero__title}>
-              Celebrando el Arte
-              <br />
-              Moderno desde 2008
-            </h1>
+            <h3 className={styles.about__heading}>sobre la galería de arte</h3>
+            <p className={styles.about__intro}>
+              Es nuestra misión facilitar el descubrimiento y la colección de
+              arte fino de artistas, galerías e instituciones culturales de
+              renombre en todo el mundo.
+            </p>
+            <p className={styles.about__text}>
+              Nuestra Galería fue establecida por Helen Stone para brindar
+              oportunidades a artistas que ingresan al mercado del arte global.
+              La Sra. Stone fue una visionaria que fundó la galería bajo el
+              principio de que todos los artistas se benefician de tener su obra
+              de arte promovida por una galería profesional.
+            </p>
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Story Section */}
-      <section className={styles.story}>
-        <div className={styles.story__container}>
-          <ScrollReveal delay={100}>
-            <div className={styles.story__content}>
-              <h2 className={styles.story__title}>Nuestra Historia</h2>
-              <p className={styles.story__text}>
-                DECORD nació de una visión simple pero poderosa: crear un
-                espacio donde el arte contemporáneo pudiera florecer sin
-                límites. Desde nuestros inicios en 2008, hemos sido un faro para
-                artistas innovadores que desafían las convenciones y exploran
-                nuevas fronteras creativas.
-              </p>
-              <p className={styles.story__text}>
-                A lo largo de los años, hemos organizado más de 150
-                exposiciones, presentado el trabajo de más de 300 artistas de 40
-                países diferentes, y dado la bienvenida a más de medio millón de
-                visitantes que comparten nuestra pasión por el arte moderno.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className={styles.mission}>
-        <div className={styles.mission__container}>
-          <ScrollReveal delay={150}>
-            <h2 className={styles.mission__title}>Nuestra Misión</h2>
-            <div className={styles.mission__grid}>
               <div className={styles.missionCard}>
                 <h3 className={styles.missionCard__title}>Inspirar</h3>
                 <p className={styles.missionCard__text}>

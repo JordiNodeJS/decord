@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -25,8 +26,22 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.hero__container}>
+        {/* Image positioned absolutely on the right */}
+        <div className={styles.hero__imageWrapper}>
+          <Image
+            src="/images/hero/home-01-720x900.png"
+            alt="Columnas de arte moderno"
+            width={720}
+            height={900}
+            priority
+            className={styles.hero__image}
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          />
+        </div>
+
+        {/* Text content overlaying on the left side of the image */}
         <div
-          className={styles.hero__boxIntro}
+          className={styles.hero__content}
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
           <h4 className={styles.hero__subtitle}>GALERÍA DE ARTE</h4>

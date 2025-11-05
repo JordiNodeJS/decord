@@ -45,9 +45,9 @@ export default function ContactPage() {
       <section className={styles.contact}>
         <div className={styles.contact__container}>
           <ScrollReveal>
-            <h1 className={styles.contact__heading}>
-              ¿NECESITAS AYUDA? CONTÁCTANOS.
-            </h1>
+            <h3 className={styles.contact__heading}>
+              ¿necesitas ayuda? contáctanos.
+            </h3>
             <p className={styles.contact__intro}>
               Si tienes alguna pregunta, simplemente rellena el formulario de
               contacto y te responderemos en breve. Si vives cerca, ven a
@@ -68,13 +68,13 @@ export default function ContactPage() {
 
                 <div className={styles.infoCard}>
                   <p className={styles.infoCard__text}>
-                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
+                    <strong>Lunes-Viernes:</strong> 8AM - 6PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
+                    <strong>Sábado-Domingo:</strong> 8AM - 2PM
                   </p>
                   <p className={styles.infoCard__text}>
-                    <strong>FESTIVOS:</strong> CERRADO
+                    <strong>Festivos:</strong> Cerrado
                   </p>
                 </div>
 
@@ -83,13 +83,13 @@ export default function ContactPage() {
                     href="mailto:info@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    INFO@DECORD-GALLERY.COM
+                    info@decord-gallery.com
                   </a>
                   <a
                     href="mailto:contacto@decord-gallery.com"
                     className={styles.infoCard__link}
                   >
-                    MAIL@MAIL.COM
+                    mail@mail.com
                   </a>
                 </div>
               </ScrollReveal>

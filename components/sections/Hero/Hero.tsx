@@ -24,11 +24,11 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div
-        className={styles.hero__container}
-        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-      >
-        <div className={styles.hero__content}>
+      <div className={styles.hero__container}>
+        <div
+          className={styles.hero__boxIntro}
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
           <h4 className={styles.hero__subtitle}>GALERÍA DE ARTE</h4>
           <h1 className={styles.hero__title}>
             <span>MUSEO</span>

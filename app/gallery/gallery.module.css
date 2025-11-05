@@ -54,49 +54,48 @@
 }
 
 .gallery__title {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-12);
-  letter-spacing: var(--letter-spacing-wide);
+  font-family: var(--font-family-secondary); /* Roboto (no Oswald) */
+  font-size: 24px; /* Exacto del original */
+  font-weight: 500; /* Exacto del original */
+  color: rgb(21, 21, 21); /* Color exacto del original */
+  margin-bottom: 0; /* Sin margen inferior */
+  letter-spacing: 14.4px; /* Letter-spacing exacto del original */
   text-transform: uppercase;
 }
 
-/* Category Filter */
+/* Category Filter - DECORD Style (Exacto del original) */
 .filter {
-  display: flex;
-  justify-content: flex-start;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-16);
-  flex-wrap: wrap;
+  display: block;
+  margin-bottom: var(--spacing-12);
+  margin-left: -10px; /* Negativo como en el original */
+  margin-top: 42.7px; /* Exacto del original */
 }
 
 .filter__button {
-  padding: var(--spacing-3) var(--spacing-5);
+  display: inline-block;
+  margin: 0 0 10px 10px; /* Espaciado exacto del original */
+  padding: 0;
   background: transparent;
-  color: var(--color-text-secondary);
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wider);
+  color: rgb(21, 21, 21); /* Color exacto del original */
+  font-family: var(--font-family-secondary); /* Roboto */
+  font-size: 16px; /* Exacto del original */
+  font-weight: 500; /* Exacto del original */
+  letter-spacing: 1.6px; /* Exacto del original */
   text-transform: uppercase;
-  border: 1px solid var(--color-border-default);
-  border-radius: 0;
+  border: none;
   cursor: pointer;
-  transition: var(--transition-all);
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .filter__button:hover {
-  color: var(--color-text-primary);
-  background: rgba(212, 175, 55, 0.1);
-  border-color: var(--color-primary-gold);
+  color: rgb(254, 72, 59); /* Hover en rojo como el original */
 }
 
 .filter__button_active {
-  background: var(--color-primary-gold);
-  color: var(--color-text-inverse);
-  border-color: var(--color-primary-gold);
+  color: rgb(21, 21, 21); /* Color del texto igual */
+  text-decoration: line-through rgb(254, 72, 59); /* Strikethrough ROJO - Característica única del original */
+  text-decoration-thickness: 2px; /* Grosor de la línea */
 }
 
 /* Artworks Grid */

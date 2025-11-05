@@ -14,6 +14,7 @@ const blogPosts = [
       "La fotografía de Danny Johananoff busca compartir historias de sus viajes y permitir que las audiencias sean transportadas, aunque sea por un momento. Durante más de cincuenta años, Johananoff ha tomado fotografías, pero...",
     image: "/images/blog/news-01-570x480.jpg",
     slug: "fotografia-en-movimiento",
+    height: "short", // 480px image
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const blogPosts = [
       "Se podría argumentar que la categoría de arte latinoamericano tal como la entendemos hoy realmente surgió alrededor de 1970. Cualesquiera que sean sus orígenes exactos, ha sido evidente para historiadores del arte, conocedores...",
     image: "/images/blog/news-02-570x700.jpg",
     slug: "arte-latinoamericano",
+    height: "tall", // 700px image
   },
   {
     id: 3,
@@ -32,6 +34,37 @@ const blogPosts = [
       "La mayoría de los artistas caminarían kilómetros por la oportunidad de mostrar su trabajo en una galería de arte. Junto con los museos, las galerías de arte son el lugar principal para exhibir y recibir comentarios sobre tus creaciones. Millones de personas...",
     image: "/images/blog/news-03-570x570.jpg",
     slug: "envia-tu-obra",
+    height: "medium", // 570px image
+  },
+  {
+    id: 4,
+    title: "LOREM IPSUM DOLOR",
+    date: "9/4/21",
+    excerpt:
+      "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "/images/blog/news-01-570x480.jpg",
+    slug: "lorem-ipsum-dolor",
+    height: "short",
+  },
+  {
+    id: 5,
+    title: "CONSECTETUR",
+    date: "9/4/21",
+    excerpt:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+    image: "/images/blog/news-02-570x700.jpg",
+    slug: "consectetur",
+    height: "tall",
+  },
+  {
+    id: 6,
+    title: "SIT AMET",
+    date: "9/4/21",
+    excerpt:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+    image: "/images/blog/news-03-570x570.jpg",
+    slug: "sit-amet",
+    height: "medium",
   },
 ];
 
@@ -52,10 +85,14 @@ export default function BlogPage() {
       {/* Blog Section */}
       <section className={styles.blog}>
         <div className={styles.blog__container}>
-          <div className={styles.blog__list}>
+          <div className={styles.blog__grid}>
             {blogPosts.map((post, index) => (
               <ScrollReveal key={post.id} delay={index * 100}>
-                <article className={styles.blogCard}>
+                <article
+                  className={`${styles.blogCard} ${
+                    styles[`blogCard--${post.height}`]
+                  }`}
+                >
                   <Link
                     href={`/blog/${post.slug}`}
                     className={styles.blogCard__imageLink}
@@ -64,7 +101,13 @@ export default function BlogPage() {
                       src={post.image}
                       alt={post.title}
                       width={570}
-                      height={480}
+                      height={
+                        post.height === "short"
+                          ? 480
+                          : post.height === "tall"
+                          ? 700
+                          : 570
+                      }
                       className={styles.blogCard__image}
                     />
                   </Link>

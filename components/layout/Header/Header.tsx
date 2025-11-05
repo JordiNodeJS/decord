@@ -28,10 +28,10 @@ export default function Header() {
       }`}
     >
       <div className={styles.header__container}>
-        {/* Logo - cambio dinámico según scroll */}
+        {/* Logo - always dark/visible on light/transparent background */}
         <Link href="/" className={styles.header__logo}>
           <Image
-            src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
+            src="/images/logo-dark.png"
             alt="DECORD Art Gallery"
             width={343}
             height={45}

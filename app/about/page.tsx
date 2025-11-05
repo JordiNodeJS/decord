@@ -9,7 +9,7 @@ const teamMembers = [
     id: 1,
     name: "DEVON LANE",
     role: "FUNDADOR",
-    image: "/images/team/team-1-370x370.jpg",
+    image: "/images/team/person-01.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -19,7 +19,7 @@ const teamMembers = [
     id: 2,
     name: "COURTNEY HENRY",
     role: "JEFE DE MARKETING",
-    image: "/images/team/team-2-370x370.jpg",
+    image: "/images/team/person-02.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -29,7 +29,7 @@ const teamMembers = [
     id: 3,
     name: "THERESA WEBB",
     role: "GERENTE DE OPERACIONES",
-    image: "/images/team/team-3-370x370.jpg",
+    image: "/images/team/person-03.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -39,7 +39,7 @@ const teamMembers = [
     id: 4,
     name: "JENNY WILSON",
     role: "ASISTENTE DE GALERÍA",
-    image: "/images/team/team-4-370x370.jpg",
+    image: "/images/team/person-04.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -49,7 +49,7 @@ const teamMembers = [
     id: 5,
     name: "ALBERT FLORES",
     role: "COORDINADOR DE EXPOSICIONES",
-    image: "/images/team/team-5-370x370.jpg",
+    image: "/images/team/person-05.jpg",
     social: {
       instagram: "#",
       twitter: "#",

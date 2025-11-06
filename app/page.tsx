@@ -1,7 +1,5 @@
 import Hero from "@/components/sections/Hero/Hero";
-import About from "@/components/sections/About/About";
-import Stats from "@/components/sections/Stats/Stats";
-import GallerySection from "@/components/sections/GallerySection/GallerySection";
+import AboutGallery from "@/components/sections/AboutGallery/AboutGallery";
 import EventsSection from "@/components/sections/EventsSection/EventsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection/TestimonialsSection";
 import BlogSection from "@/components/sections/BlogSection/BlogSection";
@@ -9,16 +7,10 @@ import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ScrollReveal delay={100}>
-        <About />
-      </ScrollReveal>
-      <ScrollReveal delay={100}>
-        <Stats />
-      </ScrollReveal>
-      <ScrollReveal delay={100}>
-        <GallerySection />
+        <AboutGallery />
       </ScrollReveal>
       <ScrollReveal delay={100}>
         <EventsSection />
@@ -29,6 +21,6 @@ export default function Home() {
       <ScrollReveal delay={100}>
         <BlogSection />
       </ScrollReveal>
-    </>
+    </main>
   );
 }

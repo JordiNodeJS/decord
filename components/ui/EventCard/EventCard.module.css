@@ -1,43 +1,44 @@
-/* EventCard - DECORD Style */
+/* EventCard - DECORD Style - Exact Match */
 
 .eventCard {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--spacing-8);
-  padding: var(--spacing-10);
-  background: var(--color-background-elevated);
-  border-radius: var(--radius-lg);
-  transition: var(--transition-all);
-  border: 1px solid var(--color-border-subtle);
+  padding: var(--spacing-10) 0;
+  background: transparent;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: all 0.3s ease;
+  border-radius: 0;
 }
 
 .eventCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-border-default);
+  transform: none;
+  box-shadow: none;
 }
 
 /* Date Box */
 .eventCard__dateBox {
   display: flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 0;
+  min-width: 120px;
 }
 
 .eventCard__dateNumber {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
+  font-family: var(--font-oswald), Oswald, sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 60px;
   color: var(--color-primary-red);
+  display: inline;
 }
 
 .eventCard__dateMonth {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-oswald), Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
   color: var(--color-primary-red);
-  line-height: 1;
+  display: inline;
 }
 
 /* Content */
@@ -48,13 +49,13 @@
 }
 
 .eventCard__title {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-snug);
-  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--font-family-secondary);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px; /* 1.4 ratio */
+  letter-spacing: 8px;
   color: var(--color-text-primary);
-  margin: 0;
+  margin: 0 0 10px 0;
   text-transform: uppercase;
 }
 
@@ -65,6 +66,7 @@
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
+  margin-bottom: 15px;
 }
 
 .eventCard__reception {
@@ -77,39 +79,38 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 
-/* Button */
+/* Button - Exact match from original */
 .eventCard__button {
   align-self: flex-start;
-  padding: var(--spacing-3) var(--spacing-8);
+  padding: 0;
   background: transparent;
-  color: var(--color-primary-red);
+  color: var(--color-text-primary);
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wide);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 8.4px;
   text-transform: uppercase;
-  border: 1px solid var(--color-primary-red);
-  border-radius: var(--radius-button);
+  border: none;
   cursor: pointer;
-  transition: var(--transition-all);
+  transition: color 0.3s ease;
   margin-top: var(--spacing-4);
 }
 
 .eventCard__button:hover {
-  background: var(--color-primary-red);
-  color: var(--color-text-inverse);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  color: var(--color-primary-red);
+  background: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .eventCard {
     grid-template-columns: 1fr;
-    padding: var(--spacing-6);
+    padding: var(--spacing-6) 0;
     gap: var(--spacing-6);
   }
 
@@ -129,29 +130,5 @@
   .eventCard__button {
     width: 100%;
     text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .eventCard {
-    flex-direction: column;
-    padding: var(--spacing-6);
-  }
-
-  .eventCard__date {
-    align-self: flex-start;
-    min-width: 70px;
-  }
-
-  .eventCard__dateNumber {
-    font-size: var(--font-size-3xl);
-  }
-
-  .eventCard__title {
-    font-size: var(--font-size-lg);
-  }
-
-  .eventCard__details {
-    flex-direction: column;
-    gap: var(--spacing-2);
   }
 }

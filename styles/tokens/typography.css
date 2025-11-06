@@ -4,8 +4,8 @@
 
 :root {
   /* --- FONT FAMILIES --- */
-  --font-family-primary: 'Oswald', 'Arial', sans-serif;  /* Títulos - Oswald es la font del original */
-  --font-family-secondary: 'Roboto', 'system-ui', sans-serif;    /* Cuerpo de texto - Roboto del original */
+  --font-family-primary: var(--font-oswald, 'Oswald', 'Arial', sans-serif);  /* Títulos - Oswald es la font del original */
+  --font-family-secondary: var(--font-roboto, 'Roboto', 'system-ui', sans-serif);    /* Cuerpo de texto - Roboto del original */
   --font-family-mono: 'Fira Code', 'Courier New', monospace;   /* Código (si aplica) */
 
   /* --- FONT SIZES --- */
@@ -21,7 +21,7 @@
   --font-size-4xl: 48px;     /* 3rem - H1 */
   --font-size-5xl: 64px;     /* 4rem - Hero title desktop */
   --font-size-6xl: 80px;     /* 5rem - Display titles */
-  --font-size-7xl: 90.22px;  /* Hero title EXACTO del original */
+  --font-size-7xl: 160px;    /* 10rem - Hero title EXACTO del original */
 
   /* --- FONT WEIGHTS --- */
   --font-weight-light: 300;
@@ -39,7 +39,7 @@
   --line-height-loose: 2;       /* Espaciado extra */
 
   /* --- LETTER SPACING --- */
-  --letter-spacing-hero: -4.511px;    /* Hero title - NEGATIVO del original */
+  --letter-spacing-hero: -8px;    /* Hero title - NEGATIVO del original (160px * -0.05 = -8px) */
   --letter-spacing-hero-label: 12px;   /* Hero label - 12px del original */
   --letter-spacing-tighter: -0.05em;  /* Títulos grandes compactos */
   --letter-spacing-tight: -0.025em;   /* Subtítulos */
@@ -50,15 +50,16 @@
 
   /* --- TEXT STYLES (Presets combinados) --- */
   /* Hero Title - EXACTO del original */
-  --text-hero-font-size: var(--font-size-7xl);       /* 90.22px */
+  --text-hero-font-size: var(--font-size-7xl);       /* 160px */
   --text-hero-font-weight: var(--font-weight-medium); /* 500 */
-  --text-hero-line-height: 1.1;                       /* 99.242px calculado */
-  --text-hero-letter-spacing: var(--letter-spacing-hero); /* -4.511px */
+  --text-hero-line-height: 1.0;                       /* 160px line-height igual al font-size */
+  --text-hero-letter-spacing: var(--letter-spacing-hero); /* -8px */
   --text-hero-font-family: var(--font-family-primary);  /* Oswald */
 
-  /* Hero Label */
-  --text-hero-label-font-size: var(--font-size-lg);   /* 20px */
-  --text-hero-label-letter-spacing: var(--letter-spacing-hero-label); /* 12px */
+  /* Hero Label - EXACTO del original */
+  --text-hero-label-font-size: 24px;   /* 24px del original */
+  --text-hero-label-letter-spacing: 14.4px; /* 14.4px del original */
+  --text-hero-label-font-weight: 500;  /* 500 del original */
   --text-hero-label-font-family: var(--font-family-secondary); /* Roboto */
 
   /* H1 */
@@ -73,4 +74,11 @@
   --text-body-line-height: var(--line-height-normal);
   --text-body-letter-spacing: var(--letter-spacing-normal);
   --text-body-font-family: var(--font-family-secondary);
+
+  /* Section Headings - Estilo común DECORD */
+  --text-section-heading-font-size: 30px; /* Exact from original */
+  --text-section-heading-font-weight: 500;
+  --text-section-heading-letter-spacing: 18px; /* Very wide like original */
+  --text-section-heading-font-family: var(--font-family-secondary); /* Roboto */
+  --text-section-heading-line-height: 1.172;
 }

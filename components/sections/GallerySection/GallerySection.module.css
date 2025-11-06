@@ -18,47 +18,53 @@
 
 .gallery__label {
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-widest);
+  font-size: 30px;  /* Exacto del original */
+  font-weight: 500;  /* Medium */
+  letter-spacing: 18px;  /* Amplio como el original */
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);  /* Negro, no secundario */
   display: block;
+  line-height: 1.172;
 }
 
-/* Categories Filter */
+/* Categories Filter - Match original exactly */
 .gallery__categories {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--spacing-4);
+  gap: var(--spacing-8);
   margin-bottom: var(--spacing-16);
+  list-style: none;
+  padding: 0;
 }
 
 .gallery__categoryBtn {
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-wide);
+  font-family: var(--font-family-secondary); /* Roboto */
+  font-size: 18px; /* 18px from original */
+  font-weight: 500; /* 500 from original */
+  letter-spacing: 1.8px; /* 1.8px from original */
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: rgb(21, 21, 21); /* Black text from original */
   background: transparent;
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-base);
-  padding: var(--spacing-3) var(--spacing-6);
+  border: none;
+  padding: 0;
   cursor: pointer;
-  transition: var(--transition-all);
+  transition: var(--transition-colors);
+  text-decoration: none;
+  position: relative;
 }
 
 .gallery__categoryBtn:hover {
-  color: var(--color-text-primary);
-  border-color: var(--color-primary-red);
+  color: var(--color-primary-red);
 }
 
 .gallery__categoryBtn--active {
-  color: var(--color-text-inverse);
-  background: var(--color-primary-red);
-  border-color: var(--color-primary-red);
+  color: rgb(21, 21, 21); /* Keep black text */
+  background: transparent;
+  border: none;
+  text-decoration: line-through;
+  text-decoration-color: rgb(254, 72, 59); /* Red line-through like original */
+  text-decoration-thickness: 1px;
 }
 
 /* Grid */

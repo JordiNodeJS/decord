@@ -29,16 +29,16 @@
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .statCard__number {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-primary);  /* Oswald */
+  font-size: 50px;  /* Exacto del original */
+  font-weight: 500;  /* Medium del original */
   line-height: 1;
-  color: var(--color-primary-red);
+  color: var(--color-primary-red);  /* rgb(254, 72, 59) */
   margin-bottom: var(--spacing-4);
 }
 

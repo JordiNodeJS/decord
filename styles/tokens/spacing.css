@@ -27,11 +27,9 @@
   --spacing-56: 224px; /* 28 × base */
   --spacing-64: 256px; /* 32 × base */
 
-  /* --- SEMANTIC SPACING (Casos de uso específicos) --- */
-  --spacing-section-y: var(--spacing-32);      /* Padding vertical de secciones: 128px */
-  --spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */
-
-  --spacing-container-x: var(--spacing-12);    /* Padding horizontal del container: 48px */
+/* --- SEMANTIC SPACING (Casos de uso específicos) --- */
+--spacing-section-y: 189px;      /* Padding vertical de secciones: 189px del original */
+--spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */  --spacing-container-x: var(--spacing-12);    /* Padding horizontal del container: 48px */
   --spacing-container-x-mobile: var(--spacing-6); /* 24px en mobile */
 
   --spacing-card-padding: var(--spacing-8);    /* Padding interno de cards: 32px */

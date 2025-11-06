@@ -12,18 +12,23 @@
 
 /* Header */
 .events__header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-16);
+  position: relative;
 }
 
 .events__label {
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-widest);
+  font-family: var(--font-family-secondary); /* Roboto */
+  font-size: 24px; /* Match original */
+  font-weight: 500;
+  letter-spacing: 14.4px; /* Match original wide spacing */
+  line-height: 1.172;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  display: block;
+  color: var(--color-text-primary);
+  display: inline; /* inline instead of inline-block prevents underline overflow */
+  position: relative;
+  padding-bottom: 8px; /* Space for underline */
+  border-bottom: 2px solid var(--color-primary-red);
 }
 
 /* Grid */

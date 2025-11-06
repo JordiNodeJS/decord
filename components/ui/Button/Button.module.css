@@ -1,33 +1,43 @@
-/* Componente Button - Metodología BEM con Design Tokens */
+/* Componente Button - Estilo exacto del original DECORD */
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wide);
-  border-radius: var(--radius-button);
-  transition: var(--transition-all);
+  font-family: var(--font-family-secondary);  /* Roboto */
+  font-size: 14px;  /* Exacto del original */
+  font-weight: 900;  /* Extrabold del original */
+  letter-spacing: 8.4px;  /* Exacto del original */
+  text-transform: uppercase;
+  border-radius: 0;  /* Sin border radius en el original */
+  transition: background 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+              color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.2, 1, 0.3, 1);
   cursor: pointer;
   border: 2px solid transparent;
   text-align: center;
+  padding: 24px 56px;  /* Exacto del original */
 }
 
 /* Variantes - Modificadores BEM */
 .button--primary {
-  background: var(--color-primary-red);
+  background: var(--color-primary-red);  /* rgb(254, 72, 59) */
   color: var(--color-text-inverse);
+  border-color: var(--color-primary-red);
 }
 
 .button--primary:hover {
   background: var(--color-hover-red);
+  border-color: var(--color-hover-red);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: 0 8px 16px rgba(254, 72, 59, 0.3);
 }
 
 .button--primary:active {
   background: var(--color-active-red);
+  border-color: var(--color-active-red);
   transform: translateY(0);
 }
 
@@ -38,8 +48,9 @@
 }
 
 .button--secondary:hover {
-  background: var(--color-primary-charcoal);
+  background: var(--color-neutral-100);
   border-color: var(--color-primary-red);
+  color: var(--color-primary-red);
   transform: translateY(-2px);
 }
 
@@ -54,23 +65,23 @@
   color: var(--color-text-inverse);
 }
 
-/* Tamaños - Modificadores BEM */
+/* Tamaños - Mantener compatibilidad pero el default es del original */
 .button--sm {
-  height: var(--button-height-sm);
-  padding: 0 var(--button-padding-x-sm);
-  font-size: var(--button-font-size-sm);
+  padding: 16px 40px;
+  font-size: 12px;
+  letter-spacing: 7.2px;
 }
 
 .button--md {
-  height: var(--button-height-md);
-  padding: 0 var(--button-padding-x-md);
-  font-size: var(--button-font-size-md);
+  padding: 24px 56px;  /* Default del original */
+  font-size: 14px;
+  letter-spacing: 8.4px;
 }
 
 .button--lg {
-  height: var(--button-height-lg);
-  padding: 0 var(--button-padding-x-lg);
-  font-size: var(--button-font-size-lg);
+  padding: 28px 64px;
+  font-size: 14px;
+  letter-spacing: 8.4px;
 }
 
 /* Estados deshabilitados */
@@ -79,17 +90,12 @@
   color: var(--color-text-tertiary);
   cursor: not-allowed;
   transform: none;
+  opacity: 0.5;
 }
 
 .button:disabled:hover {
   background: var(--color-disabled);
+  border-color: var(--color-disabled);
   transform: none;
   box-shadow: none;
-}
-
-/* Disabled state */
-.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none !important;
 }

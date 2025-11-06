@@ -4,7 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./MobileMenu.module.css";
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  scrolled?: boolean;
+}
+
+export default function MobileMenu({ scrolled = false }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -28,7 +32,7 @@ export default function MobileMenu() {
       <button
         className={`${styles.hamburger} ${
           isOpen ? styles["hamburger--active"] : ""
-        }`}
+        } ${scrolled ? styles["hamburger--scrolled"] : ""}`}
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
@@ -71,6 +75,13 @@ export default function MobileMenu() {
             onClick={closeMenu}
           >
             EVENTOS
+          </Link>
+          <Link
+            href="/blog"
+            className={styles.mobileMenu__link}
+            onClick={closeMenu}
+          >
+            BLOG
           </Link>
           <Link
             href="/contact"

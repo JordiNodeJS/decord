@@ -20,6 +20,11 @@
   transition: var(--transition-all);
 }
 
+/* White lines when header is scrolled (dark background) */
+.hamburger--scrolled .hamburger__line {
+  background: var(--color-text-inverse);
+}
+
 /* Hamburger Animation */
 .hamburger--active .hamburger__line:nth-child(1) {
   transform: rotate(45deg) translate(7px, 7px);

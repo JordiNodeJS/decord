@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./contact.module.css";
 
 export default function ContactPage() {
@@ -14,7 +15,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
     console.log("Form submitted:", formData);
     alert("¡Gracias por contactarnos! Te responderemos pronto.");
   };
@@ -29,135 +29,163 @@ export default function ContactPage() {
   };
 
   return (
-    <div className={styles.contactPage}>
-      {/* Hero Section */}
+    <main className={styles.contactPage}>
+      {/* Breadcrumb */}
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "CONTACTO" }]}
+      />
+
+      {/* Contact Hero */}
       <section className={styles.hero}>
         <div className={styles.hero__container}>
           <ScrollReveal>
-            <span className={styles.hero__label}>CONTACTO</span>
-            <h1 className={styles.hero__title}>Hablemos</h1>
-            <p className={styles.hero__description}>
-              ¿Tienes alguna pregunta o quieres colaborar con nosotros? Estamos
-              aquí para ayudarte.
-            </p>
+            <h3 className={styles.hero__title}>
+              ¿NECESITAS AYUDA? CONTÁCTANOS.
+            </h3>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Grid */}
       <section className={styles.contact}>
         <div className={styles.contact__container}>
           <div className={styles.contact__grid}>
-            {/* Contact Info */}
-            <div className={styles.info}>
-              <ScrollReveal>
-                <h2 className={styles.info__title}>Información de Contacto</h2>
+            {/* Contact Info Sidebar */}
+            <aside className={styles.sidebar}>
+              <ScrollReveal delay={100}>
+                {/* Description */}
+                <p className={styles.sidebar__description}>
+                  Si tienes alguna pregunta, simplemente rellena el formulario
+                  de contacto y te responderemos en breve. Si vives cerca, ven a
+                  visitar nuestra galería.
+                </p>
 
-                <div className={styles.infoCard}>
-                  <h3 className={styles.infoCard__title}>Dirección</h3>
-                  <p className={styles.infoCard__text}>
-                    Calle del Arte, 123
-                    <br />
-                    28001 Madrid, España
+                {/* Phone */}
+                <div className={styles.infoBlock}>
+                  <div className={styles.infoBlock__icon}>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <h3 className={styles.infoBlock__title}>+34 912 345 678</h3>
+                </div>
+
+                {/* Schedule */}
+                <div className={styles.infoBlock}>
+                  <p className={styles.infoBlock__text}>
+                    <strong>LUNES-VIERNES:</strong> 8AM - 6PM
+                  </p>
+                  <p className={styles.infoBlock__text}>
+                    <strong>SÁBADO-DOMINGO:</strong> 8AM - 2PM
+                  </p>
+                  <p className={styles.infoBlock__text}>
+                    <strong>FESTIVOS:</strong> CERRADO
                   </p>
                 </div>
 
-                <div className={styles.infoCard}>
-                  <h3 className={styles.infoCard__title}>Teléfono</h3>
-                  <p className={styles.infoCard__text}>+34 912 345 678</p>
-                </div>
-
-                <div className={styles.infoCard}>
-                  <h3 className={styles.infoCard__title}>Email</h3>
-                  <p className={styles.infoCard__text}>
-                    info@decord-gallery.com
+                {/* Email */}
+                <div className={styles.infoBlock}>
+                  <p className={styles.infoBlock__email}>
+                    INFO@DECORD-GALLERY.COM
                   </p>
-                </div>
-
-                <div className={styles.infoCard}>
-                  <h3 className={styles.infoCard__title}>Horarios</h3>
-                  <p className={styles.infoCard__text}>
-                    <strong>Martes - Viernes:</strong> 10:00 - 20:00
-                    <br />
-                    <strong>Sábado - Domingo:</strong> 11:00 - 21:00
-                    <br />
-                    <strong>Lunes:</strong> Cerrado
-                  </p>
+                  <p className={styles.infoBlock__email}>MAIL@MAIL.COM</p>
                 </div>
               </ScrollReveal>
-            </div>
+            </aside>
 
             {/* Contact Form */}
-            <div className={styles.form}>
+            <div className={styles.formWrapper}>
               <ScrollReveal delay={200}>
-                <h2 className={styles.form__title}>Envíanos un Mensaje</h2>
-                <form onSubmit={handleSubmit} className={styles.form__form}>
-                  <div className={styles.form__group}>
-                    <label htmlFor="name" className={styles.form__label}>
-                      Nombre Completo
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className={styles.form__input}
-                      placeholder="Tu nombre"
-                    />
+                <form onSubmit={handleSubmit} className={styles.form}>
+                  <div className={styles.form__row}>
+                    <div className={styles.form__group}>
+                      <div className={styles.form__text}>NAME</div>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className={styles.form__input}
+                        placeholder=" "
+                      />
+                      <label htmlFor="name" className={styles.form__label}>
+                        e.g.: Emma McCoy
+                      </label>
+                    </div>
                   </div>
 
-                  <div className={styles.form__group}>
-                    <label htmlFor="email" className={styles.form__label}>
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className={styles.form__input}
-                      placeholder="tu@email.com"
-                    />
+                  <div className={styles.form__row}>
+                    <div className={styles.form__group}>
+                      <div className={styles.form__text}>E-MAIL</div>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className={styles.form__input}
+                        placeholder=" "
+                      />
+                      <label htmlFor="email" className={styles.form__label}>
+                        e.g.: info@demolink.org
+                      </label>
+                    </div>
                   </div>
 
-                  <div className={styles.form__group}>
-                    <label htmlFor="subject" className={styles.form__label}>
-                      Asunto
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className={styles.form__input}
-                      placeholder="¿En qué podemos ayudarte?"
-                    />
+                  <div className={styles.form__row}>
+                    <div className={styles.form__group}>
+                      <div className={styles.form__text}>SUBJECT</div>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className={styles.form__input}
+                        placeholder=" "
+                      />
+                      <label htmlFor="subject" className={styles.form__label}>
+                        The subject of your message
+                      </label>
+                    </div>
                   </div>
 
-                  <div className={styles.form__group}>
-                    <label htmlFor="message" className={styles.form__label}>
-                      Mensaje
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className={styles.form__textarea}
-                      placeholder="Escribe tu mensaje aquí..."
-                    />
+                  <div className={styles.form__row}>
+                    <div className={styles.form__group}>
+                      <div
+                        className={`${styles.form__text} ${styles.form__text_textarea}`}
+                      >
+                        MESSAGE
+                      </div>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={8}
+                        className={styles.form__textarea}
+                        placeholder=" "
+                      />
+                      <label htmlFor="message" className={styles.form__label}>
+                        Write your message here...
+                      </label>
+                    </div>
                   </div>
 
                   <button type="submit" className={styles.form__submit}>
-                    ENVIAR MENSAJE
+                    SUBMIT
                   </button>
                 </form>
               </ScrollReveal>
@@ -165,6 +193,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

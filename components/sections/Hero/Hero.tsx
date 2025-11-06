@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -23,15 +24,37 @@ export default function Hero() {
   };
 
   return (
-    <section className={styles.hero}>
-      <div
-        className={styles.hero__container}
-        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-      >
-        <div className={styles.hero__content}>
-          <span className={styles.hero__subtitle}>GALERÍA DE ARTE</span>
-          <h1 className={styles.hero__title}>MUSEO DE ARTE MODERNO</h1>
-        </div>
+    <section className={styles.hero} aria-label="Hero principal">
+      <div className={styles.hero__container}>
+        {/* Image positioned absolutely on the left */}
+        <figure className={styles.hero__imageWrapper}>
+          <Image
+            src="/images/hero/home-01-720x900.png"
+            alt="Columnas de arte moderno"
+            width={720}
+            height={900}
+            priority
+            className={styles.hero__image}
+            style={{
+              transform: `translateY(${scrollY * 0.3}px)`,
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </figure>
+
+        {/* Text content overlaying on the right side of the image */}
+        <header
+          className={styles.hero__content}
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
+          <p className={styles.hero__subtitle}>ART GALLERY</p>
+          <h1 className={styles.hero__title}>
+            <span>MUSEUM</span>
+            <span>OF MODERN</span>
+            <span>ART</span>
+          </h1>
+        </header>
       </div>
 
       {/* Scroll Indicator */}
@@ -49,6 +72,7 @@ export default function Hero() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
         >
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <polyline points="19 12 12 19 5 12"></polyline>

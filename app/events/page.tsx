@@ -1,5 +1,6 @@
 import EventCard from "@/components/ui/EventCard/EventCard";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./events.module.css";
 
 const eventsData = [
@@ -74,26 +75,20 @@ const eventsData = [
 export default function EventsPage() {
   return (
     <div className={styles.eventsPage}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.hero__container}>
-          <ScrollReveal>
-            <span className={styles.hero__label}>EVENTOS</span>
-            <h1 className={styles.hero__title}>
-              Próximos Eventos
-              <br />y Exposiciones
-            </h1>
-            <p className={styles.hero__description}>
-              Únete a nosotros en experiencias artísticas únicas que conectan a
-              creadores y amantes del arte
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Breadcrumb */}
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "EVENTOS" }]}
+      />
 
       {/* Events Section */}
       <section className={styles.events}>
         <div className={styles.events__container}>
+          <ScrollReveal>
+            <h3 className={styles.events__title}>
+              <span className={styles.textLine}>EVENTOS</span>
+            </h3>
+          </ScrollReveal>
+
           <div className={styles.events__grid}>
             {eventsData.map((event, index) => (
               <ScrollReveal key={event.id} delay={index * 100}>

@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
+import Lightbox from "@/components/ui/Lightbox/Lightbox";
+import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import Link from "next/link";
 import styles from "./GallerySection.module.css";
 
-// Datos de ejemplo de obras de arte
+// Datos de obras de arte del sitio original
 const artworksData = [
   {
     id: 1,
@@ -13,7 +15,7 @@ const artworksData = [
     artist: "Frank Anderson",
     year: "2016",
     category: "Fotorrealismo",
-    image: "/images/home-02-420x570.jpg",
+    image: "/images/gallery/home-02-800x1200.jpg",
   },
   {
     id: 2,
@@ -21,7 +23,7 @@ const artworksData = [
     artist: "Emma Smith",
     year: "2018",
     category: "Abstracto",
-    image: "/images/home-03-570x480.jpg",
+    image: "/images/gallery/home-03-1200x800.jpg",
   },
   {
     id: 3,
@@ -29,7 +31,7 @@ const artworksData = [
     artist: "Sam Turner",
     year: "2020",
     category: "Surrealismo",
-    image: "/images/home-05-720x700.jpg",
+    image: "/images/gallery/home-05-1200x800.jpg",
   },
   {
     id: 4,
@@ -37,7 +39,7 @@ const artworksData = [
     artist: "Johnny Lee",
     year: "2019",
     category: "Anamorfismo",
-    image: "/images/home-04-570x800.jpg",
+    image: "/images/gallery/home-04-800x1200.jpg",
   },
   {
     id: 5,
@@ -45,7 +47,7 @@ const artworksData = [
     artist: "Kathleen Davis",
     year: "2021",
     category: "Hiperrealismo",
-    image: "/images/home-06-570x390.jpg",
+    image: "/images/gallery/home-06-1200x800.jpg",
   },
 ];
 
@@ -60,6 +62,8 @@ const categories = [
 
 export default function GallerySection() {
   const [activeCategory, setActiveCategory] = useState("TODAS LAS OBRAS");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredArtworks =
     activeCategory === "TODAS LAS OBRAS"
@@ -74,6 +78,29 @@ export default function GallerySection() {
           };
           return artwork.category === categoryMap[activeCategory];
         });
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev < filteredArtworks.length - 1 ? prev + 1 : prev
+    );
+  };
+
+  const previousImage = () => {
+    setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
 
   return (
     <section className={styles.gallery}>
@@ -99,8 +126,13 @@ export default function GallerySection() {
         </div>
 
         <div className={styles.gallery__grid}>
-          {filteredArtworks.map((artwork) => (
-            <ArtworkCard key={artwork.id} artwork={artwork} />
+          {filteredArtworks.map((artwork, index) => (
+            <ScrollReveal key={artwork.id} delay={index * 100}>
+              <ArtworkCard
+                artwork={artwork}
+                onClick={() => openLightbox(index)}
+              />
+            </ScrollReveal>
           ))}
         </div>
 
@@ -110,6 +142,18 @@ export default function GallerySection() {
           </Link>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <Lightbox
+          images={filteredArtworks}
+          currentIndex={currentImageIndex}
+          onClose={closeLightbox}
+          onNext={nextImage}
+          onPrevious={previousImage}
+          onThumbnailClick={goToImage}
+        />
+      )}
     </section>
   );
 }

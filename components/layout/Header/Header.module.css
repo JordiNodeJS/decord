@@ -36,6 +36,7 @@
   transition: var(--transition-colors);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .header__logo:hover {
@@ -43,9 +44,33 @@
 }
 
 .header__logoImage {
-  height: 40px;
+  height: 35px;
   width: auto;
   object-fit: contain;
+  transition: opacity var(--transition-base);
+}
+
+/* Dark logo - visible on transparent/light background */
+.header__logoDark {
+  opacity: 1;
+}
+
+/* Light logo - hidden on transparent background */
+.header__logoLight {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* When scrolled, swap logo visibility */
+.header--scrolled .header__logoDark {
+  opacity: 0;
+}
+
+.header--scrolled .header__logoLight {
+  opacity: 1;
 }
 
 .header__logoText {
@@ -69,7 +94,7 @@
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-secondary); /* Dark text visible on light/transparent background */
   text-decoration: none;
   position: relative;
   transition: var(--transition-colors);
@@ -90,10 +115,21 @@
 
 .header__link:hover {
   color: var(--color-text-primary);
+  opacity: 1;
 }
 
 .header__link:hover::after {
   width: 100%;
+}
+
+/* When header is scrolled (dark background), keep links visible */
+.header--scrolled .header__link {
+  color: var(--color-text-inverse); /* White on dark background */
+}
+
+.header--scrolled .header__link:hover {
+  color: var(--color-text-inverse);
+  opacity: 0.8;
 }
 
 /* Active link */

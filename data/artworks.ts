@@ -23,7 +23,7 @@ export const artworksData: Artwork[] = [
     title: "EL PODER DEL ÁTOMO",
     artist: "Frank Anderson",
     year: "2016",
-    category: "ANAMORFOSIS",
+    category: "anamorfismo",
     image: "/images/gallery/home-02.jpg",
   },
   {
@@ -31,7 +31,7 @@ export const artworksData: Artwork[] = [
     title: "CUBOS",
     artist: "Emma Smith",
     year: "2018",
-    category: "ANAMORFOSIS",
+    category: "anamorfismo",
     image: "/images/gallery/home-03.jpg",
   },
   {
@@ -39,7 +39,7 @@ export const artworksData: Artwork[] = [
     title: "ESCALERAS",
     artist: "Sam Turner",
     year: "2020",
-    category: "FOTORREALISMO",
+    category: "fotorrealismo",
     image: "/images/gallery/home-05.jpg",
   },
   {
@@ -47,7 +47,7 @@ export const artworksData: Artwork[] = [
     title: "CONFRONTACIÓN",
     artist: "Johnny Lee",
     year: "2019",
-    category: "SURREALISMO",
+    category: "surrealismo",
     image: "/images/gallery/home-04.jpg",
   },
   {
@@ -55,7 +55,7 @@ export const artworksData: Artwork[] = [
     title: "LÍNEAS Y ROMPECABEZAS",
     artist: "Kathleen Davis",
     year: "2021",
-    category: "OBRAS ABSTRACTAS",
+    category: "obras abstractas",
     image: "/images/gallery/home-06.jpg",
   },
 ];

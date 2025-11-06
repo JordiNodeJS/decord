@@ -77,6 +77,12 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 **Reporte Completo:** Ver `track/GALLERY_FILTERS_FIX_REPORT_2025-01-06.md`
 
+**Recomendaciones Futuras:**
+
+- [ ] Añadir más obras de arte para enriquecer la galería (actualmente solo 5 obras)
+- [ ] Asignar al menos una obra a la categoría "hiperrealismo"
+- [ ] Considerar optimización de imágenes para mejor rendimiento
+
 ---
 
 # PRÓXIMAS TAREAS

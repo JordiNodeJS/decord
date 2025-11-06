@@ -101,7 +101,7 @@ export default function AboutPage() {
                   src="/images/about/about-1.jpg"
                   alt="Galería de Arte"
                   width={570}
-                  height={703}
+                  height={790}
                   className={styles.aboutHero__image}
                 />
               </ScrollReveal>

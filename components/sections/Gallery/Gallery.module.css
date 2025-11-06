@@ -22,7 +22,7 @@
   height: fit-content;
 }
 
-/* Preview variant (home page - no sidebar) */
+/* Preview variant (home page - with filters but different layout) */
 .gallery--preview .gallery__container {
   display: flex;
   flex-direction: column;
@@ -30,7 +30,8 @@
 }
 
 .gallery--preview .gallery__filters {
-  display: none; /* Hide filters in preview mode */
+  /* Filters visible in preview mode - matching original site */
+  display: block;
 }
 
 .gallery__title {

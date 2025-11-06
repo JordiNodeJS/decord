@@ -8,26 +8,29 @@
 
 /* ========== BREADCRUMB ========== */
 .breadcrumb {
-  background: transparent; /* Original has transparent background */
-  padding: 0 var(--spacing-container-x) 28px; /* Match original: no top padding, 28px bottom */
-  border-bottom: none; /* Original has no border */
+  background: transparent;
+  padding: 0 var(--spacing-container-x);
+  padding-bottom: 26px; /* Exact spacing from original */
+  padding-top: 0; /* No top padding */
+  border-bottom: none;
 }
 
 .breadcrumb__container {
   max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0; /* Remove padding from container, it's in parent */
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: var(--spacing-4);
+  gap: 8px; /* Reduced gap for tighter spacing */
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-wide);
+  font-size: 14px; /* Exact from original */
+  font-weight: 500; /* Medium weight */
+  letter-spacing: 8.4px; /* Wide letter spacing like original */
+  text-transform: uppercase;
 }
 
 .breadcrumb__link {
-  color: var(--color-text-secondary);
+  color: rgb(118, 118, 118); /* Gray color from original */
   text-decoration: none;
   transition: var(--transition-base);
 }
@@ -37,16 +40,17 @@
 }
 
 .breadcrumb__separator {
-  color: var(--color-text-tertiary);
+  color: rgb(118, 118, 118); /* Match link color */
+  margin: 0 4px; /* Small margin around separator */
 }
 
 .breadcrumb__current {
-  color: var(--color-text-primary);
+  color: rgb(21, 21, 21); /* Black color for current page */
 }
 
 /* ========== ABOUT HERO SECTION ========== */
 .aboutHero {
-  padding: 80px var(--spacing-container-x) 115px;
+  padding: 76px var(--spacing-container-x) 115px; /* Exact padding from original */
   background: var(--color-background-primary);
 }
 
@@ -58,17 +62,18 @@
 .aboutHero__grid {
   display: flex;
   flex-direction: row;
-  gap: 60px;
-  align-items: center;
+  gap: 90px; /* Increased gap to match original */
+  align-items: flex-start; /* Align to top, not center */
   margin: 0 -15px;
 }
 
 .aboutHero__imageWrapper {
   position: relative;
-  width: 336.656px;
+  width: 270px; /* Exact width from original (col-xl-3 with padding) */
   flex: 0 0 auto;
   padding: 0 15px;
   overflow: hidden;
+  margin-left: 8.333333%; /* offset-xl-1 from original Bootstrap grid */
 }
 
 .aboutHero__image {
@@ -84,64 +89,64 @@
 
 .aboutHero__content {
   flex: 1 1 auto;
-  max-width: 550px;
+  max-width: 525px; /* Exact max-width from original */
   padding: 0 15px;
 }
 
 .aboutHero__label {
   font-family: var(--font-family-secondary);
-  font-size: 24px;
+  font-size: 24px; /* Exact from original */
   font-weight: 500;
-  letter-spacing: 14.4px;
+  letter-spacing: 14.4px; /* Very wide spacing from original */
   text-transform: uppercase;
-  color: rgb(21, 21, 21);
+  color: rgb(21, 21, 21); /* Exact black from original */
   display: block;
-  margin-bottom: 20px;
-  line-height: 37.2px;
+  margin-bottom: 28px; /* Exact spacing from original */
+  line-height: 37.2px; /* Exact line-height from original */
 }
 
 .aboutHero__labelUnderline {
   display: inline;
-  border-bottom: 2px solid var(--color-primary-red); /* rgb(254, 72, 59) */
-  padding-bottom: 0;
+  border-bottom: 2px solid var(--color-primary-red); /* 2px red underline */
+  padding-bottom: 4px; /* Small padding to separate text from underline */
 }
 
 .aboutHero__textPrimary {
   font-family: var(--font-family-secondary);
-  font-size: 23px;
+  font-size: 23px; /* Exact from original */
   font-weight: 400;
-  line-height: 37.5666px;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
+  line-height: 37.6px; /* Exact line-height from original (1.634) */
+  color: rgb(0, 0, 0); /* Pure black */
+  margin-bottom: 28px; /* Exact spacing from original */
 }
 
 .aboutHero__textSecondary {
   font-family: var(--font-family-secondary);
-  font-size: 23px;
+  font-size: 23px; /* Exact from original */
   font-weight: 400;
-  line-height: 37.5666px;
-  color: rgb(118, 118, 118);
+  line-height: 37.6px; /* Exact line-height from original (1.634) */
+  color: rgb(118, 118, 118); /* Gray from original */
   margin-bottom: 0;
 }
 
 /* ========== DETAILED STATS SECTION ========== */
 .stats {
-  padding: 0 var(--spacing-container-x) 115px; /* Original: no top padding, 115px bottom */
-  background: var(--color-background-primary); /* White background */
+  padding: 0 var(--spacing-container-x) 120px; /* Increased bottom padding to match original */
+  background: var(--color-background-primary);
 }
 
 .stats__container {
   max-width: var(--container-xl);
   margin: 0 auto;
-  display: block; /* Single column layout, not grid */
-  padding-left: 16.666667%; /* offset-xl-2 */
+  display: block;
+  padding-left: 25%; /* Increased offset to match original (col-xl-2 + col-xl-1) */
 }
 
 .statDetail {
   display: flex;
-  gap: var(--spacing-6);
+  gap: 32px; /* Exact gap from original */
   align-items: flex-start;
-  margin-bottom: 50px; /* Space between stats */
+  margin-bottom: 56px; /* Exact spacing between stats from original */
 }
 
 .statDetail:last-child {
@@ -149,36 +154,39 @@
 }
 
 .statDetail__number {
-  font-family: var(--font-family-primary);
-  font-size: 50px; /* Original: 50px, not 90px */
-  font-weight: 500;
-  line-height: 50px; /* Original: 50px */
-  color: var(--color-primary-red);
+  font-family: var(--font-family-secondary);
+  font-size: 18px; /* Exact from original */
+  font-weight: 300;
+  line-height: 28.8px; /* Exact line-height */
+  color: rgb(118, 118, 118); /* Gray, not red */
   flex-shrink: 0;
-  min-width: auto; /* Remove fixed width */
-  margin-right: 20px;
+  min-width: auto;
+  margin-right: 0; /* Remove extra margin, gap handles spacing */
 }
 
 .statDetail__content {
-  padding-top: 0; /* Remove top padding */
+  padding-top: 4px; /* Small top padding to align with number */
+  flex: 1;
 }
 
 .statDetail__label {
   font-family: var(--font-family-secondary);
-  font-size: 20px; /* Original: 20px */
+  font-size: 24px; /* Exact from original */
   font-weight: 500;
-  letter-spacing: 8px; /* Original: 8px, not wide */
+  letter-spacing: 9.6px; /* Exact from original */
   text-transform: uppercase;
   color: var(--color-text-primary);
-  margin: 0 0 8px 0; /* Small margin bottom */
+  margin: 0 0 10px 0; /* Exact margin from original */
+  line-height: 33.6px; /* Exact line-height from original */
 }
 
 .statDetail__description {
   font-family: var(--font-family-secondary);
-  font-size: 16px;
-  line-height: 25.6px; /* Original: 25.6px (1.6 line height) */
-  color: rgb(118, 118, 118); /* Original gray color */
+  font-size: 18px; /* Exact from original */
+  line-height: 28.8px; /* Exact from original (1.6 ratio) */
+  color: rgb(118, 118, 118); /* Exact gray from original */
   margin: 0;
+  font-weight: 300; /* Light weight from original */
 }
 
 /* ========== TEAM SECTION ========== */

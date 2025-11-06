@@ -252,7 +252,8 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 
 ```tsx
 // Agregar al inicio del layout
-<a href="#main-content" className="skip-link">
+// href debe usar un anchor link al contenido principal
+<a href="/skip-to-main" className="skip-link">
   Saltar al contenido principal
 </a>
 
@@ -261,8 +262,8 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
     position: absolute;
     top: -40px;
     left: 0;
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
     padding: 8px;
     text-decoration: none;
     z-index: 100;
@@ -305,7 +306,7 @@ function useFocusTrap(isOpen: boolean) {
 ```css
 /* Estilos para indicadores de foco */
 :focus-visible {
-  outline: 3px solid #005fcc;
+  outline: 3px solid rgb(0, 95, 204);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -404,11 +405,11 @@ Proporciona:
 
 ## Recursos adicionales
 
-- [WCAG 2.2 Guidelines](https://www.w3.org/WAI/WCAG22/quickref/)
-- [WebAIM Resources](https://webaim.org/resources/)
-- [A11y Project Checklist](https://www.a11yproject.com/checklist/)
-- [MDN Accessibility Guide](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- WCAG 2.2 Guidelines: <https://www.w3.org/WAI/WCAG22/quickref/>
+- WebAIM Resources: <https://webaim.org/resources/>
+- A11y Project Checklist: <https://www.a11yproject.com/checklist/>
+- MDN Accessibility Guide: <https://developer.mozilla.org/en-US/docs/Web/Accessibility>
+- ARIA Authoring Practices Guide: <https://www.w3.org/WAI/ARIA/apg/>
 
 ## Notas importantes
 

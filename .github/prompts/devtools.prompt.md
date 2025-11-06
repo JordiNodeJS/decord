@@ -176,7 +176,7 @@ Proporciona:
 1. Chrome DevTools Elements: Inspeccionar el botón en el sitio de referencia
 2. Copiar estructura HTML y todas las clases
 3. Extraer todos los estilos (Styles + Computed):
-   - Background: gradient linear de #FF6B6B a #FF8E53
+   - Background: gradient linear de rgb(255, 107, 107) a rgb(255, 142, 83)
    - Padding: 16px 32px
    - Border-radius: 8px
    - Font: 'Inter', 16px, weight 600

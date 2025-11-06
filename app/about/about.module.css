@@ -85,21 +85,21 @@
 
 .aboutHero__label {
   font-family: var(--font-family-secondary);
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 14.4px;
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: 13px;
   text-transform: uppercase;
-  color: var(--color-text-primary);
+  color: #000000;
   display: block;
   margin-bottom: var(--spacing-8);
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .aboutHero__text {
   font-family: var(--font-family-secondary);
   font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
+  line-height: 1.75;
+  color: #999999;
   margin-bottom: var(--spacing-6);
 }
 

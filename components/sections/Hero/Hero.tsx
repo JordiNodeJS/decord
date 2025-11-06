@@ -37,8 +37,6 @@ export default function Hero() {
             className={styles.hero__image}
             style={{
               transform: `translateY(${scrollY * 0.3}px)`,
-              width: "100%",
-              height: "100%",
             }}
           />
         </figure>

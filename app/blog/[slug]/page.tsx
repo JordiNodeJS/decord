@@ -22,7 +22,7 @@ const blogPosts: Record<string, BlogPost> = {
     date: "9/4/21",
     author: "Danny Johananoff",
     category: "Fotografía",
-    image: "/images/blog/news-01-570x480.jpg",
+    image: "/images/blog/news-01.jpg",
     content: `
       <p>La fotografía de Danny Johananoff busca compartir historias de sus viajes y permitir que las audiencias sean transportadas, aunque sea por un momento. Durante más de cincuenta años, Johananoff ha tomado fotografías, pero recientemente comenzó a compartir su trabajo con un público más amplio.</p>
       
@@ -42,7 +42,7 @@ const blogPosts: Record<string, BlogPost> = {
     date: "9/4/21",
     author: "María González",
     category: "Historia del Arte",
-    image: "/images/blog/news-02-570x700.jpg",
+    image: "/images/blog/news-02.jpg",
     content: `
       <p>Se podría argumentar que la categoría de arte latinoamericano tal como la entendemos hoy realmente surgió alrededor de 1970. Cualesquiera que sean sus orígenes exactos, ha sido evidente para historiadores del arte, conocedores y coleccionistas que el arte latinoamericano ha tenido un impacto significativo en el mundo del arte contemporáneo.</p>
       
@@ -66,7 +66,7 @@ const blogPosts: Record<string, BlogPost> = {
     date: "9/4/21",
     author: "Helen Stone",
     category: "Consejos para Artistas",
-    image: "/images/blog/news-03-570x570.jpg",
+    image: "/images/blog/news-03.jpg",
     content: `
       <p>La mayoría de los artistas caminarían kilómetros por la oportunidad de mostrar su trabajo en una galería de arte. Junto con los museos, las galerías de arte son el lugar principal para exhibir y recibir comentarios sobre tus creaciones. Millones de personas visitan galerías cada año, buscando obras que resuenen con ellos.</p>
       

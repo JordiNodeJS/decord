@@ -39,25 +39,14 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # **TAREAS Y CORRECCIONES**
 
-## Contact Form - Página de contacto ✅ COMPLETADO
-- ![contact-form](./original-contact-form.png)
-- **Estado**: ✅ Corregido el 6 de noviembre de 2025
-- **Reporte**: Ver [contact-form-corrections-2025-11-06.md](./track/contact-form-corrections-2025-11-06.md)
+# GALLERY ✅ RESUELTO (2025-11-06)
+**Problemas detectados:**
+- ~~Se renderizan dos gallerías siendo la misma. La galería de la págian "Galería" funciona bien, pero la galería de la página "Inicio" no funciona correctamente, dado que se recrea otra vez.~~
 
-### Correcciones aplicadas:
-1. ✅ Título cambiado a uppercase (era lowercase)
-2. ✅ Layout cambiado de CSS Grid a Flexbox con columnas iguales (50% cada una)
-3. ✅ Descripción movida de la sección hero a la columna izquierda (sidebar)
-4. ✅ Espaciado ajustado para coincidir con el original (80px top, 42px gap, 90px bottom)
-5. ✅ Fondo del formulario eliminado (el original no tiene background)
-6. ✅ Alineación de texto corregida (era centrado, ahora es izquierda)
-7. ✅ Columnas con ancho igual (550px cada una) usando flexbox
-
-### Estructura final:
-- **Hero**: Solo título "¿NECESITAS AYUDA? CONTÁCTANOS."
-- **Columna izquierda (50%)**: Descripción + Teléfono + Horarios + Emails
-- **Columna derecha (50%)**: Formulario de contacto
-
-### Capturas:
-- Original: `track/original-contact-current.png`
-- Clone final: `track/clone-contact-final.png`
+**Solución aplicada:**
+- ✅ Se identificó que el problema NO era duplicación entre home y galería (sirven propósitos diferentes)
+- ✅ Se eliminó el componente `GallerySection` que estaba sin usar y causaba confusión
+- ✅ La página "Inicio" usa `AboutGallery` (preview con stats y 5 imágenes)
+- ✅ La página "Galería" tiene su propia implementación completa (filtros + lightbox)
+- ✅ Ambas páginas funcionan correctamente sin duplicación
+- ✅ Ver detalles en: `track/gallery-duplication-fix-2025-11-06.md`

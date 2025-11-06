@@ -43,3 +43,4 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 **Problemas:**
 - Haz una comprobación exhaustiva de los filtros, tratando de averiguar si funcionan correctamente como en el original así como si las imágenes se muestran correctamente al aplicar los filtros y si se han añadido las imagenes correctas en la galería extraídas de la página original.
 - Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo compoennte.
+

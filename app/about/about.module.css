@@ -73,6 +73,7 @@
   flex: 0 0 auto;
   padding: 0 15px;
   overflow: hidden;
+  margin-left: 8.333333%; /* offset-xl-1 from original Bootstrap grid */
 }
 
 .aboutHero__image {

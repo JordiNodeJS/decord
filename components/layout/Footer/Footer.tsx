@@ -243,9 +243,31 @@ export default function Footer() {
               Code of Conduct
             </Link>
           </div>
-          <p className={styles.footer__copyright}>
-            © {new Date().getFullYear()} WEBCODE
-          </p>
+          <div className={styles.footer__copyrightSection}>
+            <p className={styles.footer__copyright}>
+              © {new Date().getFullYear()} WEBCODE
+            </p>
+            <p className={styles.footer__credits}>
+              Desarrollado por{" "}
+              <a
+                href="https://www.webcode.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footer__creditsLink}
+              >
+                webcode.es
+              </a>
+              {" · "}
+              <a
+                href="https://webcode.es/soluciones"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footer__creditsLink}
+              >
+                Soluciones
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

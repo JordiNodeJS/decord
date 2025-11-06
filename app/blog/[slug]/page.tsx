@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./post.module.css";
 
 interface BlogPost {
@@ -291,11 +292,13 @@ export default async function BlogPostPage({
     <main className={styles.post}>
       <div className={styles.post__container}>
         {/* Breadcrumb */}
-        <nav className={styles.post__breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">INICIO</Link>
-          <span className={styles.post__breadcrumbSeparator}>|</span>
-          <Link href="/blog">BLOG</Link>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: "INICIO", href: "/" },
+            { label: "BLOG", href: "/blog" },
+            { label: post.title.toUpperCase() },
+          ]}
+        />
 
         {/* Featured Image */}
         <div className={styles.post__imageWrapper}>

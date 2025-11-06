@@ -3,6 +3,7 @@
 .contactPage {
   min-height: 100vh;
   background: var(--color-background-primary);
+  padding-top: var(--header-height);
 }
 
 /* ========== HERO SECTION ========== */

@@ -1,6 +1,6 @@
 # Notas preliminares
 Para más detalles sobre inspección de elementos y pruebas visuales en layouts, consulta la documentación de `devtools.prompt.md` o explora sus opciones desde las herramientas de desarrollo del navegador para obtener recomendaciones e instrucciones interactivas.
-Si el servidor de desarrollo ya está corriendo no lo incicies si no lo ves necesario.
+Si el servidor de desarrollo ya está corriendo no lo incicies si no lo ves necesario, a no ser que hagas una build, entonces te toca pararlo y volver a iniciarlo después de la build.
 
 
 **URL de la web ORGINAL para clonar:**
@@ -38,9 +38,25 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # **TAREAS Y CORRECCIONES**
 
-# Página Contact. Breadcrumb fixes.
+# Página CONTACT. 
+
+### Breadcrumb fixes. ✅ FIXED (2025-11-06)
 **Problema:** 
-- Inconsistencia a través de la página Contact. El breadcrumb implementado en Contact no tiene la misma posición que el resto de páginas que usan el componente Breadcrumb, resultando en una experiencia de usuario inconsistente. El breadcrumb en Contact está más cerca del borde superior de la página en comparación con otras páginas.
+- Inconsistencia a través de la página Contact. El breadcrumb implementado en Contact no tiene la misma posición que el resto de páginas que usan el componente Breadcrumb, resultando en una experiencia de usuario inconsistente. El breadcrumb en Contact estaba más cerca del borde superior de la página en comparación con otras páginas.
+
+**Solución Aplicada:**
+- Se añadió `padding-top: var(--header-height);` a `.contactPage` en `app/contact/contact.module.css`
+- Esto asegura que el breadcrumb se posicione consistentemente en todas las páginas (80px desde el top, justo después del header fijo)
+- Verificado: El breadcrumb ahora tiene la misma posición en Contact, About, Gallery, Blog y Events
+
+**Archivos Modificados:**
+- `app/contact/contact.module.css` - Línea 6: Añadido padding-top
+
+### Diseño de Contact fixes.
+**Problema:**
+- Layout de contact diferente al original. Arreglado.
+- Tipografía de Contact ajustada para coincidir con el original.
+- Inputs de formulario estilizados para coincidir con el original.
 
 # SOBRE LA GALERÍA DE ARTE - about art gallery page - gallery layout fixes ✅ VERIFIED (2025-11-06)
 ![original](./original%20-%20about%20art%20gallery.png)
@@ -50,9 +66,3 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 - `app/about/page.tsx`
 
 **Recomendación:** Si se desea coincidencia exacta con el original, ajustar `.aboutHero__text` a fontSize: 23px y lineHeight: ~37.57px.
-
-# CONOCE AL EQUIPO. MEET THE TEAM GRID FIXES
-![original](./original-meet-the-team-grid.png)
-- Los textos de las tarjetas del equipo no coincidían con los del original. Son más gruesos. Arreglado.
-- El layout de la cuadrícula del equipo no coincidía con el original. Son asimétricos. Arreglado.
-- Las tarjetas del equipo no tenían el mismo diseño que el original. Arreglado.

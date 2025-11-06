@@ -19,13 +19,13 @@
 
 .events__label {
   font-family: var(--font-family-secondary); /* Roboto */
-  font-size: 30px; /* Exact size from original */
+  font-size: 24px; /* Match original */
   font-weight: 500;
-  letter-spacing: 18px; /* Very wide spacing like original */
+  letter-spacing: 14.4px; /* Match original wide spacing */
   line-height: 1.172;
   text-transform: uppercase;
   color: var(--color-text-primary);
-  display: inline-block;
+  display: inline; /* inline instead of inline-block prevents underline overflow */
   position: relative;
   padding-bottom: 8px; /* Space for underline */
   border-bottom: 2px solid var(--color-primary-red);

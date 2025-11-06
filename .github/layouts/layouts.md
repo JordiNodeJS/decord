@@ -39,25 +39,15 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # **TAREAS Y CORRECCIONES**
 
-## Contact Form - Página de contacto ✅ COMPLETADO
-- ![contact-form](./original-contact-form.png)
-- **Estado**: ✅ Corregido el 6 de noviembre de 2025
-- **Reporte**: Ver [contact-form-corrections-2025-11-06.md](./track/contact-form-corrections-2025-11-06.md)
+# GALLERY PAGE y HOME PAGE GALLERY SECTION 
+**Problemas:**
+- Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo componente, pero la galería de la página "Inicio" no se ve correctamente en términos de diseño. El problema es que los filtros aparecen en la izquierda y las imágenes a mostrar por los filtros se acomodan abajo, en lugar de a la derecha como en la página "Galería".
+**Solución propuesta:**
+- Hacer que en la página "Inicio" utilice la misma galería que en la página "Galería" INCLUYENDO LOS FILTROS, evitando la duplicación innecesaria del componente.
 
-### Correcciones aplicadas:
-1. ✅ Título cambiado a uppercase (era lowercase)
-2. ✅ Layout cambiado de CSS Grid a Flexbox con columnas iguales (50% cada una)
-3. ✅ Descripción movida de la sección hero a la columna izquierda (sidebar)
-4. ✅ Espaciado ajustado para coincidir con el original (80px top, 42px gap, 90px bottom)
-5. ✅ Fondo del formulario eliminado (el original no tiene background)
-6. ✅ Alineación de texto corregida (era centrado, ahora es izquierda)
-7. ✅ Columnas con ancho igual (550px cada una) usando flexbox
-
-### Estructura final:
-- **Hero**: Solo título "¿NECESITAS AYUDA? CONTÁCTANOS."
-- **Columna izquierda (50%)**: Descripción + Teléfono + Horarios + Emails
-- **Columna derecha (50%)**: Formulario de contacto
-
-### Capturas:
-- Original: `track/original-contact-current.png`
-- Clone final: `track/clone-contact-final.png`
+# ABOUT PAGE - PÁGINA ABOUT
+**Problemas:**
+![original](./original-about-img.png)
+![clone](./clone-about-img.png)
+- No se parecen. CÉNTRATE EN El tamaño de la imagen original dado que no corresponde con la original. 
+- La enumeración de experiencia: los tamaños los números, su grosor y color, el de las letras, interlineado, etc no se parece. Ajústalo para que se parezca más al original.

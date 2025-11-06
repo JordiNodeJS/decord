@@ -9,7 +9,7 @@ const teamMembers = [
     id: 1,
     name: "DEVON LANE",
     role: "FUNDADOR",
-    image: "/images/team/person-01-420x633.jpg",
+    image: "/images/team/person-01.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -19,7 +19,7 @@ const teamMembers = [
     id: 2,
     name: "COURTNEY HENRY",
     role: "JEFE DE MARKETING",
-    image: "/images/team/person-02-570x774.jpg",
+    image: "/images/team/person-02.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -29,7 +29,7 @@ const teamMembers = [
     id: 3,
     name: "THERESA WEBB",
     role: "GERENTE DE OPERACIONES",
-    image: "/images/team/person-03-420x570.jpg",
+    image: "/images/team/person-03.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -39,7 +39,7 @@ const teamMembers = [
     id: 4,
     name: "JENNY WILSON",
     role: "ASISTENTE DE GALERÍA",
-    image: "/images/team/person-04-420x570.jpg",
+    image: "/images/team/person-04.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -49,7 +49,7 @@ const teamMembers = [
     id: 5,
     name: "ALBERT FLORES",
     role: "COORDINADOR DE EXPOSICIONES",
-    image: "/images/team/person-05-420x633.jpg",
+    image: "/images/team/person-05.jpg",
     social: {
       instagram: "#",
       twitter: "#",
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className={styles.aboutHero__imageWrapper}>
               <ScrollReveal>
                 <Image
-                  src="/images/about/about-01-570x790.jpg"
+                  src="/images/about/about-1.jpg"
                   alt="Galería de Arte"
                   width={570}
                   height={790}
@@ -110,35 +110,23 @@ export default function AboutPage() {
             <div className={styles.aboutHero__content}>
               <ScrollReveal delay={100}>
                 <h3 className={styles.aboutHero__label}>
-                  SOBRE LA GALERÍA DE ARTE
+                  <span className={styles.aboutHero__labelUnderline}>
+                    ABOUT ART GALLERY
+                  </span>
                 </h3>
-                <p className={styles.aboutHero__text}>
-                  Es nuestra misión facilitar que descubra y recopile arte fino
-                  de artistas renombrados, galerías e instituciones culturales
-                  de todo el mundo.
-                </p>
-                <p className={styles.aboutHero__text}>
-                  Nuestra Galería fue establecida por Helen Stone para brindar
-                  oportunidades a artistas que ingresan al mercado del arte
-                  global. La Sra. Stone fue una visionaria que fundó la galería
-                  sobre el principio de que todos los artistas se benefician de
-                  tener su obra de arte promovida por una galería profesional.
-                </p>
+                <div className={styles.aboutHero__textPrimary}>
+                  It is our mission to make it easy for you to discover and
+                  collect fine art from renowned artists, galleries, and
+                  cultural institutions worldwide.
+                </div>
+                <div className={styles.aboutHero__textSecondary}>
+                  Our Gallery was established by Helen Stone to provide
+                  opportunities to artists entering the global art market. Ms.
+                  Stone was a visionary who founded the gallery on the principle
+                  that all artists benefit from having their artwork promoted by
+                  a professional gallery.
+                </div>
               </ScrollReveal>
-
-              {/* Stats Mini Grid */}
-              <div className={styles.statsGrid}>
-                {stats.slice(0, 4).map((stat, index) => (
-                  <ScrollReveal key={index} delay={200 + index * 50}>
-                    <div className={styles.statCard}>
-                      <div className={styles.statCard__number}>
-                        {stat.number}
-                      </div>
-                      <div className={styles.statCard__label}>{stat.label}</div>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
             </div>
           </div>
         </div>

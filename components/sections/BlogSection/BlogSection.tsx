@@ -21,7 +21,7 @@ const blogPosts: BlogPost[] = [
     date: "9/4/21",
     excerpt:
       "La fotografía de Danny Johananoff busca compartir historias de sus viajes y permitir que las audiencias sean transportadas, aunque sea por un momento. Durante más de cincuenta años, Johananoff ha tomado fotografías, pero...",
-    image: "/images/blog/news-01-570x480.jpg",
+    image: "/images/blog/news-01.jpg",
     slug: "fotografia-en-movimiento",
   },
   {
@@ -30,7 +30,7 @@ const blogPosts: BlogPost[] = [
     date: "9/4/21",
     excerpt:
       "Se podría argumentar que la categoría de arte latinoamericano tal como la entendemos hoy realmente surgió alrededor de 1970. Cualesquiera que sean sus orígenes exactos, ha sido evidente para historiadores del arte, conocedores...",
-    image: "/images/blog/news-02-570x700.jpg",
+    image: "/images/blog/news-02.jpg",
     slug: "arte-latinoamericano",
   },
   {
@@ -39,7 +39,7 @@ const blogPosts: BlogPost[] = [
     date: "9/4/21",
     excerpt:
       "La mayoría de los artistas caminarían kilómetros por la oportunidad de mostrar su trabajo en una galería de arte. Junto con los museos, las galerías de arte son el lugar principal para exhibir y recibir comentarios sobre tus creaciones. Millones de personas...",
-    image: "/images/blog/news-03-570x570.jpg",
+    image: "/images/blog/news-03.jpg",
     slug: "envia-tu-obra",
   },
 ];

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 // Script to download images from the original DECORD website
+// Note: This project is now rebranded as WEBCODE (www.webcode.es)
 const https = require("https");
 const http = require("http");
 const fs = require("fs");

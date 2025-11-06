@@ -10,9 +10,25 @@ export default function Footer() {
           {/* Logo Section */}
           <div className={styles.footer__logoSection}>
             <Link href="/" className={styles.footer__logo}>
-              <span className={styles.footer__logoRed}>DE</span>
-              <span className={styles.footer__logoGray}>CORD</span>
+              <span className={styles.footer__logoRed}>WEB</span>
+              <span className={styles.footer__logoGray}>CODE</span>
             </Link>
+            <div className={styles.footer__contact}>
+              <a
+                href="mailto:info@webcode.es"
+                className={styles.footer__contactLink}
+              >
+                info@webcode.es
+              </a>
+              <a
+                href="https://www.webcode.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footer__contactLink}
+              >
+                www.webcode.es
+              </a>
+            </div>
           </div>
 
           {/* Two Column Layout */}
@@ -228,7 +244,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className={styles.footer__copyright}>
-            © {new Date().getFullYear()} Decord
+            © {new Date().getFullYear()} WEBCODE
           </p>
         </div>
       </div>

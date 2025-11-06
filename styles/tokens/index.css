@@ -1,11 +1,12 @@
 /* ============================================
-   DECORD DESIGN TOKENS
+   /**
+   WEBCODE DESIGN TOKENS
    Import todos los tokens en orden
    ============================================ */
 
-@import './colors.css';
-@import './spacing.css';
-@import './typography.css';
-@import './layout.css';
-@import './effects.css';
-@import './components.css';
+@import "./colors.css";
+@import "./spacing.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./effects.css";
+@import "./components.css";

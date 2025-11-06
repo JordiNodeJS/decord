@@ -1,5 +1,5 @@
 /* ============================================
-   DECORD COMPONENT-SPECIFIC TOKENS
+   WEBCODE COMPONENT-SPECIFIC TOKENS
    Tokens específicos para componentes únicos
    ============================================ */
 
@@ -9,9 +9,9 @@
   --button-height-md: 44px;
   --button-height-lg: 52px;
 
-  --button-padding-x-sm: var(--spacing-4);  /* 16px */
-  --button-padding-x-md: var(--spacing-6);  /* 24px */
-  --button-padding-x-lg: var(--spacing-8);  /* 32px */
+  --button-padding-x-sm: var(--spacing-4); /* 16px */
+  --button-padding-x-md: var(--spacing-6); /* 24px */
+  --button-padding-x-lg: var(--spacing-8); /* 32px */
 
   --button-font-size-sm: var(--font-size-sm);
   --button-font-size-md: var(--font-size-base);
@@ -19,41 +19,46 @@
 
   /* --- INPUTS --- */
   --input-height: 48px;
-  --input-padding-x: var(--spacing-4);  /* 16px */
+  --input-padding-x: var(--spacing-4); /* 16px */
   --input-border-width: 1px;
   --input-border-color: var(--color-border-default);
   --input-border-color-focus: var(--color-primary-red);
 
   /* --- CARDS --- */
-  --card-padding: var(--spacing-8);         /* 32px */
+  --card-padding: var(--spacing-8); /* 32px */
   --card-border-radius: var(--radius-card); /* 8px */
   --card-background: var(--color-background-elevated);
 
   /* ArtworkCard específico */
-  --artwork-card-aspect-ratio: 3 / 4;  /* Portrait */
+  --artwork-card-aspect-ratio: 3 / 4; /* Portrait */
   --artwork-card-overlay-opacity: 0;
   --artwork-card-overlay-opacity-hover: 1;
 
   /* EventCard específico */
-  --event-card-date-size: var(--font-size-4xl);  /* Fecha grande: 48px */
+  --event-card-date-size: var(--font-size-4xl); /* Fecha grande: 48px */
   --event-card-date-color: var(--color-primary-red);
 
   /* --- HEADER/NAVBAR --- */
   --header-height: 80px;
   --header-height-mobile: 64px;
-  --header-background: transparent;  /* Transparent por defecto */
-  --header-background-scrolled: rgba(10, 10, 10, 0.95);  /* Oscuro al hacer scroll */
-  --header-backdrop-blur: 10px;  /* Blur al hacer scroll */
+  --header-background: transparent; /* Transparent por defecto */
+  --header-background-scrolled: rgba(
+    10,
+    10,
+    10,
+    0.95
+  ); /* Oscuro al hacer scroll */
+  --header-backdrop-blur: 10px; /* Blur al hacer scroll */
 
   /* --- HERO --- */
   --hero-min-height: 100vh;
   --hero-min-height-mobile: 80vh;
-  --hero-title-font-size: var(--font-size-7xl);         /* 96px desktop */
-  --hero-title-font-size-mobile: var(--font-size-4xl);  /* 48px mobile */
+  --hero-title-font-size: var(--font-size-7xl); /* 96px desktop */
+  --hero-title-font-size-mobile: var(--font-size-4xl); /* 48px mobile */
 
   /* --- FOOTER --- */
   --footer-background: var(--color-primary-black);
-  --footer-padding-y: var(--spacing-32);  /* 128px */
+  --footer-padding-y: var(--spacing-32); /* 128px */
 
   /* --- LIGHTBOX/MODAL --- */
   --lightbox-overlay-background: rgba(0, 0, 0, 0.95);

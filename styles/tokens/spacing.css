@@ -1,5 +1,5 @@
 /* ============================================
-   DECORD SPACING SYSTEM
+   WEBCODE SPACING SYSTEM
    Sistema basado en múltiplos de 8px
    ============================================ */
 
@@ -9,35 +9,42 @@
 
   /* --- SPACING SCALE --- */
   --spacing-0: 0;
-  --spacing-1: 4px;    /* 0.5 × base */
-  --spacing-2: 8px;    /* 1 × base */
-  --spacing-3: 12px;   /* 1.5 × base */
-  --spacing-4: 16px;   /* 2 × base */
-  --spacing-5: 20px;   /* 2.5 × base */
-  --spacing-6: 24px;   /* 3 × base */
-  --spacing-8: 32px;   /* 4 × base */
-  --spacing-10: 40px;  /* 5 × base */
-  --spacing-12: 48px;  /* 6 × base */
-  --spacing-16: 64px;  /* 8 × base */
-  --spacing-20: 80px;  /* 10 × base */
-  --spacing-24: 96px;  /* 12 × base */
+  --spacing-1: 4px; /* 0.5 × base */
+  --spacing-2: 8px; /* 1 × base */
+  --spacing-3: 12px; /* 1.5 × base */
+  --spacing-4: 16px; /* 2 × base */
+  --spacing-5: 20px; /* 2.5 × base */
+  --spacing-6: 24px; /* 3 × base */
+  --spacing-8: 32px; /* 4 × base */
+  --spacing-10: 40px; /* 5 × base */
+  --spacing-12: 48px; /* 6 × base */
+  --spacing-16: 64px; /* 8 × base */
+  --spacing-20: 80px; /* 10 × base */
+  --spacing-24: 96px; /* 12 × base */
   --spacing-32: 128px; /* 16 × base */
   --spacing-40: 160px; /* 20 × base */
   --spacing-48: 192px; /* 24 × base */
   --spacing-56: 224px; /* 28 × base */
   --spacing-64: 256px; /* 32 × base */
 
-/* --- SEMANTIC SPACING (Casos de uso específicos) --- */
---spacing-section-y: 189px;      /* Padding vertical de secciones: 189px del original */
---spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */  --spacing-container-x: var(--spacing-12);    /* Padding horizontal del container: 48px */
+  /* --- SEMANTIC SPACING (Casos de uso específicos) --- */
+  --spacing-section-y: 189px; /* Padding vertical de secciones: 189px del original */
+  --spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */
+  --spacing-container-x: var(
+    --spacing-12
+  ); /* Padding horizontal del container: 48px */
   --spacing-container-x-mobile: var(--spacing-6); /* 24px en mobile */
 
-  --spacing-card-padding: var(--spacing-8);    /* Padding interno de cards: 32px */
-  --spacing-card-gap: var(--spacing-6);        /* Gap entre cards: 24px */
+  --spacing-card-padding: var(--spacing-8); /* Padding interno de cards: 32px */
+  --spacing-card-gap: var(--spacing-6); /* Gap entre cards: 24px */
 
-  --spacing-element-gap: var(--spacing-4);     /* Gap entre elementos pequeños: 16px */
-  --spacing-text-gap: var(--spacing-3);        /* Gap entre párrafos: 12px */
+  --spacing-element-gap: var(
+    --spacing-4
+  ); /* Gap entre elementos pequeños: 16px */
+  --spacing-text-gap: var(--spacing-3); /* Gap entre párrafos: 12px */
 
-  --spacing-hero-title-y: var(--spacing-48);   /* Espaciado vertical en hero: 192px */
+  --spacing-hero-title-y: var(
+    --spacing-48
+  ); /* Espaciado vertical en hero: 192px */
   --spacing-hero-title-y-mobile: var(--spacing-24); /* 96px en mobile */
 }

@@ -87,7 +87,13 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # PRÓXIMAS TAREAS
 
-- [ ] Sustituir DECORD por WEBCODE en todo el proyecto. "WEB" iría en color rojo y "CODE" en color negro.
-- [ ] Actualizar la documentación para reflejar los cambios en la marca.
-- [ ] Revisar y ajustar los estilos CSS para asegurar que la nueva marca se aplique correctamente.
-- [ ] Añadir email: info@webcode.es y web: www.webcode.es
+- [x] ✅ **COMPLETADO (2025-11-06):** Sustituir DECORD por WEBCODE en todo el proyecto. "WEB" en color rojo y "CODE" en color negro. Ver reporte completo en `track/REBRAND_TO_WEBCODE_2025-11-06.md`
+  - [x] Logo del footer cambiado a "WEBCODE"
+  - [x] Email añadido: info@webcode.es
+  - [x] Web añadida: www.webcode.es
+  - [x] Todos los archivos CSS actualizados
+  - [x] README.md y package.json actualizados
+  - [x] Sin errores de TypeScript ni ESLint
+- [ ] **PENDIENTE:** Crear nuevas imágenes de logo para el Header con "WEBCODE" en lugar de las actuales con "DECORD"
+  - Reemplazar `/images/logo-default-350x70.png`
+  - Reemplazar `/images/logo-inverse-343x45.png`

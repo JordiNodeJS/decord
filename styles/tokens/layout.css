@@ -1,19 +1,19 @@
 /* ============================================
-   DECORD LAYOUT SYSTEM
+   WEBCODE LAYOUT SYSTEM
    ============================================ */
 
 :root {
   /* --- CONTAINER WIDTHS --- */
-  --container-xs: 480px;      /* Mobile container */
-  --container-sm: 640px;      /* Tablet pequeño */
-  --container-md: 768px;      /* Tablet */
-  --container-lg: 1024px;     /* Desktop pequeño */
-  --container-xl: 1280px;     /* Desktop */
-  --container-2xl: 1536px;    /* Desktop grande */
-  --container-full: 100%;     /* Full width */
+  --container-xs: 480px; /* Mobile container */
+  --container-sm: 640px; /* Tablet pequeño */
+  --container-md: 768px; /* Tablet */
+  --container-lg: 1024px; /* Desktop pequeño */
+  --container-xl: 1280px; /* Desktop */
+  --container-2xl: 1536px; /* Desktop grande */
+  --container-full: 100%; /* Full width */
 
   --container-max-width: var(--container-xl); /* Max width del sitio: 1280px */
-  --container-narrow: 800px;  /* Para contenido de texto (about, blog posts) */
+  --container-narrow: 800px; /* Para contenido de texto (about, blog posts) */
 
   /* --- BREAKPOINTS --- */
   --breakpoint-sm: 640px;
@@ -27,13 +27,13 @@
   --grid-columns-mobile: 1;
   --grid-columns-tablet: 2;
   --grid-columns-desktop: 3;
-  --grid-gap: var(--spacing-6);  /* 24px */
+  --grid-gap: var(--spacing-6); /* 24px */
 
   /* Card Grid (Events, Blog) */
   --card-grid-columns-mobile: 1;
   --card-grid-columns-tablet: 2;
   --card-grid-columns-desktop: 3;
-  --card-grid-gap: var(--spacing-8);  /* 32px */
+  --card-grid-gap: var(--spacing-8); /* 32px */
 
   /* --- Z-INDEX SCALE --- */
   --z-index-base: 0;

@@ -1,13 +1,13 @@
-# DECORD - Museum of Modern Art Gallery
+# WEBCODE - Museum of Modern Art Gallery
 
-Clon del sitio web [DECORD](https://ld-wt73.template-help.com/tf/decord_v1/) construido con Next.js 16, TypeScript y CSS Modules.
+Clon del sitio web DECORD original construido con Next.js 16, TypeScript y CSS Modules. Rebranded como WEBCODE.
 
 ## 🏗️ Estructura del Proyecto
 
 Este proyecto sigue la estructura recomendada por la documentación oficial de Next.js 16 con App Router:
 
 ```
-📁 decord/
+📁 webcode/
 ├── 📁 app/                    # App Router - Solo rutas y layouts
 │   ├── layout.tsx             # Root layout (obligatorio)
 │   ├── page.tsx               # Home page
@@ -73,7 +73,7 @@ Los Design Tokens son variables CSS reutilizables que almacenan decisiones de di
 
 ### Categorías de Tokens
 
-1. **Colores** (`colors.css`): Paleta completa del sitio DECORD
+1. **Colores** (`colors.css`): Paleta completa del sitio WEBCODE
    - `--color-primary-gold`: #d4af37 (accent principal)
    - `--color-background-primary`: #0a0a0a (fondo oscuro)
    - `--color-text-primary`: #fafafa (texto claro)
@@ -86,7 +86,7 @@ Los Design Tokens son variables CSS reutilizables que almacenan decisiones de di
 3. **Tipografía** (`typography.css`): Fuentes y text styles
    - `--font-family-primary`: 'Playfair Display' (títulos)
    - `--font-size-5xl`: 64px (hero title)
-   - `--letter-spacing-widest`: 0.1em (característico de DECORD)
+   - `--letter-spacing-widest`: 0.1em (característico de WEBCODE)
 
 4. **Layout** (`layout.css`): Containers y breakpoints
 5. **Effects** (`effects.css`): Sombras, transiciones, animaciones
@@ -292,4 +292,4 @@ pnpm lint
 
 ## 📄 Licencia
 
-Este proyecto es un clon educativo del sitio DECORD con fines de aprendizaje.
+Este proyecto es un clon educativo con fines de aprendizaje. Rebranded como WEBCODE (info@webcode.es | www.webcode.es).

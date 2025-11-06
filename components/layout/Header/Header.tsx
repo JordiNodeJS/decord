@@ -32,7 +32,7 @@ export default function Header() {
         <Link href="/" className={styles.header__logo}>
           <Image
             src="/images/logo-default-350x70.png"
-            alt="DECORD Art Gallery"
+            alt="WEBCODE Art Gallery"
             width={175}
             height={35}
             className={`${styles.header__logoImage} ${styles.header__logoDark}`}
@@ -41,7 +41,7 @@ export default function Header() {
           />
           <Image
             src="/images/logo-inverse-343x45.png"
-            alt="DECORD Art Gallery"
+            alt="WEBCODE Art Gallery"
             width={171}
             height={22}
             className={`${styles.header__logoImage} ${styles.header__logoLight}`}

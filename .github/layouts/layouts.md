@@ -15,7 +15,21 @@ Clon:
 **URL de la web a clonar:**
 https://ld-wt73.template-help.com/tf/decord_v1/
 
+# INSTRUCCIONES GENERALES PARA CLONAR LAYOUTS
 
+- Modifica este mismo prompt para que en la próxima interación al analizar las imágenes del original y el resultado final. Haz un análisis de las imágenes en terminos de ux/ui. Según ese análisis modifica el prompt layout. Comprueba resultados tanto con capturas de pantalla como mirando el código del original (devtools de chrome) y el clone.
+
+- Asegúrate que las fuentes tipográficas coinciden con las originales, asegúrate de los tamaños de las letras sea como en el original.
+---
+- Si haces capturas de imagen para comparar el original con el clone reduce el tamaño de la imagen: Asegúrate de que ni el ancho ni el alto superen los 4000 píxeles. Comprueba el formato: Si estás usando base64, verifica que la codificación sea correcta y que no haya errores en el string. Evita imágenes extremadamente grandes: Aunque se vean bien en tu editor, pueden causar problemas al procesarlas en servidores con límites.
+- Hazlo todo responsive.
+- Corrige posibles errores con next-devtools mcp
+- Acuérdate de hacer la WEB SEMÁNTICA y accesible.
+- Copia exactamente  las interaciones, las  micronanimaciones y animaciones de cada página. El scroll debe ser el mismo que el scroll original. Itera hasta que se parezca.
+- Completa todo el recorrido de esta lista de tareas. Vuelve a revisarlas.
+- Corrige errores de typescript y warnings de eslint.
+- Corrige errores con next-devtools mcp.
+- Haz el build para capturar errores o utiliza next-devtools mcp para capturar errores de producción.
 
 # TAREAS Y CORRECCIONES
 
@@ -88,26 +102,28 @@ La sección completa está organizada en dos áreas principales que se apilan ve
 
 ### Título "ABOUT ART GALLERY"
 
-**Posicionamiento y estructura:**
+**CRÍTICO - Posicionamiento y estructura:**
 - Centrado horizontalmente en la sección superior
-- El título está compuesto por tres palabras: "ABOUT", "ART", "GALLERY"
-- Las palabras "ABOUT" y "GALLERY" deben tener un subrayado decorativo en color rojo
-- La palabra "ART" no tiene subrayado
+- ⚠️ **IMPORTANTE**: El título debe renderizarse como UNA SOLA LÍNEA CONTINUA: "ABOUT ART GALLERY"
+- ⚠️ **NO dividir en palabras separadas** - debe ser un texto corrido
+- El subrayado decorativo es CONTINUO bajo TODO el título (de principio a fin)
+- NO usar flex con wrap ni dividir en spans individuales
 
 **Tipografía:**
-- Fuente sans-serif moderna y limpia
-- Tamaño muy grande (equivalente a aproximadamente 48-52px en desktop)
-- Peso de fuente bold (700)
+- Fuente sans-serif moderna y limpia (Roboto o similar)
+- Tamaño grande (equivalente a aproximadamente 40-48px en desktop)
+- Peso de fuente regular a medium (400-500, NO bold 700)
 - Todo el texto en mayúsculas
-- Espaciado entre letras moderado (letter-spacing de aproximadamente 2px)
+- ⚠️ **CRÍTICO**: Espaciado entre letras muy amplio (letter-spacing de aproximadamente 10-15px)
 - Interlineado ajustado (line-height de aproximadamente 1.2)
-- Color de texto negro sólido
+- Color de texto negro sólido (#000000)
 
 **Subrayado decorativo:**
-- Color rojo vibrante (similar a #dc2626 o #e63946)
-- Grosor del subrayado de aproximadamente 3px
-- Separación del texto de aproximadamente 8-10px (text-underline-offset)
-- Solo aplicado a "ABOUT" y "GALLERY", no a "ART"
+- Color rojo vibrante (similar to #fe483b - color exacto del original)
+- Grosor del subrayado de aproximadamente 2-3px
+- Separación del texto de aproximadamente 6-8px (text-underline-offset)
+- ⚠️ **CRÍTICO**: El subrayado es CONTINUO bajo TODO el texto, no selectivo por palabras
+- Usar text-decoration: underline con text-underline-offset
 
 **Espaciado:**
 - Margen inferior generoso (aproximadamente 40-50px) para separar del párrafo
@@ -115,17 +131,17 @@ La sección completa está organizada en dos áreas principales que se apilan ve
 ### Párrafo descriptivo
 
 **Posicionamiento:**
-- Centrado horizontalmente pero con texto alineado a la izquierda
-- Ancho máximo limitado (aproximadamente 900px) para legibilidad óptima
-- Espaciado inferior generoso (aproximadamente 60px) antes de las estadísticas
+- Centrado horizontalmente en la página
+- ⚠️ **Ancho máximo más estrecho**: aproximadamente 700-750px (NO 900px)
+- Espaciado inferior generoso (aproximadamente 60-70px) antes de las estadísticas
 
 **Tipografía:**
-- Fuente sans-serif, misma familia que el título
+- Fuente sans-serif, misma familia que el título (Roboto)
 - Tamaño de lectura cómodo (aproximadamente 16px)
 - Peso regular (400)
-- Interlineado amplio (line-height de aproximadamente 1.8) para facilitar la lectura
-- Color gris oscuro (no negro puro, similar a #333333)
-- Texto alineado a la izquierda
+- Interlineado amplio (line-height de aproximadamente 1.7-1.8) para facilitar la lectura
+- ⚠️ **Color gris medio/claro** (similar a #999999 o #9a9a9a, NO #333333)
+- Texto centrado o justificado, no alineado a la izquierda
 
 **Contenido:**
 - El párrafo describe la historia y misión de la galería
@@ -139,12 +155,12 @@ La sección completa está organizada en dos áreas principales que se apilan ve
 - Cada elemento del grid contiene: número grande, etiqueta en mayúsculas, y descripción
 
 **Número de la estadística:**
-- Tamaño muy grande y prominente (aproximadamente 64-72px)
-- Color rojo vibrante (mismo rojo que los subrayados)
+- ⚠️ **Tamaño mediano-grande**: aproximadamente 50-60px (NO 64-72px)
+- Color rojo vibrante (#fe483b - color exacto del sitio original)
 - Peso bold (700)
 - Interlineado ajustado (line-height de 1)
 - Alineado a la izquierda dentro de su columna
-- Espaciado inferior pequeño (aproximadamente 12px) antes de la etiqueta
+- Espaciado inferior pequeño (aproximadamente 8-12px) antes de la etiqueta
 
 **Etiqueta de la estadística:**
 - Texto en mayúsculas

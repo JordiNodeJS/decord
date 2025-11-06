@@ -39,9 +39,9 @@ export default function ContactPage() {
       <section className={styles.hero}>
         <div className={styles.hero__container}>
           <ScrollReveal>
-            <h1 className={styles.hero__title}>
+            <h3 className={styles.hero__title}>
               ¿NECESITAS AYUDA? CONTÁCTANOS.
-            </h1>
+            </h3>
             <p className={styles.hero__text}>
               Si tienes alguna pregunta, simplemente rellena el formulario de
               contacto y te responderemos en breve. Si vives cerca, ven a

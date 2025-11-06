@@ -136,11 +136,11 @@
 .form__label {
   display: block;
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-  color: var(--color-text-primary);
+  font-size: 12px; /* Match original */
+  font-weight: 400; /* Match original - lighter weight */
+  letter-spacing: normal; /* Match original - no extra spacing */
+  text-transform: uppercase; /* Keep uppercase for better UX */
+  color: rgb(204, 204, 204); /* Match original - light gray */
   margin-bottom: var(--spacing-3);
 }
 
@@ -149,11 +149,11 @@
   width: 100%;
   padding: var(--spacing-4) 0;
   font-family: var(--font-family-secondary);
-  font-size: 16px;
+  font-size: 12px; /* Match original */
   color: var(--color-text-primary);
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-border-default);
+  border-bottom: 1px solid rgb(204, 204, 204); /* Match original border color */
   border-radius: 0;
   transition: var(--transition-all);
 }

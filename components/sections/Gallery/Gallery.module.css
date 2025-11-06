@@ -22,11 +22,11 @@
   height: fit-content;
 }
 
-/* Preview variant (home page - with filters but different layout) */
+/* Preview variant (home page - same layout as full but with limits) */
 .gallery--preview .gallery__container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-12);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-16);
 }
 
 .gallery--preview .gallery__filters {
@@ -138,7 +138,8 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .gallery--full .gallery__container {
+  .gallery--full .gallery__container,
+  .gallery--preview .gallery__container {
     grid-template-columns: 1fr;
   }
 

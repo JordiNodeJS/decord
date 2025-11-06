@@ -44,11 +44,11 @@ export default function Hero() {
           className={styles.hero__content}
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
-          <p className={styles.hero__subtitle}>GALERÍA DE ARTE</p>
+          <p className={styles.hero__subtitle}>ART GALLERY</p>
           <h1 className={styles.hero__title}>
-            <span>MUSEO</span>
-            <span>DE ARTE</span>
-            <span>MODERNO</span>
+            <span>MUSEUM</span>
+            <span>OF MODERN</span>
+            <span>ART</span>
           </h1>
         </header>
       </div>

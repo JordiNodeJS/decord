@@ -42,11 +42,6 @@ export default function ContactPage() {
             <h3 className={styles.hero__title}>
               ¿NECESITAS AYUDA? CONTÁCTANOS.
             </h3>
-            <p className={styles.hero__text}>
-              Si tienes alguna pregunta, simplemente rellena el formulario de
-              contacto y te responderemos en breve. Si vives cerca, ven a
-              visitar nuestra galería.
-            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -58,6 +53,13 @@ export default function ContactPage() {
             {/* Contact Info Sidebar */}
             <aside className={styles.sidebar}>
               <ScrollReveal delay={100}>
+                {/* Description */}
+                <p className={styles.sidebar__description}>
+                  Si tienes alguna pregunta, simplemente rellena el formulario
+                  de contacto y te responderemos en breve. Si vives cerca, ven a
+                  visitar nuestra galería.
+                </p>
+
                 {/* Phone */}
                 <div className={styles.infoBlock}>
                   <div className={styles.infoBlock__icon}>
@@ -104,9 +106,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className={styles.form}>
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <label htmlFor="name" className={styles.form__label}>
-                        NAME
-                      </label>
+                      <div className={styles.form__text}>NAME</div>
                       <input
                         type="text"
                         id="name"
@@ -115,16 +115,17 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className={styles.form__input}
-                        placeholder="e.g.: Emma McCoy"
+                        placeholder=" "
                       />
+                      <label htmlFor="name" className={styles.form__label}>
+                        e.g.: Emma McCoy
+                      </label>
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <label htmlFor="email" className={styles.form__label}>
-                        E-MAIL
-                      </label>
+                      <div className={styles.form__text}>E-MAIL</div>
                       <input
                         type="email"
                         id="email"
@@ -133,16 +134,17 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className={styles.form__input}
-                        placeholder="e.g.: info@demolink.org"
+                        placeholder=" "
                       />
+                      <label htmlFor="email" className={styles.form__label}>
+                        e.g.: info@demolink.org
+                      </label>
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <label htmlFor="subject" className={styles.form__label}>
-                        SUBJECT
-                      </label>
+                      <div className={styles.form__text}>SUBJECT</div>
                       <input
                         type="text"
                         id="subject"
@@ -151,16 +153,21 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className={styles.form__input}
-                        placeholder="The subject of your message"
+                        placeholder=" "
                       />
+                      <label htmlFor="subject" className={styles.form__label}>
+                        The subject of your message
+                      </label>
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <label htmlFor="message" className={styles.form__label}>
+                      <div
+                        className={`${styles.form__text} ${styles.form__text_textarea}`}
+                      >
                         MESSAGE
-                      </label>
+                      </div>
                       <textarea
                         id="message"
                         name="message"
@@ -169,8 +176,11 @@ export default function ContactPage() {
                         required
                         rows={8}
                         className={styles.form__textarea}
-                        placeholder="Write your message here..."
+                        placeholder=" "
                       />
+                      <label htmlFor="message" className={styles.form__label}>
+                        Write your message here...
+                      </label>
                     </div>
                   </div>
 

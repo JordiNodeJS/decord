@@ -39,113 +39,25 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # **TAREAS Y CORRECCIONES**
 
-# Página CONTACT. 
-### Diseño de Contact fixes. ✅ FIXED (2025-11-06)
-**Problema:**
-- Layout de contact diferente al original. Arreglado.
-- Tipografía de Contact ajustada para coincidir con el original.
-- Inputs de formulario estilizados para coincidir con el original.
+## Contact Form - Página de contacto ✅ COMPLETADO
+- ![contact-form](./original-contact-form.png)
+- **Estado**: ✅ Corregido el 6 de noviembre de 2025
+- **Reporte**: Ver [contact-form-corrections-2025-11-06.md](./track/contact-form-corrections-2025-11-06.md)
 
-**Soluciones Aplicadas:**
-1. **Heading Element**: Cambiado de `<h1>` a `<h3>` para coincidir con la semántica del original
-2. **Form Labels**: 
-   - fontSize: 12px (antes 14px)
-   - fontWeight: 400 (antes 500)
-   - color: rgb(204, 204, 204) - gris claro (antes rgb(21, 21, 21) - negro)
-   - letterSpacing: normal (antes 0.35px)
-   - textTransform: uppercase (mantenido para mejor UX)
-3. **Form Inputs**:
-   - fontSize: 12px (antes 16px)
-   - borderBottom: 1px solid rgb(204, 204, 204) (color ajustado)
-4. **Heading Styling**: Mantenido fontSize 24px, letterSpacing 14.4px, textTransform lowercase
+### Correcciones aplicadas:
+1. ✅ Título cambiado a uppercase (era lowercase)
+2. ✅ Layout cambiado de CSS Grid a Flexbox con columnas iguales (50% cada una)
+3. ✅ Descripción movida de la sección hero a la columna izquierda (sidebar)
+4. ✅ Espaciado ajustado para coincidir con el original (80px top, 42px gap, 90px bottom)
+5. ✅ Fondo del formulario eliminado (el original no tiene background)
+6. ✅ Alineación de texto corregida (era centrado, ahora es izquierda)
+7. ✅ Columnas con ancho igual (550px cada una) usando flexbox
 
-**Archivos Modificados:**
-- `app/contact/page.tsx` - Línea 44: Cambiado h1 a h3
-- `app/contact/contact.module.css` - Líneas 129-147: Ajustados estilos de form labels e inputs
+### Estructura final:
+- **Hero**: Solo título "¿NECESITAS AYUDA? CONTÁCTANOS."
+- **Columna izquierda (50%)**: Descripción + Teléfono + Horarios + Emails
+- **Columna derecha (50%)**: Formulario de contacto
 
-
-# SOBRE LA GALERÍA DE ARTE
-### Gallery Page fixes. ✅ VERIFIED (2025-11-06)
-**Problema:**
-- Las letras de la galería no coinciden con el original. Arreglado.
-
----
-
-# RESUMEN DE SESIÓN - 2025-11-06
-
-## Tareas Completadas ✅
-
-### 1. Contact Page Typography Fixes
-**Status:** ✅ COMPLETADO
-- Cambiado el heading de `<h1>` a `<h3>` para coincidir con la semántica del original
-- Ajustados los estilos de form labels:
-  - fontSize: 12px (antes 14px)
-  - fontWeight: 400 (antes 500)
-  - color: rgb(204, 204, 204) - gris claro (antes negro)
-  - letterSpacing: normal (antes 0.35px)
-- Ajustados los estilos de form inputs:
-  - fontSize: 12px (antes 16px)
-  - borderBottom: 1px solid rgb(204, 204, 204)
-
-**Verificación:**
-- ✅ Inspeccionado con DevTools browser automation
-- ✅ Comparado con original en https://ld-wt73.template-help.com/tf/decord_v1/contacts.html
-- ✅ Todos los estilos coinciden con el original
-
-### 2. Build Verification
-**Status:** ✅ COMPLETADO
-- ✅ Build exitoso sin errores: `pnpm build`
-- ✅ No hay errores de TypeScript
-- ✅ No hay warnings de ESLint
-- ✅ Todas las páginas pre-renderizadas correctamente
-- ✅ Sin errores de runtime según Next.js MCP tools
-
-### 3. Cross-Page Verification
-**Status:** ✅ COMPLETADO
-- ✅ Contact Page: Verificada y corregida
-- ✅ Gallery Page: Verificada, funcionando correctamente
-- ✅ About Page: Verificada, estructura correcta
-- ✅ Breadcrumb consistency: Verificado en todas las páginas
-
-## Archivos Modificados
-
-1. `app/contact/page.tsx`
-   - Línea 44: Cambiado `<h1>` a `<h3>`
-
-2. `app/contact/contact.module.css`
-   - Líneas 129-147: Ajustados estilos de `.form__label` y `.form__input`
-   - Agregados comentarios explicativos "Match original"
-
-3. `.github/layouts/layouts.md`
-   - Actualizado con detalles de las correcciones aplicadas
-
-## Próximos Pasos Sugeridos
-
-1. **Responsive Testing**: Verificar layouts en diferentes tamaños de pantalla (mobile, tablet, desktop)
-2. **Animation Testing**: Verificar que las animaciones y microinteracciones coincidan con el original
-3. **Accessibility Audit**: Realizar auditoría de accesibilidad completa
-4. **Cross-browser Testing**: Probar en Chrome, Firefox, Safari, Edge
-5. **Performance Audit**: Verificar Core Web Vitals y optimización
-
-## Notas Técnicas
-
-- Turbopack Internal Error: Se encontró un error interno de Turbopack (no relacionado con el código)
-  - Este es un problema conocido de Next.js 16
-  - Solución: Limpiar caché `.next` y reiniciar servidor
-- Build Production: ✅ Exitoso sin errores
-- Next.js MCP: Funcionando correctamente para diagnósticos en tiempo real
-
-## Método de Trabajo Aplicado
-
-Se siguió el método documentado en layouts.md:
-1. ✅ Inspección del original con DevTools
-2. ✅ Inspección del clone con DevTools
-3. ✅ Comparación de códigos y estilos
-4. ✅ Anotación de diferencias
-5. ✅ Aplicación de correcciones
-6. ✅ Verificación con browser automation
-7. ✅ Documentación de cambios
-
----
-**Fecha de última actualización:** 2025-11-06
-**Estado general del proyecto:** ✅ Layouts principales corregidos y verificados
+### Capturas:
+- Original: `track/original-contact-current.png`
+- Clone final: `track/clone-contact-final.png`

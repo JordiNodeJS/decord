@@ -13,13 +13,12 @@
 
 /* ========== HERO SECTION ========== */
 .hero {
-  padding: var(--spacing-20) var(--spacing-container-x);
+  padding: 80px var(--spacing-container-x) 0;
   background: var(--color-background-primary);
-  text-align: center;
 }
 
 .hero__container {
-  max-width: 960px;
+  max-width: var(--container-xl);
   margin: 0 auto;
 }
 
@@ -29,9 +28,9 @@
   font-weight: 500;
   letter-spacing: 14.4px; /* Match original wide spacing */
   line-height: 1.55; /* 37.2px / 24px */
-  text-transform: lowercase;
+  text-transform: uppercase;
   color: var(--color-text-primary);
-  margin: 0 0 var(--spacing-8) 0;
+  margin: 0;
 }
 
 .hero__text {
@@ -44,8 +43,8 @@
 
 /* ========== CONTACT SECTION ========== */
 .contact {
-  padding: var(--spacing-section-y) var(--spacing-container-x);
-  background: var(--color-background-secondary);
+  padding: 42px var(--spacing-container-x) 90px;
+  background: var(--color-background-primary);
 }
 
 .contact__container {
@@ -54,10 +53,10 @@
 }
 
 .contact__grid {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: var(--spacing-16);
+  display: flex;
+  gap: 30px;
   align-items: start;
+  flex-wrap: wrap;
 }
 
 /* ========== SIDEBAR INFO ========== */
@@ -65,6 +64,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-12);
+  flex: 1 1 50%;
+  max-width: 550px;
+}
+
+.sidebar__description {
+  font-family: var(--font-family-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0 1rem var(--spacing-6) 0;
 }
 
 .infoBlock {
@@ -116,9 +125,8 @@
 
 /* ========== CONTACT FORM ========== */
 .formWrapper {
-  background: var(--color-background-primary);
-  padding: var(--spacing-12);
-  border-radius: var(--radius-base);
+  flex: 1 1 50%;
+  max-width: 550px;
 }
 
 .form {
@@ -126,53 +134,95 @@
 }
 
 .form__row {
-  margin-bottom: var(--spacing-8);
+  margin-bottom: 0; /* No margin between rows in original */
 }
 
 .form__group {
   width: 100%;
+  position: relative; /* For absolute positioning of labels */
 }
 
-.form__label {
-  display: block;
+/* Static label (inline with input) */
+.form__text {
+  position: absolute;
+  top: 16px;
+  left: 0;
   font-family: var(--font-family-secondary);
-  font-size: 12px; /* Match original */
-  font-weight: 400; /* Match original - lighter weight */
-  letter-spacing: normal; /* Match original - no extra spacing */
-  text-transform: uppercase; /* Keep uppercase for better UX */
-  color: rgb(204, 204, 204); /* Match original - light gray */
-  margin-bottom: var(--spacing-3);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 7.2px; /* Wide spacing like original */
+  text-transform: uppercase;
+  color: rgb(108, 117, 125); /* Match original gray */
+  pointer-events: none; /* Don't interfere with input clicks */
+  z-index: 1;
+  transition: color 0.25s;
+}
+
+/* Textarea variation */
+.form__text_textarea {
+  top: 16px;
+}
+
+/* Placeholder label (floating label that hides on focus/fill) */
+.form__label {
+  position: absolute;
+  top: 20px; /* Adjusted to align with input text */
+  left: 120px; /* Align with input text after the static label */
+  font-family: var(--font-family-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(204, 204, 204); /* Light gray for placeholder */
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 0;
+}
+
+/* For textarea, label position is different */
+.form__textarea + .form__label {
+  top: 50px; /* Align with textarea text */
+  left: 0; /* No left offset for textarea */
 }
 
 .form__input,
 .form__textarea {
   width: 100%;
-  padding: var(--spacing-4) 0;
+  padding: 19px 19px 19px 120px; /* Match original - space for inline label */
   font-family: var(--font-family-secondary);
-  font-size: 12px; /* Match original */
+  font-size: 12px;
   color: var(--color-text-primary);
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgb(204, 204, 204); /* Match original border color */
+  border-bottom: 1px solid rgb(204, 204, 204); /* Match original border */
   border-radius: 0;
-  transition: var(--transition-all);
+  transition: border-bottom-color 0.25s;
 }
 
+/* Textarea has different padding */
+.form__textarea {
+  padding: 50px 19px 19px 0; /* Top padding for label, no left padding */
+  resize: vertical;
+  min-height: 180px;
+  border-bottom: none; /* No bottom border for textarea in original */
+}
+
+/* Focus states */
 .form__input:focus,
 .form__textarea:focus {
   outline: none;
   border-bottom-color: var(--color-primary-red);
 }
 
-.form__input::placeholder,
-.form__textarea::placeholder {
-  color: var(--color-text-tertiary);
+/* Hide placeholder label when input has value or is focused */
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label,
+.form__textarea:focus + .form__label,
+.form__textarea:not(:placeholder-shown) + .form__label {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
-.form__textarea {
-  resize: vertical;
-  min-height: 180px;
-}
+/* Do NOT change static label color on focus - keep it gray like original */
+/* Removed the focus color change for .form__text */
 
 .form__submit {
   width: 100%;
@@ -204,19 +254,13 @@
 
 @media (max-width: 1024px) {
   .contact__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: var(--spacing-12);
   }
   
-  .sidebar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .infoBlock {
-    flex: 1;
-    min-width: 200px;
+  .sidebar,
+  .formWrapper {
+    max-width: 100%;
   }
 }
 

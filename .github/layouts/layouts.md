@@ -1,5 +1,6 @@
 # Notas preliminares
 Para más detalles sobre inspección de elementos y pruebas visuales en layouts, consulta la documentación de `devtools.prompt.md` o explora sus opciones desde las herramientas de desarrollo del navegador para obtener recomendaciones e instrucciones interactivas.
+Si el servidor de desarrollo ya está corriendo no lo incicies si no lo ves necesario.
 
 ## Referencias de imágenes (sección inicial)
 
@@ -11,6 +12,8 @@ Clon:
 
 ![Clon – sección inicial](./clone-img-01-sección-inicial.png)
 
+**URL de la web a clonar:**
+https://ld-wt73.template-help.com/tf/decord_v1/
 
 
 

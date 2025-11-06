@@ -1,6 +1,6 @@
-import Link from "next/link";
 import EventCard from "@/components/ui/EventCard/EventCard";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./events.module.css";
 
 const eventsData = [
@@ -76,19 +76,9 @@ export default function EventsPage() {
   return (
     <div className={styles.eventsPage}>
       {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>
-        <div className={styles.breadcrumb__container}>
-          <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <Link href="#" className={styles.breadcrumb__link}>
-            PÁGINAS
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>EVENTOS</span>
-        </div>
-      </div>
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "EVENTOS" }]}
+      />
 
       {/* Events Section */}
       <section className={styles.events}>

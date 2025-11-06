@@ -1,0 +1,80 @@
+/* ========== BREADCRUMB COMPONENT ========== */
+/* Matches original design from https://ld-wt73.template-help.com/tf/decord_v1/ */
+
+.breadcrumb {
+  background: transparent;
+  padding: 0 var(--spacing-container-x) 28px;
+  border-bottom: none;
+}
+
+.breadcrumb__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.breadcrumb__list {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-secondary);
+  font-size: 12px; /* Original size */
+  font-weight: 400; /* Normal weight from original */
+  letter-spacing: 7.2px; /* Original letter-spacing: 7.2px (uppercase style) */
+  line-height: 14.4px; /* Original line-height: 14.4px */
+  text-transform: uppercase; /* Original has uppercase */
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  padding-right: 35px; /* Space before separator, matching original */
+  position: relative;
+}
+
+/* Separator using ::after pseudo-element (original pattern) */
+.breadcrumb__item:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: 17.5px; /* Center the separator in the 35px padding */
+  top: 0;
+  color: rgb(0, 0, 0); /* Black separator like original */
+  font-size: 12px;
+}
+
+/* Last item has no padding or separator */
+.breadcrumb__item:last-child {
+  padding-right: 0;
+}
+
+/* Link styles - black color like original */
+.breadcrumb__link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-primary-red);
+}
+
+/* Current/active page - red color like original */
+.breadcrumb__current {
+  color: rgb(254, 72, 59); /* Exact red from original */
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 0 var(--spacing-4) 20px;
+  }
+
+  .breadcrumb__item {
+    padding-right: 20px;
+  }
+
+  .breadcrumb__item:not(:last-child)::after {
+    right: 10px;
+  }
+}

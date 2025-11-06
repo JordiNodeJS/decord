@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import ArtworkCard from "@/components/ui/ArtworkCard/ArtworkCard";
 import Lightbox from "@/components/ui/Lightbox/Lightbox";
 import styles from "./gallery.module.css";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 
 const categories = [
   "anamorfismo",
@@ -95,15 +95,9 @@ export default function GalleryPage() {
   return (
     <div className={styles.galleryPage}>
       {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>
-        <div className={styles.breadcrumb__container}>
-          <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>GALERÍA</span>
-        </div>
-      </div>
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "GALERÍA" }]}
+      />
 
       {/* Gallery Section */}
       <section className={styles.gallery}>

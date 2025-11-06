@@ -5,44 +5,9 @@
   background: var(--color-background-primary);
 }
 
-/* ========== BREADCRUMB ========== */
-.breadcrumb {
-  background: transparent; /* Original has transparent background */
-  padding: 0 var(--spacing-container-x) 28px; /* Match original: no top padding, 28px bottom */
-  border-bottom: none; /* Original has no border */
-}
-
-.breadcrumb__container {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  padding: 0; /* Remove padding from container, it's in parent */
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-4);
-  font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-wide);
-}
-
-.breadcrumb__link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: var(--transition-base);
-  text-transform: uppercase;
-}
-
-.breadcrumb__link:hover {
-  color: var(--color-primary-red);
-}
-
-.breadcrumb__separator {
-  color: var(--color-text-tertiary);
-}
-
-.breadcrumb__current {
-  color: var(--color-text-primary);
-  text-transform: uppercase;
+/* ========== HERO SECTION ========== */
+.hero {
+  padding: var(--spacing-20) var(--spacing-container-x);
 }
 
 /* ========== HERO SECTION ========== */

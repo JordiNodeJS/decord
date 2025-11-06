@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./about.module.css";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 
 // Team members data
 const teamMembers = [
@@ -87,15 +87,9 @@ export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>
       {/* Breadcrumb */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <div className={styles.breadcrumb__container}>
-          <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>SOBRE NOSOTROS</span>
-        </div>
-      </nav>
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "SOBRE NOSOTROS" }]}
+      />
 
       {/* Main About Section with Image */}
       <section className={styles.aboutHero}>

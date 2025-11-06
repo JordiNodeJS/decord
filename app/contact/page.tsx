@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./contact.module.css";
 
 export default function ContactPage() {
@@ -31,15 +31,9 @@ export default function ContactPage() {
   return (
     <main className={styles.contactPage}>
       {/* Breadcrumb */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <div className={styles.breadcrumb__container}>
-          <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>CONTACTO</span>
-        </div>
-      </nav>
+      <Breadcrumb
+        items={[{ label: "INICIO", href: "/" }, { label: "CONTACTO" }]}
+      />
 
       {/* Contact Hero */}
       <section className={styles.hero}>

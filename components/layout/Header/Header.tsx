@@ -37,6 +37,7 @@ export default function Header() {
             height={35}
             className={`${styles.header__logoImage} ${styles.header__logoDark}`}
             priority
+            style={{ width: "auto", height: "35px" }}
           />
           <Image
             src="/images/logo-inverse-343x45.png"
@@ -45,6 +46,7 @@ export default function Header() {
             height={22}
             className={`${styles.header__logoImage} ${styles.header__logoLight}`}
             priority
+            style={{ width: "auto", height: "35px" }}
           />
         </Link>
 

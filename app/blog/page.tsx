@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./blog.module.css";
 
 const blogPosts = [
@@ -66,15 +67,7 @@ export default function BlogPage() {
   return (
     <div className={styles.blogPage}>
       {/* Breadcrumb */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <div className={styles.breadcrumb__container}>
-          <Link href="/" className={styles.breadcrumb__link}>
-            INICIO
-          </Link>
-          <span className={styles.breadcrumb__separator}>|</span>
-          <span className={styles.breadcrumb__current}>BLOG</span>
-        </div>
-      </nav>
+      <Breadcrumb items={[{ label: "INICIO", href: "/" }, { label: "BLOG" }]} />
 
       {/* Blog Section */}
       <section className={styles.blog}>

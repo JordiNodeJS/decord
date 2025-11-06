@@ -3,7 +3,7 @@ Para más detalles sobre inspección de elementos y pruebas visuales en layouts,
 Si el servidor de desarrollo ya está corriendo no lo incicies si no lo ves necesario.
 
 
-**URL de la web a clonar:**
+**URL de la web ORGINAL para clonar:**
 https://ld-wt73.template-help.com/tf/decord_v1/
 
 # INSTRUCCIONES GENERALES PARA CLONAR LAYOUTS
@@ -36,40 +36,23 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 - Verifica que el clone funcione correctamente en diferentes navegadores y dispositivos.
 - Toma capturas de pantalla del original y del clone para documentar las diferencias y mejoras.
 
-# TAREAS Y CORRECCIONES
+# **TAREAS Y CORRECCIONES**
 
-# Breadcrumb fixes. ✅ COMPLETADO (2025-11-06)
+# Página Contact. Breadcrumb fixes.
 **Problema:** 
-- Inconsistencia a través de las páginas. No todas las páginas tenían breadcrumbs implementados, o se veían diferentes al original y entre sí.
-- Los breadcrumbs no usaban un componente reutilizable, lo que causaba discrepancias en estilos y estructura.
-- La página de blog post detail (`/blog/[slug]`) usaba una implementación personalizada en lugar del componente reutilizable `Breadcrumb`.
+- Inconsistencia a través de la página Contact. El breadcrumb implementado en Contact no tiene la misma posición que el resto de páginas que usan el componente Breadcrumb, resultando en una experiencia de usuario inconsistente. El breadcrumb en Contact está más cerca del borde superior de la página en comparación con otras páginas.
 
-**Solución implementada:**
-- Se actualizó la página `/blog/[slug]/page.tsx` para usar el componente `Breadcrumb` reutilizable.
-- Se eliminaron los estilos personalizados del breadcrumb en `post.module.css`.
-- Ahora todas las páginas (Contact, Blog, Events, Gallery, About, y Blog Posts) usan el mismo componente `Breadcrumb`.
-- El componente `Breadcrumb` ya tenía los estilos correctos que coinciden con el original:
-  - Font size: 12px
-  - Text transform: uppercase
-  - Letter spacing: 7.2px
-  - Separator: "|" (pipe character) con posicionamiento absoluto
-  - Link color: rgb(0, 0, 0)
-  - Active/current color: rgb(254, 72, 59)
+# SOBRE LA GALERÍA DE ARTE - about art gallery page - gallery layout fixes ✅ VERIFIED (2025-11-06)
+![original](./original%20-%20about%20art%20gallery.png)
 
-**Verificación:**
-- ✅ Contact page: Breadcrumb consistente (INICIO | CONTACTO)
-- ✅ Blog page: Breadcrumb consistente (INICIO | BLOG)
-- ✅ Blog post detail: Breadcrumb con 3 niveles (INICIO | BLOG | POST TITLE)
-- ✅ About page: Breadcrumb consistente (INICIO | SOBRE NOSOTROS)
-- ✅ Events page: Breadcrumb consistente (INICIO | EVENTOS)
-- ✅ Gallery page: Breadcrumb consistente (INICIO | GALERÍA)
+**Archivos Involucrados:**
+- `app/about/about.module.css`
+- `app/about/page.tsx`
 
-**Archivos modificados:**
-- `app/blog/[slug]/page.tsx` - Importado y usado el componente Breadcrumb
-- `app/blog/[slug]/post.module.css` - Eliminados estilos personalizados del breadcrumb
+**Recomendación:** Si se desea coincidencia exacta con el original, ajustar `.aboutHero__text` a fontSize: 23px y lineHeight: ~37.57px.
 
 # CONOCE AL EQUIPO. MEET THE TEAM GRID FIXES
-![original](./original-meet-the-team-grid.png.png)
-- No coincidía el diseño de la cuadrícula del equipo con el original. Arreglado.
+![original](./original-meet-the-team-grid.png)
+- Los textos de las tarjetas del equipo no coincidían con los del original. Son más gruesos. Arreglado.
+- El layout de la cuadrícula del equipo no coincidía con el original. Son asimétricos. Arreglado.
 - Las tarjetas del equipo no tenían el mismo diseño que el original. Arreglado.
-- Los textos de las tarjetas del equipo no coincidían con los del original. Arreglado.

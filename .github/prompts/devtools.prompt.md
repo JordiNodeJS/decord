@@ -24,7 +24,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
 ### 1. Preparación del entorno
 - Asegúrate de tener Next.js DevTools instalado y configurado en tu proyecto
 - Comprueba si el servidor de desarrollo ya está en marcha (p.ej., puerto configurado). Si está activo, no lo reinicies a menos que sea necesario; si no lo está, inícialo con `pnpm dev`.
-- Abre Chrome DevTools utilizando el mcp devtools chrome
+- Utiliza Chrome DevTools mcp para una experiencia optimizada con Next.js
 - Si estás comparando sitios, abre ambas URLs en pestañas separadas
 
 ### 2. Análisis con Next.js DevTools (para debugging de tu app)

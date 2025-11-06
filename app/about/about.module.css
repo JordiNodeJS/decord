@@ -222,37 +222,51 @@
 }
 
 .team__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
-  gap: var(--spacing-8);
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px; /* Bootstrap row margin */
+  margin-right: -20px;
+  gap: 40px 0; /* row gap: 40px, column gap handled by margins */
   margin-top: var(--spacing-16);
 }
 
-/* Masonry layout - different sizes for each card */
-.teamCard:nth-child(1) {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+/* Flexbox layout matching Bootstrap columns - Asymmetric grid */
+/* Target the ScrollReveal wrapper (direct children of grid) */
+.team__grid > *:nth-child(1) {
+  flex: 0 0 25%; /* col-xl-3 */
+  margin-left: 16.666667%; /* offset-xl-2 */
 }
 
-.teamCard:nth-child(2) {
-  grid-column: 2 / 3;
-  grid-row: 1 / 3; /* Taller card */
+.team__grid > *:nth-child(1) .teamCard {
+  align-self: center;
 }
 
-.teamCard:nth-child(3) {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
+.team__grid > *:nth-child(2) {
+  flex: 0 0 33.333333%; /* col-xl-4 - WIDER */
 }
 
-.teamCard:nth-child(4) {
-  grid-column: 4 / 5;
-  grid-row: 1 / 2;
+.team__grid > *:nth-child(3) {
+  flex: 0 0 25%; /* col-xl-3 */
 }
 
-.teamCard:nth-child(5) {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
+.team__grid > *:nth-child(3) .teamCard {
+  align-self: center;
+}
+
+.team__grid > *:nth-child(4) {
+  flex: 0 0 25%; /* col-xl-3 */
+  margin-left: 41.666667%; /* offset-xl-5 - forces wrap to new row */
+}
+
+.team__grid > *:nth-child(5) {
+  flex: 0 0 25%; /* col-xl-3 */
+}
+
+/* Padding for all cards */
+.team__grid > * {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .teamCard {
@@ -312,21 +326,22 @@
 
 .teamCard__name {
   font-family: var(--font-family-secondary);
-  font-size: 48px; /* Original size: very large and prominent */
+  font-size: 48px; /* Original size: 48px */
   font-weight: 500;
-  letter-spacing: var(--letter-spacing-base);
+  letter-spacing: -2.4px; /* Original: -2.4px (negative letter-spacing!) */
   text-transform: uppercase;
   color: var(--color-primary-red); /* rgb(254, 72, 59) */
+  line-height: 48px; /* Original: 48px */
   margin: 0 0 var(--spacing-2) 0;
 }
 
 .teamCard__role {
   font-family: var(--font-family-secondary);
   font-size: 16px; /* Original size */
-  font-weight: 500; /* Original weight (not 400) */
-  letter-spacing: var(--letter-spacing-wide);
+  font-weight: 300; /* Original weight: 300 (light) */
+  letter-spacing: normal; /* Original: normal (not wide) */
   text-transform: uppercase;
-  color: var(--color-text-primary); /* Black rgb(21, 21, 21) - not secondary */
+  color: rgb(118, 118, 118); /* Original: gray rgb(118, 118, 118) - not black */
   margin: 0 0 var(--spacing-4) 0;
 }
 
@@ -448,17 +463,28 @@
   
   /* Responsive team grid - simpler layout on tablet */
   .team__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
   }
   
-  .teamCard:nth-child(1),
-  .teamCard:nth-child(2),
-  .teamCard:nth-child(3),
-  .teamCard:nth-child(4),
-  .teamCard:nth-child(5) {
-    grid-column: auto;
-    grid-row: auto;
+  .team__grid > * {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .team__grid > *:nth-child(1),
+  .team__grid > *:nth-child(2),
+  .team__grid > *:nth-child(3),
+  .team__grid > *:nth-child(4),
+  .team__grid > *:nth-child(5) {
+    flex: 0 0 50%; /* 2 columns on tablet */
+    margin-left: 0;
+  }
+  
+  .team__grid > *:nth-child(1) .teamCard,
+  .team__grid > *:nth-child(3) .teamCard {
+    align-self: auto;
   }
   
   .cta__title {
@@ -483,7 +509,22 @@
   
   /* Single column on mobile */
   .team__grid {
-    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .team__grid > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .team__grid > *:nth-child(1),
+  .team__grid > *:nth-child(2),
+  .team__grid > *:nth-child(3),
+  .team__grid > *:nth-child(4),
+  .team__grid > *:nth-child(5) {
+    flex: 0 0 100%;
+    margin-left: 0;
   }
   
   .cta__title {

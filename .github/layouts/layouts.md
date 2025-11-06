@@ -41,13 +41,5 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # GALLERY PAGE y HOME PAGE GALLERY SECTION 
 **Problemas:**
-- Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo componente, pero la galería de la página "Inicio" no se ve correctamente en términos de diseño. El problema es que los filtros aparecen en la izquierda y las imágenes a mostrar por los filtros se acomodan abajo, en lugar de a la derecha como en la página "Galería".
-**Solución propuesta:**
-- Hacer que en la página "Inicio" utilice la misma galería que en la página "Galería" INCLUYENDO LOS FILTROS, evitando la duplicación innecesaria del componente.
-
-# ABOUT PAGE - PÁGINA ABOUT
-**Problemas:**
-![original](./original-about-img.png)
-![clone](./clone-about-img.png)
-- No se parecen. CÉNTRATE EN El tamaño de la imagen original dado que no corresponde con la original. 
-- La enumeración de experiencia: los tamaños los números, su grosor y color, el de las letras, interlineado, etc no se parece. Ajústalo para que se parezca más al original.
+- Haz una comprobación exhaustiva de los filtros, tratando de averiguar si funcionan correctamente como en el original así como si las imágenes se muestran correctamente al aplicar los filtros y si se han añadido las imagenes correctas en la galería extraídas de la página original.
+- Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo compoennte.

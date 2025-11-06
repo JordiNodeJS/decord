@@ -17,7 +17,7 @@ export default function Home() {
         <Gallery
           variant="preview"
           limit={5}
-          showFilters={false}
+          showFilters={true}
           showViewAll={true}
         />
       </ScrollReveal>

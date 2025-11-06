@@ -7,26 +7,27 @@ import styles from "./AboutGallery.module.css";
 const statsData = [
   {
     number: 15,
-    label: "YEARS",
+    label: "AÑOS DE EXPERIENCIA",
     description:
-      "Our gallery was established in 2002 to show masterpieces from all over the world.",
+      "La galería fue establecida en 2007, además celebramos el arte fino en todo el mundo",
   },
   {
     number: 34,
-    label: "ARTISTS",
-    description: "We have gathered the best artworks of the 20th century.",
+    label: "ARTISTAS FAMOSOS",
+    description:
+      "Mostramos obras de renombrados artistas de primer orden del mundo",
   },
   {
     number: 89,
-    label: "EXHIBITIONS",
+    label: "EXPOSICIONES EXITOSAS",
     description:
-      "Incredible collections of modern and experimental art, abstract art and portrait are represented in our gallery.",
+      "Nuestras colecciones de arte moderno y vanguardista de exposiciones internacionales sin un precedente de la galería",
   },
   {
     number: 12,
-    label: "CURRENT",
+    label: "EXPOSICIONES ACTUALES",
     description:
-      "We have a selection of thousands of artworks from some of the best names in contemporary art.",
+      "Tenemos numerosos acontecimientos de diversos tipos de obras de arte en curso en la galería",
   },
 ];
 

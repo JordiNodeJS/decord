@@ -41,12 +41,6 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 
 # GALLERY ✅ RESUELTO (2025-11-06)
 **Problemas detectados:**
-- ~~Se renderizan dos gallerías siendo la misma. La galería de la págian "Galería" funciona bien, pero la galería de la página "Inicio" no funciona correctamente, dado que se recrea otra vez.~~
-
-**Solución aplicada:**
-- ✅ Se identificó que el problema NO era duplicación entre home y galería (sirven propósitos diferentes)
-- ✅ Se eliminó el componente `GallerySection` que estaba sin usar y causaba confusión
-- ✅ La página "Inicio" usa `AboutGallery` (preview con stats y 5 imágenes)
-- ✅ La página "Galería" tiene su propia implementación completa (filtros + lightbox)
-- ✅ Ambas páginas funcionan correctamente sin duplicación
-- ✅ Ver detalles en: `track/gallery-duplication-fix-2025-11-06.md`
+- Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo componente, pero la galería de la página "Inicio" no funciona correctamente, dado que no pinta los filtros. Ni tiene el mismo layout que la galería de la página "Galería".
+**Solución propuesta:**
+- Hacer que en la página "Inicio" se utilice la misma galería que en la página "Galería", evitando la duplicación innecesaria del componente.

@@ -15,39 +15,41 @@ Este documento detalla todas las correcciones, implementaciones y mejoras realiz
 ### 1. Sistema de Tipografía
 
 #### Google Fonts Integrados
+
 ```typescript
 // app/layout.tsx
-import { Oswald, Roboto } from 'next/font/google';
+import { Oswald, Roboto } from "next/font/google";
 
 const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-oswald',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
+  display: "swap",
 });
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700', '900'],
-  variable: '--font-roboto',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+  display: "swap",
 });
 ```
 
 #### Especificaciones de Texto
 
-| Elemento | Font | Size | Weight | Letter Spacing | Line Height |
-|----------|------|------|--------|----------------|-------------|
-| Hero Title | Oswald | 160px | 500 | -8px | 172px |
-| Section Headings | **Roboto** | 30px | 500 | **18px** | 1.172 |
-| Stat Numbers | Oswald | 50px | 500 | - | Red color |
-| Event Day | Oswald | 60px | 500 | - | 60px |
-| Event Month | Oswald | 30px | 500 | - | - |
-| Event Title | Roboto | 24px | 500 | - | 33.6px |
-| Body Text | Roboto | 14px | 400 | - | 1.5 |
-| Buttons | Roboto | 14px | **900** | **8.4px** | - |
+| Elemento         | Font       | Size  | Weight  | Letter Spacing | Line Height |
+| ---------------- | ---------- | ----- | ------- | -------------- | ----------- |
+| Hero Title       | Oswald     | 160px | 500     | -8px           | 172px       |
+| Section Headings | **Roboto** | 30px  | 500     | **18px**       | 1.172       |
+| Stat Numbers     | Oswald     | 50px  | 500     | -              | Red color   |
+| Event Day        | Oswald     | 60px  | 500     | -              | 60px        |
+| Event Month      | Oswald     | 30px  | 500     | -              | -           |
+| Event Title      | Roboto     | 24px  | 500     | -              | 33.6px      |
+| Body Text        | Roboto     | 14px  | 400     | -              | 1.5         |
+| Buttons          | Roboto     | 14px  | **900** | **8.4px**      | -           |
 
 **Descubrimientos Clave:**
+
 - ✅ Section headings usan **Roboto**, NO Oswald (descubrimiento critical)
 - ✅ Letter spacing extremadamente amplio: 18px para headings, 8.4px para buttons
 - ✅ Buttons usan weight 900, no 700
@@ -57,6 +59,7 @@ const roboto = Roboto({
 ### 2. Sistema de Colores
 
 #### Paleta Primaria
+
 ```css
 /* Red Accent - NO GOLD */
 --color-primary-red: #fe483b;
@@ -72,6 +75,7 @@ const roboto = Roboto({
 ### 3. Layout y Espaciado
 
 #### Section Padding
+
 ```css
 section {
   padding: 189px 15px; /* Exacto del original */
@@ -79,10 +83,12 @@ section {
 ```
 
 **Medición Exacta:**
+
 - ✅ 189px vertical padding (8 secciones analizadas con Chrome DevTools)
 - ❌ NO 128px (valor previo incorrecto)
 
 #### Grid System
+
 ```css
 .gallery__grid {
   display: grid;
@@ -117,16 +123,16 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   /* Typography */
   font-size: 60px;
   font-weight: 300;
   line-height: 96px;
   color: white;
-  
+
   /* Background */
   background: rgba(254, 72, 59, 0.8);
-  
+
   /* Animation - CRITICAL */
   opacity: 0;
   transform: scale(0.5);
@@ -141,6 +147,7 @@ section {
 ```
 
 **Características Clave:**
+
 - ✅ Usa texto "+" directamente (NO SVG)
 - ✅ Scale transformation: 0.5 → 1.0 (no 0 → 1)
 - ✅ Opacidad: 0 → 1 en 0.25s
@@ -152,6 +159,7 @@ section {
 ### 5. Button Transitions
 
 #### Cubic-Bezier Específico
+
 ```css
 .button {
   font-size: 14px;
@@ -161,9 +169,9 @@ section {
   padding: 24px 56px;
   border: 2px solid;
   border-radius: 0;
-  
+
   /* Transition - CRITICAL */
-  transition: 
+  transition:
     background 0.4s cubic-bezier(0.2, 1, 0.3, 1),
     border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
     color 0.4s cubic-bezier(0.2, 1, 0.3, 1);
@@ -171,6 +179,7 @@ section {
 ```
 
 **Especificación Exacta:**
+
 - ✅ Cubic-bezier: `(0.2, 1, 0.3, 1)` (no ease genérico)
 - ✅ Duración: 0.4s
 - ✅ Border radius: 0 (cuadrado)
@@ -180,6 +189,7 @@ section {
 ### 6. Event Cards
 
 #### Estructura y Tipografía
+
 ```css
 /* Event Date Number */
 .eventCard__dateNumber {
@@ -211,6 +221,7 @@ section {
 ```
 
 **Layout:**
+
 ```css
 .eventCard {
   display: grid;
@@ -228,7 +239,7 @@ section {
 
 ```css
 .isotope-item {
-  transition: 
+  transition:
     opacity 0.4s ease-in,
     transform 0.4s ease-in;
 }
@@ -244,17 +255,17 @@ section {
 
 #### Assets del Sitio Original
 
-| Archivo | Dimensiones | Tamaño | Uso |
-|---------|-------------|--------|-----|
-| logo-default.png | 350x105 | 13KB | Logo header |
-| logo-inverse.png | 350x105 | 12KB | Logo footer |
-| home-01.png | 690x900 | 193KB | Hero background |
-| home-02.jpg | 420x570 | 80KB | Gallery item 1 |
-| home-03.jpg | 420x570 | 89KB | Gallery item 2 |
-| home-04.jpg | 420x570 | 135KB | Gallery item 3 |
-| home-05.jpg | 420x570 | 143KB | Gallery item 4 |
-| home-06.jpg | 420x570 | 119KB | Gallery item 5 |
-| home-07.jpg | 420x570 | 90KB | Gallery item 6 |
+| Archivo          | Dimensiones | Tamaño | Uso             |
+| ---------------- | ----------- | ------ | --------------- |
+| logo-default.png | 350x105     | 13KB   | Logo header     |
+| logo-inverse.png | 350x105     | 12KB   | Logo footer     |
+| home-01.png      | 690x900     | 193KB  | Hero background |
+| home-02.jpg      | 420x570     | 80KB   | Gallery item 1  |
+| home-03.jpg      | 420x570     | 89KB   | Gallery item 2  |
+| home-04.jpg      | 420x570     | 135KB  | Gallery item 3  |
+| home-05.jpg      | 420x570     | 143KB  | Gallery item 4  |
+| home-06.jpg      | 420x570     | 119KB  | Gallery item 5  |
+| home-07.jpg      | 420x570     | 90KB   | Gallery item 6  |
 
 **Total:** 9 archivos, 874KB  
 **Estado:** ✅ Todas optimizadas, máx 720x900px (bajo límite de 8000px)
@@ -264,6 +275,7 @@ section {
 ## 🔧 Herramientas Utilizadas
 
 ### Chrome DevTools MCP
+
 - ✅ Inspección de elementos en tiempo real
 - ✅ Extracción de computed styles
 - ✅ Análisis de pseudo-elementos (::before, ::after)
@@ -271,11 +283,13 @@ section {
 - ✅ Screenshots comparativos
 
 ### Next.js DevTools MCP
+
 - ✅ Monitoreo de runtime errors
 - ✅ Verificación de Hot Module Replacement
 - ✅ Detección de build issues
 
 ### Browser Automation (Playwright)
+
 - ✅ Testing de hover states
 - ✅ Verificación de animaciones
 - ✅ Screenshots automatizados
@@ -285,6 +299,7 @@ section {
 ## 📊 Métricas de Similitud
 
 ### Tipografía: 98%
+
 - ✅ Fuentes exactas (Oswald + Roboto)
 - ✅ Tamaños exactos
 - ✅ Weights exactos
@@ -292,17 +307,20 @@ section {
 - ⚠️ Algunos line-heights pueden requerir ajuste fino
 
 ### Colores: 100%
+
 - ✅ Red accent exacto (#fe483b)
 - ✅ Hover states correctos
 - ✅ Opacity values exactos
 
 ### Layout: 95%
+
 - ✅ Section padding exacto (189px)
 - ✅ Grid systems correctos
 - ✅ Aspect ratios correctos
 - ⚠️ Responsive breakpoints requieren testing
 
 ### Animaciones: 90%
+
 - ✅ Gallery hover overlay exacto
 - ✅ Button transitions con cubic-bezier
 - ✅ Isotope transitions
@@ -310,6 +328,7 @@ section {
 - ⏳ Menu mobile animations pendientes
 
 ### Assets: 100%
+
 - ✅ Todas las imágenes descargadas
 - ✅ Optimización correcta
 - ✅ Aspect ratios preservados
@@ -319,20 +338,24 @@ section {
 ## 📁 Archivos Modificados
 
 ### Core Files
+
 - `app/layout.tsx` - Font imports
 - `app/page.tsx` - Main page structure
 
 ### Styles
+
 - `styles/tokens/typography.css` - Typography system
 - `styles/tokens/colors.css` - Color palette
 - `styles/tokens/spacing.css` - Section padding (189px)
 - `styles/tokens/effects.css` - Transitions and animations
 
 ### Components - Layout
+
 - `components/layout/Header/Header.module.css` - Hover states
 - `components/layout/Footer/Footer.module.css` - Footer styling
 
 ### Components - Sections
+
 - `components/sections/Hero/Hero.module.css` - 160px title, -8px spacing
 - `components/sections/About/About.module.css` - 30px Roboto headings
 - `components/sections/GallerySection/GallerySection.module.css` - Section heading
@@ -342,12 +365,14 @@ section {
 - `components/sections/Stats/Stats.module.css` - 50px red numbers
 
 ### Components - UI
+
 - `components/ui/Button/Button.module.css` - 14px, weight 900, 8.4px spacing, cubic-bezier
 - `components/ui/ArtworkCard/ArtworkCard.tsx` - Simplified structure
 - `components/ui/ArtworkCard/ArtworkCard.module.css` - ::before hover overlay
 - `components/ui/EventCard/EventCard.module.css` - 60px/30px dates, 24px title
 
 ### Assets
+
 - `public/images/logo-default.png` - Default logo
 - `public/images/logo-inverse.png` - Inverse logo
 - `public/images/gallery/home-01.png` - Hero background
@@ -358,6 +383,7 @@ section {
 ## 🎯 Descubrimientos Críticos
 
 ### 1. Section Headings = Roboto (NOT Oswald!)
+
 ```css
 /* INCORRECTO ❌ */
 .section__label {
@@ -373,6 +399,7 @@ section {
 ```
 
 ### 2. Gallery Hover usa ::before (NO SVG)
+
 ```css
 /* El "+" es texto, no <svg> */
 .artworkCard__media::before {
@@ -383,6 +410,7 @@ section {
 ```
 
 ### 3. Section Padding = 189px (NO 128px)
+
 ```css
 /* Medido en 8 secciones con DevTools */
 section {
@@ -391,6 +419,7 @@ section {
 ```
 
 ### 4. Button Letter Spacing = 8.4px
+
 ```css
 /* Muy amplio, medido con DevTools */
 .button {
@@ -400,6 +429,7 @@ section {
 ```
 
 ### 5. Transform Scale 0.5 → 1.0 (NO 0 → 1)
+
 ```css
 /* Estado inicial */
 .artworkCard__media::before {
@@ -419,6 +449,7 @@ section {
 ## ⏳ Trabajo Pendiente
 
 ### Alta Prioridad
+
 1. **Scroll Animations**
    - Implementar WOW.js o similar
    - Fade-in animations en elementos al scroll
@@ -437,6 +468,7 @@ section {
    - Link hover effects en footer
 
 ### Media Prioridad
+
 4. **Testimonials Slider**
    - Implementar slider/carousel
    - Auto-play functionality
@@ -454,6 +486,7 @@ section {
    - Submit animation
 
 ### Baja Prioridad
+
 7. **Performance Optimization**
    - Image lazy loading
    - Code splitting
@@ -471,6 +504,7 @@ section {
 ## 📊 Testing Realizado
 
 ### Visual Regression
+
 - ✅ Hero section comparison
 - ✅ Gallery section comparison
 - ✅ Gallery hover overlay verification
@@ -479,6 +513,7 @@ section {
 - ✅ Color palette verification
 
 ### Functional Testing
+
 - ✅ Navigation links
 - ✅ Gallery hover states
 - ✅ Button hover states
@@ -487,6 +522,7 @@ section {
 - ⏳ Mobile menu (pendiente)
 
 ### Performance
+
 - ✅ Dev server startup
 - ✅ Fast Refresh speed
 - ⏳ Lighthouse audit (pendiente)
@@ -497,17 +533,20 @@ section {
 ## 🔍 Comandos de Verificación
 
 ### Iniciar Dev Server
+
 ```bash
 pnpm dev
 ```
 
 ### Verificar Errores
+
 ```bash
 pnpm lint
 pnpm build
 ```
 
 ### Testing con Browser Automation
+
 ```bash
 # Ya configurado con MCP tools
 # Usar Chrome DevTools MCP para inspección
@@ -529,6 +568,7 @@ pnpm build
 El clon de DECORD ha alcanzado una similitud visual del **95%+** con el sitio original. Los aspectos críticos de tipografía, colores, layout y animaciones clave están implementados con exactitud pixel-perfect.
 
 ### Logros Destacados:
+
 - ✅ Typography system 100% exacto
 - ✅ Color system 100% exacto
 - ✅ Gallery hover overlay replicado perfectamente
@@ -538,6 +578,7 @@ El clon de DECORD ha alcanzado una similitud visual del **95%+** con el sitio or
 - ✅ Todas las imágenes descargadas y optimizadas
 
 ### Próximos Pasos:
+
 1. Implementar scroll animations
 2. Testing responsive completo
 3. Micro-interactions y detalles finales
@@ -546,7 +587,7 @@ El clon de DECORD ha alcanzado una similitud visual del **95%+** con el sitio or
 ---
 
 **Estado del Proyecto:** 🟢 PRODUCCIÓN LISTA (con pendientes menores)  
-**Similitud Visual:** 95%+ 
+**Similitud Visual:** 95%+
 **Funcionalidad Core:** 100%  
 **Performance:** Pendiente de audit
 

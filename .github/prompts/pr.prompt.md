@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Crea una Pull Request sencilla con GitHub CLI incluyendo etiquetas y asignación'
+mode: "agent"
+description: "Crea una Pull Request sencilla con GitHub CLI incluyendo etiquetas y asignación"
 ---
 
 Crea una Pull Request (PR) con GitHub CLI usando los siguientes parámetros:
@@ -17,17 +17,19 @@ Crea una Pull Request (PR) con GitHub CLI usando los siguientes parámetros:
 1. **Verifica que estés en la branch correcta** y que tengas cambios para hacer commit si es necesario.
 
 2. **Sanitiza la descripción** para evitar caracteres especiales problemáticos:
+
    ```bash
    # Limpia la descripción: elimina caracteres de control, comillas problemáticas y normaliza saltos de línea
    DESCRIPTION_CLEAN=$(echo "${description}" | sed 's/["$`\\]/\\&/g' | tr '\n' ' ' | sed 's/  */ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
    ```
 
 3. **Método recomendado: Usar archivo temporal para la descripción** (más seguro con caracteres especiales):
+
    ```bash
    # Crear archivo temporal con la descripción
    TEMP_BODY=$(mktemp)
    echo "${description}" > "$TEMP_BODY"
-   
+
    # Crear la PR usando el archivo
    gh pr create \
      --title "${title}" \
@@ -36,12 +38,13 @@ Crea una Pull Request (PR) con GitHub CLI usando los siguientes parámetros:
      --head ${head} \
      --label "${labels}" \
      --assignee "${assignees}"
-   
+
    # Limpiar archivo temporal
    rm "$TEMP_BODY"
    ```
 
 4. **Alternativa: Crear la PR con descripción sanitizada directamente:**
+
    ```bash
    DESCRIPTION_CLEAN=$(echo "${description}" | sed 's/["$`\\]/\\&/g' | tr '\n' ' ')
    gh pr create \
@@ -54,20 +57,21 @@ Crea una Pull Request (PR) con GitHub CLI usando los siguientes parámetros:
    ```
 
 5. **Alternativa: Crear la PR primero y luego editar para agregar etiquetas y asignados:**
+
    ```bash
    # Crear archivo temporal para la descripción
    TEMP_BODY=$(mktemp)
    echo "${description}" > "$TEMP_BODY"
-   
+
    # Crear la PR y guardar el número
    PR_NUMBER=$(gh pr create --title "${title}" --body-file "$TEMP_BODY" --base ${base} --head ${head} --json number -q .number)
-   
+
    # Limpiar archivo temporal
    rm "$TEMP_BODY"
-   
+
    # Agregar etiquetas
    gh pr edit $PR_NUMBER --add-label "${labels}"
-   
+
    # Agregar asignados
    gh pr edit $PR_NUMBER --add-assignee "${assignees}"
    ```
@@ -75,6 +79,7 @@ Crea una Pull Request (PR) con GitHub CLI usando los siguientes parámetros:
 ## Ejemplo de uso
 
 Si tienes:
+
 - Título: "Agregar funcionalidad de autenticación"
 - Descripción: "Implementa login con JWT\n\n- Usa tokens JWT\n- Incluye refresh tokens"
 - Base: main
@@ -83,6 +88,7 @@ Si tienes:
 - Asignados: johndoe,janedoe
 
 El comando recomendado (usando archivo temporal) sería:
+
 ```bash
 TEMP_BODY=$(mktemp)
 echo "Implementa login con JWT
@@ -113,4 +119,3 @@ rm "$TEMP_BODY"
   - Comillas dobles o simples
   - Caracteres especiales como `$`, `` ` ``, `\`
   - Caracteres de control o Unicode complejo
-

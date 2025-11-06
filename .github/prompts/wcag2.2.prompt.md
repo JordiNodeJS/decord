@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Implementa y verifica accesibilidad web según WCAG 2.2 (Web Content Accessibility Guidelines 2.2)'
+mode: "agent"
+description: "Implementa y verifica accesibilidad web según WCAG 2.2 (Web Content Accessibility Guidelines 2.2)"
 ---
 
 # Accesibilidad Web según WCAG 2.2
@@ -22,28 +22,33 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ## Principios fundamentales de WCAG 2.2
 
 ### 1. Perceptible
+
 - **1.1 Texto alternativo:** Todo contenido no textual debe tener texto alternativo
 - **1.2 Medios temporales:** Proporcionar alternativas para audio y video
 - **1.3 Adaptable:** Crear contenido que se pueda presentar de diferentes formas
 - **1.4 Distinguible:** Facilitar que los usuarios vean y oigan el contenido
 
 ### 2. Operable
+
 - **2.1 Accesible por teclado:** Toda funcionalidad debe ser accesible mediante teclado
 - **2.2 Tiempo suficiente:** Proporcionar tiempo suficiente para leer y usar el contenido
 - **2.3 Convulsiones:** No diseñar contenido que pueda causar convulsiones
 - **2.4 Navegable:** Proporcionar formas de ayudar a los usuarios a navegar
 
 ### 3. Comprensible
+
 - **3.1 Legible:** Hacer el contenido de texto legible y comprensible
 - **3.2 Predecible:** Hacer que las páginas web aparezcan y funcionen de manera predecible
 - **3.3 Asistencia de entrada:** Ayudar a los usuarios a evitar y corregir errores
 
 ### 4. Robusto
+
 - **4.1 Compatible:** Maximizar la compatibilidad con las tecnologías asistivas actuales y futuras
 
 ## Criterios de conformidad WCAG 2.2 (nuevos y actualizados)
 
 ### Nuevos criterios en WCAG 2.2:
+
 - **2.4.11 Focus Not Obscured (Minimum) (AA):** El foco del teclado no debe estar completamente oculto
 - **2.4.12 Focus Not Obscured (Enhanced) (AAA):** El foco del teclado no debe estar parcialmente oculto
 - **2.4.13 Focus Appearance (Minimum) (AA):** El indicador de foco debe tener un área mínima
@@ -58,6 +63,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ## Checklist de verificación por categoría
 
 ### Texto alternativo y contenido no textual
+
 - [ ] Todas las imágenes tienen atributo `alt` descriptivo
 - [ ] Las imágenes decorativas usan `alt=""` (vacío)
 - [ ] Los iconos tienen texto alternativo o `aria-label`
@@ -66,6 +72,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] Los campos de formulario tienen etiquetas asociadas (`<label>` o `aria-labelledby`)
 
 ### Navegación y estructura
+
 - [ ] La página tiene un encabezado principal (`<h1>`)
 - [ ] Los encabezados están en orden jerárquico (h1 → h2 → h3)
 - [ ] Hay landmarks ARIA apropiados (`<nav>`, `<main>`, `<aside>`, etc.)
@@ -75,6 +82,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] Los breadcrumbs están implementados correctamente
 
 ### Interacción por teclado
+
 - [ ] Todo el contenido es accesible mediante teclado (Tab, Enter, Espacio, flechas)
 - [ ] El orden de tabulación es lógico y sigue el flujo visual
 - [ ] Los elementos interactivos tienen indicador de foco visible
@@ -84,6 +92,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] Los objetivos interactivos tienen tamaño mínimo de 24x24px
 
 ### Formularios
+
 - [ ] Todos los campos tienen etiquetas asociadas
 - [ ] Los campos requeridos están marcados claramente
 - [ ] Los mensajes de error son descriptivos y están asociados al campo
@@ -93,6 +102,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] Los grupos de campos relacionados usan `<fieldset>` y `<legend>`
 
 ### Contraste y legibilidad
+
 - [ ] El contraste de texto es al menos 4.5:1 para texto normal (AA)
 - [ ] El contraste de texto es al menos 3:1 para texto grande (18pt+ o 14pt+ bold) (AA)
 - [ ] El contraste de texto es al menos 7:1 para texto normal (AAA)
@@ -101,6 +111,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] No se usa solo el color para transmitir información
 
 ### Multimedia
+
 - [ ] Los videos tienen subtítulos (closed captions)
 - [ ] Los videos tienen transcripciones o descripciones de audio
 - [ ] Los controles de video son accesibles por teclado
@@ -108,6 +119,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] Los audios tienen transcripciones
 
 ### ARIA y semántica
+
 - [ ] Se usa HTML semántico cuando es posible (preferir `<button>` sobre `<div>`)
 - [ ] Los roles ARIA se usan solo cuando es necesario
 - [ ] Los estados ARIA están actualizados (`aria-expanded`, `aria-selected`, etc.)
@@ -116,6 +128,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 - [ ] No hay conflictos entre roles ARIA y elementos HTML semánticos
 
 ### Responsive y adaptabilidad
+
 - [ ] El contenido es usable en orientación vertical y horizontal
 - [ ] El contenido funciona en diferentes tamaños de pantalla
 - [ ] No hay scroll horizontal en viewports estándar
@@ -124,6 +137,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ## Herramientas de verificación
 
 ### Automatizadas
+
 1. **Lighthouse (Chrome DevTools):**
    - Ejecuta auditoría de accesibilidad
    - Revisa puntuación y problemas identificados
@@ -145,6 +159,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
    - Reportes detallados
 
 ### Manuales
+
 1. **Navegación por teclado:**
    - Desactiva el mouse
    - Navega toda la página usando solo Tab, Enter, Espacio, flechas
@@ -167,6 +182,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ### Componentes accesibles
 
 #### Botones
+
 ```tsx
 // ✅ Correcto
 <button onClick={handleClick} aria-label="Cerrar modal">
@@ -180,12 +196,13 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ```
 
 #### Formularios
+
 ```tsx
 // ✅ Correcto
 <label htmlFor="email">Correo electrónico</label>
-<input 
-  type="email" 
-  id="email" 
+<input
+  type="email"
+  id="email"
   name="email"
   required
   aria-required="true"
@@ -200,21 +217,27 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ```
 
 #### Navegación
+
 ```tsx
 // ✅ Correcto
 <nav aria-label="Navegación principal">
   <ul>
-    <li><a href="/">Inicio</a></li>
-    <li><a href="/about">Acerca de</a></li>
+    <li>
+      <a href="/">Inicio</a>
+    </li>
+    <li>
+      <a href="/about">Acerca de</a>
+    </li>
   </ul>
 </nav>
 ```
 
 #### Modales
+
 ```tsx
 // ✅ Correcto
-<div 
-  role="dialog" 
+<div
+  role="dialog"
   aria-modal="true"
   aria-labelledby="modal-title"
   aria-describedby="modal-description"
@@ -226,6 +249,7 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ```
 
 ### Skip links
+
 ```tsx
 // Agregar al inicio del layout
 <a href="#main-content" className="skip-link">
@@ -250,9 +274,10 @@ Implementa y verifica que tu aplicación web cumpla con los estándares de acces
 ```
 
 ### Focus management
+
 ```tsx
 // Hook para manejar foco en modales
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 function useFocusTrap(isOpen: boolean) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -276,6 +301,7 @@ function useFocusTrap(isOpen: boolean) {
 ```
 
 ### Indicadores de foco visibles
+
 ```css
 /* Estilos para indicadores de foco */
 :focus-visible {
@@ -293,12 +319,14 @@ function useFocusTrap(isOpen: boolean) {
 ## Pasos de verificación
 
 ### 1. Auditoría inicial
+
 - [ ] Ejecuta Lighthouse en modo accesibilidad
 - [ ] Revisa el reporte y anota todos los problemas
 - [ ] Ejecuta axe DevTools y compara resultados
 - [ ] Documenta el puntaje actual de accesibilidad
 
 ### 2. Verificación manual
+
 - [ ] Navega la página completa usando solo teclado
 - [ ] Verifica que todos los elementos interactivos sean accesibles
 - [ ] Prueba con un lector de pantalla (NVDA, VoiceOver, etc.)
@@ -306,12 +334,14 @@ function useFocusTrap(isOpen: boolean) {
 - [ ] Redimensiona el texto al 200% y verifica usabilidad
 
 ### 3. Corrección de problemas
+
 - [ ] Prioriza problemas críticos (nivel A)
 - [ ] Corrige problemas de nivel AA para cumplir estándar mínimo
 - [ ] Implementa mejoras de nivel AAA si es posible
 - [ ] Documenta cambios realizados
 
 ### 4. Verificación final
+
 - [ ] Re-ejecuta Lighthouse y verifica mejora del puntaje
 - [ ] Re-ejecuta axe DevTools
 - [ ] Verifica manualmente con teclado y lector de pantalla
@@ -321,6 +351,7 @@ function useFocusTrap(isOpen: boolean) {
 ## Salida esperada
 
 Proporciona:
+
 - **Reporte de auditoría inicial:** Puntaje de accesibilidad y lista de problemas identificados
 - **Análisis de problemas:** Descripción detallada de cada problema con su nivel de severidad (A/AA/AAA)
 - **Plan de corrección:** Priorización de problemas y estrategia de implementación
@@ -331,9 +362,11 @@ Proporciona:
 ## Ejemplos de uso
 
 ### Ejemplo 1: Auditoría completa
+
 **Tarea:** "Realiza una auditoría completa de accesibilidad en la página de contacto"
 
 **Proceso sugerido:**
+
 1. Ejecutar Lighthouse en /contact
 2. Ejecutar axe DevTools
 3. Verificar navegación por teclado
@@ -344,9 +377,11 @@ Proporciona:
 8. Verificar mejoras
 
 ### Ejemplo 2: Corrección específica
+
 **Problema:** "El formulario de contacto no es accesible por teclado"
 
 **Correcciones sugeridas:**
+
 1. Agregar etiquetas a todos los campos
 2. Implementar manejo de errores con `aria-live`
 3. Agregar indicadores de campos requeridos
@@ -355,9 +390,11 @@ Proporciona:
 6. Probar con lector de pantalla
 
 ### Ejemplo 3: Implementación de mejora
+
 **Mejora:** "Implementar skip links y mejorar navegación por teclado"
 
 **Implementación sugerida:**
+
 1. Agregar skip link al contenido principal
 2. Implementar landmarks ARIA
 3. Mejorar estructura de encabezados
@@ -383,4 +420,3 @@ Proporciona:
 - **Involucra a usuarios con discapacidades** en las pruebas cuando sea posible
 
 Implementa accesibilidad desde el inicio del desarrollo para evitar refactorizaciones costosas y crear una experiencia inclusiva para todos los usuarios.
-

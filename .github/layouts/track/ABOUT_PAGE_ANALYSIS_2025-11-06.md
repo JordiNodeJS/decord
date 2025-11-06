@@ -5,21 +5,24 @@
 ### Diferencias Detectadas
 
 #### 1. **Breadcrumb**
+
 - **Original**: Muestra claramente "INICIO | SOBRE NOSOTROS" con separador vertical
 - **Clone**: El breadcrumb está presente pero puede tener problemas de estilo
 - **Acción**: Verificar estilos y visibilidad del breadcrumb
 
 #### 2. **Sección Hero - Layout General**
-- **Original**: 
+
+- **Original**:
   - Imagen a la izquierda con dimensiones específicas
   - Contenido de texto a la derecha bien alineado
   - Espaciado vertical coherente
-- **Clone**: 
+- **Clone**:
   - Layout similar pero con posibles problemas de alineación
   - Espaciado puede diferir
 - **Acción**: Ajustar grid, gaps y alineación vertical
 
 #### 3. **Tipografía del Título "ABOUT ART GALLERY"**
+
 - **Original**:
   - Tamaño: 24px
   - Letter-spacing: 14.4px (muy amplio)
@@ -29,6 +32,7 @@
 - **Acción**: Asegurar coincidencia exacta de tipografía
 
 #### 4. **Párrafos de Contenido**
+
 - **Original**:
   - Primer párrafo: font-size 23px, negro
   - Segundo párrafo: font-size 23px, gris rgb(118, 118, 118)
@@ -37,6 +41,7 @@
 - **Acción**: Ajustar tamaños y colores de texto
 
 #### 5. **Sección de Estadísticas**
+
 - **Original**:
   - Layout vertical con números grandes a la izquierda
   - Número: 50px, rojo, line-height 50px
@@ -47,6 +52,7 @@
 - **Acción**: Asegurar layout exacto con offset correcto
 
 #### 6. **Sección Team**
+
 - **Original**:
   - Grid asimétrico con diferentes anchos de columnas
   - Tarjetas con alturas variadas
@@ -75,7 +81,7 @@
 ## Próximos Pasos
 
 - [ ] Abrir devtools en el original
-- [ ] Abrir devtools en el clone  
+- [ ] Abrir devtools en el clone
 - [ ] Documentar diferencias exactas de CSS
 - [ ] Aplicar correcciones
 - [ ] Tomar capturas finales

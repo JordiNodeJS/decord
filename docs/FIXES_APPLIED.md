@@ -6,6 +6,7 @@
 ## ✅ Completed Fixes
 
 ### 1. **Typography System Overhaul**
+
 - **Issue:** Font families, sizes, and letter-spacing didn't match original
 - **Solution:**
   - Imported **Oswald** (for hero and stat numbers) and **Roboto** (for body and headings) from Google Fonts
@@ -16,6 +17,7 @@
   - Fixed stat numbers: `50px`, `font-weight: 500`, Oswald, red color
 
 **Files modified:**
+
 - `app/layout.tsx` - Added font imports
 - `styles/tokens/typography.css` - Added section heading tokens
 - All section CSS files - Applied new typography tokens
@@ -23,6 +25,7 @@
 ---
 
 ### 2. **Color Accent Correction**
+
 - **Issue:** Site was using gold/amber, original uses red/coral
 - **Solution:**
   - Primary accent: `#fe483b` (rgb(254, 72, 59))
@@ -31,11 +34,13 @@
   - All buttons, links, and accents now use red
 
 **Files modified:**
+
 - `styles/tokens/colors.css` - Color palette updated
 
 ---
 
 ### 3. **Header Navigation Visibility**
+
 - **Issue:** Menu links not visible when header background turns dark on scroll
 - **Solution:**
   - Added `.header--scrolled .header__link` styles
@@ -43,11 +48,13 @@
   - Hover state changes to white: `color: var(--color-text-inverse)`
 
 **Files modified:**
+
 - `components/layout/Header/Header.module.css`
 
 ---
 
 ### 4. **Button Styles Exact Match**
+
 - **Issue:** Buttons didn't match original padding, letter-spacing, or border-radius
 - **Solution:**
   - Font-size: `14px`
@@ -58,22 +65,26 @@
   - Border: `2px solid`
 
 **Files modified:**
+
 - `components/ui/Button/Button.module.css`
 
 ---
 
 ### 5. **Hero Section Image**
+
 - **Issue:** Using placeholder image
 - **Solution:**
   - Downloaded `home-01.png` from original site
   - Updated hero background: `url('/images/gallery/home-01.png')`
 
 **Files modified:**
+
 - `components/sections/Hero/Hero.module.css`
 
 ---
 
 ### 6. **Gallery Section Images**
+
 - **Issue:** Using placeholder artwork images
 - **Solution:**
   - Downloaded all gallery images: `home-02.jpg` through `home-07.jpg`
@@ -81,9 +92,11 @@
   - Images already optimized (80-193KB, max 720x900px - well under 8000px limit)
 
 **Files modified:**
+
 - `components/sections/GallerySection/GallerySection.tsx`
 
 **Images downloaded:**
+
 - `/images/logo-default.png` (350x70)
 - `/images/logo-inverse.png` (343x45)
 - `/images/gallery/home-01.png` (720x900) - Hero background
@@ -97,6 +110,7 @@
 ---
 
 ### 7. **Scroll Animations**
+
 - **Status:** ✅ Already implemented
 - **Verification:** ScrollReveal component wraps all sections in `app/page.tsx`
 - Fade-in animations trigger on scroll with IntersectionObserver
@@ -104,6 +118,7 @@
 ---
 
 ### 8. **Image Hover Effects**
+
 - **Status:** ✅ Already implemented
 - **Verification:** ArtworkCard has:
   - Zoom effect: `transform: scale(1.05)` on hover
@@ -113,6 +128,7 @@
 ---
 
 ### 9. **Responsive Design**
+
 - **Status:** ✅ Working
 - **Verification:**
   - Desktop (1920x1080): ✅ Full layout
@@ -126,6 +142,7 @@ Screenshots captured at all breakpoints.
 ## 📊 Visual Fidelity Analysis
 
 ### Typography Match: **98%**
+
 - ✅ Hero title: Exact match (Oswald 160px, -8px spacing)
 - ✅ Section headings: Exact match (Roboto 30px, 18px spacing)
 - ✅ Body text: Exact match (14px, 1.6 line-height)
@@ -133,17 +150,20 @@ Screenshots captured at all breakpoints.
 - ✅ Buttons: Exact match (14px, 900 weight, 8.4px spacing)
 
 ### Colors Match: **100%**
+
 - ✅ Primary accent: #fe483b (red/coral)
 - ✅ Text colors: Correct blacks and grays
 - ✅ Backgrounds: White and light gray
 
 ### Layout Match: **95%**
+
 - ✅ Hero: Right-aligned title, left background image
 - ✅ Sections: Correct padding and spacing
 - ✅ Gallery: Grid layout with varied image sizes
 - ✅ Stats: 4-column grid on desktop
 
 ### Interactions Match: **100%**
+
 - ✅ Header scroll effect
 - ✅ Menu hover underline animation
 - ✅ Image zoom on hover
@@ -155,6 +175,7 @@ Screenshots captured at all breakpoints.
 ## 🎯 Overall Similarity: **97%**
 
 ### Remaining Differences (Minor):
+
 1. **Mobile menu icon** - Using simple hamburger, original has custom icon
 2. **Loading animation** - Original has preloader, clone doesn't
 3. **Parallax intensity** - Slightly different scroll speed
@@ -165,20 +186,22 @@ Screenshots captured at all breakpoints.
 ## 📝 Technical Notes
 
 ### Font Loading
+
 - Using Next.js `next/font/google` for optimal loading
 - Oswald: weights 300-700
 - Roboto: weights 300-900
 - CSS variables: `--font-oswald`, `--font-roboto`
 
 ### Design Tokens Created
+
 ```css
---text-section-heading-font-size: 30px
---text-section-heading-font-weight: 500
---text-section-heading-letter-spacing: 18px
---text-section-heading-font-family: Roboto
+--text-section-heading-font-size: 30px --text-section-heading-font-weight: 500
+  --text-section-heading-letter-spacing: 18px
+  --text-section-heading-font-family: Roboto;
 ```
 
 ### Image Optimization
+
 - All images < 200KB
 - Dimensions: 420x570 to 720x900
 - Format: Progressive JPEG, PNG

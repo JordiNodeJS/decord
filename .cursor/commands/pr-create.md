@@ -173,27 +173,30 @@ Este bloque es sólo un ejemplo que el agente actualizará dinámicamente según
 **Soluciones**:
 
 1. **Para body de PR**: Usar `--body-file` SIEMPRE
+
    ```bash
    # ✅ CORRECTO
    gh pr create --body-file .pr-body-temp.md
-   
+
    # ❌ INCORRECTO
    gh pr create --body "Texto con emojis 🚀"
    ```
 
 2. **Para comentarios en PR**: Evitar emojis
+
    ```bash
    # ✅ CORRECTO - Usar bullets estándar
    gh pr comment 42 --body "## Validaciones
    - ESLint: OK
    - Build: OK"
-   
+
    # ❌ INCORRECTO - Emojis se convertirán en
    gh pr comment 42 --body "## Validaciones
    ✅ ESLint: OK"
    ```
 
 3. **Alternativa**: Usar checkmarks en texto
+
    ```bash
    gh pr comment 42 --body "## Validaciones
    - [x] ESLint: OK

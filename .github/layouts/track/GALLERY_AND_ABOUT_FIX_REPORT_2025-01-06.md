@@ -1,4 +1,5 @@
 # Reporte de Correcciones: Galería y Página About
+
 **Fecha**: 6 de Enero de 2025  
 **Referencia**: layouts.md - Tareas y Correcciones
 
@@ -7,12 +8,15 @@
 ### 1. GALERÍA EN HOME PAGE
 
 #### Problema Original
+
 La galería en la página de inicio no mostraba los filtros de categorías, aunque el componente estaba configurado con `showFilters={true}`. Los filtros estaban ocultos mediante CSS en el variant "preview".
 
 #### Análisis del Original
+
 Mediante inspección del sitio original (https://ld-wt73.template-help.com/tf/decord_v1/), se confirmó que la galería en la home SÍ debe mostrar los filtros de categorías.
 
 #### Solución Aplicada
+
 **Archivo**: `components/sections/Gallery/Gallery.module.css`
 
 ```css
@@ -29,6 +33,7 @@ Mediante inspección del sitio original (https://ld-wt73.template-help.com/tf/de
 ```
 
 #### Resultado
+
 ✅ Los filtros ahora se muestran correctamente en la página de inicio
 ✅ Coincide con el diseño del sitio original
 
@@ -37,9 +42,11 @@ Mediante inspección del sitio original (https://ld-wt73.template-help.com/tf/de
 ### 2. PÁGINA ABOUT - STATS SECTION
 
 #### Problemas Identificados
+
 La sección de estadísticas (stats) no coincidía con el original en múltiples aspectos:
 
 **Números**:
+
 - ❌ Color: Rojo (var(--color-primary-red)) → Debía ser gris
 - ❌ Font size: 50px → Debía ser 18px
 - ❌ Font weight: 500 → Debía ser 300
@@ -47,16 +54,19 @@ La sección de estadísticas (stats) no coincidía con el original en múltiples
 - ❌ Font family: var(--font-family-primary) → Debía ser var(--font-family-secondary)
 
 **Labels**:
+
 - ❌ Font size: 20px → Debía ser 24px
 - ❌ Letter spacing: 8px → Debía ser 9.6px
 - ❌ Line height: 1.2 → Debía ser 33.6px
 
 **Descripciones**:
+
 - ❌ Font size: 16px → Debía ser 18px
 - ❌ Line height: 25.6px → Debía ser 28.8px
 - ❌ Font weight: 400 → Debía ser 300
 
 #### Análisis del Original
+
 Se inspeccionaron los estilos del sitio original mediante DevTools:
 
 ```javascript
@@ -86,16 +96,18 @@ Se inspeccionaron los estilos del sitio original mediante DevTools:
 ```
 
 #### Soluciones Aplicadas
+
 **Archivo**: `app/about/about.module.css`
 
 **Corrección 1 - Números**:
+
 ```css
 .statDetail__number {
-  font-family: var(--font-family-secondary);  /* Cambio de primary a secondary */
-  font-size: 18px;                           /* 50px → 18px */
-  font-weight: 300;                          /* 500 → 300 */
-  line-height: 28.8px;                       /* 50px → 28.8px */
-  color: rgb(118, 118, 118);                 /* red → gray */
+  font-family: var(--font-family-secondary); /* Cambio de primary a secondary */
+  font-size: 18px; /* 50px → 18px */
+  font-weight: 300; /* 500 → 300 */
+  line-height: 28.8px; /* 50px → 28.8px */
+  color: rgb(118, 118, 118); /* red → gray */
   flex-shrink: 0;
   min-width: auto;
   margin-right: 0;
@@ -103,32 +115,35 @@ Se inspeccionaron los estilos del sitio original mediante DevTools:
 ```
 
 **Corrección 2 - Labels**:
+
 ```css
 .statDetail__label {
   font-family: var(--font-family-secondary);
-  font-size: 24px;                           /* 20px → 24px */
+  font-size: 24px; /* 20px → 24px */
   font-weight: 500;
-  letter-spacing: 9.6px;                     /* 8px → 9.6px */
+  letter-spacing: 9.6px; /* 8px → 9.6px */
   text-transform: uppercase;
   color: var(--color-text-primary);
   margin: 0 0 10px 0;
-  line-height: 33.6px;                       /* 1.2 → 33.6px */
+  line-height: 33.6px; /* 1.2 → 33.6px */
 }
 ```
 
 **Corrección 3 - Descripciones**:
+
 ```css
 .statDetail__description {
   font-family: var(--font-family-secondary);
-  font-size: 18px;                           /* 16px → 18px */
-  line-height: 28.8px;                       /* 25.6px → 28.8px */
+  font-size: 18px; /* 16px → 18px */
+  line-height: 28.8px; /* 25.6px → 28.8px */
   color: rgb(118, 118, 118);
   margin: 0;
-  font-weight: 300;                          /* 400 → 300 */
+  font-weight: 300; /* 400 → 300 */
 }
 ```
 
 #### Resultado - Stats Section
+
 Verificado mediante DevTools en localhost:3000/about:
 
 ✅ **Número fontSize**: 18px  
@@ -140,18 +155,21 @@ Verificado mediante DevTools en localhost:3000/about:
 ✅ **Label lineHeight**: 33.6px  
 ✅ **Description fontSize**: 18px  
 ✅ **Description fontWeight**: 300  
-✅ **Description lineHeight**: 28.8px  
+✅ **Description lineHeight**: 28.8px
 
 ---
 
 ### 3. PÁGINA ABOUT - IMAGEN HERO
 
 #### Problema
+
 La imagen en la sección hero tenía dimensiones incorrectas:
+
 - ❌ Dimensiones actuales: 570x703
 - ✅ Dimensiones correctas: 570x790
 
 #### Análisis del Original
+
 ```javascript
 // Imagen del sitio original
 {
@@ -162,6 +180,7 @@ La imagen en la sección hero tenía dimensiones incorrectas:
 ```
 
 #### Solución Aplicada
+
 **Archivo**: `app/about/page.tsx`
 
 ```tsx
@@ -185,6 +204,7 @@ La imagen en la sección hero tenía dimensiones incorrectas:
 ```
 
 #### Resultado
+
 ✅ La imagen ahora tiene las dimensiones correctas (570x790)
 ✅ Coincide con la proporción del sitio original
 
@@ -208,11 +228,13 @@ La imagen en la sección hero tenía dimensiones incorrectas:
 ## Verificación de Calidad
 
 ### Errores TypeScript/ESLint
+
 ```bash
 ✅ No errors found
 ```
 
 ### Compatibilidad con Original
+
 - ✅ Galería home: Filtros visibles
 - ✅ About stats: Números en gris, tamaños correctos
 - ✅ About stats: Labels con letter-spacing correcto
@@ -248,12 +270,14 @@ Según el método de trabajo definido en layouts.md, se recomienda:
 ## Notas Técnicas
 
 ### Diferencias Clave Identificadas
+
 - El sitio original usa números grises en la sección stats, no rojos
 - El número es mucho más pequeño (18px vs 50px) que lo implementado inicialmente
 - La tipografía usa Roboto con peso 300 (light) para números y descripciones
 - El letter-spacing del label es más amplio (9.6px vs 8px)
 
 ### Lecciones Aprendidas
+
 - **Siempre verificar con DevTools del original**: No asumir diseños basándose únicamente en capturas de pantalla
 - **Inspeccionar valores computados**: Los valores en CSS pueden ser heredados o calculados
 - **Verificar proporciones de imágenes**: Las dimensiones deben coincidir exactamente con las del original

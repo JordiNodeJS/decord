@@ -9,6 +9,7 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 ## 🚀 Características Implementadas
 
 ### ✅ Sistema de Design Tokens Completo
+
 - **Colores**: Paleta oscura con acentos dorados (#d4af37)
 - **Spacing**: Sistema base de 8px con escala semántica
 - **Tipografía**: Playfair Display (títulos) + Inter (cuerpo)
@@ -17,19 +18,20 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 - **Components**: Tokens específicos para cada componente
 
 ### ✅ Componentes de Layout
-- **Header**: 
+
+- **Header**:
   - Navegación sticky con backdrop blur al hacer scroll
-  - Logo "ART GALLERY" 
+  - Logo "ART GALLERY"
   - Desktop navigation + Mobile hamburger menu
   - Animación suave de background transparente → oscuro
 
-- **Footer**: 
+- **Footer**:
   - Sección CTA "HABLEMOS" con fondo destacado
   - 4 columnas: About, Navegación, Información, Horarios
   - Footer bottom con copyright y links legales
   - Totalmente responsive
 
-- **MobileMenu**: 
+- **MobileMenu**:
   - Overlay full-screen
   - Animación de hamburger → X
   - Links con animación staggered fade-in
@@ -37,6 +39,7 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 ### ✅ Páginas Principales
 
 #### Home (`/`)
+
 1. **Hero Section**: Título grande "MUSEO DE ARTE MODERNO" con letter-spacing característico
 2. **About Section**: Descripción del museo con imagen placeholder
 3. **Stats Section**: 4 tarjetas con números destacados (15 años, 34 artistas, 500+ obras, 50K visitantes)
@@ -44,23 +47,27 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 5. **Events Section**: Próximos eventos con tarjetas especiales
 
 #### About (`/about`)
+
 - Hero dedicado
 - Historia del museo
 - Misión (3 pilares: Inspirar, Conectar, Innovar)
 - Equipo (4 miembros con fotos placeholder)
 
 #### Gallery (`/gallery`)
+
 - Hero con descripción
 - **Filtros de categorías**: Todas, Anamorfismo, Fotorrealismo, Surrealismo, Abstracto
 - Grid responsive de obras (3 → 2 → 1 columnas)
 - Filtrado funcional en client-side
 
 #### Events (`/events`)
+
 - Hero dedicado
 - Lista completa de eventos en grid 2 columnas
 - Tarjetas con fecha destacada, detalles y botón "OBTENER ENTRADAS"
 
 #### Contact (`/contact`)
+
 - Hero con call-to-action
 - Grid 2 columnas: Info + Formulario
 - Información completa (dirección, teléfono, email, horarios)
@@ -69,22 +76,26 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 ### ✅ Componentes UI Reutilizables
 
 **ArtworkCard**:
+
 - Aspect ratio 3:4 (portrait)
 - Hover: zoom imagen + overlay con información
 - Título, artista, año, categoría
 
 **EventCard**:
+
 - Badge de fecha grande (DD/MM) con borde dorado
 - Título, descripción, detalles (hora, ubicación)
 - Botón "OBTENER ENTRADAS" outline → filled al hover
 - Hover: elevación con sombra
 
 **Button**:
+
 - Variantes: primary, secondary, outline
 - Tamaños: sm, md, lg
 - Transiciones suaves
 
 **ScrollReveal**:
+
 - Intersection Observer para animaciones
 - Fade-in + translateY
 - Delay configurable para efectos staggered
@@ -93,7 +104,7 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 
 1. **Scroll Animations**: Todas las secciones tienen fade-in al entrar en viewport
 2. **Header Scroll Effect**: Backdrop blur + background oscuro aparece suavemente
-3. **Hover Effects**: 
+3. **Hover Effects**:
    - Imágenes: zoom 1.05x
    - Cards: elevación con translateY(-4px)
    - Botones: cambio de color + elevación
@@ -101,6 +112,7 @@ Este proyecto es una réplica de alta fidelidad del sitio web DECORD, un museo d
 5. **Link Underlines**: Animación de línea de izquierda a derecha
 
 ### ✅ Responsive Design
+
 - **Desktop**: Layout completo con grids multi-columna
 - **Tablet** (< 1024px): Reducción a 2 columnas, ajuste de tamaños
 - **Mobile** (< 768px): Layout de 1 columna, menú hamburguesa, tipografía escalada
@@ -164,6 +176,7 @@ decord/
 ## 🎯 Similitud Visual Estimada: **85-90%**
 
 ### ✅ Aspectos Logrados:
+
 - ✅ Paleta de colores oscuros con dorado exacta
 - ✅ Tipografía elegante con Playfair Display + Inter
 - ✅ Letter-spacing característico del hero (0.1em)
@@ -176,6 +189,7 @@ decord/
 - ✅ Hover effects en galería
 
 ### 🔄 Pendiente para 95%+ Similitud:
+
 - ⏳ **Imágenes reales**: Actualmente usa placeholders con gradients
 - ⏳ **Lightbox/Modal**: Para ver obras en tamaño completo
 - ⏳ **Imágenes de background**: Algunas secciones del original tienen fondos fotográficos
@@ -237,6 +251,7 @@ pnpm start
 ## 📝 Notas Técnicas
 
 ### Decisiones de Arquitectura:
+
 1. **CSS Modules**: Para scope aislado y evitar conflictos de estilos
 2. **Design Tokens**: Sistema centralizado para mantenibilidad
 3. **BEM Naming**: Convención clara en clases CSS
@@ -244,6 +259,7 @@ pnpm start
 5. **Client Components**: Solo donde se necesita interactividad
 
 ### Optimizaciones:
+
 - Fuentes con `display: swap` para evitar FOIT
 - Intersection Observer para lazy animations
 - CSS custom properties para theming eficiente
@@ -266,6 +282,7 @@ pnpm start
 ## 👏 Conclusión
 
 Este clon de DECORD demuestra:
+
 - ✅ Dominio de Next.js 16 App Router
 - ✅ CSS avanzado con design systems
 - ✅ TypeScript para type safety
@@ -277,4 +294,4 @@ Este clon de DECORD demuestra:
 
 ---
 
-*Desarrollado siguiendo las mejores prácticas de Next.js y metodología BEM para CSS.*
+_Desarrollado siguiendo las mejores prácticas de Next.js y metodología BEM para CSS._

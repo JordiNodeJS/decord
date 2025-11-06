@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Clona páginas web responsive en un solo paso usando shadcn/ui, TailwindCSS y mejores prácticas de diseño moderno (Layouts, Flexbox, Grid, Gaps)'
+mode: "agent"
+description: "Clona páginas web responsive en un solo paso usando shadcn/ui, TailwindCSS y mejores prácticas de diseño moderno (Layouts, Flexbox, Grid, Gaps)"
 ---
 
 # Clonación One-Shot de Páginas Web
@@ -22,6 +22,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 **⚠️ PRIORIZACIÓN CRÍTICA: Layouts y Espaciado antes que Colores**
 
 **REGLAS DE ORO:**
+
 1. **Layouts y espaciado son PRIORIDAD ALTA:** Paddings, margins, gaps, dimensiones, estructuras de layout (grid/flexbox) deben coincidir perfectamente con el diseño original.
 2. **Estructura visual es PRIORIDAD MEDIA:** Tipografías, bordes y sombras se aplican después de layouts.
 3. **Colores: Usa el theme de shadcn/ui** - NO intentes replicar colores exactos. Usa colores semánticos del theme (primary, secondary, muted, accent, etc.).
@@ -81,7 +82,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
    - Obtén documentación relevante: `get-library-docs <libraryId> --topic <topic>`
    - Consulta documentación de:
      - **Next.js/React:** Para implementar rutas, layouts, componentes, y App Router
-     - **TailwindCSS:** 
+     - **TailwindCSS:**
        - Layout y espaciado: `--topic "layout grid flexbox spacing padding margin gap"`
        - Responsive design: `--topic "responsive design breakpoints mobile-first"`
        - Container: `--topic "container max-width"`
@@ -97,6 +98,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 3. **Sistema de Layout y Espaciado - Mejores Prácticas:**
 
    **Containers y Max-Width:**
+
    ```tsx
    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
      {/* contenido */}
@@ -127,7 +129,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 
    **Flexbox Layouts - Mejores Prácticas:**
    - **Dirección Responsive:** `flex-col md:flex-row`
-   - **Alineación:** 
+   - **Alineación:**
      - Horizontal: `justify-start`, `justify-center`, `justify-between`, `justify-evenly`
      - Vertical: `items-start`, `items-center`, `items-stretch`, `items-baseline`
    - **Gap sobre Margin:** Prefiere `gap-*`:
@@ -171,9 +173,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
          <CardTitle>Título</CardTitle>
          <CardDescription>Descripción</CardDescription>
        </CardHeader>
-       <CardContent className="p-6">
-         {/* contenido */}
-       </CardContent>
+       <CardContent className="p-6">{/* contenido */}</CardContent>
      </Card>
      ```
    - Usa `className` prop para extender estilos sin modificar el componente base
@@ -181,6 +181,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 7. **Patrones de Layout Comunes:**
 
    **Hero Section:**
+
    ```tsx
    <section className="relative min-h-screen flex items-center">
      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
@@ -192,6 +193,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
    ```
 
    **Feature Grid:**
+
    ```tsx
    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
      {features.map((feature) => (
@@ -203,6 +205,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
    ```
 
    **Centered Content:**
+
    ```tsx
    <div className="container mx-auto px-4 max-w-4xl">
      <div className="text-center space-y-6">
@@ -271,11 +274,13 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 ## Herramientas a utilizar
 
 ### shadcn/ui MCP
+
 - `list-components`: Lista todos los componentes disponibles
 - `get-component-docs <component>`: Obtiene documentación de un componente
 - `install-component <component>`: Instala un componente en el proyecto
 
 ### Chrome DevTools MCP
+
 - `navigate_page <url>`: Navega a la página original
 - `take_snapshot`: Captura el estado actual del DOM
 - `take_screenshot`: Captura visual de la página (usa `fullPage: true` para capturas completas)
@@ -284,6 +289,7 @@ Clona una página web completa en una sola ejecución, utilizando componentes de
 - `list_network_requests`: Identifica recursos cargados
 
 ### Context7 MCP
+
 - `resolve-library-id <libraryName>`: Resuelve el ID de una librería
 - `get-library-docs <libraryId> --topic <topic>`: Obtiene documentación de una librería
 
@@ -331,4 +337,3 @@ Proporciona:
    - Archivos creados o modificados
    - Componentes implementados
    - Estilos aplicados
-

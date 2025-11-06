@@ -48,6 +48,7 @@ Este proyecto sigue la **estructura oficial de Next.js 16 con App Router** segú
 ## 📋 Directorio Detallado
 
 ### `app/` - App Router
+
 **Propósito:** Define rutas de la aplicación  
 **Contenido:** Solo archivos especiales de Next.js
 
@@ -67,6 +68,7 @@ app/
 ```
 
 **Archivos especiales:**
+
 - `page.tsx` - Define una ruta
 - `layout.tsx` - Layout compartido
 - `loading.tsx` - UI de carga
@@ -75,6 +77,7 @@ app/
 - `route.ts` - API endpoint
 
 ### `components/` - Componentes Reutilizables
+
 **Ubicación:** Raíz del proyecto  
 **Propósito:** Todos los componentes React
 
@@ -102,6 +105,7 @@ components/
 ```
 
 ### `styles/` - Estilos Globales
+
 **Ubicación:** Raíz del proyecto  
 **Propósito:** CSS global y variables
 
@@ -113,13 +117,15 @@ styles/
 ```
 
 **Importación:**
+
 ```tsx
 // app/layout.tsx
-import '@/styles/globals.css'
-import '@/styles/variables.css'
+import "@/styles/globals.css";
+import "@/styles/variables.css";
 ```
 
 ### `lib/` - Utilidades
+
 **Ubicación:** Raíz del proyecto  
 **Propósito:** Funciones helpers, constantes
 
@@ -131,6 +137,7 @@ lib/
 ```
 
 ### `data/` - Datos Mock
+
 **Ubicación:** Raíz del proyecto  
 **Propósito:** Datos de ejemplo, configuraciones
 
@@ -143,6 +150,7 @@ data/
 ```
 
 ### `public/` - Assets Estáticos
+
 **Ubicación:** Raíz del proyecto  
 **Propósito:** Imágenes, fuentes, archivos públicos
 
@@ -157,6 +165,7 @@ public/
 ```
 
 **Acceso:**
+
 ```tsx
 <Image src="/images/hero/hero-bg.webp" alt="Hero" />
 ```
@@ -187,15 +196,15 @@ Configurados en `tsconfig.json`:
 
 ```tsx
 // ✅ Importaciones correctas
-import Header from '@/components/layout/Header/Header'
-import Hero from '@/components/sections/Hero/Hero'
-import Button from '@/components/ui/Button/Button'
-import { formatDate } from '@/lib/utils'
-import { artworks } from '@/data/artworks'
-import '@/styles/globals.css'
+import Header from "@/components/layout/Header/Header";
+import Hero from "@/components/sections/Hero/Hero";
+import Button from "@/components/ui/Button/Button";
+import { formatDate } from "@/lib/utils";
+import { artworks } from "@/data/artworks";
+import "@/styles/globals.css";
 
 // ❌ Evitar rutas relativas largas
-import Header from '../../../components/layout/Header/Header'
+import Header from "../../../components/layout/Header/Header";
 ```
 
 ---
@@ -203,25 +212,33 @@ import Header from '../../../components/layout/Header/Header'
 ## 📐 Convenciones de Nomenclatura
 
 ### Archivos y Carpetas
+
 - **Componentes:** `PascalCase` - `Button/`, `ArtworkCard.tsx`
 - **Utilidades:** `camelCase` - `utils.ts`, `formatDate.ts`
 - **Estilos:** `kebab-case` o `PascalCase.module.css`
 
 ### Clases CSS (BEM)
+
 ```css
 /* Bloque */
-.card { }
+.card {
+}
 
 /* Elemento */
-.card__title { }
-.card__image { }
+.card__title {
+}
+.card__image {
+}
 
 /* Modificador */
-.card--featured { }
-.card--large { }
+.card--featured {
+}
+.card--large {
+}
 ```
 
 ### Variables CSS
+
 ```css
 /* Prefijo para categoría */
 --color-primary
@@ -244,8 +261,8 @@ app/nueva-pagina/page.tsx
 
 ```tsx
 // app/nueva-pagina/page.tsx
-import Hero from '@/components/sections/Hero/Hero'
-import About from '@/components/sections/About/About'
+import Hero from "@/components/sections/Hero/Hero";
+import About from "@/components/sections/About/About";
 
 export default function NuevaPaginaPage() {
   return (
@@ -253,7 +270,7 @@ export default function NuevaPaginaPage() {
       <Hero />
       <About />
     </>
-  )
+  );
 }
 ```
 
@@ -268,10 +285,10 @@ components/ui/NewComponent/
 
 ```tsx
 // components/ui/NewComponent/NewComponent.tsx
-import styles from './NewComponent.module.css'
+import styles from "./NewComponent.module.css";
 
 interface NewComponentProps {
-  title: string
+  title: string;
 }
 
 export default function NewComponent({ title }: NewComponentProps) {
@@ -279,7 +296,7 @@ export default function NewComponent({ title }: NewComponentProps) {
     <div className={styles.component}>
       <h2 className={styles.component__title}>{title}</h2>
     </div>
-  )
+  );
 }
 ```
 
@@ -287,10 +304,10 @@ export default function NewComponent({ title }: NewComponentProps) {
 
 ```tsx
 // app/page.tsx
-import NewComponent from '@/components/ui/NewComponent/NewComponent'
+import NewComponent from "@/components/ui/NewComponent/NewComponent";
 
 export default function HomePage() {
-  return <NewComponent title="Hola" />
+  return <NewComponent title="Hola" />;
 }
 ```
 
@@ -298,15 +315,15 @@ export default function HomePage() {
 
 ## 📊 Comparación: Pages Router vs App Router
 
-| Aspecto | Pages Router (Old) | App Router (New) |
-|---------|-------------------|------------------|
-| Carpeta de rutas | `pages/` | `app/` |
-| Componentes | `components/` (raíz) | `components/` (raíz) ✅ |
-| Estilos globales | `styles/` (raíz) | `styles/` (raíz) ✅ |
-| Data fetching | `getStaticProps` | `async/await` directo |
-| Layouts | `_app.tsx` | `layout.tsx` |
-| Loading states | Custom | `loading.tsx` |
-| Error handling | `_error.tsx` | `error.tsx` |
+| Aspecto          | Pages Router (Old)   | App Router (New)        |
+| ---------------- | -------------------- | ----------------------- |
+| Carpeta de rutas | `pages/`             | `app/`                  |
+| Componentes      | `components/` (raíz) | `components/` (raíz) ✅ |
+| Estilos globales | `styles/` (raíz)     | `styles/` (raíz) ✅     |
+| Data fetching    | `getStaticProps`     | `async/await` directo   |
+| Layouts          | `_app.tsx`           | `layout.tsx`            |
+| Loading states   | Custom               | `loading.tsx`           |
+| Error handling   | `_error.tsx`         | `error.tsx`             |
 
 ---
 

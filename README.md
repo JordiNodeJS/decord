@@ -113,6 +113,7 @@ Los Design Tokens son variables CSS reutilizables que almacenan decisiones de di
 ### Documentación Completa
 
 Ver [DESIGN_TOKENS.md](./docs/DESIGN_TOKENS.md) para:
+
 - Catálogo completo de todos los tokens
 - Guía de cuándo usar cada token
 - Ejemplos de uso
@@ -123,12 +124,12 @@ Ver [DESIGN_TOKENS.md](./docs/DESIGN_TOKENS.md) para:
 El proyecto utiliza path aliases configurados en `tsconfig.json`:
 
 ```typescript
-import Header from '@/components/layout/Header/Header'
-import Hero from '@/components/sections/Hero/Hero'
-import Button from '@/components/ui/Button/Button'
-import { formatDate } from '@/lib/utils'
-import { artworks } from '@/data/artworks'
-import '@/styles/globals.css'
+import Header from "@/components/layout/Header/Header";
+import Hero from "@/components/sections/Hero/Hero";
+import Button from "@/components/ui/Button/Button";
+import { formatDate } from "@/lib/utils";
+import { artworks } from "@/data/artworks";
+import "@/styles/globals.css";
 ```
 
 ## 🎨 Metodología CSS
@@ -137,14 +138,10 @@ Este proyecto usa **CSS Modules** con metodología **BEM**:
 
 ```tsx
 // components/ui/Button/Button.tsx
-import styles from './Button.module.css'
+import styles from "./Button.module.css";
 
-export default function Button({ variant = 'primary' }) {
-  return (
-    <button className={styles.button}>
-      {/* Contenido */}
-    </button>
-  )
+export default function Button({ variant = "primary" }) {
+  return <button className={styles.button}>{/* Contenido */}</button>;
 }
 ```
 
@@ -166,15 +163,18 @@ export default function Button({ variant = 'primary' }) {
 ## 🚀 Convenciones de Nomenclatura
 
 ### Componentes
+
 - **PascalCase** para nombres de carpetas y archivos: `Button/`, `ArtworkCard.tsx`
 - **BEM** para clases CSS: `.card`, `.card__title`, `.card--featured`
 
 ### Archivos
+
 - `Component.tsx` - Componente principal
 - `Component.module.css` - Estilos del componente
 - `Component.test.tsx` - Tests (opcional)
 
 ### Organización
+
 ```
 components/
 ├── ui/
@@ -193,6 +193,7 @@ components/
    - `components/layout/` - Componentes de layout
 
 2. Crear archivos del componente:
+
 ```bash
 components/ui/MyComponent/
 ├── MyComponent.tsx
@@ -200,11 +201,12 @@ components/ui/MyComponent/
 ```
 
 3. Estructura básica del componente:
+
 ```tsx
-import styles from './MyComponent.module.css'
+import styles from "./MyComponent.module.css";
 
 interface MyComponentProps {
-  title: string
+  title: string;
   // ... props
 }
 
@@ -213,22 +215,24 @@ export default function MyComponent({ title }: MyComponentProps) {
     <div className={styles.component}>
       <h2 className={styles.component__title}>{title}</h2>
     </div>
-  )
+  );
 }
 ```
 
 ### Crear una Nueva Página
 
 1. Crear carpeta en `app/`:
+
 ```bash
 app/nueva-pagina/
 └── page.tsx
 ```
 
 2. Estructura básica:
+
 ```tsx
 // app/nueva-pagina/page.tsx
-import Hero from '@/components/sections/Hero/Hero'
+import Hero from "@/components/sections/Hero/Hero";
 
 export default function NuevaPaginaPage() {
   return (
@@ -236,7 +240,7 @@ export default function NuevaPaginaPage() {
       <Hero />
       {/* Más secciones */}
     </>
-  )
+  );
 }
 ```
 

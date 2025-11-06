@@ -10,6 +10,7 @@ Los tokens garantizan **consistencia visual** y facilitan el mantenimiento del c
 ## 🎯 ¿Qué son los Design Tokens?
 
 Los Design Tokens son **variables reutilizables** que almacenan decisiones de diseño:
+
 - Colores
 - Espaciado
 - Tipografía
@@ -36,9 +37,10 @@ styles/
 ```
 
 **Importación global en `app/layout.tsx`:**
+
 ```tsx
-import '@/styles/tokens/index.css'
-import '@/styles/globals.css'
+import "@/styles/tokens/index.css";
+import "@/styles/globals.css";
 ```
 
 ---
@@ -47,22 +49,22 @@ import '@/styles/globals.css'
 
 ### Paleta Principal
 
-| Token | Valor | Uso |
-|-------|-------|-----|
-| `--color-primary-black` | `#0a0a0a` | Background principal del sitio |
-| `--color-primary-dark` | `#1a1a1a` | Background secundario |
-| `--color-primary-charcoal` | `#2a2a2a` | Cards, overlays |
-| `--color-primary-gold` | `#d4af37` | 🌟 Accent principal (dorado) |
-| `--color-primary-gold-light` | `#e6c968` | Hover sobre dorado |
-| `--color-primary-gold-dark` | `#b8941f` | Active state dorado |
+| Token                        | Valor     | Uso                            |
+| ---------------------------- | --------- | ------------------------------ |
+| `--color-primary-black`      | `#0a0a0a` | Background principal del sitio |
+| `--color-primary-dark`       | `#1a1a1a` | Background secundario          |
+| `--color-primary-charcoal`   | `#2a2a2a` | Cards, overlays                |
+| `--color-primary-gold`       | `#d4af37` | 🌟 Accent principal (dorado)   |
+| `--color-primary-gold-light` | `#e6c968` | Hover sobre dorado             |
+| `--color-primary-gold-dark`  | `#b8941f` | Active state dorado            |
 
 ### Colores Semánticos
 
 ```css
 /* Texto */
---color-text-primary: #fafafa;      /* Texto principal */
---color-text-secondary: #a3a3a3;    /* Texto secundario */
---color-text-tertiary: #737373;     /* Metadata, captions */
+--color-text-primary: #fafafa; /* Texto principal */
+--color-text-secondary: #a3a3a3; /* Texto secundario */
+--color-text-tertiary: #737373; /* Metadata, captions */
 
 /* Backgrounds */
 --color-background-primary: #0a0a0a;
@@ -77,15 +79,15 @@ import '@/styles/globals.css'
 
 ### 📖 Cuándo usar cada color
 
-| Situación | Token recomendado |
-|-----------|-------------------|
-| Botón principal / CTA | `--color-primary-gold` |
-| Hover sobre botón | `--color-hover-gold` |
-| Título principal | `--color-text-primary` |
-| Fecha, autor, metadata | `--color-text-secondary` |
-| Separadores discretos | `--color-border-subtle` |
-| Background de card | `--color-background-elevated` |
-| Overlay sobre imagen | `--color-overlay-light` |
+| Situación              | Token recomendado             |
+| ---------------------- | ----------------------------- |
+| Botón principal / CTA  | `--color-primary-gold`        |
+| Hover sobre botón      | `--color-hover-gold`          |
+| Título principal       | `--color-text-primary`        |
+| Fecha, autor, metadata | `--color-text-secondary`      |
+| Separadores discretos  | `--color-border-subtle`       |
+| Background de card     | `--color-background-elevated` |
+| Overlay sobre imagen   | `--color-overlay-light`       |
 
 ---
 
@@ -95,29 +97,29 @@ import '@/styles/globals.css'
 
 Todo el espaciado sigue múltiplos de 8px:
 
-| Token | Valor | Uso típico |
-|-------|-------|-----------|
-| `--spacing-1` | 4px | Padding mínimo |
-| `--spacing-2` | 8px | Gap pequeño |
-| `--spacing-4` | 16px | Gap entre elementos relacionados |
-| `--spacing-6` | 24px | Gap entre cards |
-| `--spacing-8` | 32px | Padding interno de cards |
-| `--spacing-12` | 48px | Padding del container |
-| `--spacing-32` | 128px | Padding vertical de secciones |
+| Token          | Valor | Uso típico                       |
+| -------------- | ----- | -------------------------------- |
+| `--spacing-1`  | 4px   | Padding mínimo                   |
+| `--spacing-2`  | 8px   | Gap pequeño                      |
+| `--spacing-4`  | 16px  | Gap entre elementos relacionados |
+| `--spacing-6`  | 24px  | Gap entre cards                  |
+| `--spacing-8`  | 32px  | Padding interno de cards         |
+| `--spacing-12` | 48px  | Padding del container            |
+| `--spacing-32` | 128px | Padding vertical de secciones    |
 
 ### Espaciado Semántico
 
 ```css
 /* Secciones */
---spacing-section-y: var(--spacing-32);  /* 128px desktop */
---spacing-section-y-mobile: var(--spacing-20);  /* 80px mobile */
+--spacing-section-y: var(--spacing-32); /* 128px desktop */
+--spacing-section-y-mobile: var(--spacing-20); /* 80px mobile */
 
 /* Cards */
---spacing-card-padding: var(--spacing-8);  /* 32px interno */
---spacing-card-gap: var(--spacing-6);  /* 24px entre cards */
+--spacing-card-padding: var(--spacing-8); /* 32px interno */
+--spacing-card-gap: var(--spacing-6); /* 24px entre cards */
 
 /* Container */
---spacing-container-x: var(--spacing-12);  /* 48px horizontal */
+--spacing-container-x: var(--spacing-12); /* 48px horizontal */
 ```
 
 ### 📖 Ejemplos de uso
@@ -145,26 +147,26 @@ Todo el espaciado sigue múltiplos de 8px:
 
 ### Fuentes
 
-| Token | Valor | Uso |
-|-------|-------|-----|
-| `--font-family-primary` | `'Playfair Display', serif` | Títulos y headings elegantes |
-| `--font-family-secondary` | `'Inter', sans-serif` | Texto de cuerpo y UI |
+| Token                     | Valor                       | Uso                          |
+| ------------------------- | --------------------------- | ---------------------------- |
+| `--font-family-primary`   | `'Playfair Display', serif` | Títulos y headings elegantes |
+| `--font-family-secondary` | `'Inter', sans-serif`       | Texto de cuerpo y UI         |
 
 ### Tamaños de Fuente
 
 Escala tipográfica basada en ratio **1.25 (Fourth)**:
 
-| Token | Valor | Uso |
-|-------|-------|-----|
-| `--font-size-xs` | 12px | Captions, legal text |
-| `--font-size-sm` | 14px | Metadata, small text |
-| `--font-size-base` | 16px | Body text (base) |
-| `--font-size-xl` | 24px | H4 |
-| `--font-size-2xl` | 32px | H3 |
-| `--font-size-3xl` | 40px | H2 |
-| `--font-size-4xl` | 48px | H1 |
-| `--font-size-5xl` | 64px | Hero title desktop |
-| `--font-size-7xl` | 96px | 🌟 Hero extra large |
+| Token              | Valor | Uso                  |
+| ------------------ | ----- | -------------------- |
+| `--font-size-xs`   | 12px  | Captions, legal text |
+| `--font-size-sm`   | 14px  | Metadata, small text |
+| `--font-size-base` | 16px  | Body text (base)     |
+| `--font-size-xl`   | 24px  | H4                   |
+| `--font-size-2xl`  | 32px  | H3                   |
+| `--font-size-3xl`  | 40px  | H2                   |
+| `--font-size-4xl`  | 48px  | H1                   |
+| `--font-size-5xl`  | 64px  | Hero title desktop   |
+| `--font-size-7xl`  | 96px  | 🌟 Hero extra large  |
 
 ### 🌟 Característica Distintiva: Letter Spacing
 
@@ -173,7 +175,7 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 ```css
 .hero__title {
   font-size: var(--font-size-7xl);
-  letter-spacing: var(--letter-spacing-widest);  /* 0.1em */
+  letter-spacing: var(--letter-spacing-widest); /* 0.1em */
   font-family: var(--font-family-primary);
 }
 ```
@@ -226,8 +228,8 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 --transition-slow: 300ms;
 
 /* Presets */
---transition-colors: color 200ms ease-in-out,
-                     background-color 200ms ease-in-out;
+--transition-colors:
+  color 200ms ease-in-out, background-color 200ms ease-in-out;
 
 --transition-transform: transform 200ms ease-in-out;
 ```
@@ -240,7 +242,7 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 }
 
 .artwork-card:hover .artwork-card__image {
-  transform: var(--animation-image-zoom);  /* scale(1.05) */
+  transform: var(--animation-image-zoom); /* scale(1.05) */
 }
 ```
 
@@ -252,22 +254,22 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 
 ```css
 --button-height-md: 44px;
---button-padding-x-md: var(--spacing-6);  /* 24px */
+--button-padding-x-md: var(--spacing-6); /* 24px */
 --button-font-size-md: var(--font-size-base);
 ```
 
 ### Cards
 
 ```css
---card-padding: var(--spacing-8);  /* 32px */
---card-border-radius: var(--radius-card);  /* 8px */
+--card-padding: var(--spacing-8); /* 32px */
+--card-border-radius: var(--radius-card); /* 8px */
 --card-background: var(--color-background-elevated);
 ```
 
 ### EventCard Específico
 
 ```css
---event-card-date-size: var(--font-size-4xl);  /* 48px - Fecha destacada */
+--event-card-date-size: var(--font-size-4xl); /* 48px - Fecha destacada */
 --event-card-date-color: var(--color-primary-gold);
 ```
 
@@ -276,7 +278,7 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 ```css
 --header-height: 80px;
 --header-height-mobile: 64px;
---header-background: transparent;  /* Por defecto */
+--header-background: transparent; /* Por defecto */
 --header-background-scrolled: rgba(10, 10, 10, 0.95);
 --header-backdrop-blur: 10px;
 ```
@@ -310,7 +312,7 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
   font-size: var(--button-font-size-md);
   border-radius: var(--radius-button);
   transition: var(--transition-colors);
-  
+
   height: var(--button-height-md);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wide);
@@ -330,11 +332,9 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 
 1. **¿Existe ya un token similar que puedas reutilizar?**
    - Busca en los archivos existentes antes de crear uno nuevo
-   
 2. **¿Sigue el patrón del sistema?**
    - Spacing: ¿Es múltiplo de 8px?
    - Color: ¿Pertenece a la paleta o necesitas justificar uno nuevo?
-   
 3. **¿Es específico de un componente o global?**
    - Global → `colors.css`, `spacing.css`, etc.
    - Componente → `components.css`
@@ -356,22 +356,27 @@ El título hero de DECORD usa un `letter-spacing` muy amplio:
 ## 📊 Beneficios del Sistema
 
 ### 1. Consistencia Visual
+
 ✅ Todos los componentes usan los mismos valores  
 ✅ Fácil mantener coherencia en todo el sitio
 
 ### 2. Mantenimiento Simplificado
+
 ✅ Cambiar un color en un lugar actualiza todo el sitio  
 ✅ No buscar/reemplazar valores hardcoded
 
 ### 3. Escalabilidad
+
 ✅ Agregar nuevos componentes es más rápido  
 ✅ Nuevos desarrolladores entienden el sistema rápidamente
 
 ### 4. Temas Fáciles
+
 ✅ Puedes crear tema claro/oscuro cambiando tokens  
 ✅ Soporte para múltiples temas sin duplicar código
 
 ### 5. Documentación Viva
+
 ✅ Los tokens son auto-documentados  
 ✅ Facilita colaboración en equipo
 
@@ -402,6 +407,7 @@ Antes de empezar a crear componentes, verifica:
 **NO escribas ningún componente sin consultar primero los tokens disponibles.**
 
 Si necesitas un valor que no existe:
+
 1. Verifica que realmente no existe un token similar
 2. Evalúa si necesitas crear un nuevo token o reutilizar uno existente
 3. Si creas un token nuevo, documéntalo aquí

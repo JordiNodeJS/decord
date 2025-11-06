@@ -7,6 +7,7 @@ Este prompt está diseñado para que cualquier LLM pueda clonar sitios web con *
 ---
 
 ## Pagina a clonar
+
 - **URL Original:** [DECORD](https://ld-wt73.template-help.com/tf/decord_v1/)
 
 ## 🎓 CONTEXTO DE APRENDIZAJE
@@ -14,6 +15,7 @@ Este prompt está diseñado para que cualquier LLM pueda clonar sitios web con *
 Este sitio web es una **galería de arte moderno y museo** llamada DECORD. Sus características distintivas son:
 
 ### Identidad Visual
+
 - **Estética:** Minimalista, elegante, sofisticada
 - **Paleta de colores:** Tonos oscuros (negro/gris oscuro) con acentos claros y dorados
 - **Tipografía:** Tipografía serif elegante para títulos, sans-serif para cuerpo
@@ -21,6 +23,7 @@ Este sitio web es una **galería de arte moderno y museo** llamada DECORD. Sus c
 - **Fotografía:** Imágenes de alta calidad de obras de arte y espacios de galería
 
 ### Elementos Característicos
+
 1. **Hero con título grande:** "MUSEUM OF MODERN ART" con tipografía espaciada
 2. **Navegación minimalista:** Logo "ART GALLERY" en esquina, menú hamburguesa
 3. **Grid de galería:** Layouts tipo masonry/grid con imágenes de diferentes aspect ratios
@@ -31,6 +34,7 @@ Este sitio web es una **galería de arte moderno y museo** llamada DECORD. Sus c
 8. **Hover effects sutiles:** Zoom en imágenes, overlays con información
 
 ### Secciones Principales
+
 - **Home:** Hero + About + Stats + Gallery preview + Events + Testimonials + Blog
 - **About:** Historia de la galería + Estadísticas + Team members con fotos
 - **Gallery:** Grid de obras con filtros por categoría artística + lightbox
@@ -38,6 +42,7 @@ Este sitio web es una **galería de arte moderno y museo** llamada DECORD. Sus c
 - **Contacts:** Formulario de contacto + información (teléfono, email, horarios)
 
 ### Características Técnicas a Implementar
+
 - **Animaciones sutiles:** Fade-in al hacer scroll, parallax suave
 - **Lightbox/Modal:** Para ver imágenes de galería en tamaño completo
 - **Filtrado dinámico:** En galería por categorías de arte
@@ -47,15 +52,17 @@ Este sitio web es una **galería de arte moderno y museo** llamada DECORD. Sus c
 
 ## 🚀 PROMPT PRINCIPAL
 
-```markdown
+````markdown
 # INSTRUCCIONES: Clonar Sitio Web con Alta Fidelidad Visual
 
 ## OBJETIVO
-Clonar el sitio web [DECORD](https://ld-wt73.template-help.com/tf/decord_v1/) con **mínimo 100% de similitud visual**, 
-creando una réplica funcional, responsive y optimizada usando Next.js 16 
+
+Clonar el sitio web [DECORD](https://ld-wt73.template-help.com/tf/decord_v1/) con **mínimo 100% de similitud visual**,
+creando una réplica funcional, responsive y optimizada usando Next.js 16
 (App Router), TypeScript y CSS Modules utilizando la metodología BEM.
 
 **URLs de referencia:**
+
 - Sitio original: https://ld-wt73.template-help.com/tf/decord_v1/
 - Enlaces del sitio original:
   - Home: https://ld-wt73.template-help.com/tf/decord_v1/
@@ -84,12 +91,14 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 #### 0.1 Metodología de Extracción
 
 **Herramientas necesarias:**
+
 - DevTools del navegador (Inspect + Computed styles)
 - Extension "ColorZilla" o "Eye Dropper" para colores exactos
 - Extension "WhatFont" para identificar tipografías
 - Regla digital o extensión "Page Ruler" para medidas exactas
 
 **Proceso sistemático:**
+
 1. **Inspeccionar cada elemento** del sitio original
 2. **Copiar valores computados** (no valores declarados que pueden tener variables)
 3. **Agrupar valores similares** (ej: si ves 16px, 16.5px, 15.8px → unificar a 16px)
@@ -109,51 +118,53 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
    ============================================ */
 
 /* --- PRIMARY PALETTE --- */
---color-primary-black: #0a0a0a;        /* Background principal */
---color-primary-dark: #1a1a1a;         /* Background secundario */
---color-primary-charcoal: #2a2a2a;     /* Cards, overlays */
---color-primary-gold: #d4af37;         /* Accent principal (dorado) */
---color-primary-gold-light: #e6c968;   /* Hover sobre dorado */
---color-primary-gold-dark: #b8941f;    /* Active state dorado */
+--color-primary-black: #0a0a0a; /* Background principal */
+--color-primary-dark: #1a1a1a; /* Background secundario */
+--color-primary-charcoal: #2a2a2a; /* Cards, overlays */
+--color-primary-gold: #d4af37; /* Accent principal (dorado) */
+--color-primary-gold-light: #e6c968; /* Hover sobre dorado */
+--color-primary-gold-dark: #b8941f; /* Active state dorado */
 
 /* --- NEUTRALS (Grises) --- */
---color-neutral-50: #fafafa;           /* Textos muy claros */
---color-neutral-100: #f5f5f5;          /* Backgrounds suaves */
---color-neutral-200: #e5e5e5;          /* Borders sutiles */
---color-neutral-300: #d4d4d4;          /* Borders visibles */
---color-neutral-400: #a3a3a3;          /* Texto secundario */
---color-neutral-500: #737373;          /* Texto terciario */
---color-neutral-600: #525252;          /* Iconos */
---color-neutral-700: #404040;          /* Dividers */
---color-neutral-800: #262626;          /* Fondos oscuros */
---color-neutral-900: #171717;          /* Texto en fondos claros */
+--color-neutral-50: #fafafa; /* Textos muy claros */
+--color-neutral-100: #f5f5f5; /* Backgrounds suaves */
+--color-neutral-200: #e5e5e5; /* Borders sutiles */
+--color-neutral-300: #d4d4d4; /* Borders visibles */
+--color-neutral-400: #a3a3a3; /* Texto secundario */
+--color-neutral-500: #737373; /* Texto terciario */
+--color-neutral-600: #525252; /* Iconos */
+--color-neutral-700: #404040; /* Dividers */
+--color-neutral-800: #262626; /* Fondos oscuros */
+--color-neutral-900: #171717; /* Texto en fondos claros */
 
 /* --- SEMANTIC COLORS --- */
---color-text-primary: #fafafa;         /* Texto principal en dark mode */
---color-text-secondary: #a3a3a3;       /* Texto secundario */
---color-text-tertiary: #737373;        /* Metadata, captions */
---color-text-inverse: #0a0a0a;         /* Texto sobre fondos claros */
+--color-text-primary: #fafafa; /* Texto principal en dark mode */
+--color-text-secondary: #a3a3a3; /* Texto secundario */
+--color-text-tertiary: #737373; /* Metadata, captions */
+--color-text-inverse: #0a0a0a; /* Texto sobre fondos claros */
 
---color-background-primary: #0a0a0a;   /* Fondo principal del sitio */
+--color-background-primary: #0a0a0a; /* Fondo principal del sitio */
 --color-background-secondary: #1a1a1a; /* Secciones alternas */
---color-background-elevated: #2a2a2a;  /* Cards, modals */
+--color-background-elevated: #2a2a2a; /* Cards, modals */
 
---color-border-subtle: #262626;        /* Bordes suaves */
---color-border-default: #404040;       /* Bordes normales */
---color-border-strong: #525252;        /* Bordes destacados */
+--color-border-subtle: #262626; /* Bordes suaves */
+--color-border-default: #404040; /* Bordes normales */
+--color-border-strong: #525252; /* Bordes destacados */
 
---color-overlay-light: rgba(0, 0, 0, 0.5);  /* Overlay sobre imágenes */
---color-overlay-dark: rgba(0, 0, 0, 0.8);   /* Overlay intenso */
+--color-overlay-light: rgba(0, 0, 0, 0.5); /* Overlay sobre imágenes */
+--color-overlay-dark: rgba(0, 0, 0, 0.8); /* Overlay intenso */
 --color-overlay-gold: rgba(212, 175, 55, 0.1); /* Hover gold subtle */
 
 /* --- INTERACTION STATES --- */
---color-hover-gold: #e6c968;           /* Hover sobre elementos dorados */
---color-active-gold: #b8941f;          /* Click/active sobre dorado */
---color-focus-outline: #d4af37;        /* Outline de accesibilidad */
---color-disabled: #404040;             /* Elementos deshabilitados */
+--color-hover-gold: #e6c968; /* Hover sobre elementos dorados */
+--color-active-gold: #b8941f; /* Click/active sobre dorado */
+--color-focus-outline: #d4af37; /* Outline de accesibilidad */
+--color-disabled: #404040; /* Elementos deshabilitados */
 ```
+````
 
 **📝 CHECKLIST DE EXTRACCIÓN DE COLORES:**
+
 - [ ] Inspeccionar backgrounds de todas las secciones
 - [ ] Extraer colores de todos los botones (normal, hover, active)
 - [ ] Identificar colores de texto (títulos h1-h6, párrafos, links)
@@ -177,18 +188,18 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 
 /* --- SPACING SCALE --- */
 --spacing-0: 0;
---spacing-1: 4px;    /* 0.5 × base */
---spacing-2: 8px;    /* 1 × base */
---spacing-3: 12px;   /* 1.5 × base */
---spacing-4: 16px;   /* 2 × base */
---spacing-5: 20px;   /* 2.5 × base */
---spacing-6: 24px;   /* 3 × base */
---spacing-8: 32px;   /* 4 × base */
---spacing-10: 40px;  /* 5 × base */
---spacing-12: 48px;  /* 6 × base */
---spacing-16: 64px;  /* 8 × base */
---spacing-20: 80px;  /* 10 × base */
---spacing-24: 96px;  /* 12 × base */
+--spacing-1: 4px; /* 0.5 × base */
+--spacing-2: 8px; /* 1 × base */
+--spacing-3: 12px; /* 1.5 × base */
+--spacing-4: 16px; /* 2 × base */
+--spacing-5: 20px; /* 2.5 × base */
+--spacing-6: 24px; /* 3 × base */
+--spacing-8: 32px; /* 4 × base */
+--spacing-10: 40px; /* 5 × base */
+--spacing-12: 48px; /* 6 × base */
+--spacing-16: 64px; /* 8 × base */
+--spacing-20: 80px; /* 10 × base */
+--spacing-24: 96px; /* 12 × base */
 --spacing-32: 128px; /* 16 × base */
 --spacing-40: 160px; /* 20 × base */
 --spacing-48: 192px; /* 24 × base */
@@ -196,23 +207,32 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --spacing-64: 256px; /* 32 × base */
 
 /* --- SEMANTIC SPACING (Casos de uso específicos) --- */
---spacing-section-y: var(--spacing-32);      /* Padding vertical de secciones: 128px */
+--spacing-section-y: var(
+  --spacing-32
+); /* Padding vertical de secciones: 128px */
 --spacing-section-y-mobile: var(--spacing-20); /* 80px en mobile */
 
---spacing-container-x: var(--spacing-12);    /* Padding horizontal del container: 48px */
+--spacing-container-x: var(
+  --spacing-12
+); /* Padding horizontal del container: 48px */
 --spacing-container-x-mobile: var(--spacing-6); /* 24px en mobile */
 
---spacing-card-padding: var(--spacing-8);    /* Padding interno de cards: 32px */
---spacing-card-gap: var(--spacing-6);        /* Gap entre cards: 24px */
+--spacing-card-padding: var(--spacing-8); /* Padding interno de cards: 32px */
+--spacing-card-gap: var(--spacing-6); /* Gap entre cards: 24px */
 
---spacing-element-gap: var(--spacing-4);     /* Gap entre elementos pequeños: 16px */
---spacing-text-gap: var(--spacing-3);        /* Gap entre párrafos: 12px */
+--spacing-element-gap: var(
+  --spacing-4
+); /* Gap entre elementos pequeños: 16px */
+--spacing-text-gap: var(--spacing-3); /* Gap entre párrafos: 12px */
 
---spacing-hero-title-y: var(--spacing-48);   /* Espaciado vertical en hero: 192px */
+--spacing-hero-title-y: var(
+  --spacing-48
+); /* Espaciado vertical en hero: 192px */
 --spacing-hero-title-y-mobile: var(--spacing-24); /* 96px en mobile */
 ```
 
 **📝 CHECKLIST DE EXTRACCIÓN DE SPACING:**
+
 - [ ] Medir padding vertical de cada sección (usar DevTools)
 - [ ] Medir gaps entre cards en grids
 - [ ] Identificar márgenes entre elementos de texto (h1 → p, p → p)
@@ -231,24 +251,26 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
    ============================================ */
 
 /* --- FONT FAMILIES --- */
---font-family-primary: 'Playfair Display', 'Georgia', serif;  /* Títulos elegantes */
---font-family-secondary: 'Inter', 'system-ui', sans-serif;    /* Cuerpo de texto */
---font-family-mono: 'Fira Code', 'Courier New', monospace;   /* Código (si aplica) */
+--font-family-primary:
+  "Playfair Display", "Georgia", serif; /* Títulos elegantes */
+--font-family-secondary: "Inter", "system-ui", sans-serif; /* Cuerpo de texto */
+--font-family-mono:
+  "Fira Code", "Courier New", monospace; /* Código (si aplica) */
 
 /* --- FONT SIZES --- */
 /* Escala tipográfica basada en ratio 1.25 (Fourth) */
---font-size-xs: 12px;      /* 0.75rem - Captions, legal text */
---font-size-sm: 14px;      /* 0.875rem - Small text, metadata */
---font-size-base: 16px;    /* 1rem - Body text (base) */
---font-size-md: 18px;      /* 1.125rem - Large body text */
---font-size-lg: 20px;      /* 1.25rem - Small headings */
---font-size-xl: 24px;      /* 1.5rem - H4 */
---font-size-2xl: 32px;     /* 2rem - H3 */
---font-size-3xl: 40px;     /* 2.5rem - H2 */
---font-size-4xl: 48px;     /* 3rem - H1 */
---font-size-5xl: 64px;     /* 4rem - Hero title desktop */
---font-size-6xl: 80px;     /* 5rem - Display titles */
---font-size-7xl: 96px;     /* 6rem - Extra large hero */
+--font-size-xs: 12px; /* 0.75rem - Captions, legal text */
+--font-size-sm: 14px; /* 0.875rem - Small text, metadata */
+--font-size-base: 16px; /* 1rem - Body text (base) */
+--font-size-md: 18px; /* 1.125rem - Large body text */
+--font-size-lg: 20px; /* 1.25rem - Small headings */
+--font-size-xl: 24px; /* 1.5rem - H4 */
+--font-size-2xl: 32px; /* 2rem - H3 */
+--font-size-3xl: 40px; /* 2.5rem - H2 */
+--font-size-4xl: 48px; /* 3rem - H1 */
+--font-size-5xl: 64px; /* 4rem - Hero title desktop */
+--font-size-6xl: 80px; /* 5rem - Display titles */
+--font-size-7xl: 96px; /* 6rem - Extra large hero */
 
 /* --- FONT WEIGHTS --- */
 --font-weight-light: 300;
@@ -259,19 +281,19 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --font-weight-extrabold: 800;
 
 /* --- LINE HEIGHTS --- */
---line-height-tight: 1.1;     /* Títulos grandes */
---line-height-snug: 1.25;     /* Subtítulos */
---line-height-normal: 1.5;    /* Texto normal */
---line-height-relaxed: 1.75;  /* Texto largo, artículos */
---line-height-loose: 2;       /* Espaciado extra */
+--line-height-tight: 1.1; /* Títulos grandes */
+--line-height-snug: 1.25; /* Subtítulos */
+--line-height-normal: 1.5; /* Texto normal */
+--line-height-relaxed: 1.75; /* Texto largo, artículos */
+--line-height-loose: 2; /* Espaciado extra */
 
 /* --- LETTER SPACING --- */
---letter-spacing-tighter: -0.05em;  /* Títulos grandes compactos */
---letter-spacing-tight: -0.025em;   /* Subtítulos */
---letter-spacing-normal: 0;         /* Texto normal */
---letter-spacing-wide: 0.025em;     /* Texto espaciado */
---letter-spacing-wider: 0.05em;     /* Navegación, labels */
---letter-spacing-widest: 0.1em;     /* "MUSEUM OF MODERN ART" - Característica DECORD */
+--letter-spacing-tighter: -0.05em; /* Títulos grandes compactos */
+--letter-spacing-tight: -0.025em; /* Subtítulos */
+--letter-spacing-normal: 0; /* Texto normal */
+--letter-spacing-wide: 0.025em; /* Texto espaciado */
+--letter-spacing-wider: 0.05em; /* Navegación, labels */
+--letter-spacing-widest: 0.1em; /* "MUSEUM OF MODERN ART" - Característica DECORD */
 
 /* --- TEXT STYLES (Presets combinados) --- */
 /* Hero Title */
@@ -296,6 +318,7 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 ```
 
 **📝 CHECKLIST DE EXTRACCIÓN DE TIPOGRAFÍA:**
+
 - [ ] Identificar todas las fuentes usadas (WhatFont extension)
 - [ ] Medir font-size de cada nivel de heading (h1-h6)
 - [ ] Capturar font-weight de títulos y cuerpo
@@ -314,16 +337,16 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
    ============================================ */
 
 /* --- CONTAINER WIDTHS --- */
---container-xs: 480px;      /* Mobile container */
---container-sm: 640px;      /* Tablet pequeño */
---container-md: 768px;      /* Tablet */
---container-lg: 1024px;     /* Desktop pequeño */
---container-xl: 1280px;     /* Desktop */
---container-2xl: 1536px;    /* Desktop grande */
---container-full: 100%;     /* Full width */
+--container-xs: 480px; /* Mobile container */
+--container-sm: 640px; /* Tablet pequeño */
+--container-md: 768px; /* Tablet */
+--container-lg: 1024px; /* Desktop pequeño */
+--container-xl: 1280px; /* Desktop */
+--container-2xl: 1536px; /* Desktop grande */
+--container-full: 100%; /* Full width */
 
 --container-max-width: var(--container-xl); /* Max width del sitio: 1280px */
---container-narrow: 800px;  /* Para contenido de texto (about, blog posts) */
+--container-narrow: 800px; /* Para contenido de texto (about, blog posts) */
 
 /* --- BREAKPOINTS --- */
 --breakpoint-sm: 640px;
@@ -337,13 +360,13 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --grid-columns-mobile: 1;
 --grid-columns-tablet: 2;
 --grid-columns-desktop: 3;
---grid-gap: var(--spacing-6);  /* 24px */
+--grid-gap: var(--spacing-6); /* 24px */
 
 /* Card Grid (Events, Blog) */
 --card-grid-columns-mobile: 1;
 --card-grid-columns-tablet: 2;
 --card-grid-columns-desktop: 3;
---card-grid-gap: var(--spacing-8);  /* 32px */
+--card-grid-gap: var(--spacing-8); /* 32px */
 
 /* --- Z-INDEX SCALE --- */
 --z-index-base: 0;
@@ -370,9 +393,12 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 /* --- SHADOWS --- */
 --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
---shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
---shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
---shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+--shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-xl:
+  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
@@ -393,10 +419,10 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --radius-full: 9999px;
 
 /* Específicos DECORD */
---radius-button: var(--radius-base);    /* Botones: 4px */
---radius-card: var(--radius-lg);        /* Cards: 8px */
---radius-input: var(--radius-base);     /* Inputs: 4px */
---radius-modal: var(--radius-xl);       /* Modals: 12px */
+--radius-button: var(--radius-base); /* Botones: 4px */
+--radius-card: var(--radius-lg); /* Cards: 8px */
+--radius-input: var(--radius-base); /* Inputs: 4px */
+--radius-modal: var(--radius-xl); /* Modals: 12px */
 
 /* --- TRANSITIONS --- */
 --transition-fast: 150ms;
@@ -410,11 +436,13 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 /* Presets de transición */
---transition-colors: color var(--transition-base) var(--transition-ease-in-out),
-                     background-color var(--transition-base) var(--transition-ease-in-out),
-                     border-color var(--transition-base) var(--transition-ease-in-out);
+--transition-colors:
+  color var(--transition-base) var(--transition-ease-in-out),
+  background-color var(--transition-base) var(--transition-ease-in-out),
+  border-color var(--transition-base) var(--transition-ease-in-out);
 
---transition-transform: transform var(--transition-base) var(--transition-ease-in-out);
+--transition-transform: transform var(--transition-base)
+  var(--transition-ease-in-out);
 
 --transition-all: all var(--transition-base) var(--transition-ease-in-out);
 
@@ -451,9 +479,9 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 --button-height-md: 44px;
 --button-height-lg: 52px;
 
---button-padding-x-sm: var(--spacing-4);  /* 16px */
---button-padding-x-md: var(--spacing-6);  /* 24px */
---button-padding-x-lg: var(--spacing-8);  /* 32px */
+--button-padding-x-sm: var(--spacing-4); /* 16px */
+--button-padding-x-md: var(--spacing-6); /* 24px */
+--button-padding-x-lg: var(--spacing-8); /* 32px */
 
 --button-font-size-sm: var(--font-size-sm);
 --button-font-size-md: var(--font-size-base);
@@ -461,41 +489,46 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 
 /* --- INPUTS --- */
 --input-height: 48px;
---input-padding-x: var(--spacing-4);  /* 16px */
+--input-padding-x: var(--spacing-4); /* 16px */
 --input-border-width: 1px;
 --input-border-color: var(--color-border-default);
 --input-border-color-focus: var(--color-primary-gold);
 
 /* --- CARDS --- */
---card-padding: var(--spacing-8);         /* 32px */
+--card-padding: var(--spacing-8); /* 32px */
 --card-border-radius: var(--radius-card); /* 8px */
 --card-background: var(--color-background-elevated);
 
 /* ArtworkCard específico */
---artwork-card-aspect-ratio: 3 / 4;  /* Portrait */
+--artwork-card-aspect-ratio: 3 / 4; /* Portrait */
 --artwork-card-overlay-opacity: 0;
 --artwork-card-overlay-opacity-hover: 1;
 
 /* EventCard específico */
---event-card-date-size: var(--font-size-4xl);  /* Fecha grande: 48px */
+--event-card-date-size: var(--font-size-4xl); /* Fecha grande: 48px */
 --event-card-date-color: var(--color-primary-gold);
 
 /* --- HEADER/NAVBAR --- */
 --header-height: 80px;
 --header-height-mobile: 64px;
---header-background: transparent;  /* Transparent por defecto */
---header-background-scrolled: rgba(10, 10, 10, 0.95);  /* Oscuro al hacer scroll */
---header-backdrop-blur: 10px;  /* Blur al hacer scroll */
+--header-background: transparent; /* Transparent por defecto */
+--header-background-scrolled: rgba(
+  10,
+  10,
+  10,
+  0.95
+); /* Oscuro al hacer scroll */
+--header-backdrop-blur: 10px; /* Blur al hacer scroll */
 
 /* --- HERO --- */
 --hero-min-height: 100vh;
 --hero-min-height-mobile: 80vh;
---hero-title-font-size: var(--font-size-7xl);         /* 96px desktop */
---hero-title-font-size-mobile: var(--font-size-4xl);  /* 48px mobile */
+--hero-title-font-size: var(--font-size-7xl); /* 96px desktop */
+--hero-title-font-size-mobile: var(--font-size-4xl); /* 48px mobile */
 
 /* --- FOOTER --- */
 --footer-background: var(--color-primary-black);
---footer-padding-y: var(--spacing-32);  /* 128px */
+--footer-padding-y: var(--spacing-32); /* 128px */
 
 /* --- LIGHTBOX/MODAL --- */
 --lightbox-overlay-background: rgba(0, 0, 0, 0.95);
@@ -521,25 +554,28 @@ El sistema de tokens de diseño es la **base fundamental** para lograr alta fide
 ```
 
 **styles/tokens/index.css:**
+
 ```css
 /* Import todos los tokens en orden */
-@import './colors.css';
-@import './spacing.css';
-@import './typography.css';
-@import './layout.css';
-@import './effects.css';
-@import './components.css';
+@import "./colors.css";
+@import "./spacing.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./effects.css";
+@import "./components.css";
 ```
 
 **app/layout.tsx (importar tokens globalmente):**
+
 ```tsx
-import '@/styles/tokens/index.css'
-import '@/styles/globals.css'
+import "@/styles/tokens/index.css";
+import "@/styles/globals.css";
 ```
 
 #### 0.4 Uso de Tokens en Componentes
 
 **❌ INCORRECTO (valores hardcoded):**
+
 ```css
 /* Button.module.css */
 .button {
@@ -556,6 +592,7 @@ import '@/styles/globals.css'
 ```
 
 **✅ CORRECTO (usando tokens):**
+
 ```css
 /* Button.module.css */
 .button {
@@ -564,7 +601,7 @@ import '@/styles/globals.css'
   font-size: var(--button-font-size-md);
   border-radius: var(--radius-button);
   transition: var(--transition-colors);
-  
+
   height: var(--button-height-md);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wide);
@@ -581,16 +618,18 @@ import '@/styles/globals.css'
 
 Crear un archivo `docs/DESIGN_TOKENS.md` con:
 
-```markdown
+````markdown
 # 🎨 Sistema de Tokens de Diseño - DECORD
 
 ## Propósito
+
 Este documento explica el sistema de tokens de diseño extraídos del sitio original DECORD.
 Los tokens garantizan consistencia visual y facilitan mantenimiento.
 
 ## Colores
 
 ### Paleta Principal
+
 - **Gold Accent:** `#d4af37` - Color principal de marca, usado en CTAs
 - **Black:** `#0a0a0a` - Background principal del sitio
 - **Charcoal:** `#2a2a2a` - Cards y elementos elevados
@@ -598,6 +637,7 @@ Los tokens garantizan consistencia visual y facilitan mantenimiento.
 [Agregar capturas visuales de la paleta]
 
 ### Cuándo usar cada color
+
 - Use `--color-primary-gold` para botones primarios y acentos importantes
 - Use `--color-text-secondary` para metadata como fechas, autores
 - Use `--color-border-subtle` para separadores discretos
@@ -605,9 +645,11 @@ Los tokens garantizan consistencia visual y facilitan mantenimiento.
 ## Espaciado
 
 ### Sistema base: 8px
+
 Todo el espaciado del sitio sigue múltiplos de 8px.
 
 **Ejemplos de uso:**
+
 - Secciones: `--spacing-32` (128px) vertical padding
 - Cards: `--spacing-8` (32px) internal padding
 - Elementos: `--spacing-4` (16px) gap entre elementos relacionados
@@ -615,32 +657,39 @@ Todo el espaciado del sitio sigue múltiplos de 8px.
 ## Tipografía
 
 ### Fuentes
+
 - **Playfair Display:** Títulos y headings elegantes
 - **Inter:** Texto de cuerpo y UI
 
 ### Característica distintiva
-El título hero usa `letter-spacing: 0.1em` (--letter-spacing-widest) 
+
+El título hero usa `letter-spacing: 0.1em` (--letter-spacing-widest)
 que es un rasgo característico de DECORD.
 
 ## Efectos
 
 ### Hover en imágenes
+
 ```css
 transform: scale(1.05);
 transition: transform 300ms ease-in-out;
 ```
+````
 
 [Incluir GIF del efecto]
 
 ---
 
 ## Mantenimiento
+
 Si necesitas agregar un nuevo color/spacing/etc:
+
 1. ¿Existe ya un token similar que puedas reutilizar?
 2. Si no, ¿sigue el patrón del sistema? (ej: múltiplo de 8px)
 3. Agrégalo en el archivo correspondiente en `styles/tokens/`
 4. Actualiza esta documentación
-```
+
+````
 
 ### ⚡ Beneficios del Sistema de Tokens
 
@@ -809,9 +858,10 @@ Lista todos los patrones repetidos:
 npx create-next-app@latest decord-clone --typescript --app --no-tailwind --no-src-dir
 
 cd decord-clone
-```
+````
 
 **IMPORTANTE:** Seguir la estructura oficial de Next.js 16 App Router:
+
 - `app/` - Solo para rutas y layouts
 - `components/` - En la raíz del proyecto para componentes reutilizables
 - `styles/` - En la raíz del proyecto para estilos globales
@@ -821,6 +871,7 @@ cd decord-clone
 Ver [ESTRUCTURA_PROYECTO.md](./ESTRUCTURA_PROYECTO.md) para más detalles.
 
 ### 2.2 Estructura de Carpetas (Next.js 16 App Router - Oficial)
+
 ```
 📁 proyecto-raiz/
 ├── 📁 app/                         # App Router - Solo rutas y layouts
@@ -950,6 +1001,7 @@ Ver [ESTRUCTURA_PROYECTO.md](./ESTRUCTURA_PROYECTO.md) para más detalles.
 ### Estructura Explicada (Según Documentación Oficial)
 
 #### 📁 `app/` - App Router (Solo rutas)
+
 - **Propósito:** Define la estructura de rutas de la aplicación
 - **Contenido:** Solo archivos de rutas (`page.tsx`), layouts (`layout.tsx`), loading, error, etc.
 - **NO contener:** Componentes reutilizables, utilidades, o estilos compartidos
@@ -976,6 +1028,7 @@ export default function HomePage() {
 ```
 
 #### 📁 `components/` - Componentes Reutilizables (Raíz del Proyecto)
+
 - **Propósito:** Todos los componentes React reutilizables
 - **Ubicación:** Raíz del proyecto (al mismo nivel que `app/`)
 - **Organización:** Por tipo (layout, sections, ui, animations)
@@ -992,6 +1045,7 @@ export default function Button({ children }) {
 ```
 
 #### 📁 `styles/` - Estilos Globales (Raíz del Proyecto)
+
 - **Propósito:** CSS global, variables, mixins
 - **Ubicación:** Raíz del proyecto
 - **Archivos:** `globals.css`, `variables.css`, `mixins.css`
@@ -1012,21 +1066,25 @@ export default function RootLayout({ children }) {
 ```
 
 #### 📁 `lib/` - Utilidades y Helpers (Raíz del Proyecto)
+
 - **Propósito:** Funciones utilitarias, constantes, helpers
 - **Ubicación:** Raíz del proyecto
 - **Contenido:** Lógica reutilizable sin UI
 
 #### 📁 `data/` - Datos Mock/Estáticos (Raíz del Proyecto)
+
 - **Propósito:** Datos de ejemplo, configuraciones
 - **Ubicación:** Raíz del proyecto
 - **Uso:** Simular APIs, contenido estático
 
 #### 📁 `public/` - Assets Estáticos (Raíz del Proyecto)
+
 - **Propósito:** Imágenes, fuentes, archivos estáticos
 - **Ubicación:** Raíz del proyecto
 - **Acceso:** Directamente desde `/` en la aplicación
 
 ### Configuración de Path Aliases
+
 ```json
 // tsconfig.json
 {
@@ -1045,72 +1103,75 @@ export default function RootLayout({ children }) {
 ```
 
 ### Importaciones Correctas
+
 ```typescript
 // ✅ Importar componentes desde la raíz
-import Header from '@/components/layout/Header/Header'
-import Hero from '@/components/sections/Hero/Hero'
-import Button from '@/components/ui/Button/Button'
+import Header from "@/components/layout/Header/Header";
+import Hero from "@/components/sections/Hero/Hero";
+import Button from "@/components/ui/Button/Button";
 
 // ✅ Importar estilos globales solo en layout.tsx
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 
 // ✅ Importar utilidades
-import { formatDate } from '@/lib/utils'
+import { formatDate } from "@/lib/utils";
 
 // ✅ Importar datos
-import { artworks } from '@/data/artworks'
+import { artworks } from "@/data/artworks";
 ```
 
 ### 2.3 Configuración de CSS Variables
+
 ```css
 /* app/styles/variables.css */
 :root {
   /* Colors - Paleta DECORD (Art Gallery) */
-  --color-primary: #0a0a0a;           /* Negro profundo para fondos */
-  --color-secondary: #1a1a1a;         /* Gris muy oscuro */
-  --color-accent: #d4af37;            /* Dorado elegante */
-  --color-accent-light: #e5c965;      /* Dorado claro hover */
-  --color-text: #333333;              /* Texto principal */
-  --color-text-light: #666666;        /* Texto secundario */
-  --color-text-dark: #0a0a0a;         /* Texto en fondos claros */
-  --color-background: #ffffff;        /* Fondo blanco */
-  --color-background-light: #f8f8f8;  /* Gris muy claro */
-  --color-border: #e5e5e5;            /* Bordes sutiles */
+  --color-primary: #0a0a0a; /* Negro profundo para fondos */
+  --color-secondary: #1a1a1a; /* Gris muy oscuro */
+  --color-accent: #d4af37; /* Dorado elegante */
+  --color-accent-light: #e5c965; /* Dorado claro hover */
+  --color-text: #333333; /* Texto principal */
+  --color-text-light: #666666; /* Texto secundario */
+  --color-text-dark: #0a0a0a; /* Texto en fondos claros */
+  --color-background: #ffffff; /* Fondo blanco */
+  --color-background-light: #f8f8f8; /* Gris muy claro */
+  --color-border: #e5e5e5; /* Bordes sutiles */
   --color-overlay: rgba(0, 0, 0, 0.7); /* Overlay para imágenes */
 
   /* Typography - Elegante para galería de arte */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-secondary: 'Playfair Display', Georgia, serif;
-  --font-accent: 'Cormorant Garamond', Georgia, serif; /* Para títulos grandes */
-  
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 2rem;      /* 32px */
-  --font-size-4xl: 2.5rem;    /* 40px */
-  --font-size-5xl: 3.5rem;    /* 56px */
-  --font-size-6xl: 4.5rem;    /* 72px - Para "MUSEUM OF MODERN ART" */
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: "Playfair Display", Georgia, serif;
+  --font-accent:
+    "Cormorant Garamond", Georgia, serif; /* Para títulos grandes */
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+  --font-size-5xl: 3.5rem; /* 56px */
+  --font-size-6xl: 4.5rem; /* 72px - Para "MUSEUM OF MODERN ART" */
 
   /* Letter spacing - Importante para el look elegante */
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.05em;
   --letter-spacing-wider: 0.1em;
-  --letter-spacing-widest: 0.2em;     /* Para título principal */
+  --letter-spacing-widest: 0.2em; /* Para título principal */
 
   /* Spacing */
-  --spacing-xs: 0.25rem;   /* 4px */
-  --spacing-sm: 0.5rem;    /* 8px */
-  --spacing-md: 1rem;      /* 16px */
-  --spacing-lg: 1.5rem;    /* 24px */
-  --spacing-xl: 2rem;      /* 32px */
-  --spacing-2xl: 3rem;     /* 48px */
-  --spacing-3xl: 4rem;     /* 64px */
-  --spacing-4xl: 6rem;     /* 96px */
-  --spacing-5xl: 8rem;     /* 128px */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+  --spacing-4xl: 6rem; /* 96px */
+  --spacing-5xl: 8rem; /* 128px */
 
   /* Breakpoints (para usar en media queries) */
   --breakpoint-sm: 640px;
@@ -1132,10 +1193,10 @@ import { artworks } from '@/data/artworks'
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
 
   /* Border Radius */
-  --radius-sm: 0.125rem;    /* 2px - Muy sutil */
-  --radius-md: 0.25rem;     /* 4px */
-  --radius-lg: 0.5rem;      /* 8px */
-  --radius-xl: 1rem;        /* 16px */
+  --radius-sm: 0.125rem; /* 2px - Muy sutil */
+  --radius-md: 0.25rem; /* 4px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 1rem; /* 16px */
 
   /* Z-index */
   --z-dropdown: 1000;
@@ -1155,9 +1216,10 @@ import { artworks } from '@/data/artworks'
 ```
 
 ### 2.4 Global Styles con BEM Reset
+
 ```css
 /* app/styles/globals.css */
-@import './variables.css';
+@import "./variables.css";
 
 * {
   box-sizing: border-box;
@@ -1212,7 +1274,12 @@ body {
 }
 
 /* Typography utilities */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-secondary);
   font-weight: 700;
   line-height: 1.2;
@@ -1240,6 +1307,7 @@ button {
 ```
 
 ### 2.5 Mixins CSS (usando @layer)
+
 ```css
 /* app/styles/mixins.css */
 
@@ -1295,27 +1363,26 @@ button {
 }
 ```
 
-
 ## FASE 3: IMPLEMENTACIÓN ITERATIVA (50% del tiempo)
 
 ### 3.1 Metodología de Desarrollo
+
 **IMPORTANTE:** Desarrollar sección por sección, NO todo de una vez.
 
 **Por cada sección:**
 
 #### 1. Crear componente base con CSS Module
+
 ```tsx
 // app/components/Hero/Hero.tsx
-import styles from './Hero.module.css'
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.hero__container}>
-        {/* Contenido */}
-      </div>
+      <div className={styles.hero__container}>{/* Contenido */}</div>
     </section>
-  )
+  );
 }
 ```
 
@@ -1336,7 +1403,7 @@ export default function Hero() {
   .hero {
     padding: 7rem 0;
   }
-  
+
   .hero__container {
     padding: 0 var(--spacing-lg);
   }
@@ -1344,18 +1411,17 @@ export default function Hero() {
 ```
 
 #### 2. Implementar estructura HTML semántica con BEM
+
 ```tsx
 // Ejemplo de estructura BEM
 <section className={styles.services}>
   <div className={styles.services__container}>
     <h2 className={styles.services__title}>Nuestros Servicios</h2>
     <div className={styles.services__grid}>
-      <div className={styles['services__card']}>
-        <div className={styles['services__card-icon']}>
-          {/* Icono */}
-        </div>
-        <h3 className={styles['services__card-title']}>Título</h3>
-        <p className={styles['services__card-description']}>Descripción</p>
+      <div className={styles["services__card"]}>
+        <div className={styles["services__card-icon"]}>{/* Icono */}</div>
+        <h3 className={styles["services__card-title"]}>Título</h3>
+        <p className={styles["services__card-description"]}>Descripción</p>
       </div>
     </div>
   </div>
@@ -1391,7 +1457,9 @@ export default function Hero() {
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .services__card:hover {
@@ -1429,36 +1497,36 @@ export default function Hero() {
 ```
 
 #### 3. Agregar contenido (textos e imágenes)
+
 ```tsx
-import Image from 'next/image'
-import styles from './About.module.css'
+import Image from "next/image";
+import styles from "./About.module.css";
 
 export default function About() {
   return (
     <section className={styles.about}>
       <div className={styles.about__container}>
         <div className={styles.about__image}>
-          <Image 
+          <Image
             src="/images/about/interior.webp"
             alt="Interior del hotel de lujo"
             width={600}
             height={400}
-            className={styles['about__image-img']}
+            className={styles["about__image-img"]}
           />
         </div>
         <div className={styles.about__content}>
           <h2 className={styles.about__title}>Sobre Nosotros</h2>
-          <p className={styles.about__text}>
-            Texto descriptivo aquí...
-          </p>
+          <p className={styles.about__text}>Texto descriptivo aquí...</p>
         </div>
       </div>
     </section>
-  )
+  );
 }
 ```
 
 #### 4. Refinar estilos visuales
+
 ```css
 /* Colores exactos extraídos del sitio original */
 .about {
@@ -1490,6 +1558,7 @@ export default function About() {
 ```
 
 #### 5. Agregar interactividad
+
 ```css
 /* Hover effects */
 .about__card {
@@ -1499,13 +1568,18 @@ export default function About() {
 }
 
 .about__card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1520,6 +1594,7 @@ export default function About() {
 ```
 
 #### 6. Optimizar responsive
+
 ```css
 /* Mobile-first approach */
 .about__container {
@@ -1577,66 +1652,75 @@ export default function About() {
 ```
 
 #### 7. Verificar en navegador
+
 - Comparar lado a lado con original
 - Ajustar hasta 95%+ similitud
 
 ### 3.2 Componentes Críticos Comunes
 
 #### ArtworkCard Component (Crítico para Galería)
+
 ```tsx
 // app/components/ui/ArtworkCard/ArtworkCard.tsx
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import styles from './ArtworkCard.module.css'
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./ArtworkCard.module.css";
 
 interface ArtworkCardProps {
-  image: string
-  title: string
-  artist: string
-  year: number
-  category: string
-  onImageClick?: () => void
+  image: string;
+  title: string;
+  artist: string;
+  year: number;
+  category: string;
+  onImageClick?: () => void;
 }
 
-export default function ArtworkCard({ 
-  image, 
-  title, 
-  artist, 
+export default function ArtworkCard({
+  image,
+  title,
+  artist,
   year,
   category,
-  onImageClick 
+  onImageClick,
 }: ArtworkCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <article 
+    <article
       className={styles.card}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onImageClick}
     >
       <div className={styles.card__image}>
-        <Image 
-          src={image} 
+        <Image
+          src={image}
           alt={`${title} by ${artist}`}
           fill
-          className={styles['card__image-img']}
+          className={styles["card__image-img"]}
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <div className={`${styles.card__overlay} ${isHovered ? styles['card__overlay--visible'] : ''}`}>
+        <div
+          className={`${styles.card__overlay} ${isHovered ? styles["card__overlay--visible"] : ""}`}
+        >
           <div className={styles.card__info}>
             <h3 className={styles.card__title}>{title}</h3>
-            <p className={styles.card__artist}>{artist}, {year}</p>
+            <p className={styles.card__artist}>
+              {artist}, {year}
+            </p>
           </div>
-          <button className={styles.card__zoom} aria-label="Ver imagen completa">
+          <button
+            className={styles.card__zoom}
+            aria-label="Ver imagen completa"
+          >
             +
           </button>
         </div>
       </div>
     </article>
-  )
+  );
 }
 ```
 
@@ -1719,18 +1803,19 @@ export default function ArtworkCard({
 ```
 
 #### EventCard Component
+
 ```tsx
 // app/components/ui/EventCard/EventCard.tsx
-import Link from 'next/link'
-import styles from './EventCard.module.css'
+import Link from "next/link";
+import styles from "./EventCard.module.css";
 
 interface EventCardProps {
-  date: string // formato: "21/02"
-  title: string
-  dateRange: string // "February 21 - February 26"
-  time: string // "10 AM-8 PM"
-  description: string
-  slug: string
+  date: string; // formato: "21/02"
+  title: string;
+  dateRange: string; // "February 21 - February 26"
+  time: string; // "10 AM-8 PM"
+  description: string;
+  slug: string;
 }
 
 export default function EventCard({
@@ -1739,27 +1824,29 @@ export default function EventCard({
   dateRange,
   time,
   description,
-  slug
+  slug,
 }: EventCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.card__date}>
-        <span className={styles.card__day}>{date.split('/')[0]}</span>
-        <span className={styles.card__month}>/{date.split('/')[1]}</span>
+        <span className={styles.card__day}>{date.split("/")[0]}</span>
+        <span className={styles.card__month}>/{date.split("/")[1]}</span>
       </div>
       <div className={styles.card__content}>
         <Link href={`/events/${slug}`} className={styles.card__title}>
           {title}
         </Link>
         <div className={styles.card__meta}>
-          <p className={styles.card__daterange}>{dateRange}, {time}</p>
+          <p className={styles.card__daterange}>
+            {dateRange}, {time}
+          </p>
           <p className={styles.card__label}>Reception</p>
         </div>
         <p className={styles.card__description}>{description}</p>
         <button className={styles.card__button}>OBTENER ENTRADAS</button>
       </div>
     </article>
-  )
+  );
 }
 ```
 
@@ -1855,7 +1942,7 @@ export default function EventCard({
     flex-direction: column;
     gap: var(--spacing-md);
   }
-  
+
   .card__date {
     font-size: var(--font-size-2xl);
   }
@@ -1863,24 +1950,29 @@ export default function EventCard({
 ```
 
 #### StatCard Component (Para estadísticas destacadas)
+
 ```tsx
 // app/components/ui/StatCard/StatCard.tsx
-import styles from './StatCard.module.css'
+import styles from "./StatCard.module.css";
 
 interface StatCardProps {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
-export default function StatCard({ number, title, description }: StatCardProps) {
+export default function StatCard({
+  number,
+  title,
+  description,
+}: StatCardProps) {
   return (
     <div className={styles.card}>
       <div className={styles.card__number}>{number}</div>
       <h3 className={styles.card__title}>{title}</h3>
       <p className={styles.card__description}>{description}</p>
     </div>
-  )
+  );
 }
 ```
 
@@ -1924,39 +2016,42 @@ export default function StatCard({ number, title, description }: StatCardProps) 
   }
 }
 ```
+
 ```tsx
 // app/components/Button/Button.tsx
-import styles from './Button.module.css'
+import styles from "./Button.module.css";
 
 interface ButtonProps {
-  children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
-  size?: 'sm' | 'md' | 'lg'
-  onClick?: () => void
-  type?: 'button' | 'submit' | 'reset'
-  className?: string
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  className?: string;
 }
 
 export default function Button({
   children,
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   onClick,
-  type = 'button',
-  className = ''
+  type = "button",
+  className = "",
 }: ButtonProps) {
   const classes = [
     styles.button,
     styles[`button--${variant}`],
     styles[`button--${size}`],
-    className
-  ].filter(Boolean).join(' ')
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <button type={type} onClick={onClick} className={classes}>
       {children}
     </button>
-  )
+  );
 }
 ```
 
@@ -2026,32 +2121,30 @@ export default function Button({
 ```
 
 #### Card Component
+
 ```tsx
 // app/components/Card/Card.tsx
-import styles from './Card.module.css'
-import Image from 'next/image'
+import styles from "./Card.module.css";
+import Image from "next/image";
 
 interface CardProps {
-  image: string
-  title: string
-  description: string
-  link?: string
+  image: string;
+  title: string;
+  description: string;
+  link?: string;
 }
 
 export default function Card({ image, title, description, link }: CardProps) {
-  const CardWrapper = link ? 'a' : 'div'
-  
+  const CardWrapper = link ? "a" : "div";
+
   return (
-    <CardWrapper 
-      href={link} 
-      className={styles.card}
-    >
+    <CardWrapper href={link} className={styles.card}>
       <div className={styles.card__image}>
-        <Image 
-          src={image} 
+        <Image
+          src={image}
           alt={title}
           fill
-          className={styles['card__image-img']}
+          className={styles["card__image-img"]}
         />
       </div>
       <div className={styles.card__content}>
@@ -2059,7 +2152,7 @@ export default function Card({ image, title, description, link }: CardProps) {
         <p className={styles.card__description}>{description}</p>
       </div>
     </CardWrapper>
-  )
+  );
 }
 ```
 
@@ -2114,35 +2207,38 @@ export default function Card({ image, title, description, link }: CardProps) {
 ```
 
 #### Navbar Component
+
 ```tsx
 // app/components/Navbar/Navbar.tsx
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import styles from './Navbar.module.css'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles['navbar--scrolled'] : ''}`}>
+    <nav
+      className={`${styles.navbar} ${isScrolled ? styles["navbar--scrolled"] : ""}`}
+    >
       <div className={styles.navbar__container}>
         <Link href="/" className={styles.navbar__logo}>
           DECORD
         </Link>
 
-        <button 
+        <button
           className={styles.navbar__toggle}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
@@ -2150,23 +2246,33 @@ export default function Navbar() {
           <span className={styles.navbar__hamburger}></span>
         </button>
 
-        <ul className={`${styles.navbar__menu} ${isMobileMenuOpen ? styles['navbar__menu--open'] : ''}`}>
+        <ul
+          className={`${styles.navbar__menu} ${isMobileMenuOpen ? styles["navbar__menu--open"] : ""}`}
+        >
           <li className={styles.navbar__item}>
-            <Link href="/" className={styles.navbar__link}>Inicio</Link>
+            <Link href="/" className={styles.navbar__link}>
+              Inicio
+            </Link>
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/about" className={styles.navbar__link}>Nosotros</Link>
+            <Link href="/about" className={styles.navbar__link}>
+              Nosotros
+            </Link>
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/gallery" className={styles.navbar__link}>Galería</Link>
+            <Link href="/gallery" className={styles.navbar__link}>
+              Galería
+            </Link>
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/contact" className={styles.navbar__link}>Contacto</Link>
+            <Link href="/contact" className={styles.navbar__link}>
+              Contacto
+            </Link>
           </li>
         </ul>
       </div>
     </nav>
-  )
+  );
 }
 ```
 
@@ -2249,7 +2355,7 @@ export default function Navbar() {
 }
 
 .navbar__link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -2297,11 +2403,10 @@ export default function Navbar() {
 }
 ```
 
-
-
 ## FASE 4: TESTING Y REFINAMIENTO (10% del tiempo)
 
 ### 4.1 Testing Responsive
+
 ```bash
 # Abrir en DevTools y probar:
 - iPhone SE (375px)
@@ -2311,6 +2416,7 @@ export default function Navbar() {
 ```
 
 **Checklist por breakpoint:**
+
 - [ ] Todo el contenido visible sin scroll horizontal
 - [ ] Imágenes mantienen aspect ratio
 - [ ] Texto legible (mínimo 16px en body)
@@ -2319,6 +2425,7 @@ export default function Navbar() {
 - [ ] Navigation funcional
 
 ### 4.2 Comparación Visual Lado a Lado
+
 1. Abrir sitio original en una ventana
 2. Abrir clone en otra ventana
 3. Alinear verticalmente
@@ -2330,6 +2437,7 @@ export default function Navbar() {
    - ✅ Layout idéntico
 
 ### 4.3 Performance Audit
+
 ```bash
 # Lighthouse en DevTools
 - Performance: >90
@@ -2339,12 +2447,14 @@ export default function Navbar() {
 ```
 
 **Optimizaciones comunes:**
+
 - Usar `next/image` para todas las imágenes
 - Lazy loading en secciones below-the-fold
 - Minimizar JavaScript bundle
 - Preload fuentes críticas
 
 ### 4.4 Console Verification
+
 ```bash
 # Objetivo: 0 errores, 0 warnings críticos
 - No 404s (imágenes, fuentes)
@@ -2356,6 +2466,7 @@ export default function Navbar() {
 ## 📋 CHECKLIST DE CALIDAD FINAL
 
 ### Visual (Objetivo: 95%+)
+
 - [ ] Colors match exactamente (DevTools Color Picker)
 - [ ] Typography sizes idénticos por breakpoint
 - [ ] Spacing consistente (padding, margins, gaps)
@@ -2365,6 +2476,7 @@ export default function Navbar() {
 - [ ] Images aspect ratios correctos
 
 ### Funcional
+
 - [ ] Todos los links funcionan
 - [ ] Forms validados correctamente
 - [ ] Navigation smooth scroll
@@ -2373,17 +2485,20 @@ export default function Navbar() {
 - [ ] Modals abren/cierran correctamente
 
 ### Responsive
+
 - [ ] Mobile (320px-640px): Layout apilado, touch-friendly
 - [ ] Tablet (768px-1024px): Layout intermedio, 2-3 columnas
 - [ ] Desktop (1280px+): Layout completo, max-width containers
 
 ### Performance
+
 - [ ] Lighthouse Performance >90
 - [ ] LCP <2.5s
 - [ ] No layout shifts (CLS <0.1)
 - [ ] Images optimizadas (WebP, Next.js Image)
 
 ### Código
+
 - [ ] TypeScript sin errores
 - [ ] ESLint sin warnings críticos
 - [ ] Componentes reutilizables extraídos
@@ -2393,8 +2508,10 @@ export default function Navbar() {
 ## 🚨 ERRORES COMUNES Y SOLUCIONES
 
 ### ERROR 1: "Navbar links no son visibles"
+
 **Causa:** Color de texto igual al background
 **Solución:**
+
 ```css
 /* MAL */
 .navbar {
@@ -2414,8 +2531,10 @@ export default function Navbar() {
 ```
 
 ### ERROR 2: "Imágenes distorsionadas"
+
 **Causa:** No especificar aspect-ratio o object-fit
 **Solución:**
+
 ```css
 /* MAL */
 .image-container {
@@ -2438,8 +2557,10 @@ export default function Navbar() {
 ```
 
 ### ERROR 3: "Fechas inválidas en date inputs"
+
 **Causa:** Formato de fecha incorrecto
 **Solución:**
+
 ```tsx
 // MAL
 <input type="date" defaultValue="2024-01-30" />  // Si hoy es 2025-11-04
@@ -2453,13 +2574,15 @@ const tomorrowStr = tomorrow.toISOString().split('T')[0]
 ```
 
 ### ERROR 4: "Glassmorphism no se ve bien"
+
 **Causa:** Valores de blur y opacity incorrectos
 **Solución:**
+
 ```css
 /* Glassmorphism efectivo */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);  /* 10-20% opacity */
-  backdrop-filter: blur(10px);            /* 10-20px blur */
+  background: rgba(255, 255, 255, 0.1); /* 10-20% opacity */
+  backdrop-filter: blur(10px); /* 10-20px blur */
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
@@ -2468,8 +2591,10 @@ const tomorrowStr = tomorrow.toISOString().split('T')[0]
 ```
 
 ### ERROR 5: "Hover effects bruscos"
+
 **Causa:** No especificar transition
 **Solución:**
+
 ```css
 /* MAL */
 .button:hover {
@@ -2487,13 +2612,17 @@ const tomorrowStr = tomorrow.toISOString().split('T')[0]
 
 /* MEJOR (aplicar globalmente) */
 * {
-  transition: color 0.3s ease, background 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
 }
 ```
 
 ### ERROR 6: "Grid no responsive"
+
 **Causa:** No usar media queries correctamente
 **Solución:**
+
 ```css
 /* MAL */
 .grid {
@@ -2522,45 +2651,44 @@ const tomorrowStr = tomorrow.toISOString().split('T')[0]
 ```
 
 ### ERROR 7: "Scroll animations no se activan"
+
 **Causa:** Intersection Observer no configurado correctamente
 **Solución:**
+
 ```tsx
-'use client'
-import { useEffect, useRef, useState } from 'react'
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 export default function AnimatedSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 } // Se activa cuando 10% es visible
-    )
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-    <div 
-      ref={ref}
-      className={isVisible ? styles.visible : styles.hidden}
-    >
+    <div ref={ref} className={isVisible ? styles.visible : styles.hidden}>
       {/* Contenido */}
     </div>
-  )
+  );
 }
 ```
 
@@ -2568,7 +2696,9 @@ export default function AnimatedSection() {
 .hidden {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .visible {
@@ -2578,8 +2708,10 @@ export default function AnimatedSection() {
 ```
 
 ### ERROR 8: "Container muy estrecho/amplio"
+
 **Causa:** Max-width incorrecto
 **Solución:**
+
 ```css
 /* Analizar el original y usar el max-width exacto */
 .container {
@@ -2596,8 +2728,10 @@ export default function AnimatedSection() {
 ```
 
 ### ERROR 9: "Padding inconsistente entre secciones"
+
 **Causa:** Cada componente usa valores diferentes
 **Solución:**
+
 ```css
 /* Estandarizar en globals.css */
 .section {
@@ -2618,28 +2752,35 @@ export default function AnimatedSection() {
 ```
 
 O crear componente Section wrapper:
+
 ```tsx
 // app/components/Section/Section.tsx
-import styles from './Section.module.css'
+import styles from "./Section.module.css";
 
 interface SectionProps {
-  children: React.ReactNode
-  className?: string
-  id?: string
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
 }
 
-export default function Section({ children, className = '', id }: SectionProps) {
+export default function Section({
+  children,
+  className = "",
+  id,
+}: SectionProps) {
   return (
     <section id={id} className={`${styles.section} ${className}`}>
       {children}
     </section>
-  )
+  );
 }
 ```
 
 ### ERROR 10: "Build errors con import paths"
+
 **Causa:** Imports relativos vs alias
 **Solución:**
+
 ```json
 // tsconfig.json - Verificar paths
 {
@@ -2653,18 +2794,20 @@ export default function Section({ children, className = '', id }: SectionProps) 
 
 ```tsx
 // Usar alias consistentemente
-import Button from '@/components/Button/Button'  // ✅
-import Button from '../Button/Button'            // ❌
+import Button from "@/components/Button/Button"; // ✅
+import Button from "../Button/Button"; // ❌
 ```
 
 ## 📊 MÉTRICAS DE ÉXITO
 
 ### Similitud Visual
+
 - **90-94%:** Muy bueno - Pequeños detalles difieren
 - **95-97%:** Excelente - Casi indistinguible
 - **98-100%:** Perfecto - Pixel-perfect (raramente necesario)
 
 ### Desarrollo Time
+
 - **Análisis:** 3-4 horas (30%)
 - **Setup:** 1 hora (10%)
 - **Implementación:** 5-6 horas (50%)
@@ -2672,7 +2815,9 @@ import Button from '../Button/Button'            // ❌
 - **Total:** 10-12 horas para sitio complejo
 
 ### Documentación
+
 Generar estos documentos durante el desarrollo:
+
 1. **COMPARISON_ANALYSIS.md** - Análisis exhaustivo original vs clone
 2. **IMPLEMENTATION_LOG.md** - Decisiones de arquitectura
 3. **FIXES_APPLIED.md** - Errores encontrados y soluciones
@@ -2681,7 +2826,9 @@ Generar estos documentos durante el desarrollo:
 ## 🎯 DECISIONES DE ARQUITECTURA CRÍTICAS
 
 ### 1. Estructura de Componentes y CSS Modules
+
 **Organización recomendada:**
+
 ```
 app/components/
 ├── Button/
@@ -2696,12 +2843,15 @@ app/components/
 ```
 
 **Convenciones de nomenclatura BEM:**
+
 - **Bloque:** `.button`, `.card`, `.navbar`
 - **Elemento:** `.button__icon`, `.card__title`, `.navbar__link`
 - **Modificador:** `.button--primary`, `.card--featured`, `.navbar--scrolled`
 
 ### 2. CSS Variables vs Hard-coded Values
+
 **Usa CSS Variables para:**
+
 - Colores del sistema
 - Spacing consistente
 - Tipografía base
@@ -2709,28 +2859,31 @@ app/components/
 - Transitions y animations
 
 **Usa valores hard-coded para:**
+
 - Valores únicos específicos de un componente
 - Ajustes finos de posicionamiento
 - Casos edge muy específicos
 
 ### 3. Server vs Client Components
+
 ```tsx
 // Server Component (default) - Sin interactividad
 export default function AboutSection() {
-  return <section>Static content</section>
+  return <section>Static content</section>;
 }
 
 // Client Component - Con state, events, hooks
-"use client"
-import { useState } from 'react'
+("use client");
+import { useState } from "react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  return <nav onClick={() => setIsOpen(!isOpen)}>...</nav>
+  const [isOpen, setIsOpen] = useState(false);
+  return <nav onClick={() => setIsOpen(!isOpen)}>...</nav>;
 }
 ```
 
 ### 4. Image Optimization Strategy
+
 ```tsx
 // Hero/Above-fold images
 <Image src="..." priority />  // Preload
@@ -2746,28 +2899,29 @@ export default function Navbar() {
 ```
 
 ### 5. Font Loading Best Practice
+
 ```tsx
 // app/layout.tsx
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display } from "next/font/google";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',  // FOIT prevention
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap", // FOIT prevention
+});
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <body className={inter.className}>{children}</body>
     </html>
-  )
+  );
 }
 ```
 
@@ -2785,6 +2939,7 @@ export default function RootLayout({ children }) {
 ## 🔄 WORKFLOW ITERATIVO RECOMENDADO
 
 ### Iteración 1: Foundation (Día 1)
+
 1. Setup proyecto con Next.js y TypeScript
 2. Configurar CSS Modules y variables (paleta DECORD específica)
 3. Implementar Header minimalista ("ART GALLERY") + menú hamburguesa
@@ -2795,12 +2950,14 @@ export default function RootLayout({ children }) {
 **Objetivo:** 60-70% similitud
 
 **Componentes creados:**
+
 - Header/Navbar con logo minimalista
 - Hero con título grande espaciado
 - Loading animation
 - Variables CSS con paleta exacta
 
 ### Iteración 2: Content Sections (Día 2)
+
 1. About section con historia de la galería
 2. Stats cards con números grandes (15 años, 34 artistas, etc.)
 3. Gallery preview con grid de obras (ArtworkCard con hover zoom)
@@ -2814,6 +2971,7 @@ export default function RootLayout({ children }) {
 **Objetivo:** 80-85% similitud
 
 **Componentes creados:**
+
 - ArtworkCard con overlay y zoom
 - EventCard con diseño de fecha
 - StatCard para estadísticas
@@ -2821,6 +2979,7 @@ export default function RootLayout({ children }) {
 - Footer con CTA grande
 
 ### Iteración 3: Páginas Internas & Interactividad (Día 3)
+
 1. Página About completa con Team section
 2. Página Gallery completa con:
    - CategoryFilter funcional
@@ -2835,6 +2994,7 @@ export default function RootLayout({ children }) {
 **Objetivo:** 90-95% similitud
 
 **Componentes creados:**
+
 - Lightbox/Modal para galería
 - CategoryFilter con estados activos
 - TeamMemberCard
@@ -2843,6 +3003,7 @@ export default function RootLayout({ children }) {
 - Breadcrumb component
 
 ### Iteración 4: Polish, Testing & Optimization (Día 4)
+
 1. Ajustes finos de tipografía (letter-spacing crítico)
 2. Perfeccionar animaciones de scroll
 3. Optimizar imágenes (WebP, lazy loading)
@@ -2857,6 +3018,7 @@ export default function RootLayout({ children }) {
 **Objetivo:** 95-97% similitud + production ready
 
 **Tareas de optimización:**
+
 - Verificar letter-spacing en título hero
 - Ajustar aspect ratios de imágenes en grid
 - Perfeccionar overlay opacity en hover
@@ -2867,15 +3029,17 @@ export default function RootLayout({ children }) {
 ## 💡 TIPS AVANZADOS
 
 ### 1. Extracción de Colores Exactos
+
 ```javascript
 // En DevTools Console del sitio original
-$$('*').forEach(el => {
-  const bg = window.getComputedStyle(el).backgroundColor
-  if (bg !== 'rgba(0, 0, 0, 0)') console.log(el.tagName, bg)
-})
+$$("*").forEach((el) => {
+  const bg = window.getComputedStyle(el).backgroundColor;
+  if (bg !== "rgba(0, 0, 0, 0)") console.log(el.tagName, bg);
+});
 ```
 
 ### 2. Comparación Visual Automatizada
+
 ```bash
 # Instalar Percy para visual regression testing
 npm install --save-dev @percy/cli @percy/puppeteer
@@ -2889,6 +3053,7 @@ npx percy compare
 ```
 
 ### 3. Debugging Responsive Issues
+
 ```css
 /* Agregar temporalmente en globals.css */
 * {
@@ -2897,7 +3062,7 @@ npx percy compare
 
 /* Ver breakpoints activos */
 body::before {
-  content: 'XS';
+  content: "XS";
   position: fixed;
   top: 0;
   right: 0;
@@ -2908,36 +3073,37 @@ body::before {
 }
 
 @media (min-width: 640px) {
-  body::before { 
-    content: 'SM'; 
-    background: orange; 
+  body::before {
+    content: "SM";
+    background: orange;
   }
 }
 
 @media (min-width: 768px) {
-  body::before { 
-    content: 'MD'; 
-    background: yellow; 
-    color: black; 
+  body::before {
+    content: "MD";
+    background: yellow;
+    color: black;
   }
 }
 
 @media (min-width: 1024px) {
-  body::before { 
-    content: 'LG'; 
-    background: green; 
+  body::before {
+    content: "LG";
+    background: green;
   }
 }
 
 @media (min-width: 1280px) {
-  body::before { 
-    content: 'XL'; 
-    background: blue; 
+  body::before {
+    content: "XL";
+    background: blue;
   }
 }
 ```
 
 ### 4. Performance: Preload Critical Assets
+
 ```tsx
 // app/layout.tsx
 export default function RootLayout({ children }) {
@@ -2945,15 +3111,22 @@ export default function RootLayout({ children }) {
     <html>
       <head>
         <link rel="preload" href="/images/hero-bg.jpg" as="image" />
-        <link rel="preload" href="/fonts/custom-font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="/fonts/custom-font.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
 ```
 
 ### 5. Smooth Scroll con CSS
+
 ```css
 /* globals.css */
 html {
@@ -2963,16 +3136,17 @@ html {
 ```
 
 O con JavaScript para más control:
+
 ```tsx
 // En el componente de navegación
-<Link 
+<Link
   href="#about"
   onClick={(e) => {
-    e.preventDefault()
-    document.getElementById('about')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    e.preventDefault();
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }}
 >
   Sobre Nosotros
@@ -2982,7 +3156,9 @@ O con JavaScript para más control:
 ## 🎨 ESPECIFICACIONES VISUALES DECORD
 
 ### Paleta de Colores Exacta
+
 Extraer con DevTools del sitio original:
+
 - **Fondo principal:** `#ffffff` o `#fafafa`
 - **Texto principal:** `#0a0a0a` o `#1a1a1a`
 - **Texto secundario:** `#666666` o `#7a7a7a`
@@ -2991,11 +3167,13 @@ Extraer con DevTools del sitio original:
 - **Bordes:** `#e5e5e5` o `#d4d4d4`
 
 ### Tipografía Específica
+
 ```css
 /* Verificar en sitio original y replicar */
---font-hero: 'Cormorant Garamond', Georgia, serif; /* Para "MUSEUM OF MODERN ART" */
---font-headings: 'Playfair Display', Georgia, serif;
---font-body: 'Inter', -apple-system, sans-serif;
+--font-hero:
+  "Cormorant Garamond", Georgia, serif; /* Para "MUSEUM OF MODERN ART" */
+--font-headings: "Playfair Display", Georgia, serif;
+--font-body: "Inter", -apple-system, sans-serif;
 
 /* Letter spacing crítico */
 .hero-title {
@@ -3010,6 +3188,7 @@ Extraer con DevTools del sitio original:
 ```
 
 ### Animaciones Específicas
+
 ```css
 /* Zoom en hover de imágenes de galería */
 .artwork-image {
@@ -3054,6 +3233,7 @@ Extraer con DevTools del sitio original:
 ```
 
 ### Layouts de Galería
+
 ```css
 /* Masonry Grid - Variable aspect ratios */
 .gallery-grid {
@@ -3063,11 +3243,11 @@ Extraer con DevTools del sitio original:
   gap: var(--gallery-gap);
 }
 
-.gallery-item:nth-child(3n+1) {
+.gallery-item:nth-child(3n + 1) {
   grid-row: span 2; /* Tall */
 }
 
-.gallery-item:nth-child(5n+2) {
+.gallery-item:nth-child(5n + 2) {
   grid-column: span 2; /* Wide */
 }
 
@@ -3084,9 +3264,9 @@ Extraer con DevTools del sitio original:
     grid-template-columns: 1fr;
     grid-auto-rows: 300px;
   }
-  
-  .gallery-item:nth-child(3n+1),
-  .gallery-item:nth-child(5n+2) {
+
+  .gallery-item:nth-child(3n + 1),
+  .gallery-item:nth-child(5n + 2) {
     grid-row: span 1;
     grid-column: span 1;
   }
@@ -3094,6 +3274,7 @@ Extraer con DevTools del sitio original:
 ```
 
 ### Footer "LET'S TALK" Específico
+
 ```css
 .footer-cta {
   background: var(--color-primary); /* Negro profundo */
@@ -3118,68 +3299,91 @@ Extraer con DevTools del sitio original:
 ```
 
 ### Datos de Ejemplo para DECORD
+
 ```typescript
 // app/data/artworks.ts
 export const artworks = [
   {
     id: 1,
-    title: 'The Power of Atom',
-    artist: 'Frank Anderson',
+    title: "The Power of Atom",
+    artist: "Frank Anderson",
     year: 2016,
-    category: 'abstract',
-    image: '/images/artworks/power-of-atom.webp',
-    aspectRatio: '3/4' // Portrait
+    category: "abstract",
+    image: "/images/artworks/power-of-atom.webp",
+    aspectRatio: "3/4", // Portrait
   },
   {
     id: 2,
-    title: 'Cubes',
-    artist: 'Emma Smith',
+    title: "Cubes",
+    artist: "Emma Smith",
     year: 2018,
-    category: 'hyperrealism',
-    image: '/images/artworks/cubes.webp',
-    aspectRatio: '4/3' // Landscape
+    category: "hyperrealism",
+    image: "/images/artworks/cubes.webp",
+    aspectRatio: "4/3", // Landscape
   },
   // ... más obras
-]
+];
 
 // app/data/events.ts
 export const events = [
   {
     id: 1,
-    date: '21/02',
-    title: 'International Fine Art Exhibition',
-    dateRange: 'February 21 - February 26',
-    time: '10 AM-8 PM',
-    description: 'The International Fine Art Exhibition serves as an opportunity for unique creatives from all around the world to demonstrate their talents.',
-    slug: 'international-fine-art-exhibition'
+    date: "21/02",
+    title: "International Fine Art Exhibition",
+    dateRange: "February 21 - February 26",
+    time: "10 AM-8 PM",
+    description:
+      "The International Fine Art Exhibition serves as an opportunity for unique creatives from all around the world to demonstrate their talents.",
+    slug: "international-fine-art-exhibition",
   },
   // ... más eventos
-]
+];
 
 // app/lib/constants.ts
 export const CATEGORIES = [
-  'anamorphosis',
-  'photorealism',
-  'surrealism',
-  'hyperrealism',
-  'abstract'
-]
+  "anamorphosis",
+  "photorealism",
+  "surrealism",
+  "hyperrealism",
+  "abstract",
+];
 
 export const STATS = [
-  { number: '15', title: 'Years of Experience', description: 'Our gallery was established in 2002 to display masterpieces from all over the world.' },
-  { number: '34', title: 'Famous Artists', description: 'We have gathered the greatest artworks of 20th century.' },
-  { number: '89', title: 'Successful Exhibitions', description: 'Amazing collections of modern and experimental art, abstract and portrait art are represented in our gallery.' },
-  { number: '12', title: 'Current Exhibitions', description: 'We have a selection of thousands of artworks from some of the best names in contemporary fine art.' }
-]
+  {
+    number: "15",
+    title: "Years of Experience",
+    description:
+      "Our gallery was established in 2002 to display masterpieces from all over the world.",
+  },
+  {
+    number: "34",
+    title: "Famous Artists",
+    description: "We have gathered the greatest artworks of 20th century.",
+  },
+  {
+    number: "89",
+    title: "Successful Exhibitions",
+    description:
+      "Amazing collections of modern and experimental art, abstract and portrait art are represented in our gallery.",
+  },
+  {
+    number: "12",
+    title: "Current Exhibitions",
+    description:
+      "We have a selection of thousands of artworks from some of the best names in contemporary fine art.",
+  },
+];
 ```
 
 ## 📝 TEMPLATE DE DOCUMENTACIÓN
 
 ### COMPARISON_ANALYSIS.md
+
 ```markdown
 # Análisis Comparativo: Original vs Clone
 
 ## Resumen Ejecutivo
+
 - URL Original: https://ld-wt73.template-help.com/tf/decord_v1/
 - Fecha Análisis: [fecha]
 - Similitud Objetivo: 95%
@@ -3187,7 +3391,9 @@ export const STATS = [
 ## Sección por Sección
 
 ### 1. Navbar
+
 **Original:**
+
 - Background: [color/opacity/blur]
 - Height: [px]
 - Logo: [descripción]
@@ -3195,40 +3401,49 @@ export const STATS = [
 - Hover: [efectos]
 
 **Clone:**
+
 - [Descripción implementación]
 
 **Diferencias:**
+
 - [Lista diferencias críticas]
 
 **Plan de Acción:**
+
 - [ ] [Corrección 1]
 - [ ] [Corrección 2]
 
 ### 2. Hero Section
+
 [Mismo formato...]
 
 ### 3. About Section
+
 [Mismo formato...]
 
 [Repetir para cada sección...]
 ```
 
 ### IMPLEMENTATION_LOG.md
+
 ```markdown
 # Log de Implementación
 
 ## [Fecha] - Sesión 1: Setup
+
 - ✅ Proyecto inicializado con Next.js 16
 - ✅ CSS Modules configurado
 - ✅ Variables CSS definidas en variables.css
 - ⚠️ Issue: [descripción] → Solucionado con [...]
 
 ## [Fecha] - Sesión 2: Navbar + Hero
+
 - ✅ Navbar con sticky behavior y CSS Modules
 - ✅ Hero con background image optimizado
 - ❌ Glassmorphism no perfecto → Pendiente refinar valores de blur
 
 ## [Fecha] - Sesión 3: Secciones de Contenido
+
 - ✅ About section implementada con BEM
 - ✅ Services grid responsive
 - ✅ Gallery con lazy loading
@@ -3238,8 +3453,8 @@ export const STATS = [
 
 ## 🎓 CONCLUSIÓN
 
-Este prompt incorpora **10+ horas de experiencia real** clonando un sitio complejo, 
-condensadas en una metodología repetible con CSS Modules y metodología BEM. 
+Este prompt incorpora **10+ horas de experiencia real** clonando un sitio complejo,
+condensadas en una metodología repetible con CSS Modules y metodología BEM.
 
 Específicamente adaptado para **DECORD - Galería de Arte Moderno**, con énfasis en:
 
@@ -3269,12 +3484,14 @@ Específicamente adaptado para **DECORD - Galería de Arte Moderno**, con énfas
 ### Diferencias Críticas vs Otros Proyectos
 
 **DECORD NO es:**
+
 - ❌ Colorido o vibrante (es elegante y minimalista)
 - ❌ Con muchos botones CTA (es discreto)
 - ❌ Con animaciones llamativas (es sutil)
 - ❌ E-commerce (es informativo/expositivo)
 
 **DECORD ES:**
+
 - ✅ Minimalista y sofisticado
 - ✅ Tipografía con mucho spacing
 - ✅ Fotografía como protagonista
@@ -3288,22 +3505,26 @@ Específicamente adaptado para **DECORD - Galería de Arte Moderno**, con énfas
 ## 📎 RECURSOS ADICIONALES
 
 ### Documentación Técnica
+
 - [Next.js 16 App Router Guide](https://nextjs.org/docs)
 - [CSS Modules Documentation](https://github.com/css-modules/css-modules)
 - [BEM Methodology](https://getbem.com/)
 - [Next.js Image Optimization](https://nextjs.org/docs/basic-features/image-optimization)
 
 ### Herramientas de Testing
+
 - [WebPageTest](https://www.webpagetest.org) - Performance testing
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) - Automated audits
 - [Can I Use](https://caniuse.com) - Browser compatibility checker
 
 ### Inspiración y Referencias
+
 - [Art Gallery Design Patterns](https://www.awwwards.com/websites/art-gallery/)
 - [Museum Website Best Practices](https://www.smashingmagazine.com/category/design/)
 - [Typography in Art Websites](https://typ.io/)
 
 ### Tipografías Recomendadas (si no se pueden extraer exactas)
+
 - **Hero/Títulos grandes:** Cormorant Garamond, Cinzel, Bodoni Moda
 - **Títulos secciones:** Playfair Display, Libre Baskerville
 - **Cuerpo de texto:** Inter, Work Sans, IBM Plex Sans
@@ -3313,8 +3534,9 @@ Específicamente adaptado para **DECORD - Galería de Arte Moderno**, con énfas
 ---
 
 **Version:** 2.0 - DECORD Specific
-**Actualización:** CSS Modules + BEM + Art Gallery Focus (Nov 2025)  
+**Actualización:** CSS Modules + BEM + Art Gallery Focus (Nov 2025)
 **Sitio objetivo:** DECORD - Museum of Modern Art Gallery
-**Basado en:** Experiencia real de clonación de sitios complejos  
-**Mantenido por:** Análisis exhaustivo del sitio original  
+**Basado en:** Experiencia real de clonación de sitios complejos
+**Mantenido por:** Análisis exhaustivo del sitio original
 **Licencia:** Open source - Usar libremente con atribución
+```

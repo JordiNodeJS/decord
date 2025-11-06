@@ -5,6 +5,7 @@ Este documento establece las reglas y mejores prácticas para el desarrollo del 
 ## 🎯 Objetivo del Proyecto
 
 Clonar el sitio web DECORD con **100% de similitud visual**, creando una réplica funcional, responsive y optimizada usando:
+
 - Next.js 16 (App Router)
 - TypeScript
 - CSS Modules con metodología BEM
@@ -13,11 +14,13 @@ Clonar el sitio web DECORD con **100% de similitud visual**, creando una réplic
 ## 🎨 CRÍTICO: Sistema de Design Tokens
 
 ### Regla de Oro
+
 > **NUNCA escribir valores hardcoded en CSS. SIEMPRE usar Design Tokens.**
 
 ### Tokens Disponibles
 
 Todos los tokens están definidos en `styles/tokens/`:
+
 - `colors.css` - Paleta DECORD (gold #d4af37, backgrounds oscuros)
 - `spacing.css` - Sistema de 8px base
 - `typography.css` - Fuentes Playfair Display (títulos) + Inter (cuerpo)
@@ -56,26 +59,29 @@ Todos los tokens están definidos en `styles/tokens/`:
 ### Tokens Más Importantes
 
 #### Colores
+
 ```css
---color-primary-gold: #d4af37;        /* Accent principal */
---color-background-primary: #0a0a0a;  /* Fondo oscuro */
---color-text-primary: #fafafa;        /* Texto claro */
---color-hover-gold: #e6c968;          /* Hover dorado */
+--color-primary-gold: #d4af37; /* Accent principal */
+--color-background-primary: #0a0a0a; /* Fondo oscuro */
+--color-text-primary: #fafafa; /* Texto claro */
+--color-hover-gold: #e6c968; /* Hover dorado */
 ```
 
 #### Espaciado (múltiplos de 8px)
+
 ```css
---spacing-4: 16px;    /* Gap entre elementos */
---spacing-6: 24px;    /* Gap entre cards */
---spacing-8: 32px;    /* Padding de cards */
---spacing-32: 128px;  /* Padding de secciones */
+--spacing-4: 16px; /* Gap entre elementos */
+--spacing-6: 24px; /* Gap entre cards */
+--spacing-8: 32px; /* Padding de cards */
+--spacing-32: 128px; /* Padding de secciones */
 ```
 
 #### Tipografía
+
 ```css
---font-family-primary: 'Playfair Display', serif;  /* Títulos */
---font-family-secondary: 'Inter', sans-serif;      /* Cuerpo */
---letter-spacing-widest: 0.1em;  /* ⭐ CARACTERÍSTICO DECORD */
+--font-family-primary: "Playfair Display", serif; /* Títulos */
+--font-family-secondary: "Inter", sans-serif; /* Cuerpo */
+--letter-spacing-widest: 0.1em; /* ⭐ CARACTERÍSTICO DECORD */
 ```
 
 ### Característica Visual Distintiva
@@ -85,7 +91,7 @@ Todos los tokens están definidos en `styles/tokens/`:
 ```css
 .hero__title {
   font-size: var(--hero-title-font-size);
-  letter-spacing: var(--letter-spacing-widest);  /* ⭐ NO OLVIDAR */
+  letter-spacing: var(--letter-spacing-widest); /* ⭐ NO OLVIDAR */
   font-family: var(--font-family-primary);
 }
 ```
@@ -137,7 +143,7 @@ decord/
 ```tsx
 // ✅ Estructura correcta
 // Component.tsx
-import styles from './Component.module.css'
+import styles from "./Component.module.css";
 
 export default function Component() {
   return (
@@ -145,7 +151,7 @@ export default function Component() {
       <h2 className={styles.component__title}>Title</h2>
       <button className={styles.component__button}>Click</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -179,6 +185,7 @@ components/ui/Button/
 Cada componente en su propia carpeta con su CSS Module.
 
 ## 📦 Package Manager
+
 ## 📦 Package Manager
 
 - **Requerido**: Usar `pnpm` como gestor de paquetes
@@ -207,7 +214,7 @@ Cada componente en su propia carpeta con su CSS Module.
 }
 
 .artwork-card:hover .artwork-card__image {
-  transform: var(--animation-image-zoom);  /* scale(1.05) */
+  transform: var(--animation-image-zoom); /* scale(1.05) */
 }
 
 /* Overlay en hover */
@@ -237,14 +244,14 @@ Configurados en `tsconfig.json`:
 
 ```tsx
 // ✅ Usar path aliases
-import Hero from '@/components/sections/Hero/Hero'
-import Button from '@/components/ui/Button/Button'
-import { formatDate } from '@/lib/utils'
-import { artworks } from '@/data/artworks'
-import '@/styles/globals.css'
+import Hero from "@/components/sections/Hero/Hero";
+import Button from "@/components/ui/Button/Button";
+import { formatDate } from "@/lib/utils";
+import { artworks } from "@/data/artworks";
+import "@/styles/globals.css";
 
 // ❌ NO usar rutas relativas largas
-import Hero from '../../../components/sections/Hero/Hero'
+import Hero from "../../../components/sections/Hero/Hero";
 ```
 
 ## 🔍 Proceso de Creación de Componentes
@@ -259,29 +266,29 @@ import Hero from '../../../components/sections/Hero/Hero'
 
 ```tsx
 // components/ui/Button/Button.tsx
-import styles from './Button.module.css'
+import styles from "./Button.module.css";
 
 interface ButtonProps {
-  children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
-  size?: 'sm' | 'md' | 'lg'
-  onClick?: () => void
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
+  onClick?: () => void;
 }
 
-export default function Button({ 
-  children, 
-  variant = 'primary',
-  size = 'md',
-  onClick 
+export default function Button({
+  children,
+  variant = "primary",
+  size = "md",
+  onClick,
 }: ButtonProps) {
   return (
-    <button 
+    <button
       className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]}`}
       onClick={onClick}
     >
       {children}
     </button>
-  )
+  );
 }
 ```
 
@@ -329,11 +336,13 @@ Antes de crear componentes, revisar:
 ## Arquitectura y Router
 
 ### App Router (Requerido)
+
 - **SIEMPRE** usar el App Router (`app/` directory), NO el Pages Router (`pages/` directory)
 - Todas las rutas deben estar definidas en el directorio `app/`
 - Usar el sistema de archivos para definir rutas y layouts anidados
 
 ### Convenciones de Archivos
+
 - `page.tsx` / `page.jsx`: Define una ruta y es accesible públicamente
 - `layout.tsx` / `layout.jsx`: Define un layout compartido para segmentos de ruta
 - `template.tsx` / `template.jsx`: Define un template que se recrea en cada navegación
@@ -344,6 +353,7 @@ Antes de crear componentes, revisar:
 ## Server Components vs Client Components
 
 ### Server Components (Default)
+
 - **Por defecto, todos los componentes son Server Components**
 - No necesitan la directiva `'use client'`
 - Pueden hacer data fetching directamente usando `async/await`
@@ -355,17 +365,18 @@ Antes de crear componentes, revisar:
 ```tsx
 // ✅ Server Component
 async function getData() {
-  const res = await fetch('https://api.example.com/data')
-  return res.json()
+  const res = await fetch("https://api.example.com/data");
+  return res.json();
 }
 
 export default async function Page() {
-  const data = await getData()
-  return <div>{data.title}</div>
+  const data = await getData();
+  return <div>{data.title}</div>;
 }
 ```
 
 ### Client Components
+
 - **Solo usar cuando sea absolutamente necesario** (interactividad, hooks, event handlers)
 - Deben tener la directiva `'use client'` al inicio del archivo, antes de cualquier import
 - Usar solo para interactividad del lado del cliente
@@ -373,22 +384,24 @@ export default async function Page() {
 
 ```tsx
 // ✅ Client Component
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
 
 export default function InteractiveButton() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
 ```
 
 ### Regla de Oro
+
 > **Usar Server Components por defecto. Solo convertir a Client Component cuando necesites interactividad del cliente.**
 
 ## Data Fetching
 
 ### Fetch en Server Components
+
 - Usar `fetch()` directamente en Server Components
 - Usar opciones de caché apropiadas:
   - `cache: 'force-cache'` (default): Para datos estáticos (equivalente a `getStaticProps`)
@@ -397,33 +410,34 @@ export default function InteractiveButton() {
 
 ```tsx
 // ✅ Static data
-const staticData = await fetch('https://api.example.com/data', {
-  cache: 'force-cache'
-})
+const staticData = await fetch("https://api.example.com/data", {
+  cache: "force-cache",
+});
 
 // ✅ Dynamic data
-const dynamicData = await fetch('https://api.example.com/data', {
-  cache: 'no-store'
-})
+const dynamicData = await fetch("https://api.example.com/data", {
+  cache: "no-store",
+});
 
 // ✅ ISR con revalidación
-const revalidatedData = await fetch('https://api.example.com/data', {
-  next: { revalidate: 3600 } // revalidar cada hora
-})
+const revalidatedData = await fetch("https://api.example.com/data", {
+  next: { revalidate: 3600 }, // revalidar cada hora
+});
 ```
 
 ### Acceso a Cookies y Headers
+
 - Usar `cookies()` y `headers()` de `next/headers` en Server Components
 - Estas funciones son async y deben ser awaited
 
 ```tsx
-import { cookies, headers } from 'next/headers'
+import { cookies, headers } from "next/headers";
 
 export default async function Page() {
-  const cookieStore = await cookies()
-  const headerStore = await headers()
-  const theme = cookieStore.get('theme')
-  const authHeader = headerStore.get('authorization')
+  const cookieStore = await cookies();
+  const headerStore = await headers();
+  const theme = cookieStore.get("theme");
+  const authHeader = headerStore.get("authorization");
   // ...
 }
 ```
@@ -431,6 +445,7 @@ export default async function Page() {
 ## Routing y Navegación
 
 ### Link Component
+
 - **SIEMPRE** usar `Link` de `next/link` para navegación interna
 - NO envolver `<Link>` con `<a>` (Next.js 13+)
 - El prefetch está habilitado por defecto en producción
@@ -446,23 +461,25 @@ import Link from 'next/link'
 ```
 
 ### Hooks de Navegación (Solo en Client Components)
+
 - Usar hooks de `next/navigation` (NO de `next/router`)
 - `useRouter`, `usePathname`, `useSearchParams` solo funcionan en Client Components
 
 ```tsx
-'use client'
+"use client";
 
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 export default function Navigation() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   // ...
 }
 ```
 
 ### Segmentos Dinámicos
+
 - Usar `[slug]` para rutas dinámicas
 - `params` es una Promise en Next.js 16 y debe ser awaited
 
@@ -470,17 +487,18 @@ export default function Navigation() {
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
-  const post = await getPost(slug)
-  return <div>{post.title}</div>
+  const { slug } = await params;
+  const post = await getPost(slug);
+  return <div>{post.title}</div>;
 }
 ```
 
 ## Layouts
 
 ### Root Layout
+
 - **SIEMPRE** debe existir `app/layout.tsx` como layout raíz
 - Debe incluir `<html>` y `<body>` tags
 - Debe aceptar `children: React.ReactNode`
@@ -489,17 +507,18 @@ export default async function BlogPostPage({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es">
       <body>{children}</body>
     </html>
-  )
+  );
 }
 ```
 
 ### Layouts Anidados
+
 - Los layouts se anidan automáticamente
 - Cada segmento de ruta puede tener su propio layout
 - Los layouts son persistentes y no se re-renderizan en navegación
@@ -509,20 +528,21 @@ export default function RootLayout({
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div>
       <nav>Dashboard Nav</nav>
       {children}
     </div>
-  )
+  );
 }
 ```
 
 ## TypeScript
 
 ### Tipos para Parámetros de Rutas
+
 - `params` siempre es una Promise en Next.js 16
 - Typear correctamente los parámetros de ruta
 
@@ -531,26 +551,28 @@ export default function DashboardLayout({
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
+  const { slug } = await params;
   // ...
 }
 ```
 
 ### Tipos de App Router
+
 - Usar tipos nativos de TypeScript para props de componentes
 - No necesitar tipos especiales para Server Components
 
 ## Streaming y Suspense
 
 ### Usar Suspense para Streaming
+
 - Envolver componentes async con `Suspense` para habilitar streaming
 - Proporcionar fallbacks apropiados
 
 ```tsx
-import { Suspense } from 'react'
-import { PostFeed, Weather } from './components'
+import { Suspense } from "react";
+import { PostFeed, Weather } from "./components";
 
 export default function Posts() {
   return (
@@ -562,72 +584,78 @@ export default function Posts() {
         <Weather />
       </Suspense>
     </section>
-  )
+  );
 }
 ```
 
 ## Mejores Prácticas
 
 ### 1. Colocación de Código
+
 - Mantener Server Components cerca de donde se usan
 - Separar lógica de negocio en funciones auxiliares
 - Usar colocation de componentes relacionados
 
 ### 2. Importaciones
+
 - Importar Server Components directamente en Server Components
 - Importar Client Components en Server Components (se renderizan en el cliente)
 - NO importar Server Components en Client Components directamente
 
 ### 3. Performance
+
 - Usar `next/dynamic` para code splitting de componentes pesados
 - Usar `loading.tsx` para estados de carga
 - Implementar error boundaries con `error.tsx`
 
 ```tsx
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+const HeavyComponent = dynamic(() => import("./HeavyComponent"), {
   loading: () => <p>Loading...</p>,
-})
+});
 ```
 
 ### 4. Variables de Entorno
+
 - Usar `process.env` para variables de entorno
 - Para runtime env vars, usar `connection()` de `next/server` en Server Components
 
 ```tsx
-import { connection } from 'next/server'
+import { connection } from "next/server";
 
 export default async function Component() {
-  await connection()
-  const value = process.env.MY_RUNTIME_VALUE
+  await connection();
+  const value = process.env.MY_RUNTIME_VALUE;
   // ...
 }
 ```
 
 ### 5. Metadata y SEO
+
 - Usar `metadata` export para SEO en páginas
 - Usar `generateMetadata` para metadata dinámica
 
 ```tsx
 export const metadata = {
-  title: 'Home',
-  description: 'Home page description',
-}
+  title: "Home",
+  description: "Home page description",
+};
 
 // O dinámico
 export async function generateMetadata({ params }): Promise<Metadata> {
-  const post = await getPost(params.slug)
+  const post = await getPost(params.slug);
   return {
     title: post.title,
     description: post.description,
-  }
+  };
 }
 ```
 
 ## Errores Comunes a Evitar
 
 ### ❌ NO hacer esto:
+
 1. **Valores hardcoded en CSS** - SIEMPRE usar tokens
 2. **Componentes en app/components/** - Deben estar en raíz
 3. **Olvidar letter-spacing: 0.1em en hero** - Es característica distintiva
@@ -643,6 +671,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 13. **Imports sin path aliases** - Siempre usar @/
 
 ### ✅ Hacer esto:
+
 1. **Consultar tokens ANTES de escribir CSS**
 2. **Usar var(--token-name) en todo el CSS**
 3. **Seguir metodología BEM estrictamente**
@@ -668,6 +697,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
    - Efectos → hover, transiciones (tokens de effects)
 
 3. **Crear componente**:
+
    ```bash
    components/sections/NuevaSeccion/
    ├── NuevaSeccion.tsx
@@ -677,12 +707,13 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 4. **Escribir JSX** con estructura semántica
 
 5. **Escribir CSS** usando SOLO tokens:
+
    ```css
    .seccion {
      padding: var(--spacing-section-y) 0;
      background: var(--color-background-primary);
    }
-   
+
    .seccion__title {
      font-size: var(--font-size-3xl);
      color: var(--color-text-primary);
@@ -777,6 +808,7 @@ grep -r "[0-9]\+px" components/**/*.module.css
 ## 🎯 Recordatorios Finales
 
 ### Antes de cada componente:
+
 1. ✅ Leer `docs/DESIGN_TOKENS.md`
 2. ✅ Identificar tokens necesarios
 3. ✅ Verificar estructura de carpetas
@@ -784,6 +816,7 @@ grep -r "[0-9]\+px" components/**/*.module.css
 5. ✅ NO escribir valores hardcoded
 
 ### Características DECORD críticas:
+
 - 🌟 **Letter-spacing: 0.1em** en hero title
 - 🎨 **Paleta oscura** con gold accent (#d4af37)
 - 📏 **Espaciado generoso** (múltiplos de 8px)
@@ -797,11 +830,13 @@ grep -r "[0-9]\+px" components/**/*.module.css
 ## 📚 Documentación Completa
 
 ### Documentación del Proyecto
+
 - **Design Tokens**: `docs/DESIGN_TOKENS.md` - ⚠️ CRÍTICO: Consultar ANTES de escribir CSS
 - **Master Prompt**: `docs/MASTER_PROMPT_FOR_LLM.md` - Guía completa de clonación
 - **Estructura**: `docs/ESTRUCTURA_PROYECTO.md` - Convenciones de carpetas
 
 ### Referencias Externas
+
 - **Sitio original**: https://ld-wt73.template-help.com/tf/decord_v1/
 - **Next.js 16 Docs**: https://nextjs.org/docs
 - **CSS Modules**: https://github.com/css-modules/css-modules
@@ -810,4 +845,3 @@ grep -r "[0-9]\+px" components/**/*.module.css
 ---
 
 **Última actualización**: Noviembre 2025 - Optimizado para proyecto DECORD con Design Tokens
-

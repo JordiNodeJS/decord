@@ -31,8 +31,8 @@ En `.github/prompts/` dentro del workspace (el nombre debe terminar en `.prompt.
 
 ```markdown
 ---
-mode: 'agent'
-description: 'Explica código de forma clara y con ejemplos'
+mode: "agent"
+description: "Explica código de forma clara y con ejemplos"
 ---
 
 Explica el siguiente código de forma sencilla:

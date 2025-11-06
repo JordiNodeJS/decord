@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Implementa diseños modernos y responsive usando mejores prácticas de layout (Flexbox, Grid, Gaps), TailwindCSS y shadcn/ui'
+mode: "agent"
+description: "Implementa diseños modernos y responsive usando mejores prácticas de layout (Flexbox, Grid, Gaps), TailwindCSS y shadcn/ui"
 ---
 
 # Implementación de Diseños Modernos con Mejores Prácticas
@@ -63,6 +63,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Mejores prácticas:**
+
 - Usa `container mx-auto px-4` como base
 - Añade padding responsive: `sm:px-6 lg:px-8` según necesidad
 - Define max-width consistente: `max-w-7xl` (1280px), `max-w-6xl` (1152px), `max-w-4xl` (896px), etc.
@@ -73,6 +74,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 **Principio:** Usa escala de espaciado de Tailwind de forma consistente y responsive
 
 **Section Padding:**
+
 ```tsx
 <section className="py-16 md:py-20 lg:py-24 xl:py-32">
   {/* contenido */}
@@ -80,6 +82,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Gap en Grids:**
+
 ```tsx
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
   {/* items */}
@@ -87,6 +90,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Gap en Flex:**
+
 ```tsx
 // ✅ Correcto - Prefiere gap sobre space-x/space-y
 <div className="flex gap-4">
@@ -102,13 +106,13 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Padding Interno de Cards:**
+
 ```tsx
-<Card className="p-6 lg:p-8">
-  {/* contenido */}
-</Card>
+<Card className="p-6 lg:p-8">{/* contenido */}</Card>
 ```
 
 **Mejores prácticas:**
+
 - **NO uses valores arbitrarios** a menos que sea absolutamente necesario
 - Usa escala de Tailwind: `4, 6, 8, 12, 16, 20, 24, 32, etc.`
 - Consulta documentación: `get-library-docs /websites/tailwindcss --topic "spacing padding margin gap"`
@@ -118,6 +122,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 **Principio:** Mobile-first con breakpoints progresivos
 
 **Grid Básico Responsive:**
+
 ```tsx
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
   {/* items */}
@@ -125,17 +130,17 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Grid Asimétrico:**
+
 ```tsx
 <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-  <div className="md:row-span-2">
-    {/* imagen grande */}
-  </div>
+  <div className="md:row-span-2">{/* imagen grande */}</div>
   <div>{/* imagen pequeña 1 */}</div>
   <div>{/* imagen pequeña 2 */}</div>
 </div>
 ```
 
 **Grid con Auto-fit:**
+
 ```tsx
 <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
   {/* items */}
@@ -143,6 +148,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Mejores prácticas:**
+
 - **Siempre comienza con 1 columna:** `grid grid-cols-1`
 - **Breakpoints consistentes:**
   - Móvil: `grid-cols-1` (default)
@@ -156,13 +162,13 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 **Principio:** Dirección responsive y alineación clara
 
 **Dirección Responsive:**
+
 ```tsx
-<div className="flex flex-col md:flex-row gap-6">
-  {/* items */}
-</div>
+<div className="flex flex-col md:flex-row gap-6">{/* items */}</div>
 ```
 
 **Alineación:**
+
 ```tsx
 // Horizontal
 <div className="flex justify-start">   {/* izquierda */}
@@ -178,13 +184,13 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Wrap cuando sea necesario:**
+
 ```tsx
-<div className="flex flex-wrap gap-4">
-  {/* items que pueden desbordarse */}
-</div>
+<div className="flex flex-wrap gap-4">{/* items que pueden desbordarse */}</div>
 ```
 
 **Mejores prácticas:**
+
 - Prefiere `gap-*` sobre `space-x-*` o `space-y-*`
 - Usa `flex-wrap` cuando los items puedan desbordarse
 - Consulta documentación: `get-library-docs /websites/tailwindcss --topic "flexbox justify align items"`
@@ -206,6 +212,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Mejores prácticas:**
+
 - Evita `display: none` en CSS personalizado
 - Usa utilidades de Tailwind: `hidden`, `block`, `md:block`, `md:hidden`
 
@@ -224,6 +231,7 @@ Implementa diseños modernos, responsive y accesibles utilizando mejores prácti
 ```
 
 **Mejores prácticas:**
+
 - Usa escala de tamaños responsive: `text-3xl md:text-4xl lg:text-5xl xl:text-6xl`
 - Consulta documentación: `get-library-docs /websites/tailwindcss --topic "typography responsive font-size"`
 
@@ -251,6 +259,7 @@ import Image from 'next/image'
 ```
 
 **Mejores prácticas:**
+
 - Usa Next.js `Image` con `sizes` prop para responsive images
 - Aplica `object-cover` o `object-contain` según necesidad
 - Usa `aspect-ratio` de shadcn/ui para mantener proporciones consistentes
@@ -268,9 +277,7 @@ import Image from 'next/image'
     <CardTitle>Título</CardTitle>
     <CardDescription>Descripción</CardDescription>
   </CardHeader>
-  <CardContent className="p-6">
-    {/* contenido */}
-  </CardContent>
+  <CardContent className="p-6">{/* contenido */}</CardContent>
   <CardFooter>
     <Button>Acción</Button>
   </CardFooter>
@@ -278,6 +285,7 @@ import Image from 'next/image'
 ```
 
 **Mejores prácticas:**
+
 - Consulta documentación de cada componente: `get-component-docs <component>`
 - Usa `className` prop para extender estilos sin modificar el componente base
 - Mantén la estructura original del componente shadcn/ui
@@ -285,6 +293,7 @@ import Image from 'next/image'
 ### Spacing en Componentes shadcn/ui
 
 **Carousel:**
+
 ```tsx
 <CarouselContent className="-ml-4 md:-ml-6">
   <CarouselItem className="pl-4 md:pl-6">...</CarouselItem>
@@ -292,6 +301,7 @@ import Image from 'next/image'
 ```
 
 **FieldGroup:**
+
 ```tsx
 <FieldGroup className="flex flex-col gap-6">
   <Field>...</Field>
@@ -300,6 +310,7 @@ import Image from 'next/image'
 ```
 
 **Mejores prácticas:**
+
 - Consulta documentación específica de cada componente para patrones de spacing
 - Usa padding negativo + padding positivo para espaciado en carousels cuando sea necesario
 
@@ -319,9 +330,7 @@ import Image from 'next/image'
           Descripción
         </p>
       </div>
-      <div>
-        {/* Imagen o contenido */}
-      </div>
+      <div>{/* Imagen o contenido */}</div>
     </div>
   </div>
 </section>
@@ -351,9 +360,7 @@ import Image from 'next/image'
 ```tsx
 <div className="container mx-auto px-4 py-16">
   <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-    <div className="md:row-span-2">
-      {/* imagen grande */}
-    </div>
+    <div className="md:row-span-2">{/* imagen grande */}</div>
     <div>{/* imagen pequeña 1 */}</div>
     <div>{/* imagen pequeña 2 */}</div>
   </div>
@@ -444,11 +451,13 @@ import Image from 'next/image'
 ## Herramientas a utilizar
 
 ### shadcn/ui MCP
+
 - `list-components`: Lista todos los componentes disponibles
 - `get-component-docs <component>`: Obtiene documentación de un componente
 - `install-component <component>`: Instala un componente en el proyecto
 
 ### Chrome DevTools MCP (si hay referencia visual)
+
 - `navigate_page <url>`: Navega a la referencia
 - `take_snapshot`: Captura el estado actual del DOM
 - `take_screenshot`: Captura visual de la página
@@ -456,6 +465,7 @@ import Image from 'next/image'
 - `evaluate_script`: Extrae información de estilos y dimensiones
 
 ### Context7 MCP
+
 - `resolve-library-id <libraryName>`: Resuelve el ID de una librería
 - `get-library-docs <libraryId> --topic <topic>`: Obtiene documentación de una librería
   - Útil para: Next.js, React, TailwindCSS, shadcn/ui, etc.
@@ -499,4 +509,3 @@ Proporciona:
 4. **Recomendaciones (si aplica):**
    - Sugerencias para mejoras futuras
    - Optimizaciones adicionales posibles
-

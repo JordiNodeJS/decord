@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Clona páginas web responsive de forma iterativa usando shadcn/ui MCP, Context7, DevTools y comparación visual hasta conseguir una réplica perfecta en todos los dispositivos'
+mode: "agent"
+description: "Clona páginas web responsive de forma iterativa usando shadcn/ui MCP, Context7, DevTools y comparación visual hasta conseguir una réplica perfecta en todos los dispositivos"
 ---
 
 # Clonación Iterativa de Páginas Web
@@ -24,6 +24,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 **⚠️ PRIORIZACIÓN CRÍTICA: Layouts y Espaciado antes que Colores**
 
 **REGLAS DE ORO para la clonación:**
+
 1. **Layouts y espaciado son PRIORIDAD ALTA:** Paddings, margins, gaps, dimensiones, estructuras de layout (grid/flexbox) deben coincidir perfectamente con el diseño original. Esto es lo más importante de todo.
 2. **Estructura visual es PRIORIDAD MEDIA:** Tipografías, bordes y sombras se corrigen después de layouts.
 3. **Colores: Usa el theme de shadcn/ui** - NO intentes replicar colores exactos de la página original. Usa los colores semánticos del theme de shadcn/ui (primary, secondary, muted, accent, destructive, etc.) que mejor se adapten al diseño. El sistema de colores de shadcn/ui está diseñado para ser coherente y accesible.
@@ -52,9 +53,9 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
        - Tipografías (font-size, font-family, line-height, letter-spacing)
        - Bordes (border-width, border-radius)
        - Sombras principales (box-shadow)
-           - **TERCERO - Detalles Estéticos (BAJA PRIORIDAD, solo para mapeo):**
-        - Colores (background-color, color, border-color) - **NO los repliques exactamente**, solo identifícalos para mapearlos a los colores semánticos del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
-        - Efectos visuales secundarios (gradientes, transparencias menores)
+         - **TERCERO - Detalles Estéticos (BAJA PRIORIDAD, solo para mapeo):**
+       - Colores (background-color, color, border-color) - **NO los repliques exactamente**, solo identifícalos para mapearlos a los colores semánticos del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
+       - Efectos visuales secundarios (gradientes, transparencias menores)
    - Identifica componentes reutilizables (botones, cards, inputs, etc.) y sus variantes responsive
    - Documenta cambios de layout por breakpoint (grid a columna, menús hamburguesa, ocultación de elementos)
    - Documenta animaciones y transiciones en todos los tamaños
@@ -113,29 +114,32 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
    - Asegura que todos los componentes sean responsive desde su primera implementación
 
 3. **Implementación de navegación y enlaces del menú principal:**
-   - **Consulta documentación de Next.js Link:** 
+   - **Consulta documentación de Next.js Link:**
      - `get-library-docs /vercel/next.js --topic "Link component navigation"`
      - Aprende cómo usar `next/link` para navegación entre páginas
    - **Implementa el componente Navbar:**
      - Crea o modifica el componente Navbar (ej: `components/Navbar.tsx`)
      - Usa el mapeo `menuNavigation` proporcionado para crear los enlaces del menú
      - Implementa cada enlace usando `next/link` de Next.js:
+
        ```tsx
-       import Link from 'next/link'
-       
+       import Link from "next/link";
+
        const menuItems = {
-         "Home": "/",
-         "Rooms": "/rooms",
-         "Services": "/services",
-         "About": "/about",
-         "Contact": "/contact"
+         Home: "/",
+         Rooms: "/rooms",
+         Services: "/services",
+         About: "/about",
+         Contact: "/contact",
+       };
+
+       {
+         Object.entries(menuItems).map(([label, href]) => (
+           <Link key={label} href={href}>
+             {label}
+           </Link>
+         ));
        }
-       
-       {Object.entries(menuItems).map(([label, href]) => (
-         <Link key={label} href={href}>
-           {label}
-         </Link>
-       ))}
        ```
    - **Maneja enlaces activos:**
      - Usa `usePathname()` de `next/navigation` para detectar la ruta actual
@@ -151,8 +155,8 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
      - Usa la estructura de Next.js App Router: `app/[ruta]/page.tsx`
    - **Valida navegación funcional:**
      - Prueba cada enlace del menú en diferentes breakpoints (móvil, tablet, desktop)
-      - Verifica que la navegación funciona correctamente sin recargar la página (client-side navigation)
-      - Asegúrate de que los estilos activos se aplican correctamente al cambiar de página
+     - Verifica que la navegación funciona correctamente sin recargar la página (client-side navigation)
+     - Asegúrate de que los estilos activos se aplican correctamente al cambiar de página
 
 4. **Componentes con shadcn/ui (responsive):**
    - Instala componentes de shadcn/ui necesarios usando MCP
@@ -165,14 +169,14 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
      - **SEGUNDO - Aplica estructura visual (MEDIA PRIORIDAD):**
        - Aplica tipografías del diseño original con variantes responsive
        - Ajusta bordes y sombras para coincidir en móvil, tablet y desktop
-           - **TERCERO - Aplica colores del theme de shadcn/ui (BAJA PRIORIDAD, solo después de layouts):**
-        - **Usa los colores semánticos del theme de shadcn/ui** (primary, secondary, muted, accent, destructive, etc.) en lugar de intentar replicar colores exactos
-        - Consulta la documentación de shadcn/ui sobre el sistema de colores: `get-component-docs <component>` para ver qué colores usa cada componente
-        - Mapea los colores del diseño original a los colores semánticos de shadcn/ui que mejor se adapten
-        - **NO personalices colores fuera del theme** hasta que layouts y espaciado estén perfectos
-        - Los colores del theme de shadcn/ui ya están optimizados para accesibilidad y coherencia visual
+         - **TERCERO - Aplica colores del theme de shadcn/ui (BAJA PRIORIDAD, solo después de layouts):**
+       - **Usa los colores semánticos del theme de shadcn/ui** (primary, secondary, muted, accent, destructive, etc.) en lugar de intentar replicar colores exactos
+       - Consulta la documentación de shadcn/ui sobre el sistema de colores: `get-component-docs <component>` para ver qué colores usa cada componente
+       - Mapea los colores del diseño original a los colores semánticos de shadcn/ui que mejor se adapten
+       - **NO personalices colores fuera del theme** hasta que layouts y espaciado estén perfectos
+       - Los colores del theme de shadcn/ui ya están optimizados para accesibilidad y coherencia visual
 
-4. **Contenido y assets:**
+5. **Contenido y assets:**
    - Descarga y organiza imágenes necesarias
    - Implementa textos y contenido
    - Configura iconos y elementos visuales
@@ -190,6 +194,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
    - Define max-width consistente: `max-w-7xl` (1280px) o `max-w-6xl` (1152px) según el diseño original
    - Consulta documentación de TailwindCSS con Context7 sobre containers: `get-library-docs /websites/tailwindcss --topic "container max-width"`
    - Ejemplo correcto:
+
    ```tsx
    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
      {/* contenido */}
@@ -224,24 +229,26 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 
 4. **Flexbox Layouts - Mejores Prácticas:**
    - **Dirección Responsive:** Usa `flex-col md:flex-row` para cambiar dirección según breakpoint
-   - **Alineación:** 
+   - **Alineación:**
      - Horizontal: `justify-start`, `justify-center`, `justify-between`, `justify-evenly`
      - Vertical: `items-start`, `items-center`, `items-stretch`, `items-baseline`
    - **Wrap:** Usa `flex-wrap` cuando los items puedan desbordarse
    - **Gap sobre Margin:** Prefiere `gap-*` sobre `space-x-*` o `space-y-*`:
+
      ```tsx
      // ✅ Correcto
      <div className="flex gap-4">
        <Button>1</Button>
        <Button>2</Button>
      </div>
-     
+
      // ⚠️ Evitar (a menos que el diseño original lo requiera)
      <div className="flex space-x-4">
        <Button>1</Button>
        <Button>2</Button>
      </div>
      ```
+
    - Consulta documentación: `get-library-docs /websites/tailwindcss --topic "flexbox justify align items"`
 
 #### 2. Composición de Componentes shadcn/ui
@@ -258,9 +265,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
          <CardTitle>Título</CardTitle>
          <CardDescription>Descripción</CardDescription>
        </CardHeader>
-       <CardContent className="p-6">
-         {/* contenido */}
-       </CardContent>
+       <CardContent className="p-6">{/* contenido */}</CardContent>
      </Card>
      ```
 
@@ -291,7 +296,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
          <Card className="hover:shadow-2xl transition-shadow" {...props}>
            {children}
          </Card>
-       )
+       );
      }
      ```
 
@@ -303,11 +308,11 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
    - Ejemplo:
      ```tsx
      <div className="
-       grid grid-cols-1 
-       md:grid-cols-2 
-       lg:grid-cols-3 
-       gap-4 
-       md:gap-6 
+       grid grid-cols-1
+       md:grid-cols-2
+       lg:grid-cols-3
+       gap-4
+       md:gap-6
        lg:gap-8
      ">
      ```
@@ -329,6 +334,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 #### 4. Patrones de Layout Comunes
 
 1. **Hero Section:**
+
    ```tsx
    <section className="relative min-h-screen flex items-center">
      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
@@ -340,6 +346,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
    ```
 
 2. **Feature Grid:**
+
    ```tsx
    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
      {features.map((feature) => (
@@ -351,11 +358,10 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
    ```
 
 3. **Asymmetric Image Layout:**
+
    ```tsx
    <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-     <div className="md:row-span-2">
-       {/* imagen grande */}
-     </div>
+     <div className="md:row-span-2">{/* imagen grande */}</div>
      <div>{/* imagen pequeña 1 */}</div>
      <div>{/* imagen pequeña 2 */}</div>
    </div>
@@ -385,12 +391,14 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 8. ✅ **Breakpoints Coherentes:** Breakpoints coinciden con el diseño original (verifica con DevTools)
 
 **Herramientas de validación:**
+
 - Usa Chrome DevTools para verificar computed styles en cada breakpoint
 - Verifica que no haya conflictos de margin/padding
 - Revisa que los grids respeten el `gap` definido
 - Asegúrate de que flexbox items se alineen correctamente
 
 **Consulta documentación cuando sea necesario:**
+
 - `get-library-docs /websites/tailwindcss --topic "layout grid flexbox"`
 - `get-library-docs /websites/tailwindcss --topic "spacing padding margin gap"`
 - `get-library-docs /websites/tailwindcss --topic "responsive design breakpoints"`
@@ -414,11 +422,11 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
        - Tipografías y tamaños de fuente (incluyendo cambios responsive)
        - Sombras y efectos visuales principales
        - Bordes y separadores
-           - **TERCERO - Colores del Theme (BAJA PRIORIDAD, solo para validar mapeo):**
-        - Verifica que los colores usados sean del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
-        - NO verifiques coincidencia exacta de colores RGB/HEX con la página original
-        - Solo asegúrate de que el mapeo de colores del diseño original a colores semánticos de shadcn/ui sea apropiado
-        - Efectos visuales secundarios
+         - **TERCERO - Colores del Theme (BAJA PRIORIDAD, solo para validar mapeo):**
+       - Verifica que los colores usados sean del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
+       - NO verifiques coincidencia exacta de colores RGB/HEX con la página original
+       - Solo asegúrate de que el mapeo de colores del diseño original a colores semánticos de shadcn/ui sea apropiado
+       - Efectos visuales secundarios
      - Computed styles de elementos equivalentes en cada breakpoint, **enfocándose primero en propiedades de layout y espaciado**
 
 2. **Análisis con Next.js DevTools:**
@@ -440,11 +448,11 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
        - Diferencias de tipografía (tamaños de fuente responsive, line-height, letter-spacing)
        - Diferencias de bordes y sombras
        - Animaciones o transiciones faltantes
-           - **BAJA PRIORIDAD - Colores del Theme (solo validar mapeo, no coincidencia exacta):**
-        - Verificar que se usen colores del theme de shadcn/ui apropiados
-        - NO documentar diferencias de color exacto (RGB/HEX) con la página original
-        - Solo validar que el mapeo de colores del diseño original a colores semánticos de shadcn/ui sea apropiado
-        - Efectos visuales secundarios (gradientes sutiles, transparencias menores)
+         - **BAJA PRIORIDAD - Colores del Theme (solo validar mapeo, no coincidencia exacta):**
+       - Verificar que se usen colores del theme de shadcn/ui apropiados
+       - NO documentar diferencias de color exacto (RGB/HEX) con la página original
+       - Solo validar que el mapeo de colores del diseño original a colores semánticos de shadcn/ui sea apropiado
+       - Efectos visuales secundarios (gradientes sutiles, transparencias menores)
    - **Documenta primero las diferencias de layout y espaciado** antes de detallar diferencias de color
 
 ### Fase 4: Iteración y refinamiento
@@ -463,11 +471,11 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
      - Bordes y sombras
      - Espaciado interno de componentes
        - **PRIORIDAD BAJA - Colores del Theme:**
-      - Verificar que se usen colores semánticos del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
-      - NO intentar replicar colores exactos de la página original
-      - Solo ajustar el mapeo de colores si el tema elegido no es apropiado
-      - Efectos visuales secundarios (gradientes sutiles, transparencias menores)
-    - **Regla de oro:** Corrige layout y espaciado antes que cualquier ajuste de color. Un layout incorrecto es mucho más notorio que cualquier diferencia de color. Los colores del theme de shadcn/ui ya están optimizados.
+     - Verificar que se usen colores semánticos del theme de shadcn/ui (primary, secondary, muted, accent, etc.)
+     - NO intentar replicar colores exactos de la página original
+     - Solo ajustar el mapeo de colores si el tema elegido no es apropiado
+     - Efectos visuales secundarios (gradientes sutiles, transparencias menores)
+   - **Regla de oro:** Corrige layout y espaciado antes que cualquier ajuste de color. Un layout incorrecto es mucho más notorio que cualquier diferencia de color. Los colores del theme de shadcn/ui ya están optimizados.
 
 2. **Ajustes incrementales (con enfoque responsive y mejores prácticas de layout):**
    - Para cada diferencia identificada en cada breakpoint, **corrige en orden de prioridad (layouts primero, colores al final):**
@@ -499,14 +507,14 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
        - Tipografías y tamaños de fuente (incluyendo responsive)
        - Bordes y sombras principales
        - Consulta documentación: `get-library-docs /websites/tailwindcss --topic "typography responsive font-size"`
-           - **TERCERO - Aplica colores del theme de shadcn/ui (BAJA PRIORIDAD, solo después de corregir layouts):**
-        - **Usa colores semánticos del theme de shadcn/ui** (primary, secondary, muted, accent, destructive, etc.)
-        - Consulta documentación de shadcn/ui: `get-component-docs <component>` para ver qué colores usa cada componente
-        - Mapea los colores del diseño original a colores semánticos de shadcn/ui apropiados
-        - **NO intentes replicar colores exactos (RGB/HEX)** de la página original
-        - **NO ajustes colores hasta que layouts y espaciado estén perfectos**
-        - Los colores del theme de shadcn/ui ya están optimizados para accesibilidad y coherencia
-        - Efectos visuales secundarios
+         - **TERCERO - Aplica colores del theme de shadcn/ui (BAJA PRIORIDAD, solo después de corregir layouts):**
+       - **Usa colores semánticos del theme de shadcn/ui** (primary, secondary, muted, accent, destructive, etc.)
+       - Consulta documentación de shadcn/ui: `get-component-docs <component>` para ver qué colores usa cada componente
+       - Mapea los colores del diseño original a colores semánticos de shadcn/ui apropiados
+       - **NO intentes replicar colores exactos (RGB/HEX)** de la página original
+       - **NO ajustes colores hasta que layouts y espaciado estén perfectos**
+       - Los colores del theme de shadcn/ui ya están optimizados para accesibilidad y coherencia
+       - Efectos visuales secundarios
      - **Consulta documentación de React si necesitas implementar patrones avanzados o hooks** (como useMediaQuery) para mejorar layouts responsive
 
 3. **Verificación continua (responsive):**
@@ -561,6 +569,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 ## Herramientas a utilizar
 
 ### shadcn/ui MCP
+
 - `list-components`: Lista todos los componentes disponibles
 - `get-component-docs <component>`: Obtiene documentación de un componente
 - `install-component <component>`: Instala un componente en el proyecto
@@ -569,6 +578,7 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 - `install-blocks <block>`: Instala un block completo
 
 ### Chrome DevTools MCP
+
 - `navigate_page <url>`: Navega a la página original
 - `take_snapshot`: Captura el estado actual del DOM
 - `take_screenshot`: Captura visual de la página (usa `fullPage: true` para capturas completas)
@@ -580,17 +590,19 @@ Clona una página web original de forma iterativa, utilizando componentes de sha
 - `list_network_requests`: Identifica recursos cargados
 
 ### Next.js DevTools
+
 - Inspección del árbol de componentes
 - Análisis de props y estado
 - Identificación de re-renders
 
 ### Context7 MCP
+
 - `resolve-library-id <libraryName>`: Resuelve el ID de una librería (ej: "next.js", "react", "tailwindcss")
 - `get-library-docs <libraryId> --topic <topic>`: Obtiene documentación de una librería
   - Útil para consultar:
     - **Next.js**: App Router, Server Components, routing, layouts, metadata
     - **React**: Componentes, hooks, estado, efectos, patrones
-    - **TailwindCSS**: 
+    - **TailwindCSS**:
       - **Layout y espaciado:** `--topic "layout grid flexbox spacing padding margin gap"`
       - **Responsive design:** `--topic "responsive design breakpoints mobile-first"`
       - **Container y max-width:** `--topic "container max-width"`
@@ -662,7 +674,7 @@ Para cada iteración, proporciona:
 
 4. **Decisión de continuidad:**
    - **Si TODOS los criterios están cumplidos:** Tarea completa, proporciona resumen final
-   - **Si hay criterios NO cumplidos:** 
+   - **Si hay criterios NO cumplidos:**
      - **DEBES continuar iterando automáticamente**
      - No finalices la tarea
      - Proporciona plan de acción detallado para la siguiente iteración
@@ -711,11 +723,13 @@ El clone se considera completo cuando:
 ## Ejemplo de uso
 
 **Iteración 1:**
+
 - URL original: https://best-luxury-hotel-in-the-world.vercel.app/
 - Prioridad: Hero section, Navbar, Cards de habitaciones
 - Iteración: primera vez
 
 **Proceso:**
+
 1. Análisis de la página original con Chrome DevTools en móvil, tablet y desktop usando `resize_page`
 2. Consulta documentación de Next.js con Context7 para estructura de rutas
 3. Consulta documentación de TailwindCSS con Context7:
@@ -733,10 +747,12 @@ El clone se considera completo cuando:
 8. Lista de ajustes responsive y de maquetación para iteración 2 (enfoque en layouts y espaciado)
 
 **Iteración 2:**
+
 - Mismo contexto
 - Iteración: 2
 
 **Proceso:**
+
 1. Consulta documentación de TailwindCSS con Context7:
    - Layout y espaciado: `get-library-docs /websites/tailwindcss --topic "layout grid flexbox spacing"`
    - Espaciados responsive
@@ -762,7 +778,7 @@ El clone se considera completo cuando:
 - **Si hay criterios no cumplidos:** Continúa automáticamente con la siguiente iteración sin esperar instrucciones del usuario
 - **Solo cuando TODOS los criterios estén cumplidos:** Considera la tarea completa y proporciona un resumen final
 
-Continúa iterando hasta lograr el clone completo y responsive. **IMPORTANTE:** 
+Continúa iterando hasta lograr el clone completo y responsive. **IMPORTANTE:**
 
 1. **En cada paso, verifica y compara en móvil, tablet y desktop** usando `resize_page`
 2. **Usa DevTools en cada paso** para validar y comparar en todos los breakpoints
@@ -774,4 +790,3 @@ Continúa iterando hasta lograr el clone completo y responsive. **IMPORTANTE:**
    - Valida layouts según Fase 2.5 antes de continuar
 5. **El diseño responsive y las mejores prácticas de layout** son prioridad en cada iteración
 6. **Al finalizar cada iteración:** Verifica obligatoriamente todos los criterios de finalización antes de decidir continuar o finalizar
-

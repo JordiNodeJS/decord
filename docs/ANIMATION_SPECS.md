@@ -7,6 +7,7 @@
 ## 🎯 Gallery Cards (Product Media)
 
 ### Estructura HTML
+
 ```html
 <article class="artworkCard">
   <a href="#" class="artworkCard__media">
@@ -22,6 +23,7 @@
 ```
 
 ### Estilos del Hover Overlay
+
 ```css
 .artworkCard__media {
   position: relative;
@@ -42,16 +44,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   /* Typography */
   font-size: 60px;
   font-weight: 300;
   line-height: 96px;
   color: white;
-  
+
   /* Background */
   background: rgba(254, 72, 59, 0.8); /* Red con 80% opacidad */
-  
+
   /* Animation States */
   opacity: 0;
   transform: scale(0.5);
@@ -66,6 +68,7 @@
 ```
 
 **Características clave:**
+
 - ✅ Sin SVG - usa texto "+" directamente
 - ✅ Escala de 0.5 a 1.0 en hover
 - ✅ Opacidad de 0 a 1 en 0.25s
@@ -78,6 +81,7 @@
 ## 🔘 Buttons
 
 ### Primary Button Specs
+
 ```css
 .button {
   /* Typography */
@@ -85,16 +89,16 @@
   font-weight: 900;
   letter-spacing: 8.4px;
   text-transform: uppercase;
-  
+
   /* Spacing */
   padding: 24px 56px;
-  
+
   /* Border */
   border: 2px solid;
   border-radius: 0;
-  
+
   /* Transition - CRITICAL: Cubic Bezier */
-  transition: 
+  transition:
     background 0.4s cubic-bezier(0.2, 1, 0.3, 1),
     border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
     color 0.4s cubic-bezier(0.2, 1, 0.3, 1);
@@ -102,6 +106,7 @@
 ```
 
 **Características:**
+
 - ✅ Letter spacing MUY amplio: 8.4px
 - ✅ Font weight 900 (no 700)
 - ✅ Cubic-bezier específico: `(0.2, 1, 0.3, 1)`
@@ -112,9 +117,10 @@
 ## 🎨 Gallery Isotope Items
 
 ### Transitions
+
 ```css
 .isotope-item {
-  transition: 
+  transition:
     opacity 0.4s ease-in,
     transform 0.4s ease-in;
 }
@@ -129,6 +135,7 @@
 ## 📅 Event Cards
 
 ### Estructura de Fecha
+
 ```html
 <div class="blurb-event">
   <div class="blurb-event-item">
@@ -146,6 +153,7 @@
 ```
 
 ### Estilos de Fecha
+
 ```css
 .blurb-event-day {
   font-family: Oswald;
@@ -164,6 +172,7 @@
 ```
 
 ### Título del Evento
+
 ```css
 .blurb-event-title {
   font-size: 24px;
@@ -174,6 +183,7 @@
 ```
 
 **Características:**
+
 - ✅ Día: 60px Oswald, weight 500, rojo
 - ✅ Mes: 30px, weight 500, rojo
 - ✅ Título: 24px, weight 500
@@ -189,6 +199,7 @@ section {
 ```
 
 **Medida extraída:**
+
 - ✅ 8 secciones analizadas
 - ✅ Todas usan 189px vertical padding
 - ❌ NO 128px (era el valor previo incorrecto)
@@ -198,6 +209,7 @@ section {
 ## 🎭 Typography System
 
 ### Hero Title
+
 ```css
 .hero__title {
   font-family: Oswald;
@@ -209,6 +221,7 @@ section {
 ```
 
 ### Section Headings (GALLERY, EVENTS, etc.)
+
 ```css
 .section__label {
   font-family: Roboto; /* NOT Oswald! */
@@ -221,6 +234,7 @@ section {
 ```
 
 ### Stat Numbers
+
 ```css
 .stat__number {
   font-family: Oswald;
@@ -235,6 +249,7 @@ section {
 ## 🎨 Color System
 
 ### Primary Red
+
 ```css
 --color-primary-red: #fe483b;
 --color-primary-red-rgb: rgb(254, 72, 59);
@@ -242,6 +257,7 @@ section {
 ```
 
 ### Hover Red (lighter)
+
 ```css
 --color-hover-red: #ff6b5f;
 ```
@@ -251,11 +267,13 @@ section {
 ## ✨ Animation Timing Functions
 
 ### Standard Transitions
+
 - **Fast**: `0.25s`
 - **Medium**: `0.3s ease-in-out`
 - **Slow**: `0.4s ease-in`
 
 ### Custom Cubic Bezier
+
 ```css
 cubic-bezier(0.2, 1, 0.3, 1) /* Para buttons */
 ```
@@ -265,6 +283,7 @@ cubic-bezier(0.2, 1, 0.3, 1) /* Para buttons */
 ## 📊 Layout System
 
 ### Grid - Gallery
+
 ```css
 .gallery__grid {
   display: grid;
@@ -274,6 +293,7 @@ cubic-bezier(0.2, 1, 0.3, 1) /* Para buttons */
 ```
 
 ### Container Max Width
+
 ```css
 .container {
   max-width: 1200px; /* Típico bootstrap */
@@ -299,6 +319,7 @@ cubic-bezier(0.2, 1, 0.3, 1) /* Para buttons */
 ## 📝 Estado de Implementación
 
 ### ✅ Completado
+
 - Gallery card hover overlay exacto
 - Button transitions con cubic-bezier
 - Typography system (Oswald + Roboto)
@@ -308,12 +329,14 @@ cubic-bezier(0.2, 1, 0.3, 1) /* Para buttons */
 - Stat numbers styling
 
 ### 🔄 En Progreso
+
 - Responsive breakpoints
 - Scroll animations (WOW.js?)
 - Testimonials slider
 - Menu mobile animations
 
 ### ⏳ Pendiente
+
 - Parallax effects (si aplica)
 - Smooth scroll behavior
 - Form interactions

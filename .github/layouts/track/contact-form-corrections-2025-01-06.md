@@ -1,14 +1,16 @@
 # Contact Form Layout Corrections - 2025-01-06
 
 ## Task Summary
+
 Update the contact form (`/contact` page) to match the original design from https://ld-wt73.template-help.com/tf/decord_v1/contacts.html
 
 ## Original Design Analysis
 
 ### Form Structure
+
 The original uses a unique inline label system with two label elements:
 
-1. **Static Label (`.form-text`)**: 
+1. **Static Label (`.form-text`)**:
    - Positioned absolutely on the left side of input
    - Font: 12px Roboto
    - Color: `rgb(108, 117, 125)` (gray)
@@ -29,6 +31,7 @@ The original uses a unique inline label system with two label elements:
 ### Input Styling
 
 **Regular Inputs (Name, E-Mail, Subject):**
+
 - Padding: `19px 19px 19px 120px` (120px left padding for inline label)
 - Font: 12px Roboto
 - Background: transparent
@@ -37,6 +40,7 @@ The original uses a unique inline label system with two label elements:
 - Changes to red on focus
 
 **Textarea (Message):**
+
 - Padding: `50px 19px 19px 0` (top padding for label, no left padding)
 - No border-bottom
 - Same font and background as inputs
@@ -47,6 +51,7 @@ The original uses a unique inline label system with two label elements:
 ### 1. HTML Structure (`app/contact/page.tsx`)
 
 **Before:**
+
 ```tsx
 <label htmlFor="name" className={styles.form__label}>NAME</label>
 <input
@@ -62,6 +67,7 @@ The original uses a unique inline label system with two label elements:
 ```
 
 **After:**
+
 ```tsx
 <div className={styles.form__text}>NAME</div>
 <input
@@ -80,6 +86,7 @@ The original uses a unique inline label system with two label elements:
 ```
 
 **Key Changes:**
+
 - Added static label div (`.form__text`) positioned absolutely
 - Moved `<label>` after `<input>` for CSS sibling selectors
 - Changed placeholder attribute to single space (for `:placeholder-shown` detection)
@@ -88,6 +95,7 @@ The original uses a unique inline label system with two label elements:
 ### 2. CSS Styling (`app/contact/contact.module.css`)
 
 #### Static Label (`.form__text`)
+
 ```css
 .form__text {
   position: absolute;
@@ -106,6 +114,7 @@ The original uses a unique inline label system with two label elements:
 ```
 
 #### Floating Label (`.form__label`)
+
 ```css
 .form__label {
   position: absolute;
@@ -116,12 +125,15 @@ The original uses a unique inline label system with two label elements:
   font-weight: 400;
   color: rgb(204, 204, 204);
   pointer-events: none;
-  transition: opacity 0.25s, transform 0.25s;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
   z-index: 0;
 }
 ```
 
 #### Input Fields
+
 ```css
 .form__input {
   width: 100%;
@@ -138,6 +150,7 @@ The original uses a unique inline label system with two label elements:
 ```
 
 #### Focus & Value States
+
 ```css
 /* Hide placeholder when input has focus or value */
 .form__input:focus + .form__label,
@@ -158,6 +171,7 @@ The original uses a unique inline label system with two label elements:
 ### Browser Testing (Chrome DevTools via MCP)
 
 **Original Site Analysis:**
+
 - Static label color: `rgb(108, 117, 125)` - stays constant
 - Placeholder label: `rgb(204, 204, 204)` - fades to opacity 0
 - Input padding-left: `120px`
@@ -165,6 +179,7 @@ The original uses a unique inline label system with two label elements:
 - Focus border: changes to red
 
 **Clone Site Results:**
+
 ```javascript
 // Focus state:
 {
@@ -187,6 +202,7 @@ The original uses a unique inline label system with two label elements:
 ## UX/UI Analysis
 
 ### ✅ Strengths
+
 1. **Inline labels save vertical space** - form is more compact
 2. **Wide letter-spacing (7.2px)** creates elegant, modern aesthetic
 3. **Smooth transitions** (0.25s) feel professional
@@ -194,12 +210,14 @@ The original uses a unique inline label system with two label elements:
 5. **Focus states** provide clear feedback
 
 ### ⚠️ Accessibility Considerations
+
 1. Labels are positioned absolutely but remain in DOM for screen readers ✓
 2. Proper `for` attributes connect labels to inputs ✓
 3. `pointer-events: none` prevents label interference ✓
 4. Color contrast adequate (gray on white background) ✓
 
 ### 📐 Layout Precision
+
 - **Perfect match** on padding, spacing, and positioning
 - **Typography** matches exactly (12px Roboto, 7.2px letter-spacing)
 - **Colors** match pixel-perfect (gray #6c757d, light gray #cccccc, red #fe483b)
@@ -213,6 +231,7 @@ The original uses a unique inline label system with two label elements:
 ## Responsive Behavior
 
 The existing responsive breakpoints were preserved:
+
 - Desktop (>1024px): Two-column layout (sidebar + form)
 - Tablet (768-1024px): Single column, sidebar becomes horizontal
 - Mobile (<768px): Stacked layout
@@ -238,6 +257,7 @@ The inline label system works well across all breakpoints.
 ## Screenshots
 
 See comparison images in this directory:
+
 - `original-contact-form.png` (already exists)
 - TODO: Add `clone-contact-form-after.png`
 - TODO: Add `comparison-side-by-side.png`

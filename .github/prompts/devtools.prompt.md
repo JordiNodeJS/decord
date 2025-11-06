@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-description: 'Depura aplicaciones Next.js usando Chrome DevTools y Next.js DevTools de forma conjunta'
+mode: "agent"
+description: "Depura aplicaciones Next.js usando Chrome DevTools y Next.js DevTools de forma conjunta"
 ---
 
 # Depuración e Inspección con Chrome DevTools y Next.js DevTools
@@ -22,12 +22,14 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
 ## Pasos a seguir
 
 ### 1. Preparación del entorno
+
 - Asegúrate de tener Next.js DevTools instalado y configurado en tu proyecto
 - Comprueba si el servidor de desarrollo ya está en marcha (p.ej., puerto configurado). Si está activo, no lo reinicies a menos que sea necesario; si no lo está, inícialo con `pnpm dev`.
 - Utiliza Chrome DevTools mcp para una experiencia optimizada con Next.js
 - Si estás comparando sitios, abre ambas URLs en pestañas separadas
 
 ### 2. Análisis con Next.js DevTools (para debugging de tu app)
+
 - Usa Next.js DevTools para:
   - Inspeccionar el árbol de componentes React
   - Revisar el estado y props de los componentes
@@ -37,6 +39,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
 ### 3. Análisis con Chrome DevTools
 
 #### Para debugging general:
+
 - Usa Chrome DevTools para:
   - Revisar la consola de errores y warnings
   - Inspeccionar la pestaña Network para verificar peticiones HTTP
@@ -45,6 +48,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
   - Inspeccionar elementos del DOM y aplicar cambios en tiempo real
 
 #### Para inspección y clonación de estilos:
+
 - **Pestaña Elements:**
   - Selecciona el elemento a inspeccionar usando el selector (⌘+Shift+C o Ctrl+Shift+C)
   - En el panel derecho, revisa todas las pestañas:
@@ -53,7 +57,6 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
     - **Layout:** Box model (margin, border, padding, dimensiones)
     - **Event Listeners:** Eventos JavaScript asociados
     - **Properties:** Propiedades del objeto DOM
-  
 - **Extracción completa de estilos:**
   1. Click derecho en el elemento → "Inspect"
   2. En Styles, copia todos los selectores y reglas CSS aplicadas
@@ -85,6 +88,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
   - **Animations Tab:** Inspecciona y modifica animaciones CSS/JS frame por frame
 
 ### 4. Análisis conjunto
+
 - Combina información de ambas herramientas:
   - Correlaciona los componentes re-renderizados (Next.js DevTools) con los eventos del Performance Profiler (Chrome DevTools)
   - Verifica si los errores de consola (Chrome DevTools) corresponden a componentes específicos (Next.js DevTools)
@@ -94,6 +98,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
 ### 5. Clonación y replicación de diseños
 
 #### Proceso de clonación paso a paso:
+
 1. **Estructura HTML:**
    - Copia el árbol DOM del elemento desde Elements tab
    - Identifica las clases y estructura semántica
@@ -122,6 +127,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
    - Ajusta para responsive design
 
 ### 6. Solución y verificación
+
 - Implementa las correcciones o el diseño clonado
 - Verifica la solución usando ambas herramientas para confirmar que el problema se resolvió o que el diseño es idéntico
 - Compara visualmente usando overlays o comparación lado a lado
@@ -130,6 +136,7 @@ Depura problemas, inspecciona elementos/estilos y clona diseños de tu aplicaci�
 ## Salida esperada
 
 Proporciona:
+
 - Análisis detallado del problema o diseño usando ambas herramientas
 - Capturas o evidencia de lo encontrado en cada herramienta
 - Para debugging: Pasos específicos para reproducir el problema
@@ -149,9 +156,11 @@ Proporciona:
 ## Ejemplos de uso
 
 ### Ejemplo 1: Debugging
+
 **Problema:** "Los componentes se re-renderizan constantemente cuando cambio de página"
 
 **Análisis sugerido:**
+
 1. Next.js DevTools: Identificar qué componentes se re-renderizan y por qué
 2. Chrome DevTools: Revisar Performance Profiler para ver el patrón de re-renders
 3. Chrome DevTools: Verificar si hay listeners de eventos sin limpiar en la consola
@@ -159,9 +168,11 @@ Proporciona:
 5. Solución: Implementar memoización o corregir dependencias de useEffect
 
 ### Ejemplo 2: Clonación de diseño
+
 **Problema:** "Quiero clonar exactamente el botón de CTA de https://ejemplo.com"
 
 **Análisis sugerido:**
+
 1. Chrome DevTools Elements: Inspeccionar el botón en el sitio de referencia
 2. Copiar estructura HTML y todas las clases
 3. Extraer todos los estilos (Styles + Computed):
@@ -177,9 +188,11 @@ Proporciona:
 6. Verificar visualmente con screenshot comparison
 
 ### Ejemplo 3: Comparación de sitios
+
 **Problema:** "Mi header no se ve igual que el de referencia, necesito identificar las diferencias"
 
 **Análisis sugerido:**
+
 1. Abrir ambos sitios en pestañas separadas
 2. Inspeccionar header en ambos con Chrome DevTools
 3. Comparar en Computed tab:

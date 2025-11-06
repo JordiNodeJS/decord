@@ -1,4 +1,5 @@
 # About Page Layout Fix Report
+
 **Fecha:** 6 de Noviembre, 2025
 **Tarea:** Corrección completa del layout de la página About para que coincida exactamente con el original
 
@@ -30,14 +31,15 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 
 ### 1. Layout Principal
 
-| Aspecto | Original | Clone (Antes) | Estado |
-|---------|----------|---------------|--------|
-| Display | `flex` | `grid` | ❌ Incorrecto |
-| Estructura | Flexbox row, 2 columnas | Grid 570px 1fr | ❌ Incorrecto |
-| Gap | 60px (estimado) | var(--spacing-16) | ⚠️ Aproximado |
-| Align Items | center | start | ❌ Incorrecto |
+| Aspecto     | Original                | Clone (Antes)     | Estado        |
+| ----------- | ----------------------- | ----------------- | ------------- |
+| Display     | `flex`                  | `grid`            | ❌ Incorrecto |
+| Estructura  | Flexbox row, 2 columnas | Grid 570px 1fr    | ❌ Incorrecto |
+| Gap         | 60px (estimado)         | var(--spacing-16) | ⚠️ Aproximado |
+| Align Items | center                  | start             | ❌ Incorrecto |
 
 **Inspección DevTools Original:**
+
 ```json
 {
   "gridContainer": {
@@ -53,59 +55,59 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 
 ### 2. Heading "ABOUT ART GALLERY"
 
-| Propiedad | Original | Clone (Antes) | Clone (Después) |
-|-----------|----------|---------------|-----------------|
-| font-size | 24px | 44px ❌ | 24px ✅ |
-| font-weight | 500 | 400 ⚠️ | 500 ✅ |
-| letter-spacing | 14.4px | 13px ❌ | 14.4px ✅ |
-| line-height | 37.2px | 52.8px ❌ | 37.2px ✅ |
-| color | rgb(21,21,21) | #000000 ⚠️ | rgb(21,21,21) ✅ |
-| margin-bottom | - | 32px ⚠️ | 20px ✅ |
+| Propiedad      | Original      | Clone (Antes) | Clone (Después)  |
+| -------------- | ------------- | ------------- | ---------------- |
+| font-size      | 24px          | 44px ❌       | 24px ✅          |
+| font-weight    | 500           | 400 ⚠️        | 500 ✅           |
+| letter-spacing | 14.4px        | 13px ❌       | 14.4px ✅        |
+| line-height    | 37.2px        | 52.8px ❌     | 37.2px ✅        |
+| color          | rgb(21,21,21) | #000000 ⚠️    | rgb(21,21,21) ✅ |
+| margin-bottom  | -             | 32px ⚠️       | 20px ✅          |
 
 ### 3. Padding de la Sección
 
-| Lado | Original | Clone (Antes) | Clone (Después) |
-|------|----------|---------------|-----------------|
-| Top | 80px | 189px ❌ | 80px ✅ |
-| Right | 0px | 48px ❌ | container-x ✅ |
-| Bottom | 115px | 189px ❌ | 115px ✅ |
-| Left | 0px | 48px ❌ | container-x ✅ |
+| Lado   | Original | Clone (Antes) | Clone (Después) |
+| ------ | -------- | ------------- | --------------- |
+| Top    | 80px     | 189px ❌      | 80px ✅         |
+| Right  | 0px      | 48px ❌       | container-x ✅  |
+| Bottom | 115px    | 189px ❌      | 115px ✅        |
+| Left   | 0px      | 48px ❌       | container-x ✅  |
 
 ### 4. Contenido de Texto
 
 **Original (2 divs):**
+
 ```html
 <div class="big fw-normal text-dark">
   It is our mission to make it easy for you to discover...
 </div>
-<div class="big">
-  Our Gallery was established by Helen Stone...
-</div>
+<div class="big">Our Gallery was established by Helen Stone...</div>
 ```
 
 **Clone Antes (1 párrafo):**
+
 ```html
-<p className={styles.aboutHero__text}>
+<p className="{styles.aboutHero__text}">
   Decord Gallery was established by Helen Stone...
 </p>
 ```
 
 **Estilos de Texto:**
 
-| Elemento | Original | Clone (Antes) | Clone (Después) |
-|----------|----------|---------------|-----------------|
-| Primer texto - size | 23px | 16px ❌ | 23px ✅ |
-| Primer texto - color | rgb(0,0,0) | - | rgb(0,0,0) ✅ |
-| Segundo texto - size | 23px | - | 23px ✅ |
-| Segundo texto - color | rgb(118,118,118) | - | rgb(118,118,118) ✅ |
-| Line-height | 37.5666px | 28px ❌ | 37.5666px ✅ |
+| Elemento              | Original         | Clone (Antes) | Clone (Después)     |
+| --------------------- | ---------------- | ------------- | ------------------- |
+| Primer texto - size   | 23px             | 16px ❌       | 23px ✅             |
+| Primer texto - color  | rgb(0,0,0)       | -             | rgb(0,0,0) ✅       |
+| Segundo texto - size  | 23px             | -             | 23px ✅             |
+| Segundo texto - color | rgb(118,118,118) | -             | rgb(118,118,118) ✅ |
+| Line-height           | 37.5666px        | 28px ❌       | 37.5666px ✅        |
 
 ### 5. Anchos de Columnas
 
-| Elemento | Original | Clone (Antes) | Clone (Después) |
-|----------|----------|---------------|-----------------|
-| Imagen wrapper | 336.656px | 100% ❌ | 336.656px ✅ |
-| Contenido | 550px max | - | 550px max ✅ |
+| Elemento       | Original  | Clone (Antes) | Clone (Después) |
+| -------------- | --------- | ------------- | --------------- |
+| Imagen wrapper | 336.656px | 100% ❌       | 336.656px ✅    |
+| Contenido      | 550px max | -             | 550px max ✅    |
 
 ---
 
@@ -116,6 +118,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 1: Estructura HTML del Contenido
 
 **Antes:**
+
 ```tsx
 <h3 className={styles.aboutHero__label}>ABOUT ART GALLERY</h3>
 <p className={styles.aboutHero__text}>
@@ -125,16 +128,17 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```tsx
 <h3 className={styles.aboutHero__label}>ABOUT ART GALLERY</h3>
 <div className={styles.aboutHero__textPrimary}>
-  It is our mission to make it easy for you to discover and collect 
+  It is our mission to make it easy for you to discover and collect
   fine art from renowned artists, galleries, and cultural institutions worldwide.
 </div>
 <div className={styles.aboutHero__textSecondary}>
-  Our Gallery was established by Helen Stone to provide opportunities 
-  to artists entering the global art market. Ms. Stone was a visionary 
-  who founded the gallery on the principle that all artists benefit from 
+  Our Gallery was established by Helen Stone to provide opportunities
+  to artists entering the global art market. Ms. Stone was a visionary
+  who founded the gallery on the principle that all artists benefit from
   having their artwork promoted by a professional gallery.
 </div>
 ```
@@ -148,6 +152,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 1: Layout del Grid Hero
 
 **Antes:**
+
 ```css
 .aboutHero__grid {
   display: grid;
@@ -158,6 +163,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 .aboutHero__grid {
   display: flex;
@@ -173,6 +179,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 2: Ancho de la Imagen
 
 **Antes:**
+
 ```css
 .aboutHero__imageWrapper {
   position: relative;
@@ -182,6 +189,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 .aboutHero__imageWrapper {
   position: relative;
@@ -197,6 +205,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 3: Ancho del Contenido
 
 **Antes:**
+
 ```css
 .aboutHero__content {
   padding-top: var(--spacing-8);
@@ -204,6 +213,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 .aboutHero__content {
   flex: 1 1 auto;
@@ -217,6 +227,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 4: Tipografía del Heading
 
 **Antes:**
+
 ```css
 .aboutHero__label {
   font-family: var(--font-family-secondary);
@@ -232,6 +243,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 .aboutHero__label {
   font-family: var(--font-family-secondary);
@@ -251,6 +263,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 5: Padding de la Sección
 
 **Antes:**
+
 ```css
 .aboutHero {
   padding: var(--spacing-section-y) var(--spacing-container-x);
@@ -259,6 +272,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 .aboutHero {
   padding: 80px var(--spacing-container-x) 115px;
@@ -271,6 +285,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 6: Nuevos Estilos de Texto
 
 **Eliminado:**
+
 ```css
 .aboutHero__text {
   font-family: var(--font-family-secondary);
@@ -282,6 +297,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Agregado:**
+
 ```css
 .aboutHero__textPrimary {
   font-family: var(--font-family-secondary);
@@ -307,13 +323,14 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 #### Cambio 7: Responsive Design
 
 **Antes:**
+
 ```css
 @media (max-width: 1200px) {
   .aboutHero__grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-12);
   }
-  
+
   .aboutHero__imageWrapper {
     max-width: 570px;
     margin: 0 auto;
@@ -322,19 +339,20 @@ Siguiendo las instrucciones del archivo `layouts.md`:
 ```
 
 **Después:**
+
 ```css
 @media (max-width: 1200px) {
   .aboutHero__grid {
     flex-direction: column;
     gap: var(--spacing-12);
   }
-  
+
   .aboutHero__imageWrapper {
     width: 100%;
     max-width: 570px;
     margin: 0 auto;
   }
-  
+
   .aboutHero__content {
     max-width: 100%;
   }
@@ -346,7 +364,7 @@ Siguiendo las instrucciones del archivo `layouts.md`:
     letter-spacing: 10.8px;
     line-height: 28px;
   }
-  
+
   .aboutHero__textPrimary,
   .aboutHero__textSecondary {
     font-size: 18px;
@@ -413,12 +431,14 @@ Las siguientes capturas se guardaron en `.github/layouts/track/`:
 ## Validación de Errores
 
 ### TypeScript
+
 ```
 ✅ No errors found - app/about/page.tsx
 ✅ No errors found - app/about/about.module.css
 ```
 
 ### ESLint
+
 ```
 ✅ Sin errores reportados
 ```
@@ -452,6 +472,7 @@ Las siguientes capturas se guardaron en `.github/layouts/track/`:
 La página About ha sido completamente corregida para que coincida exactamente con el original. Todos los aspectos del layout, tipografía, colores, espaciado y estructura han sido ajustados siguiendo el método de trabajo establecido.
 
 **Próximos pasos sugeridos:**
+
 1. Verificar el resto de las secciones de la página About (Stats, Team, etc.)
 2. Verificar animaciones y transiciones
 3. Probar en diferentes navegadores y dispositivos

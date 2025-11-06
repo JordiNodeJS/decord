@@ -44,6 +44,7 @@
 
   /* --- INTERACTION STATES --- */
   --color-hover-red: #ff6b5f;            /* Hover sobre elementos rojos */
+  --color-hover-red-dark: #ea3a30;       /* Hover oscuro para botones CTA (mejor contraste WCAG AA) */
   --color-active-red: #e63a2e;           /* Click/active sobre rojo */
   --color-focus-outline: #fe483b;        /* Outline de accesibilidad */
   --color-disabled: #d4d4d4;             /* Elementos deshabilitados */

@@ -64,9 +64,11 @@
   letter-spacing: 12px;
   text-transform: uppercase;
   color: rgb(21, 21, 21);
-  display: block;
+  display: inline-block;
   margin: 0 0 20px 0;
   line-height: 1.2;
+  background-color: white;
+  padding: 4px 8px;
 }
 
 .hero__title {

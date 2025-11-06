@@ -29,7 +29,7 @@ export default function Hero() {
         {/* Image positioned absolutely on the left */}
         <figure className={styles.hero__imageWrapper}>
           <Image
-            src="/images/hero/home-01-720x900.png"
+            src="/images/hero/hero-bg.png"
             alt="Columnas de arte moderno"
             width={720}
             height={900}

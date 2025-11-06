@@ -43,4 +43,4 @@ https://ld-wt73.template-help.com/tf/decord_v1/
 **Problemas detectados:**
 - Se renderizan dos gallerías que son la misma. Esto está bien  porque usan el mismo componente, pero la galería de la página "Inicio" no funciona correctamente, dado que no pinta los filtros. Ni tiene el mismo layout que la galería de la página "Galería".
 **Solución propuesta:**
-- Hacer que en la página "Inicio" se utilice la misma galería que en la página "Galería", evitando la duplicación innecesaria del componente.
+- Hacer que en la página "Inicio" utilice la misma galería que en la página "Galería" INCLUYENDO LOS FILTROS, evitando la duplicación innecesaria del componente.

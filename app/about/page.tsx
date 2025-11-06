@@ -109,29 +109,24 @@ export default function AboutPage() {
 
             <div className={styles.aboutHero__content}>
               <ScrollReveal delay={100}>
-                <h3 className={styles.aboutHero__label}>ABOUT ART GALLERY</h3>
-                <p className={styles.aboutHero__text}>
-                  Decord Gallery was established by Helen Stone to provide
+                <h3 className={styles.aboutHero__label}>
+                  <span className={styles.aboutHero__labelUnderline}>
+                    ABOUT ART GALLERY
+                  </span>
+                </h3>
+                <div className={styles.aboutHero__textPrimary}>
+                  It is our mission to make it easy for you to discover and
+                  collect fine art from renowned artists, galleries, and
+                  cultural institutions worldwide.
+                </div>
+                <div className={styles.aboutHero__textSecondary}>
+                  Our Gallery was established by Helen Stone to provide
                   opportunities to artists entering the global art market. Ms.
                   Stone was a visionary who founded the gallery on the principle
                   that all artists benefit from having their artwork promoted by
                   a professional gallery.
-                </p>
+                </div>
               </ScrollReveal>
-
-              {/* Stats Mini Grid */}
-              <div className={styles.statsGrid}>
-                {stats.slice(0, 4).map((stat, index) => (
-                  <ScrollReveal key={index} delay={200 + index * 50}>
-                    <div className={styles.statCard}>
-                      <div className={styles.statCard__number}>
-                        {stat.number}
-                      </div>
-                      <div className={styles.statCard__label}>{stat.label}</div>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
             </div>
           </div>
         </div>

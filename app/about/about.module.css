@@ -46,7 +46,7 @@
 
 /* ========== ABOUT HERO SECTION ========== */
 .aboutHero {
-  padding: var(--spacing-section-y) var(--spacing-container-x);
+  padding: 80px var(--spacing-container-x) 115px;
   background: var(--color-background-primary);
 }
 
@@ -56,15 +56,18 @@
 }
 
 .aboutHero__grid {
-  display: grid;
-  grid-template-columns: 570px 1fr;
-  gap: var(--spacing-16);
-  align-items: start;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  margin: 0 -15px;
 }
 
 .aboutHero__imageWrapper {
   position: relative;
-  width: 100%;
+  width: 336.656px;
+  flex: 0 0 auto;
+  padding: 0 15px;
   overflow: hidden;
 }
 
@@ -80,117 +83,101 @@
 }
 
 .aboutHero__content {
-  padding-top: var(--spacing-8);
+  flex: 1 1 auto;
+  max-width: 550px;
+  padding: 0 15px;
 }
 
 .aboutHero__label {
   font-family: var(--font-family-secondary);
-  font-size: 44px;
-  font-weight: 400;
-  letter-spacing: 13px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 14.4px;
   text-transform: uppercase;
-  color: #000000;
+  color: rgb(21, 21, 21);
   display: block;
-  margin-bottom: var(--spacing-8);
-  line-height: 1.2;
+  margin-bottom: 20px;
+  line-height: 37.2px;
 }
 
-.aboutHero__text {
+.aboutHero__labelUnderline {
+  display: inline;
+  border-bottom: 2px solid var(--color-primary-red); /* rgb(254, 72, 59) */
+  padding-bottom: 0;
+}
+
+.aboutHero__textPrimary {
   font-family: var(--font-family-secondary);
-  font-size: 16px;
-  line-height: 1.75;
-  color: #999999;
-  margin-bottom: var(--spacing-6);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 37.5666px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
 }
 
-/* Stats Mini Grid */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-8);
-  margin-top: var(--spacing-12);
-}
-
-.statCard {
-  text-align: center;
-  padding: var(--spacing-6);
-  background: var(--color-background-secondary);
-  border-radius: var(--radius-base);
-  transition: var(--transition-all);
-}
-
-.statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.statCard__number {
-  font-family: var(--font-family-primary);
-  font-size: 60px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--color-primary-red);
-  margin-bottom: var(--spacing-2);
-}
-
-.statCard__label {
+.aboutHero__textSecondary {
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-  color: var(--color-text-primary);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 37.5666px;
+  color: rgb(118, 118, 118);
+  margin-bottom: 0;
 }
 
 /* ========== DETAILED STATS SECTION ========== */
 .stats {
-  padding: var(--spacing-section-y) var(--spacing-container-x);
-  background: var(--color-background-secondary);
+  padding: 0 var(--spacing-container-x) 115px; /* Original: no top padding, 115px bottom */
+  background: var(--color-background-primary); /* White background */
 }
 
 .stats__container {
   max-width: var(--container-xl);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-12);
+  display: block; /* Single column layout, not grid */
+  padding-left: 16.666667%; /* offset-xl-2 */
 }
 
 .statDetail {
   display: flex;
   gap: var(--spacing-6);
   align-items: flex-start;
+  margin-bottom: 50px; /* Space between stats */
+}
+
+.statDetail:last-child {
+  margin-bottom: 0;
 }
 
 .statDetail__number {
   font-family: var(--font-family-primary);
-  font-size: 90px;
+  font-size: 50px; /* Original: 50px, not 90px */
   font-weight: 500;
-  line-height: 1;
+  line-height: 50px; /* Original: 50px */
   color: var(--color-primary-red);
   flex-shrink: 0;
-  min-width: 120px;
+  min-width: auto; /* Remove fixed width */
+  margin-right: 20px;
 }
 
 .statDetail__content {
-  padding-top: var(--spacing-4);
+  padding-top: 0; /* Remove top padding */
 }
 
 .statDetail__label {
   font-family: var(--font-family-secondary);
-  font-size: 18px;
+  font-size: 20px; /* Original: 20px */
   font-weight: 500;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 8px; /* Original: 8px, not wide */
   text-transform: uppercase;
   color: var(--color-text-primary);
-  margin: 0 0 var(--spacing-3) 0;
+  margin: 0 0 8px 0; /* Small margin bottom */
 }
 
 .statDetail__description {
   font-family: var(--font-family-secondary);
   font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+  line-height: 25.6px; /* Original: 25.6px (1.6 line height) */
+  color: rgb(118, 118, 118); /* Original gray color */
   margin: 0;
 }
 
@@ -418,23 +405,27 @@
 
 @media (max-width: 1200px) {
   .aboutHero__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: var(--spacing-12);
   }
   
   .aboutHero__imageWrapper {
+    width: 100%;
     max-width: 570px;
     margin: 0 auto;
   }
   
+  .aboutHero__content {
+    max-width: 100%;
+  }
+  
   .stats__container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-10);
+    padding-left: 0; /* Remove offset on smaller screens */
   }
   
   .statDetail__number {
-    font-size: 70px;
-    min-width: 100px;
+    font-size: 40px;
+    line-height: 40px;
   }
   
   .cta__title {
@@ -444,21 +435,15 @@
 }
 
 @media (max-width: 768px) {
-  .statsGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .statCard__number {
-    font-size: 48px;
-  }
-  
   .statDetail {
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* Keep left aligned on mobile */
   }
   
   .statDetail__number {
-    font-size: 60px;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 10px;
   }
   
   /* Responsive team grid - simpler layout on tablet */
@@ -497,14 +482,23 @@
   .aboutHero__label {
     font-size: 18px;
     letter-spacing: 10.8px;
+    line-height: 28px;
   }
   
-  .statCard__number {
-    font-size: 36px;
+  .aboutHero__textPrimary,
+  .aboutHero__textSecondary {
+    font-size: 18px;
+    line-height: 28px;
   }
   
   .statDetail__number {
-    font-size: 48px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  
+  .statDetail__label {
+    font-size: 16px;
+    letter-spacing: 6px;
   }
   
   /* Single column on mobile */

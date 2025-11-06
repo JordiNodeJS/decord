@@ -20,6 +20,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: "DECORD - Museo de Arte Moderno",
   description:
     "Galería de arte moderno dedicada a exhibir obras contemporáneas de artistas emergentes y establecidos.",
@@ -29,6 +30,12 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
     ],
     apple: "/icon.svg",
+  },
+  openGraph: {
+    title: "DECORD - Museo de Arte Moderno",
+    description:
+      "Galería de arte moderno dedicada a exhibir obras contemporáneas de artistas emergentes y establecidos.",
+    type: "website",
   },
 };
 

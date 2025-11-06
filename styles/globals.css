@@ -3,7 +3,7 @@
    ============================================ */
 
 /* Import Design Tokens */
-@import './tokens/index.css';
+@import "./tokens/index.css";
 
 /* ============================================
    RESET & BASE
@@ -30,10 +30,10 @@ body {
   font-weight: var(--text-body-font-weight);
   line-height: var(--text-body-line-height);
   letter-spacing: var(--text-body-letter-spacing);
-  
+
   color: var(--color-text-primary);
   background-color: var(--color-background-primary);
-  
+
   overflow-x: hidden;
   max-width: 100vw;
 }
@@ -46,7 +46,12 @@ main {
    TYPOGRAPHY
    ============================================ */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-snug);
@@ -128,9 +133,9 @@ a:hover {
   border-width: 0;
 }
 
-/* Focus styles */
+/* Focus styles - WCAG 2.2 compliant (minimum 3px) */
 *:focus-visible {
-  outline: 2px solid var(--color-focus-outline);
+  outline: 3px solid var(--color-focus-outline);
   outline-offset: 2px;
 }
 

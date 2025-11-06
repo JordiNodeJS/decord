@@ -51,7 +51,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className={styles.header__nav}>
+        <nav className={styles.header__nav} aria-label="Navegación principal">
           <Link href="/" className={styles.header__link}>
             INICIO
           </Link>

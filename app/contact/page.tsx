@@ -5,6 +5,13 @@ import ScrollReveal from "@/components/animations/ScrollReveal/ScrollReveal";
 import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./contact.module.css";
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,19 +20,70 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "El nombre es requerido";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "El correo electrónico es requerido";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Por favor ingresa un correo electrónico válido";
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "El asunto es requerido";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "El mensaje es requerido";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("¡Gracias por contactarnos! Te responderemos pronto.");
+
+    if (validateForm()) {
+      console.log("Form submitted:", formData);
+      setSubmitStatus("success");
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setErrors({});
+    } else {
+      setSubmitStatus("error");
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    // Clear error for this field when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors({
+        ...errors,
+        [name]: undefined,
+      });
+    }
   };
 
   return (
@@ -103,10 +161,33 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className={styles.formWrapper}>
               <ScrollReveal delay={200}>
-                <form onSubmit={handleSubmit} className={styles.form}>
+                {/* Success Message */}
+                {submitStatus === "success" && (
+                  <div
+                    className={styles.form__success}
+                    role="alert"
+                    aria-live="polite"
+                  >
+                    ¡Gracias por contactarnos! Te responderemos pronto.
+                  </div>
+                )}
+
+                <form
+                  onSubmit={handleSubmit}
+                  className={styles.form}
+                  noValidate
+                >
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <div className={styles.form__text}>NAME</div>
+                      <label htmlFor="name" className={styles.form__text}>
+                        NAME{" "}
+                        <span
+                          aria-label="requerido"
+                          className={styles.form__required}
+                        >
+                          *
+                        </span>
+                      </label>
                       <input
                         type="text"
                         id="name"
@@ -114,18 +195,38 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className={styles.form__input}
-                        placeholder=" "
+                        aria-required="true"
+                        aria-invalid={errors.name ? "true" : "false"}
+                        aria-describedby={
+                          errors.name ? "name-error" : undefined
+                        }
+                        autoComplete="name"
+                        className={`${styles.form__input} ${errors.name ? styles["form__input--error"] : ""}`}
+                        placeholder="e.g.: Emma McCoy"
                       />
-                      <label htmlFor="name" className={styles.form__label}>
-                        e.g.: Emma McCoy
-                      </label>
+                      {errors.name && (
+                        <span
+                          id="name-error"
+                          className={styles.form__error}
+                          role="alert"
+                        >
+                          {errors.name}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <div className={styles.form__text}>E-MAIL</div>
+                      <label htmlFor="email" className={styles.form__text}>
+                        E-MAIL{" "}
+                        <span
+                          aria-label="requerido"
+                          className={styles.form__required}
+                        >
+                          *
+                        </span>
+                      </label>
                       <input
                         type="email"
                         id="email"
@@ -133,18 +234,38 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className={styles.form__input}
-                        placeholder=" "
+                        aria-required="true"
+                        aria-invalid={errors.email ? "true" : "false"}
+                        aria-describedby={
+                          errors.email ? "email-error" : undefined
+                        }
+                        autoComplete="email"
+                        className={`${styles.form__input} ${errors.email ? styles["form__input--error"] : ""}`}
+                        placeholder="e.g.: info@demolink.org"
                       />
-                      <label htmlFor="email" className={styles.form__label}>
-                        e.g.: info@demolink.org
-                      </label>
+                      {errors.email && (
+                        <span
+                          id="email-error"
+                          className={styles.form__error}
+                          role="alert"
+                        >
+                          {errors.email}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <div className={styles.form__text}>SUBJECT</div>
+                      <label htmlFor="subject" className={styles.form__text}>
+                        SUBJECT{" "}
+                        <span
+                          aria-label="requerido"
+                          className={styles.form__required}
+                        >
+                          *
+                        </span>
+                      </label>
                       <input
                         type="text"
                         id="subject"
@@ -152,35 +273,61 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className={styles.form__input}
-                        placeholder=" "
+                        aria-required="true"
+                        aria-invalid={errors.subject ? "true" : "false"}
+                        aria-describedby={
+                          errors.subject ? "subject-error" : undefined
+                        }
+                        className={`${styles.form__input} ${errors.subject ? styles["form__input--error"] : ""}`}
+                        placeholder="The subject of your message"
                       />
-                      <label htmlFor="subject" className={styles.form__label}>
-                        The subject of your message
-                      </label>
+                      {errors.subject && (
+                        <span
+                          id="subject-error"
+                          className={styles.form__error}
+                          role="alert"
+                        >
+                          {errors.subject}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   <div className={styles.form__row}>
                     <div className={styles.form__group}>
-                      <div
-                        className={`${styles.form__text} ${styles.form__text_textarea}`}
-                      >
-                        MESSAGE
-                      </div>
+                      <label htmlFor="message" className={styles.form__text}>
+                        MESSAGE{" "}
+                        <span
+                          aria-label="requerido"
+                          className={styles.form__required}
+                        >
+                          *
+                        </span>
+                      </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        aria-required="true"
+                        aria-invalid={errors.message ? "true" : "false"}
+                        aria-describedby={
+                          errors.message ? "message-error" : undefined
+                        }
                         rows={8}
-                        className={styles.form__textarea}
-                        placeholder=" "
+                        className={`${styles.form__textarea} ${errors.message ? styles["form__input--error"] : ""}`}
+                        placeholder="Write your message here..."
                       />
-                      <label htmlFor="message" className={styles.form__label}>
-                        Write your message here...
-                      </label>
+                      {errors.message && (
+                        <span
+                          id="message-error"
+                          className={styles.form__error}
+                          role="alert"
+                        >
+                          {errors.message}
+                        </span>
+                      )}
                     </div>
                   </div>
 

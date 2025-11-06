@@ -20,7 +20,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   title: "DECORD - Museo de Arte Moderno",
   description:
     "Galería de arte moderno dedicada a exhibir obras contemporáneas de artistas emergentes y establecidos.",
@@ -48,7 +50,7 @@ export default function RootLayout({
     <html lang="es" className={`${oswald.variable} ${roboto.variable}`}>
       <body>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

@@ -147,6 +147,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* WCAG 2.2 - Minimum target size 24x24px */
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--spacing-2);
 }
 
 .footer__socialLink:hover {
@@ -235,7 +239,7 @@
   .footer__columns {
     gap: 60px;
   }
-  
+
   .footer__ctaTitle {
     font-size: 64px;
   }

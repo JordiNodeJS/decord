@@ -8,9 +8,14 @@
   background: none;
   border: none;
   cursor: pointer;
+  /* WCAG 2.2 - Minimum target size 24x24px (using 44x44 for better touch) */
+  min-width: 44px;
+  min-height: 44px;
   padding: var(--spacing-2);
   z-index: var(--z-index-modal);
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger__line {
@@ -52,8 +57,9 @@
   z-index: var(--z-index-fixed);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-slow) var(--transition-ease-in-out),
-              visibility var(--transition-slow) var(--transition-ease-in-out);
+  transition:
+    opacity var(--transition-slow) var(--transition-ease-in-out),
+    visibility var(--transition-slow) var(--transition-ease-in-out);
 }
 
 .mobileMenu--open {
@@ -81,7 +87,8 @@
   transition: var(--transition-colors);
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp var(--transition-slower) var(--transition-ease-out) forwards;
+  animation: fadeInUp var(--transition-slower) var(--transition-ease-out)
+    forwards;
 }
 
 .mobileMenu--open .mobileMenu__link:nth-child(1) {

@@ -173,7 +173,9 @@
   font-weight: 400;
   color: rgb(204, 204, 204); /* Light gray for placeholder */
   pointer-events: none;
-  transition: opacity 0.25s, transform 0.25s;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
   z-index: 0;
 }
 
@@ -224,6 +226,36 @@
 /* Do NOT change static label color on focus - keep it gray like original */
 /* Removed the focus color change for .form__text */
 
+/* Form Accessibility Styles */
+.form__required {
+  color: var(--color-primary-red);
+  margin-left: var(--spacing-1);
+}
+
+.form__error {
+  display: block;
+  color: var(--color-primary-red);
+  font-size: 14px;
+  margin-top: var(--spacing-2);
+  font-family: var(--font-family-secondary);
+}
+
+.form__input--error,
+.form__textarea--error {
+  border-color: var(--color-primary-red) !important;
+}
+
+.form__success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid rgb(34, 197, 94);
+  color: rgb(34, 197, 94);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-secondary);
+  font-weight: 500;
+}
+
 .form__submit {
   width: 100%;
   padding: 20px 30px;
@@ -257,7 +289,7 @@
     flex-direction: column;
     gap: var(--spacing-12);
   }
-  
+
   .sidebar,
   .formWrapper {
     max-width: 100%;
@@ -269,15 +301,15 @@
     font-size: 48px;
     letter-spacing: -2.4px;
   }
-  
+
   .hero__text {
     font-size: 14px;
   }
-  
+
   .sidebar {
     flex-direction: column;
   }
-  
+
   .formWrapper {
     padding: var(--spacing-8);
   }
@@ -288,7 +320,7 @@
     font-size: 36px;
     letter-spacing: -1.8px;
   }
-  
+
   .formWrapper {
     padding: var(--spacing-6);
   }

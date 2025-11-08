@@ -4,21 +4,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-family-secondary);  /* Roboto */
-  font-size: 14px;  /* Exacto del original */
-  font-weight: 900;  /* Extrabold del original */
-  letter-spacing: 8.4px;  /* Exacto del original */
+  font-family: var(--font-family-secondary);
+  font-size: var(--button-font-size-md);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing-md);
   text-transform: uppercase;
-  border-radius: 0;  /* Sin border radius en el original */
-  transition: background 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
-              border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
-              color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
-              transform 0.4s cubic-bezier(0.2, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  border-radius: var(--button-border-radius);
+  transition: var(--button-transition);
   cursor: pointer;
-  border: 2px solid transparent;
+  border: var(--button-border-width) solid transparent;
   text-align: center;
-  padding: 24px 56px;  /* Exacto del original */
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
 }
 
 /* Variantes - Modificadores BEM */
@@ -32,7 +28,7 @@
   background: var(--color-hover-red);
   border-color: var(--color-hover-red);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(254, 72, 59, 0.3);
+  box-shadow: var(--button-shadow-hover);
 }
 
 .button--primary:active {
@@ -67,21 +63,21 @@
 
 /* Tamaños - Mantener compatibilidad pero el default es del original */
 .button--sm {
-  padding: 16px 40px;
-  font-size: 12px;
-  letter-spacing: 7.2px;
+  padding: var(--button-padding-y-sm) var(--button-padding-x-sm);
+  font-size: var(--button-font-size-sm);
+  letter-spacing: var(--button-letter-spacing-sm);
 }
 
 .button--md {
-  padding: 24px 56px;  /* Default del original */
-  font-size: 14px;
-  letter-spacing: 8.4px;
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
+  font-size: var(--button-font-size-md);
+  letter-spacing: var(--button-letter-spacing-md);
 }
 
 .button--lg {
-  padding: 28px 64px;
-  font-size: 14px;
-  letter-spacing: 8.4px;
+  padding: var(--button-padding-y-lg) var(--button-padding-x-lg);
+  font-size: var(--button-font-size-lg);
+  letter-spacing: var(--button-letter-spacing-lg);
 }
 
 /* Estados deshabilitados */

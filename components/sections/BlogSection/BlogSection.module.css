@@ -39,8 +39,8 @@
 
 .blog__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns like original */
-  gap: 30px; /* Standard gap between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
   margin-bottom: var(--spacing-16);
 }
 
@@ -54,7 +54,7 @@
 
 .blogCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Elegant shadow on hover */
+  box-shadow: var(--shadow-xl);
 }
 
 .blogCard__link {
@@ -66,7 +66,7 @@
 .blogCard__imageWrapper {
   position: relative;
   width: 100%;
-  height: 400px; /* Fixed height for consistent layout */
+  height: 400px;
   overflow: hidden;
   background: var(--color-background-secondary);
 }
@@ -75,11 +75,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease-in-out;
+  transition: var(--artwork-card-image-transition);
 }
 
 .blogCard:hover .blogCard__image {
-  transform: scale(1.05); /* Subtle zoom on hover */
+  transform: scale(var(--artwork-card-image-scale-hover));
 }
 
 .blogCard__content {

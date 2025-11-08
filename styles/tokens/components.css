@@ -9,13 +9,28 @@
   --button-height-md: 44px;
   --button-height-lg: 52px;
 
-  --button-padding-x-sm: var(--spacing-4); /* 16px */
-  --button-padding-x-md: var(--spacing-6); /* 24px */
-  --button-padding-x-lg: var(--spacing-8); /* 32px */
+  --button-padding-y-sm: 16px;
+  --button-padding-y-md: 24px;
+  --button-padding-y-lg: 28px;
+  --button-padding-x-sm: 40px;
+  --button-padding-x-md: 56px;
+  --button-padding-x-lg: 64px;
 
-  --button-font-size-sm: var(--font-size-sm);
-  --button-font-size-md: var(--font-size-base);
-  --button-font-size-lg: var(--font-size-md);
+  --button-font-size-sm: 12px;
+  --button-font-size-md: 14px; /* Exacto del original */
+  --button-font-size-lg: 14px;
+  --button-font-weight: 900; /* Extrabold del original */
+  --button-letter-spacing-sm: 7.2px;
+  --button-letter-spacing-md: 8.4px; /* Exacto del original */
+  --button-letter-spacing-lg: 8.4px;
+  --button-border-radius: 0; /* Sin border radius en el original */
+  --button-border-width: 2px;
+  --button-transition: background 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+                       border-color 0.4s cubic-bezier(0.2, 1, 0.3, 1), 
+                       color 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+                       transform 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+                       box-shadow 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  --button-shadow-hover: 0 8px 16px var(--color-shadow-red-30);
 
   /* --- INPUTS --- */
   --input-height: 48px;
@@ -30,13 +45,36 @@
   --card-background: var(--color-background-elevated);
 
   /* ArtworkCard específico */
-  --artwork-card-aspect-ratio: 3 / 4; /* Portrait */
+  --artwork-card-aspect-ratio: 420 / 570; /* Original image dimensions */
   --artwork-card-overlay-opacity: 0;
   --artwork-card-overlay-opacity-hover: 1;
+  --artwork-card-overlay-background: var(--color-overlay-red-65);
+  --artwork-card-overlay-font-size: 60px;
+  --artwork-card-overlay-font-weight: 300;
+  --artwork-card-overlay-line-height: 96px;
+  --artwork-card-overlay-color: var(--color-text-inverse);
+  --artwork-card-overlay-transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+  --artwork-card-overlay-scale-initial: 0.5;
+  --artwork-card-overlay-scale-hover: 1;
+  --artwork-card-image-transition: transform 0.35s ease-in-out;
+  --artwork-card-image-scale-hover: 1.03;
+  --artwork-card-content-margin-top: 20px;
+  --artwork-card-title-margin-bottom: 5px;
+  --artwork-card-margin-bottom: 30px;
 
   /* EventCard específico */
-  --event-card-date-size: var(--font-size-4xl); /* Fecha grande: 48px */
+  --event-card-date-number-size: 60px;
+  --event-card-date-month-size: 30px;
   --event-card-date-color: var(--color-primary-red);
+  --event-card-date-min-width: 120px;
+  --event-card-gap: var(--spacing-8);
+  --event-card-padding-y: var(--spacing-10);
+  --event-card-padding-y-mobile: var(--spacing-6);
+  --event-card-border-bottom: 1px solid var(--color-border-subtle);
+  --event-card-title-margin-bottom: 10px;
+  --event-card-meta-margin-bottom: 15px;
+  --event-card-description-margin-bottom: 20px;
+  --event-card-button-margin-top: var(--spacing-4);
 
   /* --- HEADER/NAVBAR --- */
   --header-height: 80px;
@@ -53,15 +91,124 @@
   /* --- HERO --- */
   --hero-min-height: 100vh;
   --hero-min-height-mobile: 80vh;
-  --hero-title-font-size: var(--font-size-7xl); /* 96px desktop */
-  --hero-title-font-size-mobile: var(--font-size-4xl); /* 48px mobile */
+  --hero-container-max-width: 1600px;
+  --hero-title-font-size-desktop: 140px; /* Desktop large */
+  --hero-title-font-size-1200: 80px; /* At 1200px */
+  --hero-title-font-size-992: 70px; /* At 992px */
+  --hero-title-font-size-768: 60px; /* Mobile */
+  --hero-title-font-size-480: 48px; /* Mobile small */
+  --hero-title-letter-spacing-desktop: -7px;
+  --hero-title-letter-spacing-1200: -4px;
+  --hero-title-letter-spacing-992: -3.5px;
+  --hero-title-letter-spacing-768: -3px;
+  --hero-title-letter-spacing-480: -2.4px;
+  --hero-title-line-height: 0.9;
+  --hero-subtitle-font-size: var(--font-size-lg); /* 20px */
+  --hero-subtitle-font-size-992: 18px;
+  --hero-subtitle-font-size-768: 16px;
+  --hero-subtitle-font-size-480: 14px;
+  --hero-subtitle-letter-spacing: 12px;
+  --hero-subtitle-letter-spacing-992: 10.8px;
+  --hero-subtitle-letter-spacing-768: 9.6px;
+  --hero-subtitle-letter-spacing-480: 8.4px;
+  --hero-subtitle-padding: 4px 8px;
+  --hero-image-width: 720px;
+  --hero-image-height: 900px;
+  --hero-image-width-1200: 600px;
+  --hero-image-height-1200: 750px;
+  --hero-image-width-992: 500px;
+  --hero-image-height-992: 625px;
+  --hero-image-width-mobile: 400px;
+  --hero-image-height-mobile: 500px;
+  --hero-image-width-mobile-small: 300px;
+  --hero-image-height-mobile-small: 375px;
+  --hero-image-left: 15%;
+  --hero-content-right: 10%;
+  --hero-scroll-indicator-size: 48px;
+  --hero-scroll-indicator-border-width: 2px;
 
   /* --- FOOTER --- */
-  --footer-background: var(--color-primary-black);
-  --footer-padding-y: var(--spacing-32); /* 128px */
+  --footer-background: var(--color-footer-background);
+  --footer-main-padding-y-top: 60px;
+  --footer-main-padding-y-bottom: 40px;
+  --footer-main-padding-y-top-mobile: 40px;
+  --footer-cta-padding-y-top: 60px;
+  --footer-cta-padding-y-bottom: 80px;
+  --footer-cta-padding-y-top-mobile: 40px;
+  --footer-cta-title-font-size: var(--font-size-8xl); /* 88px */
+  --footer-cta-title-font-size-1024: 64px;
+  --footer-cta-title-font-size-mobile: 48px;
+  --footer-cta-arrow-width: 260px;
+  --footer-cta-arrow-width-mobile: 180px;
+  --footer-bottom-padding-y: 30px;
+  --footer-bottom-padding-y-mobile: 20px;
+  --footer-bottom-border-top: 1px solid var(--color-footer-border);
+  --footer-logo-section-gap: 20px;
+  --footer-logo-section-margin-bottom: 40px;
+  --footer-contact-gap: 8px;
+  --footer-columns-gap: 80px;
+  --footer-columns-gap-1024: 60px;
+  --footer-columns-gap-mobile: 40px;
+  --footer-columns-max-width: 900px;
+  --footer-nav-gap: 12px;
+  --footer-social-gap: 16px;
+  --footer-social-margin-top: 20px;
+  --footer-legal-gap: 30px;
+  --footer-legal-gap-mobile: 10px;
+  --footer-copyright-gap: 8px;
 
   /* --- LIGHTBOX/MODAL --- */
   --lightbox-overlay-background: rgba(0, 0, 0, 0.95);
   --lightbox-content-max-width: 90vw;
   --lightbox-content-max-height: 90vh;
+  --lightbox-content-max-width-desktop: 1400px;
+  --lightbox-content-max-height-desktop: 900px;
+  --lightbox-backdrop-blur: 4px;
+  --lightbox-z-index: 9999;
+  --lightbox-content-z-index: 10000;
+  --lightbox-close-z-index: 10001;
+  --lightbox-close-size: 48px;
+  --lightbox-close-size-mobile: 40px;
+  --lightbox-close-font-size: 24px;
+  --lightbox-close-top: 24px;
+  --lightbox-close-right: 24px;
+  --lightbox-close-top-mobile: var(--spacing-3);
+  --lightbox-close-right-mobile: var(--spacing-3);
+  --lightbox-arrow-size: 56px;
+  --lightbox-arrow-size-mobile: 48px;
+  --lightbox-arrow-font-size: 24px;
+  --lightbox-arrow-position: 24px;
+  --lightbox-arrow-position-mobile: var(--spacing-2);
+  --lightbox-counter-top: 24px;
+  --lightbox-counter-left: 24px;
+  --lightbox-counter-top-mobile: var(--spacing-3);
+  --lightbox-counter-left-mobile: var(--spacing-3);
+  --lightbox-counter-font-size: var(--font-size-base);
+  --lightbox-counter-font-size-mobile: var(--font-size-sm);
+  --lightbox-counter-padding: var(--spacing-2) var(--spacing-4);
+  --lightbox-counter-background: rgba(0, 0, 0, 0.7);
+  --lightbox-counter-border-radius: var(--radius-base);
+  --lightbox-thumbnails-width: 90%;
+  --lightbox-thumbnails-width-mobile: 95%;
+  --lightbox-thumbnails-max-width: 600px;
+  --lightbox-thumbnails-background: rgba(0, 0, 0, 0.8);
+  --lightbox-thumbnails-bottom: var(--spacing-6);
+  --lightbox-thumbnails-bottom-mobile: var(--spacing-3);
+  --lightbox-thumbnail-size: 80px;
+  --lightbox-thumbnail-size-mobile: 60px;
+  --lightbox-thumbnail-border-width: 2px;
+  --lightbox-thumbnail-gap: var(--spacing-2);
+  --lightbox-image-wrapper-height-mobile: calc(100vh - 220px);
+  --lightbox-image-wrapper-margin-mobile: var(--spacing-8) 0;
+
+  /* --- STATS --- */
+  --stats-grid-columns: 4;
+  --stats-grid-columns-1024: 2;
+  --stats-grid-columns-mobile: 1;
+  --stats-card-padding: var(--spacing-8);
+  --stats-card-padding-mobile: var(--spacing-6);
+  --stats-card-shadow-hover: 0 4px 12px var(--color-shadow-black-08);
+
+  /* --- ABOUT --- */
+  --about-text-line-height: 1.6;
 }

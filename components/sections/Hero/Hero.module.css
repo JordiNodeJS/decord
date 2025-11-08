@@ -1,10 +1,10 @@
 /* Hero Section - DECORD Style - Estructura exacta del original */
 
 .hero {
-  min-height: 100vh;
+  min-height: var(--hero-min-height);
   height: 100vh;
   position: relative;
-  background: #ffffff; /* White background to match the image */
+  background: var(--color-background-primary);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .hero__container {
-  max-width: 1600px;
+  max-width: var(--hero-container-max-width);
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -26,11 +26,11 @@
 /* Image Wrapper - Positioned on the LEFT, slightly off-center */
 .hero__imageWrapper {
   position: absolute;
-  left: 15%;
+  left: var(--hero-image-left);
   top: 50%;
   transform: translateY(-50%);
-  width: 720px;
-  height: 900px;
+  width: var(--hero-image-width);
+  height: var(--hero-image-height);
   max-height: 90vh;
   z-index: 1;
 }
@@ -47,37 +47,37 @@
 /* Content - Text that overlays on the RIGHT side, overlapping the image */
 .hero__content {
   position: absolute;
-  right: 10%;
+  right: var(--hero-content-right);
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
   max-width: 900px;
   will-change: transform;
-  transition: transform 0.1s ease-out;
+  transition: var(--transition-transform);
   text-align: right;
 }
 
 .hero__subtitle {
-  font-family: var(--font-family-secondary); /* Roboto */
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 12px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--hero-subtitle-font-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--hero-subtitle-letter-spacing);
   text-transform: uppercase;
-  color: rgb(21, 21, 21);
+  color: var(--color-text-primary);
   display: inline-block;
-  margin: 0 0 20px 0;
+  margin: 0 0 var(--spacing-5) 0;
   line-height: 1.2;
-  background-color: white;
-  padding: 4px 8px;
+  background-color: var(--color-background-primary);
+  padding: var(--hero-subtitle-padding);
 }
 
 .hero__title {
-  font-family: var(--font-family-primary); /* Oswald */
-  font-size: 140px;
-  font-weight: 500;
-  letter-spacing: -7px;
-  line-height: 0.9;
-  color: rgb(254, 72, 59); /* Color exacto del original - ROJO/NARANJA */
+  font-family: var(--font-family-primary);
+  font-size: var(--hero-title-font-size-desktop);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--hero-title-letter-spacing-desktop);
+  line-height: var(--hero-title-line-height);
+  color: var(--color-primary-red);
   text-transform: uppercase;
   margin: 0;
   display: block;
@@ -95,27 +95,27 @@
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(21, 21, 21, 0.1);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  border: var(--hero-scroll-indicator-border-width) solid rgba(21, 21, 21, 0.1);
+  border-radius: var(--radius-full);
+  width: var(--hero-scroll-indicator-size);
+  height: var(--hero-scroll-indicator-size);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(21, 21, 21);
+  color: var(--color-text-primary);
   cursor: pointer;
   padding: 0;
   animation: bounce 2s infinite;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .hero__scrollIndicator:hover {
-  color: rgb(254, 72, 59);
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-color: rgba(254, 72, 59, 0.2);
+  color: var(--color-primary-red);
+  background: var(--color-background-primary);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-overlay-red);
 }
 
 @keyframes bounce {
@@ -133,8 +133,8 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero__imageWrapper {
-    width: 600px;
-    height: 750px;
+    width: var(--hero-image-width-1200);
+    height: var(--hero-image-height-1200);
   }
   
   .hero__content {
@@ -142,20 +142,20 @@
   }
   
   .hero__title {
-    font-size: 80px;
-    letter-spacing: -4px;
+    font-size: var(--hero-title-font-size-1200);
+    letter-spacing: var(--hero-title-letter-spacing-1200);
   }
   
   .hero__subtitle {
-    font-size: 20px;
-    letter-spacing: 12px;
+    font-size: var(--hero-subtitle-font-size);
+    letter-spacing: var(--hero-subtitle-letter-spacing);
   }
 }
 
 @media (max-width: 992px) {
   .hero__imageWrapper {
-    width: 500px;
-    height: 625px;
+    width: var(--hero-image-width-992);
+    height: var(--hero-image-height-992);
   }
   
   .hero__content {
@@ -163,19 +163,19 @@
   }
   
   .hero__title {
-    font-size: 70px;
-    letter-spacing: -3.5px;
+    font-size: var(--hero-title-font-size-992);
+    letter-spacing: var(--hero-title-letter-spacing-992);
   }
   
   .hero__subtitle {
-    font-size: 18px;
-    letter-spacing: 10.8px;
+    font-size: var(--hero-subtitle-font-size-992);
+    letter-spacing: var(--hero-subtitle-letter-spacing-992);
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 40px 0;
+    padding: var(--spacing-10) 0;
   }
 
   .hero__container {
@@ -190,9 +190,9 @@
     top: auto;
     transform: none;
     width: 100%;
-    max-width: 400px;
-    height: 500px;
-    margin: 0 auto 30px;
+    max-width: var(--hero-image-width-mobile);
+    height: var(--hero-image-height-mobile);
+    margin: 0 auto var(--spacing-6);
   }
   
   .hero__content {
@@ -202,30 +202,30 @@
   }
   
   .hero__title {
-    font-size: 60px;
-    letter-spacing: -3px;
+    font-size: var(--hero-title-font-size-768);
+    letter-spacing: var(--hero-title-letter-spacing-768);
   }
   
   .hero__subtitle {
-    font-size: 16px;
-    letter-spacing: 9.6px;
+    font-size: var(--hero-subtitle-font-size-768);
+    letter-spacing: var(--hero-subtitle-letter-spacing-768);
   }
 }
 
 @media (max-width: 480px) {
   .hero__imageWrapper {
-    max-width: 300px;
-    height: 375px;
+    max-width: var(--hero-image-width-mobile-small);
+    height: var(--hero-image-height-mobile-small);
   }
 
   .hero__title {
-    font-size: 48px;
-    letter-spacing: -2.4px;
+    font-size: var(--hero-title-font-size-480);
+    letter-spacing: var(--hero-title-letter-spacing-480);
   }
   
   .hero__subtitle {
-    font-size: 14px;
-    letter-spacing: 8.4px;
+    font-size: var(--hero-subtitle-font-size-480);
+    letter-spacing: var(--hero-subtitle-letter-spacing-480);
   }
 }
 

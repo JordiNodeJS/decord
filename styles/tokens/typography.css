@@ -92,4 +92,72 @@
   --text-section-heading-letter-spacing: 18px; /* Very wide like original */
   --text-section-heading-font-family: var(--font-family-secondary); /* Roboto */
   --text-section-heading-line-height: 1.172;
+
+  /* --- ADDITIONAL FONT SIZES --- */
+  --font-size-8xl: 88px; /* Footer CTA title */
+  --font-size-9xl: 140px; /* Hero title desktop large */
+  --font-size-10xl: 50px; /* Stats numbers */
+
+  /* --- ADDITIONAL LETTER SPACING --- */
+  --letter-spacing-button: 8.4px; /* Button letter spacing */
+  --letter-spacing-button-sm: 7.2px; /* Button small letter spacing */
+  --letter-spacing-event-title: 8px; /* Event card title */
+  --letter-spacing-footer-link: 7.2px; /* Footer links */
+  --letter-spacing-footer-link-large: 1.8px; /* Footer large links */
+  --letter-spacing-footer-logo: 8px; /* Footer logo */
+  --letter-spacing-footer-cta: -4.4px; /* Footer CTA title */
+
+  /* --- TEXT STYLES ADDITIONAL --- */
+  /* About Text */
+  --text-about-font-size: 14px;
+  --text-about-line-height: 1.6;
+  --text-about-font-family: var(--font-family-secondary);
+
+  /* Stats Number */
+  --text-stats-number-font-size: var(--font-size-10xl); /* 50px */
+  --text-stats-number-font-weight: var(--font-weight-medium);
+  --text-stats-number-line-height: 1;
+  --text-stats-number-font-family: var(--font-family-primary);
+  --text-stats-number-color: var(--color-primary-red);
+
+  /* Event Card Date */
+  --text-event-date-number-font-size: 60px;
+  --text-event-date-number-font-weight: var(--font-weight-medium);
+  --text-event-date-number-line-height: 60px;
+  --text-event-date-month-font-size: 30px;
+  --text-event-date-month-font-weight: var(--font-weight-medium);
+
+  /* Event Card Title */
+  --text-event-title-font-size: var(--font-size-lg); /* 20px */
+  --text-event-title-font-weight: var(--font-weight-medium);
+  --text-event-title-line-height: 28px;
+  --text-event-title-letter-spacing: var(--letter-spacing-event-title);
+  --text-event-title-font-family: var(--font-family-secondary);
+
+  /* Artwork Card */
+  --text-artwork-title-font-size: var(--font-size-sm); /* 14px */
+  --text-artwork-title-font-weight: var(--font-weight-normal);
+  --text-artwork-title-line-height: 1.5;
+  --text-artwork-meta-font-size: var(--font-size-xs); /* 12px */
+  --text-artwork-meta-line-height: 1.5;
+
+  /* Footer CTA Title */
+  --text-footer-cta-font-size: var(--font-size-8xl); /* 88px */
+  --text-footer-cta-font-weight: var(--font-weight-medium);
+  --text-footer-cta-letter-spacing: var(--letter-spacing-footer-cta);
+  --text-footer-cta-line-height: 1;
+  --text-footer-cta-font-family: var(--font-family-primary);
+
+  /* Footer Logo */
+  --text-footer-logo-font-size: 28px;
+  --text-footer-logo-font-weight: var(--font-weight-normal);
+  --text-footer-logo-letter-spacing: var(--letter-spacing-footer-logo);
+  --text-footer-logo-font-family: var(--font-family-primary);
+
+  /* Footer Links */
+  --text-footer-link-font-size: var(--font-size-xs); /* 12px */
+  --text-footer-link-letter-spacing: var(--letter-spacing-footer-link);
+  --text-footer-link-large-font-size: var(--font-size-md); /* 18px */
+  --text-footer-link-large-letter-spacing: var(--letter-spacing-footer-link-large);
+  --text-footer-link-large-font-weight: var(--font-weight-medium);
 }

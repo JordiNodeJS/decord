@@ -3,11 +3,11 @@
 .eventCard {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--spacing-8);
-  padding: var(--spacing-10) 0;
+  gap: var(--event-card-gap);
+  padding: var(--event-card-padding-y) 0;
   background: transparent;
-  border-bottom: 1px solid var(--color-border-subtle);
-  transition: all 0.3s ease;
+  border-bottom: var(--event-card-border-bottom);
+  transition: var(--transition-all);
   border-radius: 0;
 }
 
@@ -21,23 +21,23 @@
   display: flex;
   align-items: baseline;
   gap: 0;
-  min-width: 120px;
+  min-width: var(--event-card-date-min-width);
 }
 
 .eventCard__dateNumber {
-  font-family: var(--font-oswald), Oswald, sans-serif;
-  font-size: 60px;
-  font-weight: 500;
-  line-height: 60px;
-  color: var(--color-primary-red);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-event-date-number-font-size);
+  font-weight: var(--text-event-date-number-font-weight);
+  line-height: var(--text-event-date-number-line-height);
+  color: var(--event-card-date-color);
   display: inline;
 }
 
 .eventCard__dateMonth {
-  font-family: var(--font-oswald), Oswald, sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  color: var(--color-primary-red);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-event-date-month-font-size);
+  font-weight: var(--text-event-date-month-font-weight);
+  color: var(--event-card-date-color);
   display: inline;
 }
 
@@ -49,13 +49,13 @@
 }
 
 .eventCard__title {
-  font-family: var(--font-family-secondary);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 28px; /* 1.4 ratio */
-  letter-spacing: 8px;
+  font-family: var(--text-event-title-font-family);
+  font-size: var(--text-event-title-font-size);
+  font-weight: var(--text-event-title-font-weight);
+  line-height: var(--text-event-title-line-height);
+  letter-spacing: var(--text-event-title-letter-spacing);
   color: var(--color-text-primary);
-  margin: 0 0 10px 0;
+  margin: 0 0 var(--event-card-title-margin-bottom) 0;
   text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  margin-bottom: 15px;
+  margin-bottom: var(--event-card-meta-margin-bottom);
 }
 
 .eventCard__reception {
@@ -79,7 +79,7 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
-  margin: 0 0 20px 0;
+  margin: 0 0 var(--event-card-description-margin-bottom) 0;
 }
 
 /* Button - Exact match from original */
@@ -89,14 +89,14 @@
   background: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 8.4px;
+  font-size: var(--button-font-size-md);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing-md);
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
-  margin-top: var(--spacing-4);
+  transition: var(--transition-colors);
+  margin-top: var(--event-card-button-margin-top);
 }
 
 .eventCard__button:hover {
@@ -110,7 +110,7 @@
 @media (max-width: 768px) {
   .eventCard {
     grid-template-columns: 1fr;
-    padding: var(--spacing-6) 0;
+    padding: var(--event-card-padding-y-mobile) 0;
     gap: var(--spacing-6);
   }
 
@@ -120,7 +120,7 @@
   }
 
   .eventCard__dateNumber {
-    font-size: var(--font-size-4xl);
+    font-size: var(--text-event-date-number-font-size);
   }
 
   .eventCard__title {

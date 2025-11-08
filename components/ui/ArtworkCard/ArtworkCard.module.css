@@ -2,7 +2,7 @@
 
 .artworkCard {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: var(--artwork-card-margin-bottom);
 }
 
 /* Product Media Link with Hover Overlay */
@@ -10,8 +10,8 @@
   position: relative;
   display: block;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
-  aspect-ratio: 420 / 570; /* Original image dimensions */
+  transition: var(--transition-all);
+  aspect-ratio: var(--artwork-card-aspect-ratio);
   width: 100%;
   border: none;
   background: none;
@@ -29,21 +29,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
-  font-weight: 300;
-  line-height: 96px;
-  color: white;
-  background: rgba(254, 72, 59, 0.65); /* Reduced opacity from 0.8 to 0.65 for elegance */
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; /* Smoother, slower transition */
+  font-size: var(--artwork-card-overlay-font-size);
+  font-weight: var(--artwork-card-overlay-font-weight);
+  line-height: var(--artwork-card-overlay-line-height);
+  color: var(--artwork-card-overlay-color);
+  background: var(--artwork-card-overlay-background);
+  opacity: var(--artwork-card-overlay-opacity);
+  transform: scale(var(--artwork-card-overlay-scale-initial));
+  transition: var(--artwork-card-overlay-transition);
   z-index: 1;
   pointer-events: none;
 }
 
 .artworkCard__media:hover .artworkCard__plus {
-  opacity: 1;
-  transform: scale(1);
+  opacity: var(--artwork-card-overlay-opacity-hover);
+  transform: scale(var(--artwork-card-overlay-scale-hover));
 }
 
 .artworkCard__image {
@@ -51,29 +51,29 @@
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.35s ease-in-out; /* Slower, more elegant */
+  transition: var(--artwork-card-image-transition);
 }
 
 .artworkCard__media:hover .artworkCard__image {
-  transform: scale(1.03); /* Reduced from 1.05 to 1.03 for subtle effect */
+  transform: scale(var(--artwork-card-image-scale-hover));
 }
 
 /* Title and Meta */
 .artworkCard__content {
-  margin-top: 20px;
+  margin-top: var(--artwork-card-content-margin-top);
 }
 
 .artworkCard__title {
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 0 5px 0;
-  line-height: 1.5;
+  font-size: var(--text-artwork-title-font-size);
+  font-weight: var(--text-artwork-title-font-weight);
+  margin: 0 0 var(--artwork-card-title-margin-bottom) 0;
+  line-height: var(--text-artwork-title-line-height);
 }
 
 .artworkCard__title a {
   color: var(--color-text-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: var(--transition-colors);
 }
 
 .artworkCard__title a:hover {
@@ -81,7 +81,7 @@
 }
 
 .artworkCard__meta {
-  font-size: 12px;
+  font-size: var(--text-artwork-meta-font-size);
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: var(--text-artwork-meta-line-height);
 }

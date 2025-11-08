@@ -41,6 +41,16 @@
   --color-overlay-light: rgba(0, 0, 0, 0.5); /* Overlay sobre imágenes */
   --color-overlay-dark: rgba(0, 0, 0, 0.8); /* Overlay intenso */
   --color-overlay-red: rgba(254, 72, 59, 0.1); /* Hover red subtle */
+  --color-overlay-red-65: rgba(254, 72, 59, 0.65); /* Overlay rojo para artwork cards */
+  --color-overlay-red-80: rgba(254, 72, 59, 0.8); /* Overlay rojo intenso */
+
+  /* --- FOOTER COLORS --- */
+  --color-footer-background: #f2f2f2; /* Fondo del footer rgb(242, 242, 242) */
+  --color-footer-text: #000000; /* Texto negro del footer */
+  --color-footer-text-secondary: #666666; /* Texto secundario del footer rgb(102, 102, 102) */
+  --color-footer-text-tertiary: #999999; /* Texto terciario del footer rgb(153, 153, 153) */
+  --color-footer-border: #e0e0e0; /* Borde del footer rgb(224, 224, 224) */
+  --color-footer-social: #2a2a2a; /* Color de iconos sociales */
 
   /* --- INTERACTION STATES --- */
   --color-hover-red: #ff6b5f; /* Hover sobre elementos rojos */
@@ -48,4 +58,10 @@
   --color-active-red: #e63a2e; /* Click/active sobre rojo */
   --color-focus-outline: #fe483b; /* Outline de accesibilidad */
   --color-disabled: #d4d4d4; /* Elementos deshabilitados */
+
+  /* --- SHADOW COLORS --- */
+  --color-shadow-red-30: rgba(254, 72, 59, 0.3); /* Sombra roja al 30% */
+  --color-shadow-black-08: rgba(0, 0, 0, 0.08); /* Sombra negra suave */
+  --color-shadow-black-10: rgba(0, 0, 0, 0.1); /* Sombra negra estándar */
+  --color-shadow-black-15: rgba(0, 0, 0, 0.15); /* Sombra negra más intensa */
 }

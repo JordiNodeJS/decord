@@ -36,9 +36,9 @@
 
 .gallery__title {
   font-family: var(--font-family-secondary);
-  font-size: 24px;
-  font-weight: 500;
-  color: rgb(21, 21, 21);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
   margin-bottom: 42.7px;
   letter-spacing: 14.4px;
   text-transform: uppercase;
@@ -57,18 +57,18 @@
   display: block;
   padding: 0;
   background: transparent;
-  color: rgb(21, 21, 21);
+  color: var(--color-text-primary);
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: normal;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-normal);
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
   text-decoration: none;
   text-align: left;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }
 
 .filter__button:hover {
@@ -105,22 +105,22 @@
   background: var(--color-primary-red);
   color: var(--color-text-inverse);
   font-family: var(--font-family-secondary);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--button-font-size-md);
+  font-weight: var(--font-weight-semibold);
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 16px 32px;
+  padding: var(--spacing-4) var(--spacing-8);
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: var(--transition-all);
 }
 
 .gallery__ctaButton:hover {
   background: var(--color-hover-red-dark);
   color: var(--color-text-inverse);
-  box-shadow: 0 4px 12px rgba(254, 72, 59, 0.3);
+  box-shadow: var(--stats-card-shadow-hover);
   transform: translateY(-2px);
 }
 
